@@ -17,11 +17,6 @@ namespace LeSoleil_Taller2
             InitializeComponent();
         }
 
-        private void LFondoLogin_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -29,7 +24,7 @@ namespace LeSoleil_Taller2
 
         private void BIngresar_Click(object sender, EventArgs e)
         {
-            InicioSesion form = new InicioSesion();
+            Menu form = new Menu();
 
             form.Show();
             this.Hide();
