@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//using CapaNegocio;
+//using CapaEntidad;
+
 namespace LeSoleil_Taller2
 {
     public partial class InicioSesion : Form
@@ -24,6 +27,11 @@ namespace LeSoleil_Taller2
 
         private void BIngresar_Click(object sender, EventArgs e)
         {
+
+            // List<Usuario> TEST = new CN_Usuario().Listar();
+
+            // Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.User == TBUsuario.Text && u.Contraseña == TBContraseña.Text).FirstOrDefault();
+
             Menu form = new Menu();
 
             form.Show();
