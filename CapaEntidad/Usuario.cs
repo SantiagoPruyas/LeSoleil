@@ -11,6 +11,7 @@ namespace CapaEntidad
         public int Id_usuario { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string Correo { get; set; }
         public string User { get; set; }
         public string Contraseña { get; set; }
         public bool Baja { get; set; }
