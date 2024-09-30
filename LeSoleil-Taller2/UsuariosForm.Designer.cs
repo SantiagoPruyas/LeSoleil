@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -45,12 +45,7 @@
             this.LDireccionUser = new System.Windows.Forms.Label();
             this.TBDniUser = new System.Windows.Forms.TextBox();
             this.TBDirecionUser = new System.Windows.Forms.TextBox();
-            this.LFechaNacUser = new System.Windows.Forms.Label();
-            this.DTPFechaNacUser = new System.Windows.Forms.DateTimePicker();
             this.LTelefonoUser = new System.Windows.Forms.Label();
-            this.LSexoUser = new System.Windows.Forms.Label();
-            this.RBMujer = new System.Windows.Forms.RadioButton();
-            this.RBHombre = new System.Windows.Forms.RadioButton();
             this.TBTelefonoUser = new System.Windows.Forms.TextBox();
             this.BGuardarUser = new FontAwesome.Sharp.IconButton();
             this.BCancelarUser = new FontAwesome.Sharp.IconButton();
@@ -181,7 +176,7 @@
             this.LPerfilUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LPerfilUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPerfilUser.ForeColor = System.Drawing.Color.Black;
-            this.LPerfilUser.Location = new System.Drawing.Point(142, 225);
+            this.LPerfilUser.Location = new System.Drawing.Point(414, 141);
             this.LPerfilUser.Name = "LPerfilUser";
             this.LPerfilUser.Size = new System.Drawing.Size(41, 18);
             this.LPerfilUser.TabIndex = 13;
@@ -190,7 +185,7 @@
             // CBPerfilUser
             // 
             this.CBPerfilUser.FormattingEnabled = true;
-            this.CBPerfilUser.Location = new System.Drawing.Point(222, 225);
+            this.CBPerfilUser.Location = new System.Drawing.Point(481, 143);
             this.CBPerfilUser.Name = "CBPerfilUser";
             this.CBPerfilUser.Size = new System.Drawing.Size(134, 21);
             this.CBPerfilUser.TabIndex = 14;
@@ -239,25 +234,6 @@
             this.TBDirecionUser.Size = new System.Drawing.Size(134, 25);
             this.TBDirecionUser.TabIndex = 18;
             // 
-            // LFechaNacUser
-            // 
-            this.LFechaNacUser.AutoSize = true;
-            this.LFechaNacUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFechaNacUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaNacUser.ForeColor = System.Drawing.Color.Black;
-            this.LFechaNacUser.Location = new System.Drawing.Point(414, 142);
-            this.LFechaNacUser.Name = "LFechaNacUser";
-            this.LFechaNacUser.Size = new System.Drawing.Size(117, 18);
-            this.LFechaNacUser.TabIndex = 19;
-            this.LFechaNacUser.Text = "Fecha Nacimiento";
-            // 
-            // DTPFechaNacUser
-            // 
-            this.DTPFechaNacUser.Location = new System.Drawing.Point(532, 142);
-            this.DTPFechaNacUser.Name = "DTPFechaNacUser";
-            this.DTPFechaNacUser.Size = new System.Drawing.Size(200, 20);
-            this.DTPFechaNacUser.TabIndex = 20;
-            // 
             // LTelefonoUser
             // 
             this.LTelefonoUser.AutoSize = true;
@@ -269,46 +245,6 @@
             this.LTelefonoUser.Size = new System.Drawing.Size(60, 18);
             this.LTelefonoUser.TabIndex = 21;
             this.LTelefonoUser.Text = "Telefono";
-            // 
-            // LSexoUser
-            // 
-            this.LSexoUser.AutoSize = true;
-            this.LSexoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LSexoUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LSexoUser.ForeColor = System.Drawing.Color.Black;
-            this.LSexoUser.Location = new System.Drawing.Point(414, 225);
-            this.LSexoUser.Name = "LSexoUser";
-            this.LSexoUser.Size = new System.Drawing.Size(36, 18);
-            this.LSexoUser.TabIndex = 22;
-            this.LSexoUser.Text = "Sexo";
-            // 
-            // RBMujer
-            // 
-            this.RBMujer.AutoSize = true;
-            this.RBMujer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RBMujer.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBMujer.ForeColor = System.Drawing.Color.Black;
-            this.RBMujer.Location = new System.Drawing.Point(481, 225);
-            this.RBMujer.Name = "RBMujer";
-            this.RBMujer.Size = new System.Drawing.Size(59, 22);
-            this.RBMujer.TabIndex = 23;
-            this.RBMujer.TabStop = true;
-            this.RBMujer.Text = "Mujer";
-            this.RBMujer.UseVisualStyleBackColor = false;
-            // 
-            // RBHombre
-            // 
-            this.RBHombre.AutoSize = true;
-            this.RBHombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RBHombre.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBHombre.ForeColor = System.Drawing.Color.Black;
-            this.RBHombre.Location = new System.Drawing.Point(546, 225);
-            this.RBHombre.Name = "RBHombre";
-            this.RBHombre.Size = new System.Drawing.Size(70, 22);
-            this.RBHombre.TabIndex = 24;
-            this.RBHombre.TabStop = true;
-            this.RBHombre.Text = "Hombre";
-            this.RBHombre.UseVisualStyleBackColor = false;
             // 
             // TBTelefonoUser
             // 
@@ -371,14 +307,14 @@
             // 
             // DGVUsuarios
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdUsuario,
@@ -508,12 +444,7 @@
             this.Controls.Add(this.BCancelarUser);
             this.Controls.Add(this.BGuardarUser);
             this.Controls.Add(this.TBTelefonoUser);
-            this.Controls.Add(this.RBHombre);
-            this.Controls.Add(this.RBMujer);
-            this.Controls.Add(this.LSexoUser);
             this.Controls.Add(this.LTelefonoUser);
-            this.Controls.Add(this.DTPFechaNacUser);
-            this.Controls.Add(this.LFechaNacUser);
             this.Controls.Add(this.TBDirecionUser);
             this.Controls.Add(this.TBDniUser);
             this.Controls.Add(this.LDireccionUser);
@@ -555,12 +486,7 @@
         private System.Windows.Forms.Label LDireccionUser;
         private System.Windows.Forms.TextBox TBDniUser;
         private System.Windows.Forms.TextBox TBDirecionUser;
-        private System.Windows.Forms.Label LFechaNacUser;
-        private System.Windows.Forms.DateTimePicker DTPFechaNacUser;
         private System.Windows.Forms.Label LTelefonoUser;
-        private System.Windows.Forms.Label LSexoUser;
-        private System.Windows.Forms.RadioButton RBMujer;
-        private System.Windows.Forms.RadioButton RBHombre;
         private System.Windows.Forms.TextBox TBTelefonoUser;
         private FontAwesome.Sharp.IconButton BGuardarUser;
         private FontAwesome.Sharp.IconButton BCancelarUser;
