@@ -39,6 +39,7 @@
             this.BCancelar = new System.Windows.Forms.Button();
             this.LUsuario = new System.Windows.Forms.Label();
             this.LContraseña = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // LNombreNegocio
@@ -191,6 +192,7 @@
         private System.Windows.Forms.Button BCancelar;
         private System.Windows.Forms.Label LUsuario;
         private System.Windows.Forms.Label LContraseña;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 

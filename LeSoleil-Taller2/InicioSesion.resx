@@ -121,7 +121,7 @@
   <data name="LFondoLogin2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAA/7JJREFUeF7svXmfJUd1rf1+0fcaIyTEjMEYCxAaQCDEPIh5nhEzCOzr4WIMxhhj
+        wAAADsABataJCQAA/7JJREFUeF7svXmfJUd1rf1+0fcaIyTEjMEYCxAaQCDEPIh5nhEzCOzr4WIMxhhj
         GxsbM9j3fodXXdVz57tXnFjRK3buzNwRpZbBV388v7X2jqzT1SWdfjpPn67+f5a33b1s8lbJxvNcstf5
         McvH6h5ZqLtN7PwtNTG/BXPddel37vzReg0yy5uDHOVNkiM8IjnDGyVnecMgDweZ5SHJWR68IA9M8vq7
         atbe5VaX3f3W70cO8DpiH9t6tNfz2l9bZ+Qh9jHgNcg6ozdsF3a3u0926LP8sWSWV1e0Z/ijILO8Ksgs
@@ -1862,4 +1862,7 @@
         //pvKJwLaWI/dxQAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
