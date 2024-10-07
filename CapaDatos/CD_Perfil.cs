@@ -20,7 +20,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select Perfil_id,Nombre from Perfil");
+                    query.AppendLine("select Perfil_id,NombreRol from Perfil");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -35,7 +35,7 @@ namespace CapaDatos
                             lista.Add(new Perfil()
                             {
                                 Perfil_id = Convert.ToInt32(dr["Perfil_id"]),
-                                Nombre = dr["Nombre"].ToString(),
+                                NombreRol = dr["NombreRol"].ToString(),
                             });
                         }
                     }

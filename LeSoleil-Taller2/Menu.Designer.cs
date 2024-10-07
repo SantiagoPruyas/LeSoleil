@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.PContenedor = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MN_nombreUsuario = new System.Windows.Forms.Label();
             this.MSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,11 +186,35 @@
             this.PContenedor.Size = new System.Drawing.Size(805, 574);
             this.PContenedor.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DarkSalmon;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(677, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Usuario:";
+            // 
+            // MN_nombreUsuario
+            // 
+            this.MN_nombreUsuario.AutoSize = true;
+            this.MN_nombreUsuario.BackColor = System.Drawing.Color.DarkSalmon;
+            this.MN_nombreUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold);
+            this.MN_nombreUsuario.Location = new System.Drawing.Point(677, 67);
+            this.MN_nombreUsuario.Name = "MN_nombreUsuario";
+            this.MN_nombreUsuario.Size = new System.Drawing.Size(86, 18);
+            this.MN_nombreUsuario.TabIndex = 6;
+            this.MN_nombreUsuario.Text = "UsuarioActual";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 674);
+            this.Controls.Add(this.MN_nombreUsuario);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.PContenedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.MSMenu);
@@ -198,6 +224,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.MSMenu.ResumeLayout(false);
             this.MSMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -218,5 +245,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuReportes;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.Panel PContenedor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label MN_nombreUsuario;
     }
 }

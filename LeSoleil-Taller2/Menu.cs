@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +18,10 @@ namespace LeSoleil_Taller2
         // Form activo que se muestra actualmente en el panel
         private static Form formularioActivo = null;
 
-        public Menu()
+        private static Usuario usuarioActual;
+        public Menu(Usuario objusuario)
         {
+            usuarioActual = objusuario;
             InitializeComponent();
         }
 
@@ -84,6 +88,22 @@ namespace LeSoleil_Taller2
             this.Close();
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.Id_usuario);
+
+            foreach (ToolStripMenuItem iconmenu in MSMenu.Items)
+            {
+                bool encontrado = ListaPermisos.Any(m => m.Nombre == iconmenu.Name);
+
+                if (encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+            }
+
+            MN_nombreUsuario.Text = usuarioActual.User;
+        }
     }
 
     // Clase para el renderizado personalizado de los ítems del menú

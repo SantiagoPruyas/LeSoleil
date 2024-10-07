@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaNegocio;
+using LeSoleil_Taller2.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -261,8 +264,62 @@ namespace LeSoleil_Taller2
             MessageBox.Show("Datos actualizados correctamente.");
         }
 
+        private void UsuariosForm_Load(object sender, EventArgs e)
+        {
+            List<Perfil> listaPerfil = new CN_Perfil().Listar();
 
+            foreach (Perfil item in listaPerfil)
+            {
+                CBPerfilUser.Items.Add(new OpcionCombo() { Valor = item.Perfil_id, Texto = item.NombreRol });
+                CBPerfilUser.DisplayMember = "Texto";
+                CBPerfilUser.ValueMember = "Valor";
+                CBPerfilUser.SelectedIndex = 0;
+            }
 
+            // Mostrar todos los usuarios en la tabla
+            List<Usuario> listaUsuario = new CN_Usuario().Listar();
 
+            foreach (Usuario item in listaUsuario)
+            {
+                DGVUsuarios.Rows.Add(new object[] {
+                item.Nombre,
+                item.Apellido,
+                item.DNI,
+                item.User,
+                item.Correo,
+                item.Direccion,
+                item.oPerfil.NombreRol,
+                item.Telefono,
+            });
+            }
+        }
+
+        private void BGuardarUser_Click(object sender, EventArgs e)
+        {
+            DGVUsuarios.Rows.Add(new object[] {"",
+                TBNombreUser.Text,
+                TBApellidoUser.Text,
+                TBDniUser.Text,
+                TBDniUser,
+                TBEmailUser,
+                TBDireccionUser.Text,
+                ((OpcionCombo)CBPerfilUser.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)CBPerfilUser.SelectedItem).Texto.ToString(),
+                TBTelefonoUser.Text
+            });
+        }
+
+        private void DGVUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                // var w = Properties.Resources.check20.witdh;
+            }
+        }
     }
-    }
+}

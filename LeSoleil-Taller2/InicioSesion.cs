@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-//using CapaNegocio;
-//using CapaEntidad;
+using CapaNegocio;
+using CapaEntidad;
 
 namespace LeSoleil_Taller2
 {
@@ -27,12 +26,9 @@ namespace LeSoleil_Taller2
 
         private void BIngresar_Click(object sender, EventArgs e)
         {
+            Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.User == TBUsuario.Text && u.Contraseña == TBContraseña.Text).FirstOrDefault();
 
-            // List<Usuario> TEST = new CN_Usuario().Listar();
-
-            // Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.User == TBUsuario.Text && u.Contraseña == TBContraseña.Text).FirstOrDefault();
-
-            Menu form = new Menu();
+            Menu form = new Menu(oUsuario);
 
             form.Show();
             this.Hide();

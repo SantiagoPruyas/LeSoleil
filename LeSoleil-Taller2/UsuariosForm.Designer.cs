@@ -65,6 +65,7 @@
             this.BCancelarUsuario = new System.Windows.Forms.Button();
             this.BActivosUser = new System.Windows.Forms.Button();
             this.BInactivosUsers = new System.Windows.Forms.Button();
+            this.BTNseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -308,6 +309,7 @@
             this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BTNseleccionar,
             this.nombreUsuario,
             this.apellidoUsuario,
             this.dniUsuario,
@@ -401,6 +403,13 @@
             this.BInactivosUsers.TabIndex = 38;
             this.BInactivosUsers.Text = "Usuarios Inactivos";
             this.BInactivosUsers.UseVisualStyleBackColor = false;
+            // 
+            // BTNseleccionar
+            // 
+            this.BTNseleccionar.HeaderText = "";
+            this.BTNseleccionar.Name = "BTNseleccionar";
+            this.BTNseleccionar.ReadOnly = true;
+            this.BTNseleccionar.Width = 50;
             // 
             // nombreUsuario
             // 
@@ -520,6 +529,7 @@
             this.Controls.Add(this.LFondoUser);
             this.Name = "UsuariosForm";
             this.Text = "UsuariosForm";
+            this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).EndInit();
             this.ResumeLayout(false);
@@ -558,6 +568,7 @@
         private System.Windows.Forms.Button BCancelarUsuario;
         private System.Windows.Forms.Button BActivosUser;
         private System.Windows.Forms.Button BInactivosUsers;
+        private System.Windows.Forms.DataGridViewButtonColumn BTNseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniUsuario;

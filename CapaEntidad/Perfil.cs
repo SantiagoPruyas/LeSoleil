@@ -9,7 +9,7 @@ namespace CapaEntidad
     public class Perfil
     {
         public int Perfil_id { get; set; }
-        public string Nombre { get; set; }
+        public string NombreRol { get; set; }
         public string Descripcion { get; set; }
         public string Fecha_registro { get; set; }
     }
