@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaEntidad", "CapaEntidad\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{18410B2E-C410-41CE-91BB-B4C419519A82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeSoleil-Taller2", "..\..\..\LeSoleil-Taller2\LeSoleil-Taller2.csproj", "{A52389EA-3361-464B-8AD4-3531C86DFC07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeSoleil-Taller2", "LeSoleil-Taller2\LeSoleil-Taller2.csproj", "{A52389EA-3361-464B-8AD4-3531C86DFC07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
