@@ -19,8 +19,10 @@ namespace CapaDatos
             {
                 try
                 {
-                    string query = "select Id_usuario,Nombre,Apellido,Usuario,Contraseña,Baja from Usuario";
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Sexo, u.Fecha_nacimiento, r.Perfil_id, r.Nombre from Usuario u");
+                    query.AppendLine("inner join Perfil r on r.Perfil_id = u.Perfil_id");
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
@@ -37,7 +39,13 @@ namespace CapaDatos
                                 Apellido = dr["Apellido"].ToString(),
                                 User = dr["Usuario"].ToString(),
                                 Contraseña = dr["Contraseña"].ToString(),
-                                Baja = Convert.ToBoolean(dr["Baja"])
+                                Baja = Convert.ToBoolean(dr["Baja"]),
+                                DNI = dr["DNI"].ToString(),
+                                Direccion = dr["Direccion"].ToString(),
+                                Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
+                                Telefono = dr["Telefono"].ToString(),
+                                Sexo = dr["Sexo"].ToString(),
+                                oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(dr["Perfil_id"]), Nombre = dr["Nombre"].ToString() }
                             });
                         }
 
