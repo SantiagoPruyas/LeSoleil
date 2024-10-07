@@ -120,6 +120,12 @@
     <Compile Include="UsuariosForm.Designer.cs">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosFormEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosFormEditar.Designer.cs">
+      <DependentUpon>UsuariosFormEditar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBackUp.resx">
       <DependentUpon>FormBackUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosFormEditar.resx">
+      <DependentUpon>UsuariosFormEditar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

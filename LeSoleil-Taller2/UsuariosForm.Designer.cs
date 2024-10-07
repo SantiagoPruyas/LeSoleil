@@ -30,6 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -50,19 +59,22 @@
             this.LFondoUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
-            this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TBEmailUser = new System.Windows.Forms.TextBox();
             this.LEmailUser = new System.Windows.Forms.Label();
             this.BGuardarUsuario = new System.Windows.Forms.Button();
             this.BCancelarUsuario = new System.Windows.Forms.Button();
+            this.BActivosUser = new System.Windows.Forms.Button();
+            this.BInactivosUsers = new System.Windows.Forms.Button();
+            this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -270,9 +282,9 @@
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFondoUser.Location = new System.Drawing.Point(-6, -25);
+            this.LFondoUser.Location = new System.Drawing.Point(-6, -3);
             this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(813, 312);
+            this.LFondoUser.Size = new System.Drawing.Size(813, 297);
             this.LFondoUser.TabIndex = 28;
             // 
             // pictureBox1
@@ -289,81 +301,29 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdUsuario,
-            this.Perfil,
             this.nombreUsuario,
             this.apellidoUsuario,
-            this.usuario,
             this.dniUsuario,
+            this.usuario,
             this.emailUsuario,
             this.direccionUsuario,
-            this.telefonoUsuario});
-            this.DGVUsuarios.Location = new System.Drawing.Point(12, 341);
+            this.Perfil,
+            this.telefonoUsuario,
+            this.eliminarUsuario,
+            this.editarUsuario});
+            this.DGVUsuarios.Location = new System.Drawing.Point(12, 345);
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.ReadOnly = true;
             this.DGVUsuarios.Size = new System.Drawing.Size(781, 245);
             this.DGVUsuarios.TabIndex = 30;
-            // 
-            // IdUsuario
-            // 
-            this.IdUsuario.HeaderText = "ID Usuario";
-            this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.ReadOnly = true;
-            // 
-            // Perfil
-            // 
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            // 
-            // nombreUsuario
-            // 
-            this.nombreUsuario.HeaderText = "Nombre";
-            this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.ReadOnly = true;
-            // 
-            // apellidoUsuario
-            // 
-            this.apellidoUsuario.HeaderText = "Apellido";
-            this.apellidoUsuario.Name = "apellidoUsuario";
-            this.apellidoUsuario.ReadOnly = true;
-            // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // dniUsuario
-            // 
-            this.dniUsuario.HeaderText = "DNI";
-            this.dniUsuario.Name = "dniUsuario";
-            this.dniUsuario.ReadOnly = true;
-            // 
-            // emailUsuario
-            // 
-            this.emailUsuario.HeaderText = "Email";
-            this.emailUsuario.Name = "emailUsuario";
-            this.emailUsuario.ReadOnly = true;
-            // 
-            // direccionUsuario
-            // 
-            this.direccionUsuario.HeaderText = "Direccion";
-            this.direccionUsuario.Name = "direccionUsuario";
-            this.direccionUsuario.ReadOnly = true;
-            // 
-            // telefonoUsuario
-            // 
-            this.telefonoUsuario.HeaderText = "Telefono";
-            this.telefonoUsuario.Name = "telefonoUsuario";
-            this.telefonoUsuario.ReadOnly = true;
+            this.DGVUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellClick);
             // 
             // TBEmailUser
             // 
@@ -394,7 +354,7 @@
             this.BGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGuardarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarUsuario.Location = new System.Drawing.Point(280, 216);
+            this.BGuardarUsuario.Location = new System.Drawing.Point(31, 216);
             this.BGuardarUsuario.Name = "BGuardarUsuario";
             this.BGuardarUsuario.Size = new System.Drawing.Size(94, 40);
             this.BGuardarUsuario.TabIndex = 35;
@@ -408,7 +368,7 @@
             this.BCancelarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BCancelarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCancelarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarUsuario.Location = new System.Drawing.Point(415, 216);
+            this.BCancelarUsuario.Location = new System.Drawing.Point(146, 216);
             this.BCancelarUsuario.Name = "BCancelarUsuario";
             this.BCancelarUsuario.Size = new System.Drawing.Size(94, 40);
             this.BCancelarUsuario.TabIndex = 36;
@@ -416,11 +376,124 @@
             this.BCancelarUsuario.UseVisualStyleBackColor = false;
             this.BCancelarUsuario.Click += new System.EventHandler(this.BCancelarUsuario_Click);
             // 
+            // BActivosUser
+            // 
+            this.BActivosUser.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BActivosUser.Location = new System.Drawing.Point(12, 297);
+            this.BActivosUser.Name = "BActivosUser";
+            this.BActivosUser.Size = new System.Drawing.Size(152, 35);
+            this.BActivosUser.TabIndex = 37;
+            this.BActivosUser.Text = "Usuarios Activos";
+            this.BActivosUser.UseVisualStyleBackColor = false;
+            // 
+            // BInactivosUsers
+            // 
+            this.BInactivosUsers.BackColor = System.Drawing.Color.Brown;
+            this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BInactivosUsers.Location = new System.Drawing.Point(635, 297);
+            this.BInactivosUsers.Name = "BInactivosUsers";
+            this.BInactivosUsers.Size = new System.Drawing.Size(158, 35);
+            this.BInactivosUsers.TabIndex = 38;
+            this.BInactivosUsers.Text = "Usuarios Inactivos";
+            this.BInactivosUsers.UseVisualStyleBackColor = false;
+            // 
+            // nombreUsuario
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nombreUsuario.HeaderText = "Nombre";
+            this.nombreUsuario.Name = "nombreUsuario";
+            this.nombreUsuario.ReadOnly = true;
+            // 
+            // apellidoUsuario
+            // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.apellidoUsuario.HeaderText = "Apellido";
+            this.apellidoUsuario.Name = "apellidoUsuario";
+            this.apellidoUsuario.ReadOnly = true;
+            // 
+            // dniUsuario
+            // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dniUsuario.HeaderText = "DNI";
+            this.dniUsuario.Name = "dniUsuario";
+            this.dniUsuario.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle5;
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // emailUsuario
+            // 
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle6;
+            this.emailUsuario.HeaderText = "Email";
+            this.emailUsuario.Name = "emailUsuario";
+            this.emailUsuario.ReadOnly = true;
+            // 
+            // direccionUsuario
+            // 
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle7;
+            this.direccionUsuario.HeaderText = "Direccion";
+            this.direccionUsuario.Name = "direccionUsuario";
+            this.direccionUsuario.ReadOnly = true;
+            // 
+            // Perfil
+            // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.Perfil.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.Name = "Perfil";
+            this.Perfil.ReadOnly = true;
+            // 
+            // telefonoUsuario
+            // 
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle9;
+            this.telefonoUsuario.HeaderText = "Telefono";
+            this.telefonoUsuario.Name = "telefonoUsuario";
+            this.telefonoUsuario.ReadOnly = true;
+            // 
+            // eliminarUsuario
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.eliminarUsuario.DefaultCellStyle = dataGridViewCellStyle10;
+            this.eliminarUsuario.HeaderText = "Dar de Baja";
+            this.eliminarUsuario.Name = "eliminarUsuario";
+            this.eliminarUsuario.ReadOnly = true;
+            this.eliminarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.eliminarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.eliminarUsuario.Text = "Eliminar";
+            // 
+            // editarUsuario
+            // 
+            this.editarUsuario.HeaderText = "Editar ";
+            this.editarUsuario.Name = "editarUsuario";
+            this.editarUsuario.ReadOnly = true;
+            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editarUsuario.Text = "editar";
+            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 598);
+            this.Controls.Add(this.BInactivosUsers);
+            this.Controls.Add(this.BActivosUser);
             this.Controls.Add(this.BCancelarUsuario);
             this.Controls.Add(this.BGuardarUsuario);
             this.Controls.Add(this.LEmailUser);
@@ -481,16 +554,19 @@
         //private FontAwesome.Sharp.IconButton BInactivos;
         private System.Windows.Forms.TextBox TBEmailUser;
         private System.Windows.Forms.Label LEmailUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dniUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccionUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
         private System.Windows.Forms.Button BGuardarUsuario;
         private System.Windows.Forms.Button BCancelarUsuario;
+        private System.Windows.Forms.Button BActivosUser;
+        private System.Windows.Forms.Button BInactivosUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn eliminarUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn editarUsuario;
     }
 }

@@ -195,6 +195,74 @@ namespace LeSoleil_Taller2
             // Limpiar el ComboBox
             CBPerfilUser.SelectedIndex = -1;
         }
-    }
-}
 
+        private void DGVUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar si la celda clickeada es el botón "Eliminar"
+            if (e.ColumnIndex == DGVUsuarios.Columns["eliminarUsuario"].Index && e.RowIndex >= 0)
+            {
+                // Verificar que la fila no sea la nueva fila sin confirmar
+                if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
+                {
+                    // Mostrar mensaje de confirmación
+                    DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este registro?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // Si el usuario presiona 'Sí', eliminar la fila
+                    if (result == DialogResult.Yes)
+                    {
+                        DGVUsuarios.Rows.RemoveAt(e.RowIndex);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar la fila de nuevos registros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            // Verificar si la celda clickeada es el botón "Modificar"
+            else if (e.ColumnIndex == DGVUsuarios.Columns["editarUsuario"].Index && e.RowIndex >= 0)
+            {
+                // Obtener los valores actuales de la fila seleccionada
+                string nombre = DGVUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string apellido = DGVUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string dni = DGVUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string usuario = DGVUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string contraseña = DGVUsuarios.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string email = DGVUsuarios.Rows[e.RowIndex].Cells[5].Value.ToString();
+                string direccion = DGVUsuarios.Rows[e.RowIndex].Cells[6].Value.ToString();
+                string perfil = DGVUsuarios.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string telefono = DGVUsuarios.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+                // Crear y abrir el formulario de edición con los datos
+                UsuariosFormEditar editarForm = new UsuariosFormEditar(
+                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, e.RowIndex, this
+                );
+
+                // Establecer la propiedad Owner (propietario del formulario)
+                editarForm.Owner = this; // 'this' es el formulario principal UsuariosForm
+
+                // Mostrar el formulario de edición como un cuadro de diálogo modal
+                editarForm.ShowDialog();
+            }
+        }
+
+        public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
+        string usuario, string contraseña, string email, string direccion, string perfil, string telefono)
+        {
+            DGVUsuarios.Rows[rowIndex].Cells[0].Value = nombre;
+            DGVUsuarios.Rows[rowIndex].Cells[1].Value = apellido;
+            DGVUsuarios.Rows[rowIndex].Cells[2].Value = dni;
+            DGVUsuarios.Rows[rowIndex].Cells[3].Value = usuario;
+            DGVUsuarios.Rows[rowIndex].Cells[4].Value = contraseña;
+            DGVUsuarios.Rows[rowIndex].Cells[5].Value = email;
+            DGVUsuarios.Rows[rowIndex].Cells[6].Value = direccion;
+            DGVUsuarios.Rows[rowIndex].Cells[7].Value = perfil;
+            DGVUsuarios.Rows[rowIndex].Cells[8].Value = telefono;
+
+            MessageBox.Show("Datos actualizados correctamente.");
+        }
+
+
+
+
+    }
+    }
