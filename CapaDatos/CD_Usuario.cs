@@ -19,9 +19,7 @@ namespace CapaDatos
             {
                 try
                 {
-
-                    string query = "select Id_usuario, Nombre, Apellido, Correo, Contraseña, Baja from usuario";
-                    
+                    string query = "select Id_usuario,Nombre,Apellido,Usuario,Contraseña,Baja from Usuario";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
 
@@ -32,13 +30,12 @@ namespace CapaDatos
 
                         while (dr.Read())
                         {
-
                             lista.Add(new Usuario()
                             {
                                 Id_usuario = Convert.ToInt32(dr["Id_usuario"]),
                                 Nombre = dr["Nombre"].ToString(),
                                 Apellido = dr["Apellido"].ToString(),
-                                Correo = dr["Correo"].ToString(),
+                                User = dr["Usuario"].ToString(),
                                 Contraseña = dr["Contraseña"].ToString(),
                                 Baja = Convert.ToBoolean(dr["Baja"])
                             });
