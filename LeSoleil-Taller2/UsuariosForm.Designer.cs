@@ -47,15 +47,9 @@
             this.TBDireccionUser = new System.Windows.Forms.TextBox();
             this.LTelefonoUser = new System.Windows.Forms.Label();
             this.TBTelefonoUser = new System.Windows.Forms.TextBox();
-            this.BGuardarUser = new FontAwesome.Sharp.IconButton();
-            this.BCancelarUser = new FontAwesome.Sharp.IconButton();
             this.LFondoUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
-            this.BActivos = new FontAwesome.Sharp.IconButton();
-            this.BInactivos = new FontAwesome.Sharp.IconButton();
-            this.TBEmailUser = new System.Windows.Forms.TextBox();
-            this.LEmailUser = new System.Windows.Forms.Label();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +59,10 @@
             this.emailUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBEmailUser = new System.Windows.Forms.TextBox();
+            this.LEmailUser = new System.Windows.Forms.Label();
+            this.BGuardarUsuario = new System.Windows.Forms.Button();
+            this.BCancelarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -269,39 +267,6 @@
             this.TBTelefonoUser.TabIndex = 25;
             this.TBTelefonoUser.Leave += new System.EventHandler(this.TBTelefonoUser_Leave);
             // 
-            // BGuardarUser
-            // 
-            this.BGuardarUser.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarUser.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarUser.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BGuardarUser.IconColor = System.Drawing.Color.Black;
-            this.BGuardarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BGuardarUser.Location = new System.Drawing.Point(299, 222);
-            this.BGuardarUser.Name = "BGuardarUser";
-            this.BGuardarUser.Size = new System.Drawing.Size(94, 41);
-            this.BGuardarUser.TabIndex = 26;
-            this.BGuardarUser.Text = "Guardar";
-            this.BGuardarUser.UseVisualStyleBackColor = false;
-            this.BGuardarUser.Click += new System.EventHandler(this.BGuardarUser_Click);
-            // 
-            // BCancelarUser
-            // 
-            this.BCancelarUser.BackColor = System.Drawing.Color.Coral;
-            this.BCancelarUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelarUser.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelarUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarUser.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BCancelarUser.IconColor = System.Drawing.Color.Black;
-            this.BCancelarUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BCancelarUser.Location = new System.Drawing.Point(415, 222);
-            this.BCancelarUser.Name = "BCancelarUser";
-            this.BCancelarUser.Size = new System.Drawing.Size(94, 41);
-            this.BCancelarUser.TabIndex = 27;
-            this.BCancelarUser.Text = "Cancelar";
-            this.BCancelarUser.UseVisualStyleBackColor = false;
-            // 
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -345,61 +310,6 @@
             this.DGVUsuarios.ReadOnly = true;
             this.DGVUsuarios.Size = new System.Drawing.Size(781, 245);
             this.DGVUsuarios.TabIndex = 30;
-            // 
-            // BActivos
-            // 
-            this.BActivos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BActivos.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActivos.ForeColor = System.Drawing.Color.Coral;
-            this.BActivos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BActivos.IconColor = System.Drawing.Color.Black;
-            this.BActivos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BActivos.Location = new System.Drawing.Point(12, 299);
-            this.BActivos.Name = "BActivos";
-            this.BActivos.Size = new System.Drawing.Size(94, 29);
-            this.BActivos.TabIndex = 31;
-            this.BActivos.Text = "Activos";
-            this.BActivos.UseVisualStyleBackColor = false;
-            // 
-            // BInactivos
-            // 
-            this.BInactivos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInactivos.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInactivos.ForeColor = System.Drawing.Color.Coral;
-            this.BInactivos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BInactivos.IconColor = System.Drawing.Color.Black;
-            this.BInactivos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BInactivos.Location = new System.Drawing.Point(122, 298);
-            this.BInactivos.Name = "BInactivos";
-            this.BInactivos.Size = new System.Drawing.Size(94, 29);
-            this.BInactivos.TabIndex = 32;
-            this.BInactivos.Text = "Inactivos";
-            this.BInactivos.UseVisualStyleBackColor = false;
-            // 
-            // TBEmailUser
-            // 
-            this.TBEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailUser.ForeColor = System.Drawing.Color.Coral;
-            this.TBEmailUser.Location = new System.Drawing.Point(375, 161);
-            this.TBEmailUser.Multiline = true;
-            this.TBEmailUser.Name = "TBEmailUser";
-            this.TBEmailUser.Size = new System.Drawing.Size(134, 25);
-            this.TBEmailUser.TabIndex = 33;
-            this.TBEmailUser.Leave += new System.EventHandler(this.TBEmailUser_Leave);
-            // 
-            // LEmailUser
-            // 
-            this.LEmailUser.AutoSize = true;
-            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
-            this.LEmailUser.Location = new System.Drawing.Point(313, 163);
-            this.LEmailUser.Name = "LEmailUser";
-            this.LEmailUser.Size = new System.Drawing.Size(41, 18);
-            this.LEmailUser.TabIndex = 34;
-            this.LEmailUser.Text = "Email";
             // 
             // IdUsuario
             // 
@@ -455,19 +365,68 @@
             this.telefonoUsuario.Name = "telefonoUsuario";
             this.telefonoUsuario.ReadOnly = true;
             // 
+            // TBEmailUser
+            // 
+            this.TBEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmailUser.ForeColor = System.Drawing.Color.Coral;
+            this.TBEmailUser.Location = new System.Drawing.Point(375, 161);
+            this.TBEmailUser.Multiline = true;
+            this.TBEmailUser.Name = "TBEmailUser";
+            this.TBEmailUser.Size = new System.Drawing.Size(134, 25);
+            this.TBEmailUser.TabIndex = 33;
+            this.TBEmailUser.Leave += new System.EventHandler(this.TBEmailUser_Leave);
+            // 
+            // LEmailUser
+            // 
+            this.LEmailUser.AutoSize = true;
+            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
+            this.LEmailUser.Location = new System.Drawing.Point(313, 163);
+            this.LEmailUser.Name = "LEmailUser";
+            this.LEmailUser.Size = new System.Drawing.Size(41, 18);
+            this.LEmailUser.TabIndex = 34;
+            this.LEmailUser.Text = "Email";
+            // 
+            // BGuardarUsuario
+            // 
+            this.BGuardarUsuario.BackColor = System.Drawing.Color.Coral;
+            this.BGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGuardarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BGuardarUsuario.Location = new System.Drawing.Point(280, 216);
+            this.BGuardarUsuario.Name = "BGuardarUsuario";
+            this.BGuardarUsuario.Size = new System.Drawing.Size(94, 40);
+            this.BGuardarUsuario.TabIndex = 35;
+            this.BGuardarUsuario.Text = "Guardar";
+            this.BGuardarUsuario.UseVisualStyleBackColor = false;
+            this.BGuardarUsuario.Click += new System.EventHandler(this.BGuardarUsuario_Click);
+            // 
+            // BCancelarUsuario
+            // 
+            this.BCancelarUsuario.BackColor = System.Drawing.Color.Coral;
+            this.BCancelarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelarUsuario.Location = new System.Drawing.Point(415, 216);
+            this.BCancelarUsuario.Name = "BCancelarUsuario";
+            this.BCancelarUsuario.Size = new System.Drawing.Size(94, 40);
+            this.BCancelarUsuario.TabIndex = 36;
+            this.BCancelarUsuario.Text = "Cancelar";
+            this.BCancelarUsuario.UseVisualStyleBackColor = false;
+            this.BCancelarUsuario.Click += new System.EventHandler(this.BCancelarUsuario_Click);
+            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 598);
+            this.Controls.Add(this.BCancelarUsuario);
+            this.Controls.Add(this.BGuardarUsuario);
             this.Controls.Add(this.LEmailUser);
             this.Controls.Add(this.TBEmailUser);
-            this.Controls.Add(this.BInactivos);
-            this.Controls.Add(this.BActivos);
             this.Controls.Add(this.DGVUsuarios);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BCancelarUser);
-            this.Controls.Add(this.BGuardarUser);
             this.Controls.Add(this.TBTelefonoUser);
             this.Controls.Add(this.LTelefonoUser);
             this.Controls.Add(this.TBDireccionUser);
@@ -513,13 +472,13 @@
         private System.Windows.Forms.TextBox TBDireccionUser;
         private System.Windows.Forms.Label LTelefonoUser;
         private System.Windows.Forms.TextBox TBTelefonoUser;
-        private FontAwesome.Sharp.IconButton BGuardarUser;
-        private FontAwesome.Sharp.IconButton BCancelarUser;
+        //private FontAwesome.Sharp.IconButton BGuardarUser;
+        //private FontAwesome.Sharp.IconButton BCancelarUser;
         private System.Windows.Forms.Label LFondoUser;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView DGVUsuarios;
-        private FontAwesome.Sharp.IconButton BActivos;
-        private FontAwesome.Sharp.IconButton BInactivos;
+        //private FontAwesome.Sharp.IconButton BActivos;
+        //private FontAwesome.Sharp.IconButton BInactivos;
         private System.Windows.Forms.TextBox TBEmailUser;
         private System.Windows.Forms.Label LEmailUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
@@ -531,5 +490,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
+        private System.Windows.Forms.Button BGuardarUsuario;
+        private System.Windows.Forms.Button BCancelarUsuario;
     }
 }

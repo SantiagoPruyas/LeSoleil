@@ -38,12 +38,9 @@
             this.LStock = new System.Windows.Forms.Label();
             this.LCantidad = new System.Windows.Forms.Label();
             this.DUDCantidad = new System.Windows.Forms.DomainUpDown();
-            this.BBuscarProducto = new FontAwesome.Sharp.IconButton();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
             this.LDescripcionProducto = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
-            this.BGuardarProducto = new FontAwesome.Sharp.IconButton();
-            this.BCancelarProducto = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +49,6 @@
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BActivosProductos = new FontAwesome.Sharp.IconButton();
-            this.BInactivosProductos = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -151,23 +146,7 @@
             this.DUDCantidad.Name = "DUDCantidad";
             this.DUDCantidad.Size = new System.Drawing.Size(60, 20);
             this.DUDCantidad.TabIndex = 38;
-            // 
-            // BBuscarProducto
-            // 
-            this.BBuscarProducto.BackColor = System.Drawing.Color.Coral;
-            this.BBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BBuscarProducto.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BBuscarProducto.IconColor = System.Drawing.Color.Black;
-            this.BBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BBuscarProducto.Location = new System.Drawing.Point(190, 78);
-            this.BBuscarProducto.Name = "BBuscarProducto";
-            this.BBuscarProducto.Size = new System.Drawing.Size(85, 25);
-            this.BBuscarProducto.TabIndex = 40;
-            this.BBuscarProducto.Text = "Buscar";
-            this.BBuscarProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BBuscarProducto.UseVisualStyleBackColor = false;
+            
             // 
             // TBDescripcion
             // 
@@ -203,38 +182,7 @@
             this.LProductos.TabIndex = 43;
             this.LProductos.Text = "PRODUCTOS";
             this.LProductos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // BGuardarProducto
-            // 
-            this.BGuardarProducto.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarProducto.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarProducto.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BGuardarProducto.IconColor = System.Drawing.Color.Black;
-            this.BGuardarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BGuardarProducto.Location = new System.Drawing.Point(39, 254);
-            this.BGuardarProducto.Name = "BGuardarProducto";
-            this.BGuardarProducto.Size = new System.Drawing.Size(94, 41);
-            this.BGuardarProducto.TabIndex = 44;
-            this.BGuardarProducto.Text = "Guardar";
-            this.BGuardarProducto.UseVisualStyleBackColor = false;
-            // 
-            // BCancelarProducto
-            // 
-            this.BCancelarProducto.BackColor = System.Drawing.Color.Coral;
-            this.BCancelarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelarProducto.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarProducto.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BCancelarProducto.IconColor = System.Drawing.Color.Black;
-            this.BCancelarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BCancelarProducto.Location = new System.Drawing.Point(155, 254);
-            this.BCancelarProducto.Name = "BCancelarProducto";
-            this.BCancelarProducto.Size = new System.Drawing.Size(94, 41);
-            this.BCancelarProducto.TabIndex = 45;
-            this.BCancelarProducto.Text = "Cancelar";
-            this.BCancelarProducto.UseVisualStyleBackColor = false;
+            
             // 
             // dataGridView1
             // 
@@ -289,53 +237,17 @@
             this.pictureBox1.Size = new System.Drawing.Size(810, 280);
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
-            // 
-            // BActivosProductos
-            // 
-            this.BActivosProductos.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BActivosProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BActivosProductos.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActivosProductos.ForeColor = System.Drawing.Color.FloralWhite;
-            this.BActivosProductos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BActivosProductos.IconColor = System.Drawing.Color.Black;
-            this.BActivosProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BActivosProductos.Location = new System.Drawing.Point(69, 332);
-            this.BActivosProductos.Name = "BActivosProductos";
-            this.BActivosProductos.Size = new System.Drawing.Size(147, 29);
-            this.BActivosProductos.TabIndex = 48;
-            this.BActivosProductos.Text = "Productos Activos";
-            this.BActivosProductos.UseVisualStyleBackColor = false;
-            // 
-            // BInactivosProductos
-            // 
-            this.BInactivosProductos.BackColor = System.Drawing.Color.DarkRed;
-            this.BInactivosProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInactivosProductos.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInactivosProductos.ForeColor = System.Drawing.Color.FloralWhite;
-            this.BInactivosProductos.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BInactivosProductos.IconColor = System.Drawing.Color.Black;
-            this.BInactivosProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BInactivosProductos.Location = new System.Drawing.Point(540, 332);
-            this.BInactivosProductos.Name = "BInactivosProductos";
-            this.BInactivosProductos.Size = new System.Drawing.Size(169, 29);
-            this.BInactivosProductos.TabIndex = 49;
-            this.BInactivosProductos.Text = "Productos Inactivos";
-            this.BInactivosProductos.UseVisualStyleBackColor = false;
+            
             // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 598);
-            this.Controls.Add(this.BInactivosProductos);
-            this.Controls.Add(this.BActivosProductos);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BCancelarProducto);
-            this.Controls.Add(this.BGuardarProducto);
             this.Controls.Add(this.LProductos);
             this.Controls.Add(this.LDescripcionProducto);
             this.Controls.Add(this.TBDescripcion);
-            this.Controls.Add(this.BBuscarProducto);
             this.Controls.Add(this.DUDCantidad);
             this.Controls.Add(this.LCantidad);
             this.Controls.Add(this.LStock);
@@ -366,12 +278,9 @@
         private System.Windows.Forms.Label LStock;
         private System.Windows.Forms.Label LCantidad;
         private System.Windows.Forms.DomainUpDown DUDCantidad;
-        private FontAwesome.Sharp.IconButton BBuscarProducto;
         private System.Windows.Forms.TextBox TBDescripcion;
         private System.Windows.Forms.Label LDescripcionProducto;
         private System.Windows.Forms.Label LProductos;
-        private FontAwesome.Sharp.IconButton BGuardarProducto;
-        private FontAwesome.Sharp.IconButton BCancelarProducto;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -380,7 +289,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn eliminar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton BActivosProductos;
-        private FontAwesome.Sharp.IconButton BInactivosProductos;
     }
 }

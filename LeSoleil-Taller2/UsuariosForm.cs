@@ -134,8 +134,7 @@ namespace LeSoleil_Taller2
                 TBTelefonoUser.Focus();
             }
         }
-
-        private void BGuardarUser_Click(object sender, EventArgs e)
+        private void BGuardarUsuario_Click(object sender, EventArgs e)
         {
             // Verificar si todos los campos necesarios tienen datos
             if (!string.IsNullOrWhiteSpace(TBNombreUser.Text) &&
@@ -180,6 +179,22 @@ namespace LeSoleil_Taller2
                 MessageBox.Show("Por favor, complete todos los campos.");
             }
         }
-        
+
+        private void BCancelarUsuario_Click(object sender, EventArgs e)
+        {
+            // Limpiar los TextBox
+            TBNombreUser.Text = "";
+            TBApellidoUser.Text = "";
+            TBDniUser.Text = "";
+            TBUsuarioUser.Text = "";
+            TBContraseñaUser.Text = "";
+            TBEmailUser.Text = "";
+            TBDireccionUser.Text = "";
+            TBTelefonoUser.Text = "";
+
+            // Limpiar el ComboBox
+            CBPerfilUser.SelectedIndex = -1;
+        }
     }
 }
+
