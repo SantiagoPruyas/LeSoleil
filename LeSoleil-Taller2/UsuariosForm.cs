@@ -282,25 +282,27 @@ namespace LeSoleil_Taller2
             foreach (Usuario item in listaUsuario)
             {
                 DGVUsuarios.Rows.Add(new object[] {
-                item.Nombre,
-                item.Apellido,
-                item.DNI,
-                item.User,
-                item.Correo,
-                item.Direccion,
-                item.oPerfil.NombreRol,
-                item.Telefono,
-            });
+                    item.Nombre,
+                    item.Apellido,
+                    item.DNI,
+                    item.User,
+                    item.Contraseña,
+                    item.Correo,
+                    item.Direccion,
+                    item.oPerfil.NombreRol,
+                    item.Telefono,
+                });
             }
         }
 
         private void BGuardarUser_Click(object sender, EventArgs e)
         {
-            DGVUsuarios.Rows.Add(new object[] {"",
+            DGVUsuarios.Rows.Add(new object[] {
                 TBNombreUser.Text,
                 TBApellidoUser.Text,
                 TBDniUser.Text,
                 TBDniUser,
+                TBContraseñaUser,
                 TBEmailUser,
                 TBDireccionUser.Text,
                 ((OpcionCombo)CBPerfilUser.SelectedItem).Valor.ToString(),
@@ -314,12 +316,33 @@ namespace LeSoleil_Taller2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 10)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                // var w = Properties.Resources.check20.witdh;
+                var w = Properties.Resources.deletepng.Width;
+                var h = Properties.Resources.deletepng.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.deletepng, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex == 9)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.editpng.Width;
+                var h = Properties.Resources.editpng.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.editpng, new Rectangle(x, y, w, h));
+                e.Handled = true;
             }
         }
+
+        private void DGVUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e){}
     }
 }

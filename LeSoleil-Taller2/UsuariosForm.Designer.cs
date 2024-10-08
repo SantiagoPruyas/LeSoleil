@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,7 +57,6 @@
             this.LTelefonoUser = new System.Windows.Forms.Label();
             this.TBTelefonoUser = new System.Windows.Forms.TextBox();
             this.LFondoUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
             this.TBEmailUser = new System.Windows.Forms.TextBox();
             this.LEmailUser = new System.Windows.Forms.Label();
@@ -65,19 +64,20 @@
             this.BCancelarUsuario = new System.Windows.Forms.Button();
             this.BActivosUser = new System.Windows.Forms.Button();
             this.BInactivosUsers = new System.Windows.Forms.Button();
-            this.BTNseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.eliminarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LUsers
@@ -288,15 +288,6 @@
             this.LFondoUser.Size = new System.Drawing.Size(813, 297);
             this.LFondoUser.TabIndex = 28;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 285);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(810, 324);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            // 
             // DGVUsuarios
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -309,23 +300,25 @@
             this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BTNseleccionar,
             this.nombreUsuario,
             this.apellidoUsuario,
             this.dniUsuario,
             this.usuario,
+            this.Contraseña,
             this.emailUsuario,
             this.direccionUsuario,
             this.Perfil,
             this.telefonoUsuario,
-            this.eliminarUsuario,
-            this.editarUsuario});
+            this.editarUsuario,
+            this.eliminarUsuario});
             this.DGVUsuarios.Location = new System.Drawing.Point(12, 345);
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.ReadOnly = true;
             this.DGVUsuarios.Size = new System.Drawing.Size(781, 245);
             this.DGVUsuarios.TabIndex = 30;
             this.DGVUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellClick);
+            this.DGVUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellContentClick);
+            this.DGVUsuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVUsuarios_CellPainting);
             // 
             // TBEmailUser
             // 
@@ -404,12 +397,14 @@
             this.BInactivosUsers.Text = "Usuarios Inactivos";
             this.BInactivosUsers.UseVisualStyleBackColor = false;
             // 
-            // BTNseleccionar
+            // pictureBox1
             // 
-            this.BTNseleccionar.HeaderText = "";
-            this.BTNseleccionar.Name = "BTNseleccionar";
-            this.BTNseleccionar.ReadOnly = true;
-            this.BTNseleccionar.Width = 50;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 285);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(810, 324);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // nombreUsuario
             // 
@@ -443,6 +438,13 @@
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
             // 
+            // Contraseña
+            // 
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            this.Contraseña.Visible = false;
+            // 
             // emailUsuario
             // 
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
@@ -475,6 +477,15 @@
             this.telefonoUsuario.Name = "telefonoUsuario";
             this.telefonoUsuario.ReadOnly = true;
             // 
+            // editarUsuario
+            // 
+            this.editarUsuario.HeaderText = "Editar ";
+            this.editarUsuario.Name = "editarUsuario";
+            this.editarUsuario.ReadOnly = true;
+            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editarUsuario.Text = "editar";
+            // 
             // eliminarUsuario
             // 
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -486,15 +497,6 @@
             this.eliminarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.eliminarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.eliminarUsuario.Text = "Eliminar";
-            // 
-            // editarUsuario
-            // 
-            this.editarUsuario.HeaderText = "Editar ";
-            this.editarUsuario.Name = "editarUsuario";
-            this.editarUsuario.ReadOnly = true;
-            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editarUsuario.Text = "editar";
             // 
             // UsuariosForm
             // 
@@ -530,8 +532,8 @@
             this.Name = "UsuariosForm";
             this.Text = "UsuariosForm";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,16 +570,16 @@
         private System.Windows.Forms.Button BCancelarUsuario;
         private System.Windows.Forms.Button BActivosUser;
         private System.Windows.Forms.Button BInactivosUsers;
-        private System.Windows.Forms.DataGridViewButtonColumn BTNseleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dniUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
-        private System.Windows.Forms.DataGridViewButtonColumn eliminarUsuario;
         private System.Windows.Forms.DataGridViewButtonColumn editarUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn eliminarUsuario;
     }
 }

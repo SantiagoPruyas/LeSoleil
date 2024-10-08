@@ -20,7 +20,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Sexo, u.Fecha_nacimiento, r.Perfil_id, r.NombreRol from Usuario u");
+                    query.AppendLine("select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Fecha_nacimiento, u.Correo, r.Perfil_id, r.NombreRol from Usuario u");
                     query.AppendLine("inner join Perfil r on r.Perfil_id = u.Perfil_id");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -44,7 +44,7 @@ namespace CapaDatos
                                 Direccion = dr["Direccion"].ToString(),
                                 Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
-                                Sexo = dr["Sexo"].ToString(),
+                                Correo = dr["Correo"].ToString(),
                                 oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(dr["Perfil_id"]), NombreRol = dr["NombreRol"].ToString() }
                             });
                         }

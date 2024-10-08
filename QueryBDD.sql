@@ -160,22 +160,41 @@ ADD
 
 ALTER TABLE Usuario
 ADD 
-    DNI VARCHAR(100),
-    Sexo VARCHAR(50),
-	Fecha_nacimiento DATE;
-
+    Correo VARCHAR(100);
 
 ALTER TABLE Usuario
 ALTER COLUMN Telefono VARCHAR(20);
 
+-- Drop columna Sexo
+ALTER TABLE Usuario
+DROP COLUMN Sexo;
+
+-- Solucion de perfiles
+SELECT name 
+FROM sys.foreign_keys 
+WHERE referenced_object_id = object_id('Perfil');
+
+ALTER TABLE Permiso
+DROP CONSTRAINT FK__Permiso__Perfil___5629CD9C;
+
+ALTER TABLE Usuario
+DROP CONSTRAINT FK__Usuario__Perfil___59FA5E80;
+
+DROP TABLE IF EXISTS Perfil;
+
+ALTER TABLE Usuario
+ADD CONSTRAINT FK_Usuario_Perfil
+FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
+
+ALTER TABLE Permiso
+ADD CONSTRAINT FK_Permiso_Perfil
+FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
+
 -- Lote de Datos
--- Primer Usuario
-
+-- Selects
 SELECT * from Usuario
-
-select * from Perfil
-
-select * from Permiso
+SELECT * from Perfil
+SELECT * from Permiso
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
@@ -188,15 +207,13 @@ values ('Lara','Valetto','Lara','admin','45374333','2003-11-26','lvaletto21@gmai
 
 -- Modificar usuario
 UPDATE Usuario
-SET Perfil_id = 1
-WHERE Id_usuario = 2;
+SET Baja = 0
+WHERE Id_usuario = 3;
 
 -- Insertar nuevos valores
 UPDATE Usuario
-SET DNI = '43205306',
-    Sexo = 'Masculino',
-    Fecha_nacimiento = '2000-12-24'
-WHERE Id_usuario = 2;
+SET	Correo = 'juanperez@hotmail.com'
+WHERE Id_usuario = 4;
 
 -- Primer Usuario Vendedor
 insert into Usuario(Nombre, Apellido, Usuario, Contraseña, DNI, Fecha_nacimiento, Correo, Baja, Perfil_id, Direccion, Telefono) 
@@ -243,6 +260,11 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (3,'MenuReportes'),
 (3,'MenuSalir')
 
+-- Modificar Permisos
+UPDATE Permiso
+SET Perfil_id = 3
+WHERE Perfil_id = 4;
+
 -- Select de Perfiles
 select p.Perfil_id,p.Nombre from Permiso p 
 inner join Perfil r on r.Perfil_id = p.Perfil_id
@@ -250,7 +272,7 @@ inner join Usuario u on u.Perfil_id = r.Perfil_id
 where u.Id_usuario = 2
 
 -- Select de Usuarios
-select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Sexo, u.Fecha_nacimiento, r.Perfil_id, r.Nombre from Usuario u
+select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Fecha_nacimiento, u.Correo, r.Perfil_id, r.NombreRol from Usuario u
 inner join Perfil r on r.Perfil_id = u.Perfil_id
 
 -- Procedimientos 

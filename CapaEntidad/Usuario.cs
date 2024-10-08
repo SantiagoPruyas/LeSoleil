@@ -20,7 +20,6 @@ namespace CapaEntidad
         public string Direccion { get; set; }
         public string Fecha_nacimiento { get; set; }
         public string Telefono { get; set; }
-        public string Sexo { get; set; }
         public string Correo { get; set; }
     }
 }
