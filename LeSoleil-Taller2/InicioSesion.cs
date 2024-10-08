@@ -28,13 +28,19 @@ namespace LeSoleil_Taller2
         {
             Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.User == TBUsuario.Text && u.Contraseña == TBContraseña.Text).FirstOrDefault();
 
-            Menu form = new Menu(oUsuario);
+            if (oUsuario != null)
+            {
+                Menu form = new Menu(oUsuario);
 
-            form.Show();
-            this.Hide();
+                form.Show();
+                this.Hide();
 
-            form.FormClosing += frm_closing;
-
+                form.FormClosing += frm_closing;
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void frm_closing(object sender , FormClosingEventArgs e)
