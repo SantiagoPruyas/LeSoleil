@@ -5,7 +5,7 @@ USE DBLE_SOLEIL
 CREATE TABLE Perfil
 (
   Perfil_id INT IDENTITY NOT NULL,
-  Nombre VARCHAR(50) NOT NULL,
+  NombreRol VARCHAR(50) NOT NULL,
   Descripcion VARCHAR(200) NOT NULL,
   Fecha_creacion DATETIME DEFAULT getdate(),
   PRIMARY KEY (Perfil_id)
@@ -68,6 +68,10 @@ CREATE TABLE Usuario
   Apellido VARCHAR(50) NOT NULL,
   Usuario VARCHAR(100) NOT NULL,
   Contraseña VARCHAR(50) NOT NULL,
+  DNI VARCHAR(100),
+  Sexo VARCHAR(50),
+  Fecha_nacimiento DATE,
+  Correo VARCHAR(100),
   Baja bit,
   Fecha_creacion DATETIME DEFAULT getdate(),
   Perfil_id INT NOT NULL,
@@ -174,13 +178,18 @@ select * from Perfil
 select * from Permiso
 
 -- Creacion de Perfiles
-insert into Perfil (Nombre, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
-insert into Perfil (Nombre, Descripcion) values ('VENDEDOR', 'Este usuario administrador tiene los permisos necesarios para manejar ventas y clientes')
-insert into Perfil (Nombre, Descripcion) values ('REPOSITOR', 'Este usuario repositor tiene los permisos necesarios para gestionar los productos')
+insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
+insert into Perfil (NombreRol, Descripcion) values ('VENDEDOR', 'Este usuario administrador tiene los permisos necesarios para manejar ventas y clientes')
+insert into Perfil (NombreRol, Descripcion) values ('REPOSITOR', 'Este usuario repositor tiene los permisos necesarios para gestionar los productos')
 
 -- Primer Usuario Admin
-insert into Usuario(Nombre, Apellido, Usuario, Contraseña, Baja, Perfil_id, Direccion, Telefono) 
-values ('Santiago','Pruyas','Santiago','admin',1,2,'Jose Negro 86', '3794909259')
+insert into Usuario(Nombre, Apellido, Usuario, Contraseña, DNI, Fecha_nacimiento, Correo, Baja, Perfil_id, Direccion, Telefono) 
+values ('Lara','Valetto','Lara','admin','45374333','2003-11-26','lvaletto21@gmail.com',0,2,'Junin 25', '3794995322')
+
+-- Modificar usuario
+UPDATE Usuario
+SET Perfil_id = 1
+WHERE Id_usuario = 2;
 
 -- Insertar nuevos valores
 UPDATE Usuario
@@ -189,14 +198,14 @@ SET DNI = '43205306',
     Fecha_nacimiento = '2000-12-24'
 WHERE Id_usuario = 2;
 
--- Segundo Usuario Admin
-insert into Usuario(Nombre, Apellido, Usuario, Contraseña, Baja, Perfil_id, Direccion, Telefono) 
-values ('Lara','Valetto','Lara','admin',1,2,'Junin 25', '3794995322')
-
 -- Primer Usuario Vendedor
-insert into Usuario(Nombre, Apellido, Usuario, Contraseña, Baja, Perfil_id, Direccion, Telefono) 
-values ('Juan','Perez','
-','12345',0,3,'Yrigoyen 700', '3794208945')
+insert into Usuario(Nombre, Apellido, Usuario, Contraseña, DNI, Fecha_nacimiento, Correo, Baja, Perfil_id, Direccion, Telefono) 
+values ('Juan','Perez','Vendedor','12345','28678943','1997-11-02','juanperez@gmail.com',0,3,'En su casa', '3795687953')
+
+-- Modificar Vendedor
+UPDATE Usuario
+SET Perfil_id = 2
+WHERE Id_usuario = 3;
 
 -- Insertar nuevos valores
 UPDATE Usuario
@@ -207,12 +216,12 @@ WHERE Id_usuario = 4;
 
 -- Tratamiento de Permisos
 INSERT INTO Permiso(Perfil_id,Nombre) values
-(2,'MenuUsuarios'),
-(2,'MenuBackup'),
-(2,'MenuClientes'),
-(2,'MenuProductos'),
-(2,'MenuReportes'),
-(2,'MenuSalir')
+(1,'MenuUsuarios'),
+(1,'MenuBackup'),
+(1,'MenuClientes'),
+(1,'MenuProductos'),
+(1,'MenuReportes'),
+(1,'MenuSalir')
 
 UPDATE Permiso
 SET Nombre = 'MenuBackup'
@@ -225,14 +234,14 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (3,'MenuSalir')
 
 INSERT INTO Permiso(Perfil_id, Nombre) values
-(2,'MenuVentas'),
-(3,'MenuVentas')
+(1,'MenuVentas'),
+(2,'MenuVentas')
 
 INSERT INTO Permiso(Perfil_id,Nombre) values
-(4,'MenuBackup'),
-(4,'MenuProductos'),
-(4,'MenuReportes'),
-(4,'MenuSalir')
+(3,'MenuBackup'),
+(3,'MenuProductos'),
+(3,'MenuReportes'),
+(3,'MenuSalir')
 
 -- Select de Perfiles
 select p.Perfil_id,p.Nombre from Permiso p 
