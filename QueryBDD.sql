@@ -1,7 +1,9 @@
+-- Creacion de la BDD
 CREATE DATABASE DBLE_SOLEIL
 
 USE DBLE_SOLEIL
 
+-- Creacion de las Tablas asociadas al Proyecto
 CREATE TABLE Perfil
 (
   Perfil_id INT IDENTITY NOT NULL,
@@ -69,9 +71,10 @@ CREATE TABLE Usuario
   Usuario VARCHAR(100) NOT NULL,
   Contraseña VARCHAR(50) NOT NULL,
   DNI VARCHAR(100),
-  Sexo VARCHAR(50),
   Fecha_nacimiento DATE,
   Correo VARCHAR(100),
+  Direccion VARCHAR(100),
+  Telefono VARCHAR(20),
   Baja bit,
   Fecha_creacion DATETIME DEFAULT getdate(),
   Perfil_id INT NOT NULL,
@@ -151,12 +154,12 @@ CREATE TABLE VentaDetalle
   FOREIGN KEY (Id_venta) REFERENCES VentaCabecera(Id_venta),
   FOREIGN KEY (Id_producto) REFERENCES Producto(Id_producto)
 );
-
+-- Modificaciones previas a la creacion de Datos
 -- Nuevas Columnas a Tabla Usuario
-ALTER TABLE Usuario
+/* ALTER TABLE Usuario
 ADD 
     Direccion VARCHAR(100),
-    Telefono INT;
+    Telefono VARCHAR(20);
 
 ALTER TABLE Usuario
 ADD 
@@ -190,6 +193,7 @@ ALTER TABLE Permiso
 ADD CONSTRAINT FK_Permiso_Perfil
 FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
 
+*/
 -- Lote de Datos
 -- Selects
 SELECT * from Usuario
@@ -275,6 +279,7 @@ where u.Id_usuario = 2
 select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Fecha_nacimiento, u.Correo, r.Perfil_id, r.NombreRol from Usuario u
 inner join Perfil r on r.Perfil_id = u.Perfil_id
 
+/* A IMPLEMENTAR
 -- Procedimientos 
 create PROC SP_REGISTRARUSUARIO(
 @Documento varchar(50),
@@ -304,3 +309,4 @@ begin
 		set @Mensaje = 'No se puede repetir el documento para más de un usuario'
 
 end
+*/
