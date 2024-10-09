@@ -50,6 +50,7 @@
             this.LEditarUsuario = new System.Windows.Forms.Label();
             this.BEditarGuardar = new System.Windows.Forms.Button();
             this.BEditarCancelar = new System.Windows.Forms.Button();
+            this.LIDUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LFondoUser
@@ -240,10 +241,6 @@
             // CBPerfilUser
             // 
             this.CBPerfilUser.FormattingEnabled = true;
-            this.CBPerfilUser.Items.AddRange(new object[] {
-            "Administrador",
-            "Vendedor",
-            "Repositor de Stock"});
             this.CBPerfilUser.Location = new System.Drawing.Point(199, 414);
             this.CBPerfilUser.Name = "CBPerfilUser";
             this.CBPerfilUser.Size = new System.Drawing.Size(134, 21);
@@ -267,7 +264,7 @@
             this.LEditarUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LEditarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEditarUsuario.ForeColor = System.Drawing.Color.Coral;
-            this.LEditarUsuario.Location = new System.Drawing.Point(161, 29);
+            this.LEditarUsuario.Location = new System.Drawing.Point(147, 29);
             this.LEditarUsuario.Name = "LEditarUsuario";
             this.LEditarUsuario.Size = new System.Drawing.Size(172, 29);
             this.LEditarUsuario.TabIndex = 48;
@@ -302,11 +299,25 @@
             this.BEditarCancelar.UseVisualStyleBackColor = false;
             this.BEditarCancelar.Click += new System.EventHandler(this.BEditarCancelar_Click);
             // 
+            // LIDUser
+            // 
+            this.LIDUser.AutoSize = true;
+            this.LIDUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LIDUser.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LIDUser.ForeColor = System.Drawing.Color.Coral;
+            this.LIDUser.Location = new System.Drawing.Point(325, 29);
+            this.LIDUser.Name = "LIDUser";
+            this.LIDUser.Size = new System.Drawing.Size(22, 29);
+            this.LIDUser.TabIndex = 51;
+            this.LIDUser.Text = "-";
+            this.LIDUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // UsuariosFormEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 598);
+            this.Controls.Add(this.LIDUser);
             this.Controls.Add(this.BEditarCancelar);
             this.Controls.Add(this.BEditarGuardar);
             this.Controls.Add(this.LEditarUsuario);
@@ -332,6 +343,7 @@
             this.Name = "UsuariosFormEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Usuario";
+            this.Load += new System.EventHandler(this.UsuariosFormEditar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,5 +373,6 @@
         private System.Windows.Forms.Label LEditarUsuario;
         private System.Windows.Forms.Button BEditarGuardar;
         private System.Windows.Forms.Button BEditarCancelar;
+        private System.Windows.Forms.Label LIDUser;
     }
 }

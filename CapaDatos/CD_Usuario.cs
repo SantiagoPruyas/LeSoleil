@@ -132,7 +132,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Perfil_id", obj.oPerfil.Perfil_id);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
 
