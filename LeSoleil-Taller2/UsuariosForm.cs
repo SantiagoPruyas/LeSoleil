@@ -275,7 +275,7 @@ namespace LeSoleil_Taller2
 
                 // Crear y abrir el formulario de edición con los datos
                 UsuariosFormEditar editarForm = new UsuariosFormEditar(
-                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, e.RowIndex, this
+                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, fechaNacimiento, e.RowIndex, this
                 );
 
                 // Establecer la propiedad Owner (propietario del formulario)
@@ -287,7 +287,7 @@ namespace LeSoleil_Taller2
         }
 
         public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
-        string usuario, string contraseña, string email, string direccion, string perfil, string telefono)
+        string usuario, string contraseña, string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento)
         {
             DGVUsuarios.Rows[rowIndex].Cells[0].Value = id;
             DGVUsuarios.Rows[rowIndex].Cells[1].Value = nombre;
