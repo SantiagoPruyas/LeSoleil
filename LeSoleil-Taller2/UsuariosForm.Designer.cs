@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,7 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -60,15 +59,6 @@
             this.TBTelefonoUser = new System.Windows.Forms.TextBox();
             this.LFondoUser = new System.Windows.Forms.Label();
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
-            this.TBEmailUser = new System.Windows.Forms.TextBox();
-            this.LEmailUser = new System.Windows.Forms.Label();
-            this.BGuardarUsuario = new System.Windows.Forms.Button();
-            this.BCancelarUsuario = new System.Windows.Forms.Button();
-            this.BActivosUser = new System.Windows.Forms.Button();
-            this.BInactivosUsers = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
-            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +72,15 @@
             this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bajaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TBEmailUser = new System.Windows.Forms.TextBox();
+            this.LEmailUser = new System.Windows.Forms.Label();
+            this.BGuardarUsuario = new System.Windows.Forms.Button();
+            this.BCancelarUsuario = new System.Windows.Forms.Button();
+            this.BActivosUser = new System.Windows.Forms.Button();
+            this.BInactivosUsers = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
+            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -315,120 +314,13 @@
             this.Fecha_Nacimiento,
             this.editarUsuario,
             this.bajaUsuario});
-            this.DGVUsuarios.Location = new System.Drawing.Point(12, 345);
+            this.DGVUsuarios.Location = new System.Drawing.Point(27, 345);
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.ReadOnly = true;
             this.DGVUsuarios.Size = new System.Drawing.Size(1237, 236);
             this.DGVUsuarios.TabIndex = 30;
             this.DGVUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellClick);
             this.DGVUsuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVUsuarios_CellPainting);
-            // 
-            // TBEmailUser
-            // 
-            this.TBEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailUser.ForeColor = System.Drawing.Color.Coral;
-            this.TBEmailUser.Location = new System.Drawing.Point(703, 23);
-            this.TBEmailUser.Multiline = true;
-            this.TBEmailUser.Name = "TBEmailUser";
-            this.TBEmailUser.Size = new System.Drawing.Size(359, 25);
-            this.TBEmailUser.TabIndex = 33;
-            this.TBEmailUser.Leave += new System.EventHandler(this.TBEmailUser_Leave);
-            // 
-            // LEmailUser
-            // 
-            this.LEmailUser.AutoSize = true;
-            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
-            this.LEmailUser.Location = new System.Drawing.Point(641, 25);
-            this.LEmailUser.Name = "LEmailUser";
-            this.LEmailUser.Size = new System.Drawing.Size(41, 18);
-            this.LEmailUser.TabIndex = 34;
-            this.LEmailUser.Text = "Email";
-            // 
-            // BGuardarUsuario
-            // 
-            this.BGuardarUsuario.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarUsuario.Location = new System.Drawing.Point(644, 221);
-            this.BGuardarUsuario.Name = "BGuardarUsuario";
-            this.BGuardarUsuario.Size = new System.Drawing.Size(94, 38);
-            this.BGuardarUsuario.TabIndex = 35;
-            this.BGuardarUsuario.Text = "Guardar";
-            this.BGuardarUsuario.UseVisualStyleBackColor = false;
-            this.BGuardarUsuario.Click += new System.EventHandler(this.BGuardarUsuario_Click);
-            // 
-            // BCancelarUsuario
-            // 
-            this.BCancelarUsuario.BackColor = System.Drawing.Color.Coral;
-            this.BCancelarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarUsuario.Location = new System.Drawing.Point(764, 221);
-            this.BCancelarUsuario.Name = "BCancelarUsuario";
-            this.BCancelarUsuario.Size = new System.Drawing.Size(94, 38);
-            this.BCancelarUsuario.TabIndex = 36;
-            this.BCancelarUsuario.Text = "Cancelar";
-            this.BCancelarUsuario.UseVisualStyleBackColor = false;
-            this.BCancelarUsuario.Click += new System.EventHandler(this.BCancelarUsuario_Click);
-            // 
-            // BActivosUser
-            // 
-            this.BActivosUser.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosUser.Location = new System.Drawing.Point(22, 304);
-            this.BActivosUser.Name = "BActivosUser";
-            this.BActivosUser.Size = new System.Drawing.Size(152, 41);
-            this.BActivosUser.TabIndex = 37;
-            this.BActivosUser.Text = "Usuarios Activos";
-            this.BActivosUser.UseVisualStyleBackColor = false;
-            // 
-            // BInactivosUsers
-            // 
-            this.BInactivosUsers.BackColor = System.Drawing.Color.Brown;
-            this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosUsers.Location = new System.Drawing.Point(1106, 304);
-            this.BInactivosUsers.Name = "BInactivosUsers";
-            this.BInactivosUsers.Size = new System.Drawing.Size(158, 41);
-            this.BInactivosUsers.TabIndex = 38;
-            this.BInactivosUsers.Text = "Usuarios Inactivos";
-            this.BInactivosUsers.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 288);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1295, 413);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            // 
-            // LFechaNacimientoUser
-            // 
-            this.LFechaNacimientoUser.AutoSize = true;
-            this.LFechaNacimientoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFechaNacimientoUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaNacimientoUser.ForeColor = System.Drawing.Color.Black;
-            this.LFechaNacimientoUser.Location = new System.Drawing.Point(641, 159);
-            this.LFechaNacimientoUser.Name = "LFechaNacimientoUser";
-            this.LFechaNacimientoUser.Size = new System.Drawing.Size(117, 18);
-            this.LFechaNacimientoUser.TabIndex = 39;
-            this.LFechaNacimientoUser.Text = "Fecha Nacimiento";
-            // 
-            // DTPFechaNacimiento
-            // 
-            this.DTPFechaNacimiento.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.DTPFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPFechaNacimiento.Location = new System.Drawing.Point(775, 159);
-            this.DTPFechaNacimiento.Name = "DTPFechaNacimiento";
-            this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
-            this.DTPFechaNacimiento.TabIndex = 41;
             // 
             // Id_Usuario
             // 
@@ -511,6 +403,7 @@
             // 
             // Fecha_Nacimiento
             // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
             this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle11;
             this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
@@ -528,8 +421,6 @@
             // 
             // bajaUsuario
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
             this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle11;
             this.bajaUsuario.HeaderText = "Dar de Baja";
             this.bajaUsuario.Name = "bajaUsuario";
@@ -537,6 +428,113 @@
             this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.bajaUsuario.Text = "Eliminar";
+            // 
+            // TBEmailUser
+            // 
+            this.TBEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBEmailUser.ForeColor = System.Drawing.Color.Coral;
+            this.TBEmailUser.Location = new System.Drawing.Point(703, 23);
+            this.TBEmailUser.Multiline = true;
+            this.TBEmailUser.Name = "TBEmailUser";
+            this.TBEmailUser.Size = new System.Drawing.Size(359, 25);
+            this.TBEmailUser.TabIndex = 33;
+            this.TBEmailUser.Leave += new System.EventHandler(this.TBEmailUser_Leave);
+            // 
+            // LEmailUser
+            // 
+            this.LEmailUser.AutoSize = true;
+            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
+            this.LEmailUser.Location = new System.Drawing.Point(641, 25);
+            this.LEmailUser.Name = "LEmailUser";
+            this.LEmailUser.Size = new System.Drawing.Size(41, 18);
+            this.LEmailUser.TabIndex = 34;
+            this.LEmailUser.Text = "Email";
+            // 
+            // BGuardarUsuario
+            // 
+            this.BGuardarUsuario.BackColor = System.Drawing.Color.Coral;
+            this.BGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGuardarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BGuardarUsuario.Location = new System.Drawing.Point(644, 221);
+            this.BGuardarUsuario.Name = "BGuardarUsuario";
+            this.BGuardarUsuario.Size = new System.Drawing.Size(94, 38);
+            this.BGuardarUsuario.TabIndex = 35;
+            this.BGuardarUsuario.Text = "Guardar";
+            this.BGuardarUsuario.UseVisualStyleBackColor = false;
+            this.BGuardarUsuario.Click += new System.EventHandler(this.BGuardarUsuario_Click);
+            // 
+            // BCancelarUsuario
+            // 
+            this.BCancelarUsuario.BackColor = System.Drawing.Color.Coral;
+            this.BCancelarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelarUsuario.Location = new System.Drawing.Point(764, 221);
+            this.BCancelarUsuario.Name = "BCancelarUsuario";
+            this.BCancelarUsuario.Size = new System.Drawing.Size(94, 38);
+            this.BCancelarUsuario.TabIndex = 36;
+            this.BCancelarUsuario.Text = "Cancelar";
+            this.BCancelarUsuario.UseVisualStyleBackColor = false;
+            this.BCancelarUsuario.Click += new System.EventHandler(this.BCancelarUsuario_Click);
+            // 
+            // BActivosUser
+            // 
+            this.BActivosUser.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BActivosUser.Location = new System.Drawing.Point(27, 292);
+            this.BActivosUser.Name = "BActivosUser";
+            this.BActivosUser.Size = new System.Drawing.Size(152, 41);
+            this.BActivosUser.TabIndex = 37;
+            this.BActivosUser.Text = "Usuarios Activos";
+            this.BActivosUser.UseVisualStyleBackColor = false;
+            // 
+            // BInactivosUsers
+            // 
+            this.BInactivosUsers.BackColor = System.Drawing.Color.Brown;
+            this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BInactivosUsers.Location = new System.Drawing.Point(1106, 292);
+            this.BInactivosUsers.Name = "BInactivosUsers";
+            this.BInactivosUsers.Size = new System.Drawing.Size(158, 41);
+            this.BInactivosUsers.TabIndex = 38;
+            this.BInactivosUsers.Text = "Usuarios Inactivos";
+            this.BInactivosUsers.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 281);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1295, 420);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LFechaNacimientoUser
+            // 
+            this.LFechaNacimientoUser.AutoSize = true;
+            this.LFechaNacimientoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LFechaNacimientoUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFechaNacimientoUser.ForeColor = System.Drawing.Color.Black;
+            this.LFechaNacimientoUser.Location = new System.Drawing.Point(641, 159);
+            this.LFechaNacimientoUser.Name = "LFechaNacimientoUser";
+            this.LFechaNacimientoUser.Size = new System.Drawing.Size(117, 18);
+            this.LFechaNacimientoUser.TabIndex = 39;
+            this.LFechaNacimientoUser.Text = "Fecha Nacimiento";
+            // 
+            // DTPFechaNacimiento
+            // 
+            this.DTPFechaNacimiento.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.DTPFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPFechaNacimiento.Location = new System.Drawing.Point(775, 159);
+            this.DTPFechaNacimiento.Name = "DTPFechaNacimiento";
+            this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
+            this.DTPFechaNacimiento.TabIndex = 41;
             // 
             // UsuariosForm
             // 

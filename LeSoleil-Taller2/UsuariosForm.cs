@@ -260,7 +260,7 @@ namespace LeSoleil_Taller2
             else if (e.ColumnIndex == DGVUsuarios.Columns["editarUsuario"].Index && e.RowIndex >= 0)
             {
                 // Obtener los valores actuales de la fila seleccionada
-                string id = DGVUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int id = Convert.ToInt32(DGVUsuarios.Rows[e.RowIndex].Cells[0].Value); // Convertir el valor a int
                 string nombre = DGVUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string apellido = DGVUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string dni = DGVUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -275,7 +275,7 @@ namespace LeSoleil_Taller2
 
                 // Crear y abrir el formulario de edición con los datos
                 UsuariosFormEditar editarForm = new UsuariosFormEditar(
-                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, fechaNacimiento, e.RowIndex, this
+                    id, nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, fechaNacimiento, e.RowIndex, this
                 );
 
                 // Establecer la propiedad Owner (propietario del formulario)
@@ -286,7 +286,7 @@ namespace LeSoleil_Taller2
             }
         }
 
-        public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
+        public void ActualizarUsuario(int rowIndex, int id, string nombre, string apellido, string dni,
         string usuario, string contraseña, string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento)
         {
             DGVUsuarios.Rows[rowIndex].Cells[0].Value = id;

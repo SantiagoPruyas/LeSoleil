@@ -18,15 +18,15 @@ namespace LeSoleil_Taller2
         private int rowIndex;
         private UsuariosForm usuariosForm;  // Referencia al formulario principal
 
-        public UsuariosFormEditar(string id, string nombre, string apellido, string dni, string usuario, string contraseña,
-            string email, string direccion, string perfil, string telefono, int rowIndex, UsuariosForm usuariosForm)
+        public UsuariosFormEditar(int id, string nombre, string apellido, string dni, string usuario, string contraseña,
+            string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento, int rowIndex, UsuariosForm usuariosForm)
         {
             InitializeComponent();
             this.usuariosForm = usuariosForm;
             this.rowIndex = rowIndex;
 
             // Cargar los valores actuales en los TextBox y demás controles
-            LIDUser.Text = id;
+            LIDUser.Text = id.ToString();
             TBNombreUser.Text = nombre;
             TBApellidoUser.Text = apellido;
             TBDniUser.Text = dni;
@@ -58,7 +58,8 @@ namespace LeSoleil_Taller2
                 Telefono = TBTelefonoUser.Text,
                 oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(((OpcionCombo)CBPerfilUser.SelectedItem).Valor) },
                 Baja = false,
-                Fecha_nacimiento = "2000-04-02"
+                //Fecha_nacimiento = DTPFechaNacimiento.Value
+                Fecha_nacimiento = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd")
             };
 
             bool resultado = new CN_Usuario().Editar(objUsuario, out Mensaje);
@@ -67,7 +68,7 @@ namespace LeSoleil_Taller2
             {
                 usuariosForm.ActualizarUsuario(rowIndex, IdUsuario, TBNombreUser.Text, TBApellidoUser.Text, TBDniUser.Text,
                 TBUsuarioUser.Text, TBContraseñaUser.Text, TBEmailUser.Text, TBDireccionUser.Text, CBPerfilUser.Text,
-                TBTelefonoUser.Text);
+                TBTelefonoUser.Text,DTPFechaNacimiento.Value);
                 this.Close();
             } else
             {
