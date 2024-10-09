@@ -225,30 +225,42 @@ namespace LeSoleil_Taller2
 
         private void DGVUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificar si la celda clickeada es el botón "Eliminar"
-            if (e.ColumnIndex == DGVUsuarios.Columns["eliminarUsuario"].Index && e.RowIndex >= 0)
+            int Id_usuario = Convert.ToInt32(DGVUsuarios.Rows[e.RowIndex].Cells[0].Value);
+            string Mensaje = string.Empty;
+
+            // Verificar si la celda clickeada es el botón "bajaUsuario"
+            if (e.ColumnIndex == DGVUsuarios.Columns["bajaUsuario"].Index && e.RowIndex >= 0)
             {
                 // Verificar que la fila no sea la nueva fila sin confirmar
                 if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
                 {
                     // Mostrar mensaje de confirmación
-                    DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este registro?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de baja este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    // Si el usuario presiona 'Sí', eliminar la fila
+                    // Si el usuario presiona 'Sí', dar de baja el usuario
                     if (result == DialogResult.Yes)
                     {
-                        DGVUsuarios.Rows.RemoveAt(e.RowIndex);
+                        bool respuesta = new CN_Usuario().DarBaja(Id_usuario, out Mensaje);
+                        if (respuesta)
+                        {
+                            MessageBox.Show("Usuario dado de baja del sistema!");
+                            // Faltaria cambiar el valor del estado dentro de la tabla
+                        } else
+                        {
+                            MessageBox.Show(Mensaje);
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se puede eliminar la fila de nuevos registros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se puede dar de baja al usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             // Verificar si la celda clickeada es el botón "Modificar"
             else if (e.ColumnIndex == DGVUsuarios.Columns["editarUsuario"].Index && e.RowIndex >= 0)
             {
                 // Obtener los valores actuales de la fila seleccionada
+                string id = DGVUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
                 string nombre = DGVUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string apellido = DGVUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string dni = DGVUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -263,7 +275,7 @@ namespace LeSoleil_Taller2
 
                 // Crear y abrir el formulario de edición con los datos
                 UsuariosFormEditar editarForm = new UsuariosFormEditar(
-                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, fechaNacimiento, e.RowIndex, this
+                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, e.RowIndex, this
                 );
 
                 // Establecer la propiedad Owner (propietario del formulario)
@@ -275,8 +287,9 @@ namespace LeSoleil_Taller2
         }
 
         public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
-        string usuario, string contraseña, string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento)
+        string usuario, string contraseña, string email, string direccion, string perfil, string telefono)
         {
+            DGVUsuarios.Rows[rowIndex].Cells[0].Value = id;
             DGVUsuarios.Rows[rowIndex].Cells[1].Value = nombre;
             DGVUsuarios.Rows[rowIndex].Cells[2].Value = apellido;
             DGVUsuarios.Rows[rowIndex].Cells[3].Value = dni;

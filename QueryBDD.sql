@@ -434,7 +434,7 @@ select @mensaje
 
 go
 
-create PROC SP_BAJAUSUARIO(
+ALTER PROC SP_BAJAUSUARIO(
 @IdUsuario int,
 @Respuesta bit output,
 @Mensaje varchar(500) output
@@ -444,22 +444,24 @@ begin
 	set @Respuesta = 0
 	set @Mensaje = ''
 
-	if not exists(select * from Usuario where Id_usuario != @IdUsuario)
+	if EXISTS(select * from Usuario where Id_usuario = @IdUsuario)
 		BEGIN
 			UPDATE Usuario set 
-			Baja = 0
+			Baja = 1
 			where Id_usuario = @IdUsuario
 
 			set @Respuesta = 1 
 			set @Mensaje = 'Se ejecuto con exito la baja del usuario'
 		END	
+		ELSE
+			SET @Mensaje = 'El id de Usuario no coindice con ningun otro id';
 end
 
 -- Prueba
 declare @Respuesta bit
 declare @mensaje varchar(500)
 
-exec SP_EDITARUSUARIO 5,'43205306', 'Sara', 'Huarez', 'Repositora', 'SaraHuarez@gmail.com', '12345', '2000-04-05', 'Junin 80', '3456902345', 3, 1, @Respuesta output, @mensaje output
+exec SP_BAJAUSUARIO 6, @Respuesta output, @mensaje output
 
 select @Respuesta
 

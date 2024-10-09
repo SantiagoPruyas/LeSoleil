@@ -81,7 +81,7 @@
             this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.eliminarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bajaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -314,8 +314,8 @@
             this.telefonoUsuario,
             this.Fecha_Nacimiento,
             this.editarUsuario,
-            this.eliminarUsuario});
-            this.DGVUsuarios.Location = new System.Drawing.Point(27, 358);
+            this.bajaUsuario});
+            this.DGVUsuarios.Location = new System.Drawing.Point(12, 345);
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.ReadOnly = true;
             this.DGVUsuarios.Size = new System.Drawing.Size(1237, 236);
@@ -526,17 +526,17 @@
             this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.editarUsuario.Text = "editar";
             // 
-            // eliminarUsuario
+            // bajaUsuario
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.eliminarUsuario.DefaultCellStyle = dataGridViewCellStyle12;
-            this.eliminarUsuario.HeaderText = "Dar de Baja";
-            this.eliminarUsuario.Name = "eliminarUsuario";
-            this.eliminarUsuario.ReadOnly = true;
-            this.eliminarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eliminarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.eliminarUsuario.Text = "Eliminar";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle11;
+            this.bajaUsuario.HeaderText = "Dar de Baja";
+            this.bajaUsuario.Name = "bajaUsuario";
+            this.bajaUsuario.ReadOnly = true;
+            this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.bajaUsuario.Text = "Eliminar";
             // 
             // UsuariosForm
             // 
@@ -626,6 +626,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Nacimiento;
         private System.Windows.Forms.DataGridViewButtonColumn editarUsuario;
-        private System.Windows.Forms.DataGridViewButtonColumn eliminarUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn bajaUsuario;
     }
 }
