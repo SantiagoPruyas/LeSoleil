@@ -77,9 +77,9 @@ namespace CapaNegocio
         {
             return objcd_usuario.Eliminar(obj, out Mensaje);
         }
-        public bool DarBaja(Usuario obj, out string Mensaje)
+        public bool DarBaja(int Id_usuario, out string Mensaje)
         {
-            return objcd_usuario.DarBaja(obj, out Mensaje);
+            return objcd_usuario.DarBaja(Id_usuario, out Mensaje);
         }
     }
 }

@@ -192,7 +192,7 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool DarBaja(Usuario obj, out string Mensaje)
+        public bool DarBaja(int Id_usuario, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
@@ -204,9 +204,9 @@ namespace CapaDatos
                 {
 
                     SqlCommand cmd = new SqlCommand("SP_BAJAUSUARIO", oconexion);
-                    cmd.Parameters.AddWithValue("IdUsuario", obj.Id_usuario);
+                    cmd.Parameters.AddWithValue("IdUsuario", Id_usuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
 

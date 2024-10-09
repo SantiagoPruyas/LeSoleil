@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.eliminarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bajaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -288,14 +288,14 @@
             // 
             // DGVUsuarios
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Usuario,
@@ -309,7 +309,7 @@
             this.Perfil,
             this.telefonoUsuario,
             this.editarUsuario,
-            this.eliminarUsuario});
+            this.bajaUsuario});
             this.DGVUsuarios.Location = new System.Drawing.Point(12, 345);
             this.DGVUsuarios.Name = "DGVUsuarios";
             this.DGVUsuarios.ReadOnly = true;
@@ -406,40 +406,40 @@
             // 
             // Id_Usuario
             // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id_Usuario.HeaderText = "ID";
             this.Id_Usuario.Name = "Id_Usuario";
             this.Id_Usuario.ReadOnly = true;
             // 
             // nombreUsuario
             // 
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreUsuario.HeaderText = "Nombre";
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.ReadOnly = true;
             // 
             // apellidoUsuario
             // 
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle4;
             this.apellidoUsuario.HeaderText = "Apellido";
             this.apellidoUsuario.Name = "apellidoUsuario";
             this.apellidoUsuario.ReadOnly = true;
             // 
             // dniUsuario
             // 
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle5;
             this.dniUsuario.HeaderText = "DNI";
             this.dniUsuario.Name = "dniUsuario";
             this.dniUsuario.ReadOnly = true;
             // 
             // usuario
             // 
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle6;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -453,32 +453,32 @@
             // 
             // emailUsuario
             // 
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle7;
             this.emailUsuario.HeaderText = "Email";
             this.emailUsuario.Name = "emailUsuario";
             this.emailUsuario.ReadOnly = true;
             // 
             // direccionUsuario
             // 
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle8;
             this.direccionUsuario.HeaderText = "Direccion";
             this.direccionUsuario.Name = "direccionUsuario";
             this.direccionUsuario.ReadOnly = true;
             // 
             // Perfil
             // 
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            this.Perfil.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Perfil.DefaultCellStyle = dataGridViewCellStyle9;
             this.Perfil.HeaderText = "Perfil";
             this.Perfil.Name = "Perfil";
             this.Perfil.ReadOnly = true;
             // 
             // telefonoUsuario
             // 
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle10;
             this.telefonoUsuario.HeaderText = "Telefono";
             this.telefonoUsuario.Name = "telefonoUsuario";
             this.telefonoUsuario.ReadOnly = true;
@@ -492,17 +492,17 @@
             this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.editarUsuario.Text = "editar";
             // 
-            // eliminarUsuario
+            // bajaUsuario
             // 
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            this.eliminarUsuario.DefaultCellStyle = dataGridViewCellStyle22;
-            this.eliminarUsuario.HeaderText = "Dar de Baja";
-            this.eliminarUsuario.Name = "eliminarUsuario";
-            this.eliminarUsuario.ReadOnly = true;
-            this.eliminarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eliminarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.eliminarUsuario.Text = "Eliminar";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle11;
+            this.bajaUsuario.HeaderText = "Dar de Baja";
+            this.bajaUsuario.Name = "bajaUsuario";
+            this.bajaUsuario.ReadOnly = true;
+            this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.bajaUsuario.Text = "Eliminar";
             // 
             // UsuariosForm
             // 
@@ -587,6 +587,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoUsuario;
         private System.Windows.Forms.DataGridViewButtonColumn editarUsuario;
-        private System.Windows.Forms.DataGridViewButtonColumn eliminarUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn bajaUsuario;
     }
 }

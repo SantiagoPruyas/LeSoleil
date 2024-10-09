@@ -222,24 +222,35 @@ namespace LeSoleil_Taller2
 
         private void DGVUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificar si la celda clickeada es el botón "Eliminar"
-            if (e.ColumnIndex == DGVUsuarios.Columns["eliminarUsuario"].Index && e.RowIndex >= 0)
+            int Id_usuario = Convert.ToInt32(DGVUsuarios.Rows[e.RowIndex].Cells[0].Value);
+            string Mensaje = string.Empty;
+
+            // Verificar si la celda clickeada es el botón "bajaUsuario"
+            if (e.ColumnIndex == DGVUsuarios.Columns["bajaUsuario"].Index && e.RowIndex >= 0)
             {
                 // Verificar que la fila no sea la nueva fila sin confirmar
                 if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
                 {
                     // Mostrar mensaje de confirmación
-                    DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este registro?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de baja este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    // Si el usuario presiona 'Sí', eliminar la fila
+                    // Si el usuario presiona 'Sí', dar de baja el usuario
                     if (result == DialogResult.Yes)
                     {
-                        DGVUsuarios.Rows.RemoveAt(e.RowIndex);
+                        bool respuesta = new CN_Usuario().DarBaja(Id_usuario, out Mensaje);
+                        if (respuesta)
+                        {
+                            MessageBox.Show("Usuario dado de baja del sistema!");
+                            // Faltaria cambiar el valor del estado dentro de la tabla
+                        } else
+                        {
+                            MessageBox.Show(Mensaje);
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se puede eliminar la fila de nuevos registros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se puede dar de baja al usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             // Verificar si la celda clickeada es el botón "Modificar"
