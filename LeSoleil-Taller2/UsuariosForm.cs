@@ -20,6 +20,21 @@ namespace LeSoleil_Taller2
             InitializeComponent();
         }
 
+        private void Limpiar()
+        {
+            // Limpiar los TextBox
+            TBNombreUser.Text = "";
+            TBApellidoUser.Text = "";
+            TBDniUser.Text = "";
+            TBUsuarioUser.Text = "";
+            TBContraseñaUser.Text = "";
+            TBEmailUser.Text = "";
+            TBDireccionUser.Text = "";
+            TBTelefonoUser.Text = "";
+
+            // Limpiar el ComboBox
+            CBPerfilUser.SelectedIndex = -1;
+        }
         private void TBNombreUser_Leave(object sender, EventArgs e)
         {
             // Validación de que solo contenga letras, al menos 2 caracteres y no más de 20 caracteres
@@ -139,6 +154,8 @@ namespace LeSoleil_Taller2
         }
         private void BGuardarUsuario_Click(object sender, EventArgs e)
         {
+            string Mensaje = string.Empty;
+            
             // Verificar si todos los campos necesarios tienen datos
             if (!string.IsNullOrWhiteSpace(TBNombreUser.Text) &&
                 !string.IsNullOrWhiteSpace(TBApellidoUser.Text) &&
@@ -150,32 +167,47 @@ namespace LeSoleil_Taller2
                 !string.IsNullOrWhiteSpace(CBPerfilUser.Text) &&
                 !string.IsNullOrWhiteSpace(TBTelefonoUser.Text))
             {
-                // Adicionar nuevo renglón en el DataGridView
-                int n = DGVUsuarios.Rows.Add();
+                Usuario objUsuario = new Usuario()
+                {
+                    Nombre = TBNombreUser.Text,
+                    Apellido = TBApellidoUser.Text,
+                    DNI = TBDniUser.Text,
+                    User = TBUsuarioUser.Text,
+                    Contraseña = TBContraseñaUser.Text,
+                    Correo = TBEmailUser.Text,
+                    Direccion = TBDireccionUser.Text,
+                    Telefono = TBTelefonoUser.Text,
+                    oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(((OpcionCombo)CBPerfilUser.SelectedItem).Valor) },
+                    Baja = false,
+                    Fecha_nacimiento = "2000-04-02"
+                };
 
-                // Colocar la información en las celdas correspondientes
-                DGVUsuarios.Rows[n].Cells[0].Value = TBNombreUser.Text;
-                DGVUsuarios.Rows[n].Cells[1].Value = TBApellidoUser.Text;
-                DGVUsuarios.Rows[n].Cells[2].Value = TBDniUser.Text;
-                DGVUsuarios.Rows[n].Cells[3].Value = TBUsuarioUser.Text;
-                DGVUsuarios.Rows[n].Cells[4].Value = TBContraseñaUser.Text;  // Asegúrate de que la contraseña esté cifrada en un entorno real.
-                DGVUsuarios.Rows[n].Cells[5].Value = TBEmailUser.Text;
-                DGVUsuarios.Rows[n].Cells[6].Value = TBDireccionUser.Text;
-                DGVUsuarios.Rows[n].Cells[7].Value = CBPerfilUser.Text;
-                DGVUsuarios.Rows[n].Cells[8].Value = TBTelefonoUser.Text;
+                int IdUsuarioGenerado = new CN_Usuario().Registrar(objUsuario, out Mensaje);
 
-                // Limpiar los campos después de agregar la fila
-                TBNombreUser.Clear();
-                TBApellidoUser.Clear();
-                TBDniUser.Clear();
-                TBUsuarioUser.Clear();
-                TBContraseñaUser.Clear();
-                TBEmailUser.Clear();
-                TBDireccionUser.Clear();
-                CBPerfilUser.SelectedIndex = -1; // Restablece el valor seleccionado
-                TBTelefonoUser.Clear();
+                if(IdUsuarioGenerado != 0)
+                {
+                    // Adicionar nuevo renglón en el DataGridView
+                    int n = DGVUsuarios.Rows.Add();
 
-                MessageBox.Show("Usuario guardado exitosamente.");
+                    // Colocar la información en las celdas correspondientes
+                    DGVUsuarios.Rows[n].Cells[0].Value = IdUsuarioGenerado;
+                    DGVUsuarios.Rows[n].Cells[1].Value = TBNombreUser.Text;
+                    DGVUsuarios.Rows[n].Cells[2].Value = TBApellidoUser.Text;
+                    DGVUsuarios.Rows[n].Cells[3].Value = TBDniUser.Text;
+                    DGVUsuarios.Rows[n].Cells[4].Value = TBUsuarioUser.Text;
+                    DGVUsuarios.Rows[n].Cells[5].Value = TBContraseñaUser.Text;  // Asegúrate de que la contraseña esté cifrada en un entorno real.
+                    DGVUsuarios.Rows[n].Cells[6].Value = TBEmailUser.Text;
+                    DGVUsuarios.Rows[n].Cells[7].Value = TBDireccionUser.Text;
+                    DGVUsuarios.Rows[n].Cells[8].Value = CBPerfilUser.Text;
+                    DGVUsuarios.Rows[n].Cells[9].Value = TBTelefonoUser.Text;
+
+                    Limpiar();
+
+                    MessageBox.Show("Usuario guardado exitosamente.");
+                } else
+                {
+                    MessageBox.Show(Mensaje);
+                }
             }
             else
             {
@@ -185,18 +217,7 @@ namespace LeSoleil_Taller2
 
         private void BCancelarUsuario_Click(object sender, EventArgs e)
         {
-            // Limpiar los TextBox
-            TBNombreUser.Text = "";
-            TBApellidoUser.Text = "";
-            TBDniUser.Text = "";
-            TBUsuarioUser.Text = "";
-            TBContraseñaUser.Text = "";
-            TBEmailUser.Text = "";
-            TBDireccionUser.Text = "";
-            TBTelefonoUser.Text = "";
-
-            // Limpiar el ComboBox
-            CBPerfilUser.SelectedIndex = -1;
+            Limpiar();
         }
 
         private void DGVUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -225,15 +246,15 @@ namespace LeSoleil_Taller2
             else if (e.ColumnIndex == DGVUsuarios.Columns["editarUsuario"].Index && e.RowIndex >= 0)
             {
                 // Obtener los valores actuales de la fila seleccionada
-                string nombre = DGVUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
-                string apellido = DGVUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string dni = DGVUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string usuario = DGVUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string contraseña = DGVUsuarios.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string email = DGVUsuarios.Rows[e.RowIndex].Cells[5].Value.ToString();
-                string direccion = DGVUsuarios.Rows[e.RowIndex].Cells[6].Value.ToString();
-                string perfil = DGVUsuarios.Rows[e.RowIndex].Cells[7].Value.ToString();
-                string telefono = DGVUsuarios.Rows[e.RowIndex].Cells[8].Value.ToString();
+                string nombre = DGVUsuarios.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string apellido = DGVUsuarios.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string dni = DGVUsuarios.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string usuario = DGVUsuarios.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string contraseña = DGVUsuarios.Rows[e.RowIndex].Cells[5].Value.ToString();
+                string email = DGVUsuarios.Rows[e.RowIndex].Cells[6].Value.ToString();
+                string direccion = DGVUsuarios.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string perfil = DGVUsuarios.Rows[e.RowIndex].Cells[8].Value.ToString();
+                string telefono = DGVUsuarios.Rows[e.RowIndex].Cells[9].Value.ToString();
 
                 // Crear y abrir el formulario de edición con los datos
                 UsuariosFormEditar editarForm = new UsuariosFormEditar(
@@ -251,15 +272,15 @@ namespace LeSoleil_Taller2
         public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
         string usuario, string contraseña, string email, string direccion, string perfil, string telefono)
         {
-            DGVUsuarios.Rows[rowIndex].Cells[0].Value = nombre;
-            DGVUsuarios.Rows[rowIndex].Cells[1].Value = apellido;
-            DGVUsuarios.Rows[rowIndex].Cells[2].Value = dni;
-            DGVUsuarios.Rows[rowIndex].Cells[3].Value = usuario;
-            DGVUsuarios.Rows[rowIndex].Cells[4].Value = contraseña;
-            DGVUsuarios.Rows[rowIndex].Cells[5].Value = email;
-            DGVUsuarios.Rows[rowIndex].Cells[6].Value = direccion;
-            DGVUsuarios.Rows[rowIndex].Cells[7].Value = perfil;
-            DGVUsuarios.Rows[rowIndex].Cells[8].Value = telefono;
+            DGVUsuarios.Rows[rowIndex].Cells[1].Value = nombre;
+            DGVUsuarios.Rows[rowIndex].Cells[2].Value = apellido;
+            DGVUsuarios.Rows[rowIndex].Cells[3].Value = dni;
+            DGVUsuarios.Rows[rowIndex].Cells[4].Value = usuario;
+            DGVUsuarios.Rows[rowIndex].Cells[5].Value = contraseña;
+            DGVUsuarios.Rows[rowIndex].Cells[6].Value = email;
+            DGVUsuarios.Rows[rowIndex].Cells[7].Value = direccion;
+            DGVUsuarios.Rows[rowIndex].Cells[8].Value = perfil;
+            DGVUsuarios.Rows[rowIndex].Cells[9].Value = telefono;
 
             MessageBox.Show("Datos actualizados correctamente.");
         }
@@ -282,6 +303,7 @@ namespace LeSoleil_Taller2
             foreach (Usuario item in listaUsuario)
             {
                 DGVUsuarios.Rows.Add(new object[] {
+                    item.Id_usuario,
                     item.Nombre,
                     item.Apellido,
                     item.DNI,
@@ -295,28 +317,28 @@ namespace LeSoleil_Taller2
             }
         }
 
-        private void BGuardarUser_Click(object sender, EventArgs e)
-        {
-            DGVUsuarios.Rows.Add(new object[] {
-                TBNombreUser.Text,
-                TBApellidoUser.Text,
-                TBDniUser.Text,
-                TBDniUser,
-                TBContraseñaUser,
-                TBEmailUser,
-                TBDireccionUser.Text,
-                ((OpcionCombo)CBPerfilUser.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)CBPerfilUser.SelectedItem).Texto.ToString(),
-                TBTelefonoUser.Text
-            });
-        }
+        //private void BGuardarUser_Click(object sender, EventArgs e)
+        //{
+        //    DGVUsuarios.Rows.Add(new object[] {
+        //        TBNombreUser.Text,
+        //        TBApellidoUser.Text,
+        //        TBDniUser.Text,
+        //        TBDniUser,
+        //        TBContraseñaUser,
+        //        TBEmailUser,
+        //        TBDireccionUser.Text,
+        //        ((OpcionCombo)CBPerfilUser.SelectedItem).Valor.ToString(),
+        //        ((OpcionCombo)CBPerfilUser.SelectedItem).Texto.ToString(),
+        //        TBTelefonoUser.Text
+        //    });
+        //}
 
         private void DGVUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 11)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -329,7 +351,7 @@ namespace LeSoleil_Taller2
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 10)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -342,7 +364,5 @@ namespace LeSoleil_Taller2
                 e.Handled = true;
             }
         }
-
-        private void DGVUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e){}
     }
 }

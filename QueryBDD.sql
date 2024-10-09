@@ -194,7 +194,7 @@ ADD CONSTRAINT FK_Permiso_Perfil
 FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
 
 */
--- Lote de Datos
+---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
 SELECT * from Perfil
@@ -279,15 +279,19 @@ where u.Id_usuario = 2
 select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Fecha_nacimiento, u.Correo, r.Perfil_id, r.NombreRol from Usuario u
 inner join Perfil r on r.Perfil_id = u.Perfil_id
 
-/* A IMPLEMENTAR
--- Procedimientos 
+---------------------------------- PROCEDIMIENTOS ----------------------------------
 create PROC SP_REGISTRARUSUARIO(
-@Documento varchar(50),
-@NombreCompleto varchar(100),
+@DNI varchar(100),
+@Nombre varchar(50),
+@Apellido varchar(50),
+@Usuario varchar(50),
 @Correo varchar(100),
-@Clave varchar(100),
-@IdRol int,
-@Estado bit,
+@Contraseña varchar(50),
+@Fecha_nacimiento DATE,
+@Direccion VARCHAR(100),
+@Telefono VARCHAR(20),
+@Perfil_id int,
+@Baja bit,
 @IdUsuarioResultado int output,
 @Mensaje varchar(500) output
 )
@@ -297,16 +301,166 @@ begin
 	set @Mensaje = ''
 
 
-	if not exists(select * from USUARIO where Documento = @Documento)
+	if not exists(select * from Usuario where DNI = @DNI)
 	begin
-		insert into usuario(Documento,NombreCompleto,Correo,Clave,IdRol,Estado) values
-		(@Documento,@NombreCompleto,@Correo,@Clave,@IdRol,@Estado)
+		insert into Usuario(DNI, Nombre, Apellido, Usuario, Correo, Contraseña, Fecha_nacimiento, Direccion, Telefono, Perfil_id, Baja) values
+		(@DNI, @Nombre, @Apellido, @Usuario, @Correo, @Contraseña, @Fecha_nacimiento, @Direccion, @Telefono, @Perfil_id, @Baja)
 
 		set @IdUsuarioResultado = SCOPE_IDENTITY()
 		
 	end
 	else
-		set @Mensaje = 'No se puede repetir el documento para más de un usuario'
+		set @Mensaje = 'No se puede repetir el DNI para más de un usuario'
 
 end
-*/
+
+-- Prueba
+declare @IdUsuariogenerado int
+declare @mensaje varchar(500)
+
+exec SP_REGISTRARUSUARIO '23456789', 'Sara', 'Huarez', 'Repositora', 'SaraHuarez@gmail.com', '12345', '2000-04-05', 'Junin 80', '3456902345', 3, 0, @IdUsuariogenerado output, @mensaje output
+
+select @IdUsuariogenerado
+
+select @mensaje
+
+go
+
+create PROC SP_EDITARUSUARIO(
+@Id_usuario int,
+@DNI varchar(100),
+@Nombre varchar(50),
+@Apellido varchar(50),
+@Usuario varchar(50),
+@Correo varchar(100),
+@Contraseña varchar(50),
+@Fecha_nacimiento DATE,
+@Direccion VARCHAR(100),
+@Telefono VARCHAR(20),
+@Perfil_id int,
+@Baja bit,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+
+	if not exists(select * from Usuario where DNI = @DNI and Id_usuario != @Id_usuario)
+	begin
+		UPDATE Usuario set
+		DNI = @DNI, 
+		Nombre = @Nombre, 
+		Apellido = @Apellido, 
+		Usuario = @Usuario, 
+		Correo = @Correo, 
+		Contraseña = @Contraseña, 
+		Fecha_nacimiento = @Fecha_nacimiento, 
+		Direccion = @Direccion, 
+		Telefono = @Telefono, 
+		Perfil_id = @Perfil_id, 
+		Baja = @Baja
+		where Id_usuario = @Id_usuario
+
+		set @Respuesta = 1
+		
+	end
+	else
+		set @Mensaje = 'No se puede repetir el DNI para más de un usuario'
+
+end
+
+-- Prueba
+declare @Respuesta bit
+declare @mensaje varchar(500)
+
+exec SP_EDITARUSUARIO 5,'43205306', 'Sara', 'Huarez', 'Repositora', 'SaraHuarez@gmail.com', '12345', '2000-04-05', 'Junin 80', '3456902345', 3, 1, @Respuesta output, @mensaje output
+
+select @Respuesta
+
+select @mensaje
+
+go
+
+create PROC SP_ELIMINARUSUARIO(
+@IdUsuario int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+	declare @pasoreglas bit = 1
+
+	IF EXISTS (SELECT * FROM CompraCabecera C 
+	INNER JOIN USUARIO U ON U.Id_usuario = C.Id_usuario
+	WHERE U.Id_usuario = @IdUsuario
+	)
+	BEGIN
+		set @pasoreglas = 0
+		set @Respuesta = 0
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario se encuentra relacionado a una COMPRA\n' 
+	END
+
+	IF EXISTS (SELECT * FROM VentaCabecera V
+	INNER JOIN USUARIO U ON U.Id_usuario = V.Id_usuario
+	WHERE U.Id_usuario = @IdUsuario
+	)
+	BEGIN
+		set @pasoreglas = 0
+		set @Respuesta = 0
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque el usuario se encuentra relacionado a una VENTA\n' 
+	END
+
+	if(@pasoreglas = 1)
+	begin
+		delete from USUARIO where Id_usuario = @IdUsuario
+		set @Respuesta = 1 
+	end
+end
+
+-- Prueba
+declare @Respuesta bit
+declare @mensaje varchar(500)
+
+exec SP_EDITARUSUARIO 5,'43205306', 'Sara', 'Huarez', 'Repositora', 'SaraHuarez@gmail.com', '12345', '2000-04-05', 'Junin 80', '3456902345', 3, 1, @Respuesta output, @mensaje output
+
+select @Respuesta
+
+select @mensaje
+
+go
+
+create PROC SP_BAJAUSUARIO(
+@IdUsuario int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if not exists(select * from Usuario where Id_usuario != @IdUsuario)
+		BEGIN
+			UPDATE Usuario set 
+			Baja = 0
+			where Id_usuario = @IdUsuario
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito la baja del usuario'
+		END	
+end
+
+-- Prueba
+declare @Respuesta bit
+declare @mensaje varchar(500)
+
+exec SP_EDITARUSUARIO 5,'43205306', 'Sara', 'Huarez', 'Repositora', 'SaraHuarez@gmail.com', '12345', '2000-04-05', 'Junin 80', '3456902345', 3, 1, @Respuesta output, @mensaje output
+
+select @Respuesta
+
+select @mensaje
