@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
@@ -291,14 +291,14 @@
             // 
             // DGVUsuarios
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Usuario,
@@ -324,40 +324,40 @@
             // 
             // Id_Usuario
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle13;
             this.Id_Usuario.HeaderText = "ID";
             this.Id_Usuario.Name = "Id_Usuario";
             this.Id_Usuario.ReadOnly = true;
             // 
             // nombreUsuario
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle14;
             this.nombreUsuario.HeaderText = "Nombre";
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.ReadOnly = true;
             // 
             // apellidoUsuario
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle15;
             this.apellidoUsuario.HeaderText = "Apellido";
             this.apellidoUsuario.Name = "apellidoUsuario";
             this.apellidoUsuario.ReadOnly = true;
             // 
             // dniUsuario
             // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle16;
             this.dniUsuario.HeaderText = "DNI";
             this.dniUsuario.Name = "dniUsuario";
             this.dniUsuario.ReadOnly = true;
             // 
             // usuario
             // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle17;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
@@ -371,41 +371,41 @@
             // 
             // emailUsuario
             // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle18;
             this.emailUsuario.HeaderText = "Email";
             this.emailUsuario.Name = "emailUsuario";
             this.emailUsuario.ReadOnly = true;
             // 
             // direccionUsuario
             // 
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle19;
             this.direccionUsuario.HeaderText = "Direccion";
             this.direccionUsuario.Name = "direccionUsuario";
             this.direccionUsuario.ReadOnly = true;
             // 
             // Perfil
             // 
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.Perfil.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.Perfil.DefaultCellStyle = dataGridViewCellStyle20;
             this.Perfil.HeaderText = "Perfil";
             this.Perfil.Name = "Perfil";
             this.Perfil.ReadOnly = true;
             // 
             // telefonoUsuario
             // 
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle21;
             this.telefonoUsuario.HeaderText = "Telefono";
             this.telefonoUsuario.Name = "telefonoUsuario";
             this.telefonoUsuario.ReadOnly = true;
             // 
             // Fecha_Nacimiento
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle22;
             this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
             this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
             this.Fecha_Nacimiento.ReadOnly = true;
@@ -421,7 +421,7 @@
             // 
             // bajaUsuario
             // 
-            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle11;
+            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle12;
             this.bajaUsuario.HeaderText = "Dar de Baja";
             this.bajaUsuario.Name = "bajaUsuario";
             this.bajaUsuario.ReadOnly = true;
@@ -492,6 +492,7 @@
             this.BActivosUser.TabIndex = 37;
             this.BActivosUser.Text = "Usuarios Activos";
             this.BActivosUser.UseVisualStyleBackColor = false;
+            this.BActivosUser.Click += new System.EventHandler(this.BActivosUser_Click);
             // 
             // BInactivosUsers
             // 
@@ -505,6 +506,7 @@
             this.BInactivosUsers.TabIndex = 38;
             this.BInactivosUsers.Text = "Usuarios Inactivos";
             this.BInactivosUsers.UseVisualStyleBackColor = false;
+            this.BInactivosUsers.Click += new System.EventHandler(this.BInactivosUsers_Click);
             // 
             // pictureBox1
             // 

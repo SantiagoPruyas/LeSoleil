@@ -63,6 +63,16 @@ namespace LeSoleil_Taller2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altapng {
+            get {
+                object obj = ResourceManager.GetObject("altapng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checkpng {
             get {
                 object obj = ResourceManager.GetObject("checkpng", resourceCulture);

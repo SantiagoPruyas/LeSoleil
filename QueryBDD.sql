@@ -313,7 +313,7 @@ begin
 		set @Mensaje = 'No se puede repetir el DNI para más de un usuario'
 
 end
-
+-- Fin SP_REGISTRARUSUARIO
 -- Prueba
 declare @IdUsuariogenerado int
 declare @mensaje varchar(500)
@@ -371,7 +371,7 @@ begin
 		set @Mensaje = 'No se puede repetir el DNI para más de un usuario'
 
 end
-
+-- Fin SP_EDITARUSUARIO
 -- Prueba
 declare @Respuesta bit
 declare @mensaje varchar(500)
@@ -421,7 +421,7 @@ begin
 		set @Respuesta = 1 
 	end
 end
-
+-- Fin SP_ELIMINARUSUARIO
 -- Prueba
 declare @Respuesta bit
 declare @mensaje varchar(500)
@@ -434,7 +434,7 @@ select @mensaje
 
 go
 
-ALTER PROC SP_BAJAUSUARIO(
+create PROC SP_BAJAUSUARIO(
 @IdUsuario int,
 @Respuesta bit output,
 @Mensaje varchar(500) output
@@ -456,12 +456,48 @@ begin
 		ELSE
 			SET @Mensaje = 'El id de Usuario no coindice con ningun otro id';
 end
-
+-- Fin SP_BAJAUSUARIO
 -- Prueba
 declare @Respuesta bit
 declare @mensaje varchar(500)
 
 exec SP_BAJAUSUARIO 6, @Respuesta output, @mensaje output
+
+select @Respuesta
+
+select @mensaje
+
+go
+
+create PROC SP_ALTAUSUARIO(
+@IdUsuario int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Usuario where Id_usuario = @IdUsuario)
+		BEGIN
+			UPDATE Usuario set 
+			Baja = 0
+			where Id_usuario = @IdUsuario
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito el alta del usuario'
+		END	
+		ELSE
+			SET @Mensaje = 'El id de Usuario no coindice con ningun otro id';
+end
+-- Fin SP_ALTAUSUARIO
+
+-- Prueba
+declare @Respuesta bit
+declare @mensaje varchar(500)
+
+exec SP_ALTAUSUARIO 6, @Respuesta output, @mensaje output
 
 select @Respuesta
 

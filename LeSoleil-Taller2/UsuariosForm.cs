@@ -180,7 +180,6 @@ namespace LeSoleil_Taller2
                     Telefono = TBTelefonoUser.Text,
                     oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(((OpcionCombo)CBPerfilUser.SelectedItem).Valor) },
                     Baja = false,
-                    //Fecha_nacimiento = "2000-04-02"
                     Fecha_nacimiento = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd")
                 };
 
@@ -188,25 +187,33 @@ namespace LeSoleil_Taller2
 
                 if(IdUsuarioGenerado != 0)
                 {
-                    // Adicionar nuevo renglón en el DataGridView
-                    int n = DGVUsuarios.Rows.Add();
+                    if (DGVUsuarios.Columns[12].HeaderText == "Dar de Baja")
+                    {
+                        // Adicionar nuevo renglón en el DataGridView
+                        int n = DGVUsuarios.Rows.Add();
 
-                    // Colocar la información en las celdas correspondientes
-                    DGVUsuarios.Rows[n].Cells[0].Value = IdUsuarioGenerado;
-                    DGVUsuarios.Rows[n].Cells[1].Value = TBNombreUser.Text;
-                    DGVUsuarios.Rows[n].Cells[2].Value = TBApellidoUser.Text;
-                    DGVUsuarios.Rows[n].Cells[3].Value = TBDniUser.Text;
-                    DGVUsuarios.Rows[n].Cells[4].Value = TBUsuarioUser.Text;
-                    DGVUsuarios.Rows[n].Cells[5].Value = TBContraseñaUser.Text;  
-                    DGVUsuarios.Rows[n].Cells[6].Value = TBEmailUser.Text;
-                    DGVUsuarios.Rows[n].Cells[7].Value = TBDireccionUser.Text;
-                    DGVUsuarios.Rows[n].Cells[8].Value = CBPerfilUser.Text;
-                    DGVUsuarios.Rows[n].Cells[9].Value = TBTelefonoUser.Text;
-                    DGVUsuarios.Rows[n].Cells[10].Value = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd"); 
+                        // Colocar la información en las celdas correspondientes
+                        DGVUsuarios.Rows[n].Cells[0].Value = IdUsuarioGenerado;
+                        DGVUsuarios.Rows[n].Cells[1].Value = TBNombreUser.Text;
+                        DGVUsuarios.Rows[n].Cells[2].Value = TBApellidoUser.Text;
+                        DGVUsuarios.Rows[n].Cells[3].Value = TBDniUser.Text;
+                        DGVUsuarios.Rows[n].Cells[4].Value = TBUsuarioUser.Text;
+                        DGVUsuarios.Rows[n].Cells[5].Value = TBContraseñaUser.Text;
+                        DGVUsuarios.Rows[n].Cells[6].Value = TBEmailUser.Text;
+                        DGVUsuarios.Rows[n].Cells[7].Value = TBDireccionUser.Text;
+                        DGVUsuarios.Rows[n].Cells[8].Value = CBPerfilUser.Text;
+                        DGVUsuarios.Rows[n].Cells[9].Value = TBTelefonoUser.Text;
+                        DGVUsuarios.Rows[n].Cells[10].Value = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd");
 
-                    Limpiar();
+                        Limpiar();
 
-                    MessageBox.Show("Usuario guardado exitosamente.");
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                    } else
+                    {
+                        Limpiar();
+
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                    }
                 } else
                 {
                     MessageBox.Show(Mensaje);
@@ -231,29 +238,60 @@ namespace LeSoleil_Taller2
             // Verificar si la celda clickeada es el botón "bajaUsuario"
             if (e.ColumnIndex == DGVUsuarios.Columns["bajaUsuario"].Index && e.RowIndex >= 0)
             {
-                // Verificar que la fila no sea la nueva fila sin confirmar
-                if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
+                if (DGVUsuarios.Columns[12].HeaderText == "Dar de Alta")
                 {
-                    // Mostrar mensaje de confirmación
-                    DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de baja este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    // Si el usuario presiona 'Sí', dar de baja el usuario
-                    if (result == DialogResult.Yes)
+                    // Verificar que la fila no sea la nueva fila sin confirmar
+                    if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
                     {
-                        bool respuesta = new CN_Usuario().DarBaja(Id_usuario, out Mensaje);
-                        if (respuesta)
+                        // Mostrar mensaje de confirmación
+                        DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de alta este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        // Si el usuario presiona 'Sí', dar de baja el usuario
+                        if (result == DialogResult.Yes)
                         {
-                            MessageBox.Show("Usuario dado de baja del sistema!");
-                            // Faltaria cambiar el valor del estado dentro de la tabla
-                        } else
-                        {
-                            MessageBox.Show(Mensaje);
+                            bool respuesta = new CN_Usuario().DarAlta(Id_usuario, out Mensaje);
+                            if (respuesta)
+                            {
+                                MessageBox.Show("Usuario dado de alta del sistema!");
+                                DGVUsuarios.Rows.RemoveAt(e.RowIndex);
+                            }
+                            else
+                            {
+                                MessageBox.Show(Mensaje);
+                            }
                         }
                     }
-                }
-                else
+                    else
+                    {
+                        MessageBox.Show("No se puede dar de alta al usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                } else
                 {
-                    MessageBox.Show("No se puede dar de baja al usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Verificar que la fila no sea la nueva fila sin confirmar
+                    if (!DGVUsuarios.Rows[e.RowIndex].IsNewRow)
+                    {
+                        // Mostrar mensaje de confirmación
+                        DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de baja este usuario?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        // Si el usuario presiona 'Sí', dar de baja el usuario
+                        if (result == DialogResult.Yes)
+                        {
+                            bool respuesta = new CN_Usuario().DarBaja(Id_usuario, out Mensaje);
+                            if (respuesta)
+                            {
+                                MessageBox.Show("Usuario dado de baja del sistema!");
+                                DGVUsuarios.Rows.RemoveAt(e.RowIndex);
+                            }
+                            else
+                            {
+                                MessageBox.Show(Mensaje);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede dar de baja al usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             // Verificar si la celda clickeada es el botón "Modificar"
@@ -316,8 +354,8 @@ namespace LeSoleil_Taller2
                 CBPerfilUser.SelectedIndex = 0;
             }
 
-            // Mostrar todos los usuarios en la tabla
-            List<Usuario> listaUsuario = new CN_Usuario().Listar();
+            // Mostrar todos los usuarios activos en la tabla
+            List<Usuario> listaUsuario = new CN_Usuario().Listar().Where(u => u.Baja == false).ToList();
 
             foreach (Usuario item in listaUsuario)
             {
@@ -360,14 +398,32 @@ namespace LeSoleil_Taller2
 
             if (e.ColumnIndex == 12)
             {
+                // Pintar la celda normal
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                var w = Properties.Resources.deletepng.Width;
-                var h = Properties.Resources.deletepng.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                // Verificar el encabezado de la columna para determinar qué imagen pintar
+                if (DGVUsuarios.Columns[12].HeaderText == "Dar de Alta")
+                {
+                    // Pintar la imagen de "Dar de Alta"
+                    var w = Properties.Resources.altapng.Width;
+                    var h = Properties.Resources.altapng.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                e.Graphics.DrawImage(Properties.Resources.deletepng, new Rectangle(x, y, w, h));
+                    e.Graphics.DrawImage(Properties.Resources.altapng, new Rectangle(x, y, w, h));
+                }
+                else
+                {
+                    // Pintar la imagen de "Dar de Baja"
+                    var w = Properties.Resources.deletepng.Width;
+                    var h = Properties.Resources.deletepng.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                    e.Graphics.DrawImage(Properties.Resources.deletepng, new Rectangle(x, y, w, h));
+                }
+
+                // Marcar como pintado
                 e.Handled = true;
             }
 
@@ -385,6 +441,56 @@ namespace LeSoleil_Taller2
             }
         }
 
+        private void BActivosUser_Click(object sender, EventArgs e)
+        {
+            DGVUsuarios.Rows.Clear();
 
+            DGVUsuarios.Columns[12].HeaderText = "Dar de Baja";
+
+            List<Usuario> listaUsuarioActivos = new CN_Usuario().Listar().Where(u => u.Baja == false).ToList();
+
+            foreach (Usuario item in listaUsuarioActivos)
+            {
+                DGVUsuarios.Rows.Add(new object[] {
+                    item.Id_usuario,
+                    item.Nombre,
+                    item.Apellido,
+                    item.DNI,
+                    item.User,
+                    item.Contraseña,
+                    item.Correo,
+                    item.Direccion,
+                    item.oPerfil.NombreRol,
+                    item.Telefono,
+                    item.Fecha_nacimiento,
+                });
+            }
+        }
+
+        private void BInactivosUsers_Click(object sender, EventArgs e)
+        {
+            DGVUsuarios.Rows.Clear();
+
+            DGVUsuarios.Columns[12].HeaderText = "Dar de Alta";
+
+            List<Usuario> listaUsuarioInactivos = new CN_Usuario().Listar().Where(u => u.Baja == true).ToList();
+
+            foreach (Usuario item in listaUsuarioInactivos)
+            {
+                DGVUsuarios.Rows.Add(new object[] {
+                    item.Id_usuario,
+                    item.Nombre,
+                    item.Apellido,
+                    item.DNI,
+                    item.User,
+                    item.Contraseña,
+                    item.Correo,
+                    item.Direccion,
+                    item.oPerfil.NombreRol,
+                    item.Telefono,
+                    item.Fecha_nacimiento,
+                });
+            }
+        }
     }
 }

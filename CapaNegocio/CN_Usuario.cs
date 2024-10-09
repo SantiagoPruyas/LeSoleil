@@ -81,5 +81,9 @@ namespace CapaNegocio
         {
             return objcd_usuario.DarBaja(Id_usuario, out Mensaje);
         }
+        public bool DarAlta(int Id_usuario, out string Mensaje)
+        {
+            return objcd_usuario.DarAlta(Id_usuario, out Mensaje);
+        }
     }
 }

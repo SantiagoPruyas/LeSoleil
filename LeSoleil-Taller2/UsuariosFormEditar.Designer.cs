@@ -52,6 +52,8 @@
             this.BEditarCancelar = new System.Windows.Forms.Button();
             this.LFechaNacimientoUser = new System.Windows.Forms.Label();
             this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.LIDUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LFondoUser
@@ -265,7 +267,7 @@
             this.LEditarUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LEditarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEditarUsuario.ForeColor = System.Drawing.Color.Coral;
-            this.LEditarUsuario.Location = new System.Drawing.Point(147, 29);
+            this.LEditarUsuario.Location = new System.Drawing.Point(161, 33);
             this.LEditarUsuario.Name = "LEditarUsuario";
             this.LEditarUsuario.Size = new System.Drawing.Size(172, 29);
             this.LEditarUsuario.TabIndex = 48;
@@ -321,11 +323,39 @@
             this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
             this.DTPFechaNacimiento.TabIndex = 52;
             // 
+            // LIDUser
+            // 
+            this.LIDUser.AutoSize = true;
+            this.LIDUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LIDUser.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LIDUser.ForeColor = System.Drawing.Color.Coral;
+            this.LIDUser.Location = new System.Drawing.Point(462, 9);
+            this.LIDUser.Name = "LIDUser";
+            this.LIDUser.Size = new System.Drawing.Size(22, 29);
+            this.LIDUser.TabIndex = 53;
+            this.LIDUser.Text = "-";
+            this.LIDUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.Location = new System.Drawing.Point(412, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 29);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "ID:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // UsuariosFormEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 633);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LIDUser);
             this.Controls.Add(this.DTPFechaNacimiento);
             this.Controls.Add(this.LFechaNacimientoUser);
             this.Controls.Add(this.BEditarCancelar);
@@ -385,5 +415,7 @@
         private System.Windows.Forms.Button BEditarCancelar;
         private System.Windows.Forms.Label LFechaNacimientoUser;
         private System.Windows.Forms.DateTimePicker DTPFechaNacimiento;
+        private System.Windows.Forms.Label LIDUser;
+        private System.Windows.Forms.Label label1;
     }
 }
