@@ -165,7 +165,8 @@ namespace LeSoleil_Taller2
                 !string.IsNullOrWhiteSpace(TBEmailUser.Text) &&
                 !string.IsNullOrWhiteSpace(TBDireccionUser.Text) &&
                 !string.IsNullOrWhiteSpace(CBPerfilUser.Text) &&
-                !string.IsNullOrWhiteSpace(TBTelefonoUser.Text))
+                !string.IsNullOrWhiteSpace(TBTelefonoUser.Text) &&
+                DTPFechaNacimiento.Value != null)
             {
                 Usuario objUsuario = new Usuario()
                 {
@@ -179,7 +180,8 @@ namespace LeSoleil_Taller2
                     Telefono = TBTelefonoUser.Text,
                     oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(((OpcionCombo)CBPerfilUser.SelectedItem).Valor) },
                     Baja = false,
-                    Fecha_nacimiento = "2000-04-02"
+                    //Fecha_nacimiento = "2000-04-02"
+                    Fecha_nacimiento = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd")
                 };
 
                 int IdUsuarioGenerado = new CN_Usuario().Registrar(objUsuario, out Mensaje);
@@ -195,11 +197,12 @@ namespace LeSoleil_Taller2
                     DGVUsuarios.Rows[n].Cells[2].Value = TBApellidoUser.Text;
                     DGVUsuarios.Rows[n].Cells[3].Value = TBDniUser.Text;
                     DGVUsuarios.Rows[n].Cells[4].Value = TBUsuarioUser.Text;
-                    DGVUsuarios.Rows[n].Cells[5].Value = TBContraseñaUser.Text;  // Asegúrate de que la contraseña esté cifrada en un entorno real.
+                    DGVUsuarios.Rows[n].Cells[5].Value = TBContraseñaUser.Text;  
                     DGVUsuarios.Rows[n].Cells[6].Value = TBEmailUser.Text;
                     DGVUsuarios.Rows[n].Cells[7].Value = TBDireccionUser.Text;
                     DGVUsuarios.Rows[n].Cells[8].Value = CBPerfilUser.Text;
                     DGVUsuarios.Rows[n].Cells[9].Value = TBTelefonoUser.Text;
+                    DGVUsuarios.Rows[n].Cells[10].Value = DTPFechaNacimiento.Value.ToString("yyyy-MM-dd"); 
 
                     Limpiar();
 
@@ -255,10 +258,12 @@ namespace LeSoleil_Taller2
                 string direccion = DGVUsuarios.Rows[e.RowIndex].Cells[7].Value.ToString();
                 string perfil = DGVUsuarios.Rows[e.RowIndex].Cells[8].Value.ToString();
                 string telefono = DGVUsuarios.Rows[e.RowIndex].Cells[9].Value.ToString();
+                DateTime fechaNacimiento = Convert.ToDateTime(DGVUsuarios.Rows[e.RowIndex].Cells[10].Value); 
+
 
                 // Crear y abrir el formulario de edición con los datos
                 UsuariosFormEditar editarForm = new UsuariosFormEditar(
-                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, e.RowIndex, this
+                    nombre, apellido, dni, usuario, contraseña, email, direccion, perfil, telefono, fechaNacimiento, e.RowIndex, this
                 );
 
                 // Establecer la propiedad Owner (propietario del formulario)
@@ -270,7 +275,7 @@ namespace LeSoleil_Taller2
         }
 
         public void ActualizarUsuario(int rowIndex, string nombre, string apellido, string dni,
-        string usuario, string contraseña, string email, string direccion, string perfil, string telefono)
+        string usuario, string contraseña, string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento)
         {
             DGVUsuarios.Rows[rowIndex].Cells[1].Value = nombre;
             DGVUsuarios.Rows[rowIndex].Cells[2].Value = apellido;
@@ -281,6 +286,7 @@ namespace LeSoleil_Taller2
             DGVUsuarios.Rows[rowIndex].Cells[7].Value = direccion;
             DGVUsuarios.Rows[rowIndex].Cells[8].Value = perfil;
             DGVUsuarios.Rows[rowIndex].Cells[9].Value = telefono;
+            DGVUsuarios.Rows[rowIndex].Cells[10].Value = fechaNacimiento.ToShortDateString(); 
 
             MessageBox.Show("Datos actualizados correctamente.");
         }
@@ -313,6 +319,7 @@ namespace LeSoleil_Taller2
                     item.Direccion,
                     item.oPerfil.NombreRol,
                     item.Telefono,
+                    item.Fecha_nacimiento,
                 });
             }
         }
@@ -338,7 +345,7 @@ namespace LeSoleil_Taller2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 11)
+            if (e.ColumnIndex == 12)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -351,7 +358,7 @@ namespace LeSoleil_Taller2
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 11)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -364,5 +371,7 @@ namespace LeSoleil_Taller2
                 e.Handled = true;
             }
         }
+
+
     }
 }

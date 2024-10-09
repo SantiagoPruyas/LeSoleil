@@ -16,7 +16,7 @@ namespace LeSoleil_Taller2
         private UsuariosForm usuariosForm;  // Referencia al formulario principal
 
         public UsuariosFormEditar(string nombre, string apellido, string dni, string usuario, string contraseña,
-            string email, string direccion, string perfil, string telefono, int rowIndex, UsuariosForm usuariosForm)
+            string email, string direccion, string perfil, string telefono, DateTime fechaNacimiento, int rowIndex, UsuariosForm usuariosForm)
         {
             InitializeComponent();
             this.usuariosForm = usuariosForm;
@@ -32,6 +32,7 @@ namespace LeSoleil_Taller2
             TBDireccionUser.Text = direccion;
             CBPerfilUser.Text = perfil;
             TBTelefonoUser.Text = telefono;
+            DTPFechaNacimiento.Value = fechaNacimiento;
         }
 
         private void BEditarGuardar_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace LeSoleil_Taller2
             UsuariosForm usuariosForm = (UsuariosForm)this.Owner;
             usuariosForm.ActualizarUsuario(rowIndex, TBNombreUser.Text, TBApellidoUser.Text, TBDniUser.Text,
                 TBUsuarioUser.Text, TBContraseñaUser.Text, TBEmailUser.Text, TBDireccionUser.Text, CBPerfilUser.Text,
-                TBTelefonoUser.Text);
+                TBTelefonoUser.Text, DTPFechaNacimiento.Value);
 
             this.Close();
         }

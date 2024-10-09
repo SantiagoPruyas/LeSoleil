@@ -104,6 +104,8 @@ namespace LeSoleil_Taller2
 
             MN_nombreUsuario.Text = usuarioActual.User;
         }
+
+
     }
 
     // Clase para el renderizado personalizado de los ítems del menú

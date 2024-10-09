@@ -50,6 +50,8 @@
             this.LEditarUsuario = new System.Windows.Forms.Label();
             this.BEditarGuardar = new System.Windows.Forms.Button();
             this.BEditarCancelar = new System.Windows.Forms.Button();
+            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
+            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // LFondoUser
@@ -57,7 +59,7 @@
             this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoUser.Location = new System.Drawing.Point(-5, -7);
             this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(505, 616);
+            this.LFondoUser.Size = new System.Drawing.Size(505, 641);
             this.LFondoUser.TabIndex = 29;
             // 
             // TBDniUser
@@ -280,7 +282,7 @@
             this.BEditarGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarGuardar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarGuardar.Location = new System.Drawing.Point(21, 526);
+            this.BEditarGuardar.Location = new System.Drawing.Point(21, 569);
             this.BEditarGuardar.Name = "BEditarGuardar";
             this.BEditarGuardar.Size = new System.Drawing.Size(152, 40);
             this.BEditarGuardar.TabIndex = 49;
@@ -294,7 +296,7 @@
             this.BEditarCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarCancelar.Location = new System.Drawing.Point(358, 526);
+            this.BEditarCancelar.Location = new System.Drawing.Point(349, 569);
             this.BEditarCancelar.Name = "BEditarCancelar";
             this.BEditarCancelar.Size = new System.Drawing.Size(95, 40);
             this.BEditarCancelar.TabIndex = 50;
@@ -302,11 +304,34 @@
             this.BEditarCancelar.UseVisualStyleBackColor = false;
             this.BEditarCancelar.Click += new System.EventHandler(this.BEditarCancelar_Click);
             // 
+            // LFechaNacimientoUser
+            // 
+            this.LFechaNacimientoUser.AutoSize = true;
+            this.LFechaNacimientoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LFechaNacimientoUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LFechaNacimientoUser.ForeColor = System.Drawing.Color.Black;
+            this.LFechaNacimientoUser.Location = new System.Drawing.Point(56, 501);
+            this.LFechaNacimientoUser.Name = "LFechaNacimientoUser";
+            this.LFechaNacimientoUser.Size = new System.Drawing.Size(117, 18);
+            this.LFechaNacimientoUser.TabIndex = 51;
+            this.LFechaNacimientoUser.Text = "Fecha Nacimiento";
+            // 
+            // DTPFechaNacimiento
+            // 
+            this.DTPFechaNacimiento.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
+            this.DTPFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTPFechaNacimiento.Location = new System.Drawing.Point(199, 501);
+            this.DTPFechaNacimiento.Name = "DTPFechaNacimiento";
+            this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
+            this.DTPFechaNacimiento.TabIndex = 52;
+            // 
             // UsuariosFormEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 598);
+            this.ClientSize = new System.Drawing.Size(496, 627);
+            this.Controls.Add(this.DTPFechaNacimiento);
+            this.Controls.Add(this.LFechaNacimientoUser);
             this.Controls.Add(this.BEditarCancelar);
             this.Controls.Add(this.BEditarGuardar);
             this.Controls.Add(this.LEditarUsuario);
@@ -361,5 +386,7 @@
         private System.Windows.Forms.Label LEditarUsuario;
         private System.Windows.Forms.Button BEditarGuardar;
         private System.Windows.Forms.Button BEditarCancelar;
+        private System.Windows.Forms.Label LFechaNacimientoUser;
+        private System.Windows.Forms.DateTimePicker DTPFechaNacimiento;
     }
 }
