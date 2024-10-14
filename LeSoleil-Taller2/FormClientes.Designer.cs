@@ -59,6 +59,8 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BGuardarCliente = new System.Windows.Forms.Button();
+            this.BCancelarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +68,9 @@
             // LFondoClientes
             // 
             this.LFondoClientes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFondoClientes.Location = new System.Drawing.Point(-3, -9);
+            this.LFondoClientes.Location = new System.Drawing.Point(-80, -8);
             this.LFondoClientes.Name = "LFondoClientes";
-            this.LFondoClientes.Size = new System.Drawing.Size(813, 281);
+            this.LFondoClientes.Size = new System.Drawing.Size(1366, 281);
             this.LFondoClientes.TabIndex = 29;
             // 
             // LCliente
@@ -77,7 +79,7 @@
             this.LCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LCliente.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCliente.ForeColor = System.Drawing.Color.Coral;
-            this.LCliente.Location = new System.Drawing.Point(241, 11);
+            this.LCliente.Location = new System.Drawing.Point(23, 20);
             this.LCliente.Name = "LCliente";
             this.LCliente.Size = new System.Drawing.Size(272, 29);
             this.LCliente.TabIndex = 30;
@@ -90,7 +92,7 @@
             this.LNombreCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LNombreCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombreCliente.ForeColor = System.Drawing.Color.Black;
-            this.LNombreCliente.Location = new System.Drawing.Point(121, 58);
+            this.LNombreCliente.Location = new System.Drawing.Point(381, 29);
             this.LNombreCliente.Name = "LNombreCliente";
             this.LNombreCliente.Size = new System.Drawing.Size(56, 18);
             this.LNombreCliente.TabIndex = 31;
@@ -102,7 +104,7 @@
             this.LApellidoCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LApellidoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellidoCliente.ForeColor = System.Drawing.Color.Black;
-            this.LApellidoCliente.Location = new System.Drawing.Point(119, 92);
+            this.LApellidoCliente.Location = new System.Drawing.Point(379, 70);
             this.LApellidoCliente.Name = "LApellidoCliente";
             this.LApellidoCliente.Size = new System.Drawing.Size(58, 18);
             this.LApellidoCliente.TabIndex = 32;
@@ -114,7 +116,7 @@
             this.LEmailCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LEmailCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEmailCliente.ForeColor = System.Drawing.Color.Black;
-            this.LEmailCliente.Location = new System.Drawing.Point(121, 127);
+            this.LEmailCliente.Location = new System.Drawing.Point(381, 113);
             this.LEmailCliente.Name = "LEmailCliente";
             this.LEmailCliente.Size = new System.Drawing.Size(41, 18);
             this.LEmailCliente.TabIndex = 33;
@@ -126,7 +128,7 @@
             this.LDniCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LDniCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDniCliente.ForeColor = System.Drawing.Color.Black;
-            this.LDniCliente.Location = new System.Drawing.Point(121, 163);
+            this.LDniCliente.Location = new System.Drawing.Point(381, 153);
             this.LDniCliente.Name = "LDniCliente";
             this.LDniCliente.Size = new System.Drawing.Size(29, 18);
             this.LDniCliente.TabIndex = 34;
@@ -136,7 +138,7 @@
             // 
             this.TBNombreCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBNombreCliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBNombreCliente.Location = new System.Drawing.Point(193, 56);
+            this.TBNombreCliente.Location = new System.Drawing.Point(453, 27);
             this.TBNombreCliente.Multiline = true;
             this.TBNombreCliente.Name = "TBNombreCliente";
             this.TBNombreCliente.Size = new System.Drawing.Size(134, 25);
@@ -146,7 +148,7 @@
             // 
             this.TBApellidoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBApellidoCliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBApellidoCliente.Location = new System.Drawing.Point(193, 90);
+            this.TBApellidoCliente.Location = new System.Drawing.Point(453, 68);
             this.TBApellidoCliente.Multiline = true;
             this.TBApellidoCliente.Name = "TBApellidoCliente";
             this.TBApellidoCliente.Size = new System.Drawing.Size(134, 25);
@@ -156,7 +158,7 @@
             // 
             this.TBEmailCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBEmailCliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBEmailCliente.Location = new System.Drawing.Point(193, 126);
+            this.TBEmailCliente.Location = new System.Drawing.Point(453, 110);
             this.TBEmailCliente.Multiline = true;
             this.TBEmailCliente.Name = "TBEmailCliente";
             this.TBEmailCliente.Size = new System.Drawing.Size(134, 25);
@@ -166,7 +168,7 @@
             // 
             this.TBDNICliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDNICliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBDNICliente.Location = new System.Drawing.Point(193, 161);
+            this.TBDNICliente.Location = new System.Drawing.Point(453, 151);
             this.TBDNICliente.Multiline = true;
             this.TBDNICliente.Name = "TBDNICliente";
             this.TBDNICliente.Size = new System.Drawing.Size(134, 25);
@@ -176,7 +178,7 @@
             // 
             this.TBTelefonoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBTelefonoCliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBTelefonoCliente.Location = new System.Drawing.Point(480, 126);
+            this.TBTelefonoCliente.Location = new System.Drawing.Point(743, 110);
             this.TBTelefonoCliente.Multiline = true;
             this.TBTelefonoCliente.Name = "TBTelefonoCliente";
             this.TBTelefonoCliente.Size = new System.Drawing.Size(134, 25);
@@ -186,7 +188,7 @@
             // 
             this.TBDireccionCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDireccionCliente.ForeColor = System.Drawing.Color.Coral;
-            this.TBDireccionCliente.Location = new System.Drawing.Point(480, 56);
+            this.TBDireccionCliente.Location = new System.Drawing.Point(749, 27);
             this.TBDireccionCliente.Multiline = true;
             this.TBDireccionCliente.Name = "TBDireccionCliente";
             this.TBDireccionCliente.Size = new System.Drawing.Size(134, 25);
@@ -198,7 +200,7 @@
             this.LSexoCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LSexoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LSexoCliente.ForeColor = System.Drawing.Color.Black;
-            this.LSexoCliente.Location = new System.Drawing.Point(408, 163);
+            this.LSexoCliente.Location = new System.Drawing.Point(669, 150);
             this.LSexoCliente.Name = "LSexoCliente";
             this.LSexoCliente.Size = new System.Drawing.Size(36, 18);
             this.LSexoCliente.TabIndex = 42;
@@ -210,7 +212,7 @@
             this.LTelefonoCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LTelefonoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTelefonoCliente.ForeColor = System.Drawing.Color.Black;
-            this.LTelefonoCliente.Location = new System.Drawing.Point(408, 127);
+            this.LTelefonoCliente.Location = new System.Drawing.Point(668, 111);
             this.LTelefonoCliente.Name = "LTelefonoCliente";
             this.LTelefonoCliente.Size = new System.Drawing.Size(60, 18);
             this.LTelefonoCliente.TabIndex = 41;
@@ -222,7 +224,7 @@
             this.LFechaNacCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFechaNacCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LFechaNacCliente.ForeColor = System.Drawing.Color.Black;
-            this.LFechaNacCliente.Location = new System.Drawing.Point(406, 92);
+            this.LFechaNacCliente.Location = new System.Drawing.Point(667, 68);
             this.LFechaNacCliente.Name = "LFechaNacCliente";
             this.LFechaNacCliente.Size = new System.Drawing.Size(117, 18);
             this.LFechaNacCliente.TabIndex = 40;
@@ -234,7 +236,7 @@
             this.LDireccionCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LDireccionCliente.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDireccionCliente.ForeColor = System.Drawing.Color.Black;
-            this.LDireccionCliente.Location = new System.Drawing.Point(408, 58);
+            this.LDireccionCliente.Location = new System.Drawing.Point(668, 29);
             this.LDireccionCliente.Name = "LDireccionCliente";
             this.LDireccionCliente.Size = new System.Drawing.Size(66, 18);
             this.LDireccionCliente.TabIndex = 39;
@@ -242,7 +244,7 @@
             // 
             // DTPFechaNacCliente
             // 
-            this.DTPFechaNacCliente.Location = new System.Drawing.Point(529, 92);
+            this.DTPFechaNacCliente.Location = new System.Drawing.Point(790, 68);
             this.DTPFechaNacCliente.Name = "DTPFechaNacCliente";
             this.DTPFechaNacCliente.Size = new System.Drawing.Size(200, 20);
             this.DTPFechaNacCliente.TabIndex = 47;
@@ -253,7 +255,7 @@
             this.RBMujerCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RBMujerCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBMujerCliente.ForeColor = System.Drawing.Color.Black;
-            this.RBMujerCliente.Location = new System.Drawing.Point(480, 164);
+            this.RBMujerCliente.Location = new System.Drawing.Point(741, 151);
             this.RBMujerCliente.Name = "RBMujerCliente";
             this.RBMujerCliente.Size = new System.Drawing.Size(59, 22);
             this.RBMujerCliente.TabIndex = 48;
@@ -267,24 +269,22 @@
             this.RBHombreCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RBHombreCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBHombreCliente.ForeColor = System.Drawing.Color.Black;
-            this.RBHombreCliente.Location = new System.Drawing.Point(557, 164);
+            this.RBHombreCliente.Location = new System.Drawing.Point(818, 151);
             this.RBHombreCliente.Name = "RBHombreCliente";
             this.RBHombreCliente.Size = new System.Drawing.Size(70, 22);
             this.RBHombreCliente.TabIndex = 49;
             this.RBHombreCliente.TabStop = true;
             this.RBHombreCliente.Text = "Hombre";
             this.RBHombreCliente.UseVisualStyleBackColor = false;
-            
             // 
             // PBFondoClientes
             // 
             this.PBFondoClientes.Image = ((System.Drawing.Image)(resources.GetObject("PBFondoClientes.Image")));
             this.PBFondoClientes.Location = new System.Drawing.Point(0, 264);
             this.PBFondoClientes.Name = "PBFondoClientes";
-            this.PBFondoClientes.Size = new System.Drawing.Size(810, 416);
+            this.PBFondoClientes.Size = new System.Drawing.Size(1286, 439);
             this.PBFondoClientes.TabIndex = 52;
             this.PBFondoClientes.TabStop = false;
-            
             // 
             // dataGridView1
             // 
@@ -299,9 +299,9 @@
             this.direccion,
             this.telefono,
             this.sexo});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 339);
+            this.dataGridView1.Location = new System.Drawing.Point(198, 342);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(941, 307);
             this.dataGridView1.TabIndex = 55;
             // 
             // IdCliente
@@ -349,11 +349,39 @@
             this.sexo.HeaderText = "sexo";
             this.sexo.Name = "sexo";
             // 
+            // BGuardarCliente
+            // 
+            this.BGuardarCliente.BackColor = System.Drawing.Color.Coral;
+            this.BGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGuardarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BGuardarCliente.Location = new System.Drawing.Point(522, 203);
+            this.BGuardarCliente.Name = "BGuardarCliente";
+            this.BGuardarCliente.Size = new System.Drawing.Size(94, 38);
+            this.BGuardarCliente.TabIndex = 56;
+            this.BGuardarCliente.Text = "Guardar";
+            this.BGuardarCliente.UseVisualStyleBackColor = false;
+            // 
+            // BCancelarCliente
+            // 
+            this.BCancelarCliente.BackColor = System.Drawing.Color.Coral;
+            this.BCancelarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelarCliente.Location = new System.Drawing.Point(640, 203);
+            this.BCancelarCliente.Name = "BCancelarCliente";
+            this.BCancelarCliente.Size = new System.Drawing.Size(94, 38);
+            this.BCancelarCliente.TabIndex = 57;
+            this.BCancelarCliente.Text = "Cancelar";
+            this.BCancelarCliente.UseVisualStyleBackColor = false;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 674);
+            this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.BCancelarCliente);
+            this.Controls.Add(this.BGuardarCliente);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.RBHombreCliente);
             this.Controls.Add(this.RBMujerCliente);
@@ -416,5 +444,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.Button BGuardarCliente;
+        private System.Windows.Forms.Button BCancelarCliente;
     }
 }
