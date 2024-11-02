@@ -244,6 +244,9 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuReportes'),
 (1,'MenuSalir')
 
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(1,'MenuCompras')
+
 UPDATE Permiso
 SET Nombre = 'MenuBackup'
 WHERE Nombre = 'MenuBackUp'

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,18 @@ using System.Windows.Forms;
 
 namespace LeSoleil_Taller2
 {
-    public partial class FormVentas : Form
+    public partial class FormCompras : Form
     {
-        public FormVentas()
+        private Usuario _usuario;
+        public FormCompras(Usuario oUsuario = null)
         {
+            _usuario = oUsuario;
             InitializeComponent();
         }
 
-        private void FormVentas_Load(object sender, EventArgs e)
+        private void FormCompras_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show(_usuario.Nombre);
         }
     }
 }
