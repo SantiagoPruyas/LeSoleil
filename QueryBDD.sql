@@ -3,7 +3,7 @@ CREATE DATABASE DBLE_SOLEIL
 
 USE DBLE_SOLEIL
 
--- Creacion de las Tablas asociadas al Proyecto
+--- Creacion de las Tablas asociadas al Proyecto
 CREATE TABLE Perfil
 (
   Perfil_id INT IDENTITY NOT NULL,

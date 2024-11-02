@@ -34,6 +34,8 @@
             this.MenuBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuRegistrarVenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuDetalleVenta = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,6 +111,9 @@
             // 
             // MenuVentas
             // 
+            this.MenuVentas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuRegistrarVenta,
+            this.MenuDetalleVenta});
             this.MenuVentas.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuVentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MenuVentas.Image = ((System.Drawing.Image)(resources.GetObject("MenuVentas.Image")));
@@ -119,7 +124,20 @@
             this.MenuVentas.Size = new System.Drawing.Size(89, 85);
             this.MenuVentas.Text = "ventas";
             this.MenuVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuVentas.Click += new System.EventHandler(this.MenuVentas_Click);
+            // 
+            // MenuRegistrarVenta
+            // 
+            this.MenuRegistrarVenta.Name = "MenuRegistrarVenta";
+            this.MenuRegistrarVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegistrarVenta.Text = "Registrar Venta";
+            this.MenuRegistrarVenta.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
+            // 
+            // MenuDetalleVenta
+            // 
+            this.MenuDetalleVenta.Name = "MenuDetalleVenta";
+            this.MenuDetalleVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuDetalleVenta.Text = "Detalle Venta";
+            this.MenuDetalleVenta.Click += new System.EventHandler(this.MenuDetalleVenta_Click);
             // 
             // MenuClientes
             // 
@@ -270,5 +288,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label MN_nombreUsuario;
         private System.Windows.Forms.ToolStripMenuItem MenuCompras;
+        private System.Windows.Forms.ToolStripMenuItem MenuRegistrarVenta;
+        private System.Windows.Forms.ToolStripMenuItem MenuDetalleVenta;
     }
 }

@@ -54,6 +54,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.BGuardarCliente = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVProductosVenta = new System.Windows.Forms.DataGridView();
             this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,10 +69,12 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BRegistrarVenta = new System.Windows.Forms.Button();
+            this.BCancelar = new System.Windows.Forms.Button();
             this.GBInfoCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProductosVenta)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +89,8 @@
             this.GBInfoCliente.Controls.Add(this.LDNIUser);
             this.GBInfoCliente.ForeColor = System.Drawing.Color.Brown;
             this.GBInfoCliente.Location = new System.Drawing.Point(438, 159);
+            this.GBInfoCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.GBInfoCliente.Location = new System.Drawing.Point(438, 132);
             this.GBInfoCliente.Margin = new System.Windows.Forms.Padding(4);
             this.GBInfoCliente.Name = "GBInfoCliente";
             this.GBInfoCliente.Padding = new System.Windows.Forms.Padding(4);
@@ -171,7 +176,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox1.Location = new System.Drawing.Point(39, 159);
+            this.groupBox1.Location = new System.Drawing.Point(40, 138);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -239,7 +244,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.ForeColor = System.Drawing.Color.Brown;
-            this.groupBox2.Location = new System.Drawing.Point(39, 288);
+            this.groupBox2.Location = new System.Drawing.Point(39, 240);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -375,13 +380,17 @@
             this.BGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGuardarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarCliente.Location = new System.Drawing.Point(875, 309);
+            this.BGuardarCliente.Location = new System.Drawing.Point(875, 261);
             this.BGuardarCliente.Name = "BGuardarCliente";
             this.BGuardarCliente.Size = new System.Drawing.Size(121, 58);
             this.BGuardarCliente.TabIndex = 57;
             this.BGuardarCliente.Text = "Agregar Producto";
             this.BGuardarCliente.UseVisualStyleBackColor = false;
             // 
+            // DGVProductosVenta
+            // 
+            this.DGVProductosVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProductosVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -392,10 +401,41 @@
             this.Cantidad,
             this.Subtotal,
             this.Accion});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 427);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(689, 150);
-            this.dataGridView1.TabIndex = 58;
+            this.DGVProductosVenta.Location = new System.Drawing.Point(40, 370);
+            this.DGVProductosVenta.Name = "DGVProductosVenta";
+            this.DGVProductosVenta.Size = new System.Drawing.Size(689, 202);
+            this.DGVProductosVenta.TabIndex = 58;
+            // 
+            // ID_Producto
+            // 
+            this.ID_Producto.HeaderText = "ID Producto";
+            this.ID_Producto.Name = "ID_Producto";
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.HeaderText = "Nombre Producto";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // Accion
+            // 
+            this.Accion.HeaderText = "Accion";
+            this.Accion.Name = "Accion";
             // 
             // ID_Producto
             // 
@@ -495,7 +535,7 @@
             // 
             this.textBox4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.Coral;
-            this.textBox4.Location = new System.Drawing.Point(792, 551);
+            this.textBox4.Location = new System.Drawing.Point(796, 454);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(160, 26);
@@ -507,7 +547,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(793, 533);
+            this.label11.Location = new System.Drawing.Point(793, 433);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 18);
@@ -517,23 +557,51 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.BCancelar);
+            this.panel1.Controls.Add(this.BRegistrarVenta);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(-4, -3);
+            this.panel1.Controls.Add(this.DGVProductosVenta);
+            this.panel1.Location = new System.Drawing.Point(-1, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1299, 758);
+            this.panel1.Size = new System.Drawing.Size(1296, 761);
             this.panel1.TabIndex = 60;
+            // 
+            // BRegistrarVenta
+            // 
+            this.BRegistrarVenta.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BRegistrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BRegistrarVenta.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BRegistrarVenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BRegistrarVenta.Location = new System.Drawing.Point(796, 532);
+            this.BRegistrarVenta.Name = "BRegistrarVenta";
+            this.BRegistrarVenta.Size = new System.Drawing.Size(160, 40);
+            this.BRegistrarVenta.TabIndex = 60;
+            this.BRegistrarVenta.Text = "Registrar Venta";
+            this.BRegistrarVenta.UseVisualStyleBackColor = false;
+            // 
+            // BCancelar
+            // 
+            this.BCancelar.BackColor = System.Drawing.Color.Brown;
+            this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelar.Location = new System.Drawing.Point(995, 557);
+            this.BCancelar.Name = "BCancelar";
+            this.BCancelar.Size = new System.Drawing.Size(113, 46);
+            this.BCancelar.TabIndex = 61;
+            this.BCancelar.Text = "Cancelar";
+            this.BCancelar.UseVisualStyleBackColor = false;
             // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BGuardarCliente);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.LUsers);
             this.Controls.Add(this.GBInfoCliente);
             this.Controls.Add(this.panel1);
@@ -548,7 +616,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProductosVenta)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -585,7 +653,7 @@
         private System.Windows.Forms.Button BGuardarCliente;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVProductosVenta;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;
@@ -600,5 +668,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BCancelar;
+        private System.Windows.Forms.Button BRegistrarVenta;
     }
 }
