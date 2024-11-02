@@ -132,6 +132,7 @@ CREATE TABLE CompraDetalle
   Cantidad INT NOT NULL,
   Subtotal DECIMAL (10,2) NOT NULL,
   Precio_compra DECIMAL (10,2) NOT NULL,
+  -- Quitar precio_venta no hace falta
   Precio_venta DECIMAL (10,2) NOT NULL,
   Fecha_registro DATETIME DEFAULT getdate(),
   Id_compra INT NOT NULL,
@@ -244,6 +245,7 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuReportes'),
 (1,'MenuSalir')
 
+-- Permiso de MenuCompras para el administrador
 INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuCompras')
 
