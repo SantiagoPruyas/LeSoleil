@@ -63,10 +63,10 @@ namespace LeSoleil_Taller2
             abrirFormulario((ToolStripMenuItem)sender, new FormBackUp());
         }
 
-        private void MenuVentas_Click(object sender, EventArgs e)
-        {
+        /*private void MenuVentas_Click(object sender, EventArgs e)
+        /{
             abrirFormulario((ToolStripMenuItem)sender, new FormVentas());
-        }
+        }*/
 
         private void MenuClientes_Click(object sender, EventArgs e)
         {
@@ -105,7 +105,15 @@ namespace LeSoleil_Taller2
             MN_nombreUsuario.Text = usuarioActual.User;
         }
 
+        private void MenuRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormVentas());
+        }
 
+        private void MenuDetalleVenta_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormVentasDetalle());
+        }
     }
 
     // Clase para el renderizado personalizado de los ítems del menú
