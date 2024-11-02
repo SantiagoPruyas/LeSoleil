@@ -32,6 +32,7 @@
             this.MSMenu = new System.Windows.Forms.MenuStrip();
             this.MenuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuBackup = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.MSMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuUsuarios,
             this.MenuBackup,
+            this.MenuCompras,
             this.MenuVentas,
             this.MenuClientes,
             this.MenuProductos,
@@ -91,6 +93,19 @@
             this.MenuBackup.Text = "back up";
             this.MenuBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuBackup.Click += new System.EventHandler(this.MenuBackup_Click);
+            // 
+            // MenuCompras
+            // 
+            this.MenuCompras.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCompras.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuCompras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuCompras.Name = "MenuCompras";
+            this.MenuCompras.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuCompras.Size = new System.Drawing.Size(78, 85);
+            this.MenuCompras.Text = "compras";
+            this.MenuCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuCompras.Click += new System.EventHandler(this.MenuCompras_Click);
             // 
             // MenuVentas
             // 
@@ -254,5 +269,6 @@
         private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label MN_nombreUsuario;
+        private System.Windows.Forms.ToolStripMenuItem MenuCompras;
     }
 }

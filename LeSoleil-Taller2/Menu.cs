@@ -83,6 +83,11 @@ namespace LeSoleil_Taller2
             abrirFormulario((ToolStripMenuItem)sender, new FormReportes());
         }
 
+        private void MenuCompras_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormCompras(usuarioActual));
+        }
+
         private void MenuSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -103,9 +108,7 @@ namespace LeSoleil_Taller2
             }
 
             MN_nombreUsuario.Text = usuarioActual.User;
-        }
-
-
+        } 
     }
 
     // Clase para el renderizado personalizado de los ítems del menú

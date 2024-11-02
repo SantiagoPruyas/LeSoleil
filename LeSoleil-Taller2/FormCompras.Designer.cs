@@ -1,6 +1,6 @@
 ﻿namespace LeSoleil_Taller2
 {
-    partial class FormVentas
+    partial class FormCompras
     {
         /// <summary>
         /// Required designer variable.
@@ -158,9 +158,9 @@
             this.LUsers.Location = new System.Drawing.Point(34, 41);
             this.LUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LUsers.Name = "LUsers";
-            this.LUsers.Size = new System.Drawing.Size(185, 29);
+            this.LUsers.Size = new System.Drawing.Size(206, 29);
             this.LUsers.TabIndex = 4;
-            this.LUsers.Text = "Registrar Venta";
+            this.LUsers.Text = "Registrar Compra";
             this.LUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // groupBox1
@@ -523,7 +523,7 @@
             this.panel1.Size = new System.Drawing.Size(1299, 758);
             this.panel1.TabIndex = 60;
             // 
-            // FormVentas
+            // FormCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -539,9 +539,9 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormVentas";
+            this.Name = "FormCompras";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormVentas_Load);
+            this.Load += new System.EventHandler(this.FormCompras_Load);
             this.GBInfoCliente.ResumeLayout(false);
             this.GBInfoCliente.PerformLayout();
             this.groupBox1.ResumeLayout(false);
