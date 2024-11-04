@@ -507,3 +507,21 @@ exec SP_ALTAUSUARIO 6, @Respuesta output, @mensaje output
 select @Respuesta
 
 select @mensaje
+
+
+---------------------------------- PROCEDIMIENTOS PRODUCTO ----------------------------------
+
+-- agregar atributos a la tabla
+ALTER TABLE Producto
+ADD Stock_minimo INT NOT NULL DEFAULT 0,
+    Imagen TEXT;
+
+ALTER TABLE Producto
+ADD Codigo VARCHAR(20) NOT NULL;
+
+ALTER TABLE Producto
+DROP COLUMN Imagen;
+
+ALTER TABLE Producto
+ADD Imagen VARBINARY(MAX);
+
