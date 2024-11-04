@@ -37,7 +37,9 @@
             this.MenuRegistrarVenta = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuDetalleVenta = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.LLeSoleil = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.PContenedor = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.MN_nombreUsuario = new System.Windows.Forms.Label();
-            this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.MSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,14 +133,14 @@
             // MenuRegistrarVenta
             // 
             this.MenuRegistrarVenta.Name = "MenuRegistrarVenta";
-            this.MenuRegistrarVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegistrarVenta.Size = new System.Drawing.Size(162, 22);
             this.MenuRegistrarVenta.Text = "Registrar Venta";
             this.MenuRegistrarVenta.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
             // MenuDetalleVenta
             // 
             this.MenuDetalleVenta.Name = "MenuDetalleVenta";
-            this.MenuDetalleVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuDetalleVenta.Size = new System.Drawing.Size(162, 22);
             this.MenuDetalleVenta.Text = "Detalle Venta";
             this.MenuDetalleVenta.Click += new System.EventHandler(this.MenuDetalleVenta_Click);
             // 
@@ -158,6 +158,20 @@
             this.MenuClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuClientes.Click += new System.EventHandler(this.MenuClientes_Click);
             // 
+            // MenuCategorias
+            // 
+            this.MenuCategorias.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuCategorias.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuCategorias.Image = ((System.Drawing.Image)(resources.GetObject("MenuCategorias.Image")));
+            this.MenuCategorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuCategorias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuCategorias.Name = "MenuCategorias";
+            this.MenuCategorias.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuCategorias.Size = new System.Drawing.Size(90, 85);
+            this.MenuCategorias.Text = "Categorias";
+            this.MenuCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuCategorias.Click += new System.EventHandler(this.MenuCategorias_Click);
+            // 
             // MenuProductos
             // 
             this.MenuProductos.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +185,19 @@
             this.MenuProductos.Text = "Productos";
             this.MenuProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuProductos.Click += new System.EventHandler(this.MenuProductos_Click);
+            // 
+            // MenuProveedores
+            // 
+            this.MenuProveedores.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuProveedores.Image = ((System.Drawing.Image)(resources.GetObject("MenuProveedores.Image")));
+            this.MenuProveedores.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuProveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuProveedores.Name = "MenuProveedores";
+            this.MenuProveedores.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuProveedores.Size = new System.Drawing.Size(102, 85);
+            this.MenuProveedores.Text = "Proveedores";
+            this.MenuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // MenuReportes
             // 
@@ -252,32 +279,6 @@
             this.MN_nombreUsuario.Size = new System.Drawing.Size(86, 18);
             this.MN_nombreUsuario.TabIndex = 6;
             this.MN_nombreUsuario.Text = "UsuarioActual";
-            // 
-            // MenuProveedores
-            // 
-            this.MenuProveedores.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuProveedores.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MenuProveedores.Image = ((System.Drawing.Image)(resources.GetObject("MenuProveedores.Image")));
-            this.MenuProveedores.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MenuProveedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuProveedores.Name = "MenuProveedores";
-            this.MenuProveedores.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.MenuProveedores.Size = new System.Drawing.Size(102, 85);
-            this.MenuProveedores.Text = "Proveedores";
-            this.MenuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // MenuCategorias
-            // 
-            this.MenuCategorias.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuCategorias.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MenuCategorias.Image = ((System.Drawing.Image)(resources.GetObject("MenuCategorias.Image")));
-            this.MenuCategorias.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MenuCategorias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuCategorias.Name = "MenuCategorias";
-            this.MenuCategorias.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.MenuCategorias.Size = new System.Drawing.Size(90, 85);
-            this.MenuCategorias.Text = "Categorias";
-            this.MenuCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // Menu
             // 

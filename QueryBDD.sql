@@ -169,6 +169,9 @@ ADD
 ALTER TABLE Usuario
 ALTER COLUMN Telefono VARCHAR(20);
 
+ALTER TABLE Categoria
+ALTER COLUMN Descripcion VARCHAR(500);
+
 -- Drop columna Sexo
 ALTER TABLE Usuario
 DROP COLUMN Sexo;
@@ -195,11 +198,16 @@ ADD CONSTRAINT FK_Permiso_Perfil
 FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
 
 */
+
+ALTER TABLE Categoria
+ALTER COLUMN Descripcion VARCHAR(500);
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
 SELECT * from Perfil
 SELECT * from Permiso
+SELECT * from Categoria
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
@@ -248,6 +256,10 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 -- Permiso de MenuCompras para el administrador
 INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuCompras')
+
+-- Permiso de MenuCategorias para el administrador
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(1,'MenuCategorias')
 
 UPDATE Permiso
 SET Nombre = 'MenuBackup'

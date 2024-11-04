@@ -67,9 +67,8 @@ namespace LeSoleil_Taller2
 
         private void FormCategoria_Load(object sender, EventArgs e)
         {
-
             // Mostrar todos los usuarios activos en la tabla
-            List<Categoria> listaCategoria = new CN_Categoria().Listar().Where(u => u.Estado == false).ToList();
+            List<Categoria> listaCategoria = new CN_Categoria().Listar().Where(u => u.Estado == true).ToList();
 
             foreach (Categoria item in listaCategoria)
             {
@@ -164,7 +163,7 @@ namespace LeSoleil_Taller2
                         // Si el usuario presiona 'Sí', dar de baja el usuario
                         if (result == DialogResult.Yes)
                         {
-                            bool respuesta = new CN_Usuario().DarAlta(Id_Categoria, out Mensaje);
+                            bool respuesta = new CN_Categoria().DarAlta(Id_Categoria, out Mensaje);
                             if (respuesta)
                             {
                                 MessageBox.Show("Categoria dada de alta en el sistema!");
@@ -192,7 +191,7 @@ namespace LeSoleil_Taller2
                         // Si el usuario presiona 'Sí', dar de baja el usuario
                         if (result == DialogResult.Yes)
                         {
-                            bool respuesta = new CN_Usuario().DarBaja(Id_Categoria, out Mensaje);
+                            bool respuesta = new CN_Categoria().DarBaja(Id_Categoria, out Mensaje);
                             if (respuesta)
                             {
                                 MessageBox.Show("Categoria dada de baja del sistema!");
