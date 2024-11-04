@@ -179,7 +179,7 @@
             this.LProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LProductos.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LProductos.ForeColor = System.Drawing.Color.Coral;
-            this.LProductos.Location = new System.Drawing.Point(39, 32);
+            this.LProductos.Location = new System.Drawing.Point(24, 23);
             this.LProductos.Name = "LProductos";
             this.LProductos.Size = new System.Drawing.Size(148, 29);
             this.LProductos.TabIndex = 43;
@@ -494,7 +494,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LFondoProductos);
             this.Name = "FormProductos";
-            this.Text = "FormProductos";
+            this.Text = "Productos";
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
