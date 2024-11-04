@@ -203,12 +203,29 @@ FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
 ALTER TABLE Categoria
 ALTER COLUMN Descripcion VARCHAR(500);
 
+-- agregar atributos a la tabla Producto
+ALTER TABLE Producto
+Drop Column Stock_min;
+
+-- Drop Column id_compra
+ALTER TABLE Producto
+DROP CONSTRAINT FK__Producto__Id_com__6A30C649;
+ALTER TABLE Producto
+Drop Column Id_compra;
+
+ALTER TABLE Producto
+ADD Codigo VARCHAR(50) NOT NULL;
+
+ALTER TABLE Producto
+ADD Imagen VARBINARY(MAX);
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
 SELECT * from Perfil
 SELECT * from Permiso
 SELECT * from Categoria
+SELECT * from Producto
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
@@ -645,29 +662,16 @@ select @mensaje
 
 
 ---------------------------------- PROCEDIMIENTOS PRODUCTO ----------------------------------
-
--- Select de Producto
-select Id_Producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Descripcion[Descripcion], Imagen, Stock, Stock_minimo, Precio_compra, Precio_venta, p.Baja from Producto p
-inner join Categoria c on c.Id_Categoria = p.Id_Categoria
-
--- agregar atributos a la tabla
-ALTER TABLE Producto
-ADD Stock_minimo INT NOT NULL DEFAULT 0,
-    Imagen TEXT;
-
-ALTER TABLE Producto
-ADD Codigo VARCHAR(20) NOT NULL;
-
-ALTER TABLE Producto
-DROP COLUMN Imagen;
-
-ALTER TABLE Producto
-ADD Imagen VARBINARY(MAX);
+SELECT Id_Producto, Codigo, Nombre, Descripcion, Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto
 
 create PROC SP_REGISTRARPRODUCTO(
-@Codigo varchar(20),
+@Codigo varchar(50),
 @Nombre varchar(50),
 @Descripcion varchar(100),
+@Precio_compra decimal (10,2),
+@Precio_venta decimal (10,2),
+@stock int,
+@stock_min int,
 @Id_Categoria int,
 @Imagen VARBINARY(MAX),
 @Baja bit,
@@ -680,8 +684,8 @@ begin
 
 	IF NOT EXISTS(SELECT * FROM producto WHERE Codigo = @Codigo)
 	begin 
-		insert into producto(Codigo,Nombre,Descripcion,Id_Categoria, Imagen, Baja) 
-		values (@Codigo, @Nombre, @Descripcion, @Id_Categoria, @Imagen, @Baja)
+		insert into Producto(Codigo,Nombre,Descripcion,Precio_compra,Precio_venta,Stock,Stock_minimo,Id_Categoria, Imagen, Baja) 
+		values (@Codigo, @Nombre, @Descripcion, @Id_Categoria, @Precio_compra, @Precio_venta, @stock, @Stock_min, @Imagen, @Baja)
 
 		set @IdProductoResultado = SCOPE_IDENTITY()
 	end
@@ -693,18 +697,22 @@ go
 
 create procedure SP_EDITARPRODUCTO(
 @Id_producto int,
-@Codigo varchar(20),
-@Nombre varchar(30),
-@Descripcion varchar(30),
+@Codigo varchar(50),
+@Nombre varchar(50),
+@Descripcion varchar(100),
+@Precio_compra decimal (10,2),
+@Precio_venta decimal (10,2),
+@stock int,
+@stock_min int,
 @Id_Categoria int,
 @Imagen VARBINARY(MAX),
 @Baja bit,
-@IdProductoResultado int output,
+@Resultado bit output,
 @Mensaje varchar(500) output
 )
 as
 begin 
-	set @IdProductoResultado = 1
+	set @Resultado = 1
 	set @Mensaje = ''
 
 	if not exists (select * from Producto where Codigo = @Codigo and Id_producto != @Id_producto)
@@ -713,13 +721,17 @@ begin
 		Codigo = @Codigo,
 		Nombre = @Nombre,
 		Descripcion = @Descripcion,
+		Precio_compra = @Precio_compra,
+		Precio_venta = @Precio_venta,
+		Stock = @stock,
+		Stock_minimo = @stock_min,
 		Id_Categoria = @Id_Categoria,
 		Imagen = @Imagen,
 		Baja = @Baja
 		where Id_producto = @Id_producto
 	ELSE
 	begin
-		set @IdProductoResultado = 0
+		set @Resultado = 0
 		set @Mensaje = 'Ya existe un producto con el mismo codigo'
 	end
 end
@@ -737,16 +749,6 @@ begin
 	set @Mensaje = ''
 	declare @pasoreglas bit = 1
 
-	if exists (select * from CompraDetalle dc
-	inner join Producto p ON p.Id_producto = dc.Id_producto
-	where p.Id_producto = @Id_producto
-	)
-	begin
-		set @pasoreglas = 0
-		set @Respuesta = 0
-		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una COMPRA\n'
-	end
-
 	if exists (select * from VentaDetalle dv
 	inner join Producto p ON p.Id_producto = dv.Id_producto
 	where p.Id_producto = @Id_producto
@@ -757,14 +759,12 @@ begin
 		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n'
 	end
 
-
 	if(@pasoreglas = 1)
 	begin
 		delete from Producto where Id_producto = @Id_producto
 		set @Respuesta = 1
 	end 
 end
-
 
 ---- BAJA PRODUCTO
 create PROC SP_BAJAPRODUCTO(

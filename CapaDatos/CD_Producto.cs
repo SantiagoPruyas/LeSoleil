@@ -35,7 +35,7 @@ namespace CapaDatos
                         {
                             lista.Add(new Producto()
                             {
-                                Id_Producto = Convert.ToInt32(dr["Id_Producto"]),
+                                Id_producto = Convert.ToInt32(dr["Id_Producto"]),
                                 Nombre = dr["Nombre"].ToString(),
                                 Apellido = dr["Apellido"].ToString(),
                                 User = dr["Producto"].ToString(),
