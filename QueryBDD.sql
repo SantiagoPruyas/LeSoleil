@@ -240,7 +240,6 @@ WHERE Id_usuario = 3;
 -- Insertar nuevos valores
 UPDATE Usuario
 SET DNI = '28345698',
-    Sexo = 'Masculino',
     Fecha_nacimiento = '1990-10-02'
 WHERE Id_usuario = 4;
 
@@ -523,7 +522,7 @@ select @mensaje
 /* ---------- PROCEDIMIENTOS PARA CATEGORIA -----------------*/
 create PROC SP_RegistrarCategoria(
 @Nombre varchar(50),
-@Descripcion varchar(50),
+@Descripcion varchar(500),
 @Resultado int output,
 @Mensaje varchar(500) output
 )as
@@ -545,7 +544,7 @@ go
 create procedure sp_EditarCategoria(
 @IdCategoria int,
 @Nombre varchar(50),
-@Descripcion varchar(100),
+@Descripcion varchar(500),
 @Resultado bit output,
 @Mensaje varchar(500) output
 )

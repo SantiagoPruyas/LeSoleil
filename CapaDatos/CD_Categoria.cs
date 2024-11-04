@@ -102,6 +102,7 @@ namespace CapaDatos
                 {
 
                     SqlCommand cmd = new SqlCommand("sp_EditarCategoria", oconexion);
+                    cmd.Parameters.AddWithValue("IdCategoria", obj.Id_Categoria);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -140,7 +141,7 @@ namespace CapaDatos
                 {
 
                     SqlCommand cmd = new SqlCommand("sp_EliminarCategoria", oconexion);
-                    cmd.Parameters.AddWithValue("Id_Categoria", obj.Id_Categoria);
+                    cmd.Parameters.AddWithValue("IdCategoria", obj.Id_Categoria);
                     cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
 
