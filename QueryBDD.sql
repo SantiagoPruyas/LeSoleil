@@ -507,3 +507,125 @@ exec SP_ALTAUSUARIO 6, @Respuesta output, @mensaje output
 select @Respuesta
 
 select @mensaje
+
+/* ---------- PROCEDIMIENTOS PARA CATEGORIA -----------------*/
+create PROC SP_RegistrarCategoria(
+@Nombre varchar(50),
+@Descripcion varchar(50),
+@Resultado int output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 0
+	IF NOT EXISTS (SELECT * FROM CATEGORIA WHERE Nombre = @Nombre)
+	begin
+		insert into CATEGORIA(Nombre,Descripcion,Estado) values (@Nombre,@Descripcion,1)
+		set @Resultado = SCOPE_IDENTITY()
+	end
+	ELSE
+		set @Mensaje = 'No se puede repetir el nombre de una categoria'
+	
+end
+
+
+go
+
+create procedure sp_EditarCategoria(
+@IdCategoria int,
+@Nombre varchar(50),
+@Descripcion varchar(100),
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (SELECT * FROM CATEGORIA WHERE Nombre =@Nombre and Id_Categoria != @IdCategoria)
+		update CATEGORIA set
+		Nombre = @Nombre,
+		Descripcion = @Descripcion
+		where Id_Categoria = @IdCategoria
+	ELSE
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'No se puede repetir el nombre de una categoria'
+	end
+
+end
+
+go
+
+create procedure sp_EliminarCategoria(
+@IdCategoria int,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	SET @Resultado = 1
+	IF NOT EXISTS (
+	 select *  from CATEGORIA c
+	 inner join PRODUCTO p on p.Id_Categoria = c.Id_Categoria
+	 where c.Id_Categoria = @IdCategoria
+	)
+	begin
+	 delete top(1) from CATEGORIA where Id_Categoria = @IdCategoria
+	end
+	ELSE
+	begin
+		SET @Resultado = 0
+		set @Mensaje = 'La categoria se encuentara relacionada a un producto'
+	end
+
+end
+
+
+-- Baja Categoria
+create PROC SP_BAJACATEGORIA(
+@IdCategoria int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Categoria where Id_Categoria = @IdCategoria)
+		BEGIN
+			UPDATE Categoria set 
+			Estado = 0
+			where Id_Categoria = @IdCategoria
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito la baja de la Categoria'
+		END	
+		ELSE
+			SET @Mensaje = 'El id de Categoria no coindice con ningun otro id';
+end
+-- Fin SP_BAJACATEGORIA
+
+go
+create PROC SP_ALTACATEGORIA(
+@IdCategoria int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Categoria where Id_Categoria = @IdCategoria)
+		BEGIN
+			UPDATE Categoria set 
+			Estado = 1
+			where Id_Categoria = @IdCategoria
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito el alta de la categoria'
+		END	
+		ELSE
+			SET @Mensaje = 'El id de Categoria no coindice con ningun otro id';
+end
+-- Fin SP_ALTACATEGORIA
