@@ -126,6 +126,7 @@ CREATE TABLE Producto
   FOREIGN KEY (Id_Categoria) REFERENCES Categoria(Id_Categoria)
 );
 
+
 CREATE TABLE CompraDetalle
 (
   Id_detalleCompra INT IDENTITY NOT NULL,
@@ -645,6 +646,10 @@ select @mensaje
 
 ---------------------------------- PROCEDIMIENTOS PRODUCTO ----------------------------------
 
+-- Select de Producto
+select Id_Producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Descripcion[Descripcion], Imagen, Stock, Stock_minimo, Precio_compra, Precio_venta, p.Baja from Producto p
+inner join Categoria c on c.Id_Categoria = p.Id_Categoria
+
 -- agregar atributos a la tabla
 ALTER TABLE Producto
 ADD Stock_minimo INT NOT NULL DEFAULT 0,
@@ -658,4 +663,154 @@ DROP COLUMN Imagen;
 
 ALTER TABLE Producto
 ADD Imagen VARBINARY(MAX);
+
+create PROC SP_REGISTRARPRODUCTO(
+@Codigo varchar(20),
+@Nombre varchar(50),
+@Descripcion varchar(100),
+@Id_Categoria int,
+@Imagen VARBINARY(MAX),
+@Baja bit,
+@IdProductoResultado int output,
+@Mensaje varchar(500) output
+) as
+begin 
+	SET @IdProductoResultado = 0
+	SET @Mensaje = ''
+
+	IF NOT EXISTS(SELECT * FROM producto WHERE Codigo = @Codigo)
+	begin 
+		insert into producto(Codigo,Nombre,Descripcion,Id_Categoria, Imagen, Baja) 
+		values (@Codigo, @Nombre, @Descripcion, @Id_Categoria, @Imagen, @Baja)
+
+		set @IdProductoResultado = SCOPE_IDENTITY()
+	end
+	ELSE 
+	SET @Mensaje = 'Ya existe un producto con el mismo codigo'
+end
+
+go
+
+create procedure SP_EDITARPRODUCTO(
+@Id_producto int,
+@Codigo varchar(20),
+@Nombre varchar(30),
+@Descripcion varchar(30),
+@Id_Categoria int,
+@Imagen VARBINARY(MAX),
+@Baja bit,
+@IdProductoResultado int output,
+@Mensaje varchar(500) output
+)
+as
+begin 
+	set @IdProductoResultado = 1
+	set @Mensaje = ''
+
+	if not exists (select * from Producto where Codigo = @Codigo and Id_producto != @Id_producto)
+	
+		update Producto set
+		Codigo = @Codigo,
+		Nombre = @Nombre,
+		Descripcion = @Descripcion,
+		Id_Categoria = @Id_Categoria,
+		Imagen = @Imagen,
+		Baja = @Baja
+		where Id_producto = @Id_producto
+	ELSE
+	begin
+		set @IdProductoResultado = 0
+		set @Mensaje = 'Ya existe un producto con el mismo codigo'
+	end
+end
+
+go
+
+create PROC SP_ELIMINARPRODUCTO(
+@Id_producto int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin 
+	set @Respuesta = 0
+	set @Mensaje = ''
+	declare @pasoreglas bit = 1
+
+	if exists (select * from CompraDetalle dc
+	inner join Producto p ON p.Id_producto = dc.Id_producto
+	where p.Id_producto = @Id_producto
+	)
+	begin
+		set @pasoreglas = 0
+		set @Respuesta = 0
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una COMPRA\n'
+	end
+
+	if exists (select * from VentaDetalle dv
+	inner join Producto p ON p.Id_producto = dv.Id_producto
+	where p.Id_producto = @Id_producto
+	)
+	begin
+		set @pasoreglas = 0
+		set @Respuesta = 0
+		set @Mensaje = @Mensaje + 'No se puede eliminar porque se encuentra relacionado a una VENTA\n'
+	end
+
+
+	if(@pasoreglas = 1)
+	begin
+		delete from Producto where Id_producto = @Id_producto
+		set @Respuesta = 1
+	end 
+end
+
+
+---- BAJA PRODUCTO
+create PROC SP_BAJAPRODUCTO(
+@IdProducto int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Producto where Id_producto = @IdProducto)
+		BEGIN
+			UPDATE Producto set 
+			Baja = 1
+			where Id_producto = @IdProducto
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito la baja del producto'
+		END	
+		ELSE
+			SET @Mensaje = 'El id del Producto no coindice con ningun otro id';
+end
+
+---- ALTA PRODUCTO
+create PROC SP_ALTAPRODUCTO(
+@IdProducto int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Producto where Id_producto = @IdProducto)
+		BEGIN
+			UPDATE Producto set 
+			Baja = 0
+			where Id_producto = @IdProducto
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito el alta del producto'
+		END	
+		ELSE
+			SET @Mensaje = 'El id del Producto no coindice con ningun otro id';
+end
 

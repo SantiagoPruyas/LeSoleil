@@ -45,6 +45,7 @@
     <Compile Include="CD_Categoria.cs" />
     <Compile Include="CD_Perfil.cs" />
     <Compile Include="CD_permiso.cs" />
+    <Compile Include="CD_Producto.cs" />
     <Compile Include="CD_Usuario.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
