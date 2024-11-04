@@ -70,11 +70,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCategorias.cs">
+    <Compile Include="FormCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCategorias.Designer.cs">
-      <DependentUpon>FormCategorias.cs</DependentUpon>
+    <Compile Include="FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategoriasEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoriasEditar.Designer.cs">
+      <DependentUpon>FormCategoriasEditar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCompras.cs">
       <SubType>Form</SubType>
@@ -160,8 +166,11 @@
     <EmbeddedResource Include="FormBackUp.resx">
       <DependentUpon>FormBackUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCategorias.resx">
-      <DependentUpon>FormCategorias.cs</DependentUpon>
+    <EmbeddedResource Include="FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoriasEditar.resx">
+      <DependentUpon>FormCategoriasEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
