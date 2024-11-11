@@ -1,10 +1,12 @@
 ﻿using CapaEntidad;
+using CapaNegocio;
 using LeSoleil_Taller2.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace LeSoleil_Taller2
 {
     public partial class FormProductos : Form
     {
+        byte[] imagenBytes;
         public FormProductos()
         {
             InitializeComponent();
@@ -24,19 +27,45 @@ namespace LeSoleil_Taller2
         {
 
         }
+        public byte[] ConvertirImagenABytes(System.Drawing.Image imagen)
+        {
+            if (imagen == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Guardar la imagen en el MemoryStream en su formato original
+                imagen.Save(ms, imagen.RawFormat);
+                // Convertir el contenido del MemoryStream a un array de bytes
+                return ms.ToArray();
+            }
+        }
+
+        public System.Drawing.Image ConvertirBytesAImagen(byte[] bytesImagen)
+        {
+            if (bytesImagen == null || bytesImagen.Length == 0)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream(bytesImagen))
+            {
+                return System.Drawing.Image.FromStream(ms);
+            }
+        }
+
         private void LimpiarCamposProducto()
         {
             // Limpiar los TextBox
             TBNombreProducto.Text = "";
             TBPrecioCompra.Text = "";
             TBStockProducto.Text = "";
-            TBTelaProducto.Text = "";
+            TBDescripcion.Text = "";
             TBPrecioVenta.Text = "";
             TBStockMin.Text = "";
             TBImagenProducto.Text = "";
 
             // Limpiar el ComboBox
             CBCategoriaProducto.SelectedIndex = -1;
+            imagenBytes = null;
         }
 
         private void TBNombreProducto_Leave(object sender, EventArgs e)
@@ -77,26 +106,15 @@ namespace LeSoleil_Taller2
             }
         }
 
-        // Validación para la Tela
-        private void TBTelaProducto_Leave(object sender, EventArgs e)
-        {
-                // Validación de que solo contenga letras y espacios, al menos 2 caracteres y no más de 30 caracteres
-                if (!TBTelaProducto.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)) || TBTelaProducto.Text.Length < 2 || TBTelaProducto.Text.Length > 30)
-                {
-                    MessageBox.Show("La tela debe contener solo letras y tener entre 2 y 30 caracteres.");
-                    TBTelaProducto.Focus();
-                }
-        }
-
         // Validación para el Precio de Venta
         private void TBPrecioVenta_Leave(object sender, EventArgs e)
         {
-                // Validación de que sea un número decimal positivo
-                if (!decimal.TryParse(TBPrecioVenta.Text, out decimal precioVenta) || precioVenta <= 0)
-                {
-                    MessageBox.Show("El precio de venta debe ser un número decimal");
-                    TBPrecioVenta.Focus();
-                }
+            // Validación de que sea un número decimal positivo
+            if (!decimal.TryParse(TBPrecioVenta.Text, out decimal precioVenta) || precioVenta <= 0)
+            {
+                MessageBox.Show("El precio de venta debe ser un número decimal");
+                TBPrecioVenta.Focus();
+            }
         }
 
         // Validación para el Stock Mínimo
@@ -113,17 +131,17 @@ namespace LeSoleil_Taller2
         // Validación para la Categoría
         private void CBCategoriaProducto_Leave(object sender, EventArgs e)
         {
-                // Validar que se haya seleccionado una opción en el ComboBox
-                if (CBCategoriaProducto.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Por favor, seleccione una categoría.");
-                    CBCategoriaProducto.Focus();
-                }
+            // Validar que se haya seleccionado una opción en el ComboBox
+            if (CBCategoriaProducto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, seleccione una categoría.");
+                CBCategoriaProducto.Focus();
+            }
         }
 
         private void TBImagenProducto_Leave(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BSeleccionarImagen_Click(object sender, EventArgs e)
@@ -131,7 +149,7 @@ namespace LeSoleil_Taller2
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 // Configurar el filtro para que solo muestre archivos de imagen
-                openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png;*.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Filter = "Archivos de imagen (*.jpg;*.jpeg;*.png;)|*.jpg;*.jpeg;*.png";
                 openFileDialog.Title = "Seleccione una imagen";
 
                 // Mostrar el cuadro de diálogo y verificar si se seleccionó un archivo
@@ -145,6 +163,14 @@ namespace LeSoleil_Taller2
                         {
                             // Asignar la ruta del archivo al TextBox
                             TBImagenProducto.Text = openFileDialog.FileName;
+
+                            // Convertir la imagen a un array de bytes
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                img.Save(ms, img.RawFormat); // Guardar la imagen en el stream en su formato original
+                                imagenBytes = ms.ToArray();  // Obtener el array de bytes
+                            }
+
                         }
                     }
                     catch (OutOfMemoryException)
@@ -159,62 +185,280 @@ namespace LeSoleil_Taller2
 
         private void DGVProductos_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-                if (e.RowIndex < 0)
-                    return;
+            if (e.RowIndex < 0)
+                return;
 
-                if (e.ColumnIndex == 10)
+            if (e.ColumnIndex == 11)
+            {
+                // Pintar la celda normal
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                // Verificar el encabezado de la columna para determinar qué imagen pintar
+                if (DGVProductos.Columns[11].HeaderText == "Dar de Alta")
                 {
-                    // Pintar la celda normal
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                    // Verificar el encabezado de la columna para determinar qué imagen pintar
-                    if (DGVProductos.Columns[10].HeaderText == "Dar de Alta")
-                    {
-                        // Pintar la imagen de "Dar de Alta"
-                        var w = Properties.Resources.altapng.Width;
-                        var h = Properties.Resources.altapng.Height;
-                        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                        e.Graphics.DrawImage(Properties.Resources.altapng, new Rectangle(x, y, w, h));
-                    }
-                    else
-                    {
-                        // Pintar la imagen de "Dar de Baja"
-                        var w = Properties.Resources.deletepng.Width;
-                        var h = Properties.Resources.deletepng.Height;
-                        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-                        e.Graphics.DrawImage(Properties.Resources.deletepng, new Rectangle(x, y, w, h));
-                    }
-
-                    // Marcar como pintado
-                    e.Handled = true;
-                }
-
-                if (e.ColumnIndex == 9)
-                {
-                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-
-                    var w = Properties.Resources.editpng.Width;
-                    var h = Properties.Resources.editpng.Height;
+                    // Pintar la imagen de "Dar de Alta"
+                    var w = Properties.Resources.altapng.Width;
+                    var h = Properties.Resources.altapng.Height;
                     var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                     var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                    e.Graphics.DrawImage(Properties.Resources.editpng, new Rectangle(x, y, w, h));
-                    e.Handled = true;
+                    e.Graphics.DrawImage(Properties.Resources.altapng, new Rectangle(x, y, w, h));
                 }
+                else
+                {
+                    // Pintar la imagen de "Dar de Baja"
+                    var w = Properties.Resources.deletepng.Width;
+                    var h = Properties.Resources.deletepng.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                    e.Graphics.DrawImage(Properties.Resources.deletepng, new Rectangle(x, y, w, h));
+                }
+
+                // Marcar como pintado
+                e.Handled = true;
             }
+
+            if (e.ColumnIndex == 10)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.editpng.Width;
+                var h = Properties.Resources.editpng.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.editpng, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
 
         private void BGuardarProducto_Click(object sender, EventArgs e)
         {
-           
+            string Mensaje = string.Empty;
+
+            // Verificar si todos los campos necesarios tienen datos
+            if (!string.IsNullOrWhiteSpace(TBNombreProducto.Text) &&
+                !string.IsNullOrWhiteSpace(TBDescripcion.Text) &&
+                !string.IsNullOrWhiteSpace(TBPrecioCompra.Text) &&
+                !string.IsNullOrWhiteSpace(TBPrecioVenta.Text) &&
+                !string.IsNullOrWhiteSpace(TBStockProducto.Text) &&
+                !string.IsNullOrWhiteSpace(TBStockMin.Text) &&
+                !string.IsNullOrWhiteSpace(TBCodigoProducto.Text) &&
+                !string.IsNullOrWhiteSpace(CBCategoriaProducto.Text))
+            {
+                Producto objProducto = new Producto()
+                {
+                    Nombre = TBNombreProducto.Text,
+                    Descripcion = TBDescripcion.Text,
+                    Precio_compra = Convert.ToDecimal(TBPrecioCompra.Text),
+                    Precio_venta = Convert.ToDecimal(TBPrecioVenta.Text),
+                    Stock = Convert.ToInt32(TBStockProducto.Text),
+                    Stock_minimo = Convert.ToInt32(TBStockMin.Text),
+                    Codigo = TBCodigoProducto.Text,
+                    oCategoria = new Categoria() { Id_Categoria = Convert.ToInt32(((OpcionCombo)CBCategoriaProducto.SelectedItem).Valor) },
+                    Imagen = imagenBytes,
+                    Baja = false
+                };
+
+                int IdProductoGenerado = new CN_Producto().Registrar(objProducto, out Mensaje);
+
+                if (IdProductoGenerado != 0)
+                {
+                    if (DGVProductos.Columns[11].HeaderText == "Dar de Baja")
+                    {
+                        // Adicionar nuevo renglón en el DataGridView
+                        int n = DGVProductos.Rows.Add();
+
+                        // Colocar la información en las celdas correspondientes
+                        DGVProductos.Rows[n].Cells[0].Value = IdProductoGenerado;
+                        DGVProductos.Rows[n].Cells[1].Value = TBCodigoProducto.Text;
+                        DGVProductos.Rows[n].Cells[2].Value = TBNombreProducto.Text;
+                        DGVProductos.Rows[n].Cells[3].Value = TBStockProducto.Text;
+                        DGVProductos.Rows[n].Cells[4].Value = TBStockMin.Text;
+                        DGVProductos.Rows[n].Cells[5].Value = TBPrecioCompra.Text;
+                        DGVProductos.Rows[n].Cells[6].Value = TBPrecioVenta.Text;
+                        DGVProductos.Rows[n].Cells[7].Value = TBDescripcion.Text;
+                        DGVProductos.Rows[n].Cells[8].Value = CBCategoriaProducto.Text;
+                        DGVProductos.Rows[n].Cells[9].Value = ConvertirBytesAImagen(imagenBytes);
+
+                        LimpiarCamposProducto();
+
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                    }
+                    else
+                    {
+                        LimpiarCamposProducto();
+
+                        MessageBox.Show("Usuario guardado exitosamente.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(Mensaje);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+            }
         }
 
         private void BCancelarProducto_Click(object sender, EventArgs e)
         {
             LimpiarCamposProducto();
+        }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+            List<Categoria> listaCategoria = new CN_Categoria().Listar();
+
+            foreach (Categoria item in listaCategoria)
+            {
+                CBCategoriaProducto.Items.Add(new OpcionCombo() { Valor = item.Id_Categoria, Texto = item.Nombre });
+                CBCategoriaProducto.DisplayMember = "Texto";
+                CBCategoriaProducto.ValueMember = "Valor";
+                CBCategoriaProducto.SelectedIndex = 0;
+            }
+
+            // Mostrar todos los usuarios activos en la tabla
+            List<Producto> listaProducto = new CN_Producto().Listar().Where(u => u.Baja == false).ToList();
+
+            foreach (Producto item in listaProducto)
+            {
+                DGVProductos.Rows.Add(new object[] {
+                    item.Id_producto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.Stock,
+                    item.Stock_minimo,
+                    item.Precio_compra,
+                    item.Precio_venta,
+                    item.Descripcion,
+                    item.oCategoria.Nombre,
+                    ConvertirBytesAImagen(item.Imagen),
+                });
+            }
+        }
+
+        private void DGVProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Id_producto = Convert.ToInt32(DGVProductos.Rows[e.RowIndex].Cells[0].Value);
+            string Mensaje = string.Empty;
+
+            // Verificar si la celda clickeada es el botón "bajaProducto"
+            if (e.ColumnIndex == DGVProductos.Columns["bajaProducto"].Index && e.RowIndex >= 0)
+            {
+                if (DGVProductos.Columns[11].HeaderText == "Dar de Alta")
+                {
+                    // Verificar que la fila no sea la nueva fila sin confirmar
+                    if (!DGVProductos.Rows[e.RowIndex].IsNewRow)
+                    {
+                        // Mostrar mensaje de confirmación
+                        DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de alta este producto?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        // Si el usuario presiona 'Sí', dar de baja el usuario
+                        if (result == DialogResult.Yes)
+                        {
+                            bool respuesta = new CN_Producto().DarAlta(Id_producto, out Mensaje);
+                            if (respuesta)
+                            {
+                                MessageBox.Show("Producto dado de alta del sistema!");
+                                DGVProductos.Rows.RemoveAt(e.RowIndex);
+                            }
+                            else
+                            {
+                                MessageBox.Show(Mensaje);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede dar de alta al producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    // Verificar que la fila no sea la nueva fila sin confirmar
+                    if (!DGVProductos.Rows[e.RowIndex].IsNewRow)
+                    {
+                        // Mostrar mensaje de confirmación
+                        DialogResult result = MessageBox.Show("¿Está seguro de que desea dar de baja este producto?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        // Si el usuario presiona 'Sí', dar de baja el usuario
+                        if (result == DialogResult.Yes)
+                        {
+                            bool respuesta = new CN_Producto().DarBaja(Id_producto, out Mensaje);
+                            if (respuesta)
+                            {
+                                MessageBox.Show("Producto dado de baja del sistema!");
+                                DGVProductos.Rows.RemoveAt(e.RowIndex);
+                            }
+                            else
+                            {
+                                MessageBox.Show(Mensaje);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede dar de baja al producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+            // Verificar si la celda clickeada es el botón "Modificar"
+            else if (e.ColumnIndex == DGVProductos.Columns["editarProducto"].Index && e.RowIndex >= 0)
+            {
+                // Obtener los valores actuales de la fila seleccionada
+                int id = Convert.ToInt32(DGVProductos.Rows[e.RowIndex].Cells[0].Value); // Convertir el valor a int
+                string codigo = DGVProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string nombre = DGVProductos.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string stock = DGVProductos.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string stock_min = DGVProductos.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string precio_compra = DGVProductos.Rows[e.RowIndex].Cells[5].Value.ToString();
+                string precio_venta = DGVProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
+                string descripcion = DGVProductos.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string categoria = DGVProductos.Rows[e.RowIndex].Cells[8].Value.ToString();
+                System.Drawing.Image img = (System.Drawing.Image)DGVProductos.Rows[e.RowIndex].Cells[9].Value;
+                byte[] imagen = ConvertirImagenABytes(img);
+
+
+                // Crear y abrir el formulario de edición con los datos
+                FormProductosEditar editarForm = new FormProductosEditar(
+                    id, codigo, nombre, stock, stock_min, precio_compra, precio_venta, descripcion, categoria, imagen, e.RowIndex, this);
+
+                // Establecer la propiedad Owner (propietario del formulario)
+                editarForm.Owner = this; // 'this' es el formulario principal UsuariosForm
+
+                // Mostrar el formulario de edición como un cuadro de diálogo modal
+                editarForm.ShowDialog();
+            }
+        }
+        public void ActualizarProducto(int rowIndex, int id, string codigo, string nombre, string stock,
+        string stock_min, string precio_compra, string precio_venta, string descripcion, string categoria, System.Drawing.Image imagen)
+        {
+            DGVProductos.Rows[rowIndex].Cells[0].Value = id;
+            DGVProductos.Rows[rowIndex].Cells[1].Value = codigo;
+            DGVProductos.Rows[rowIndex].Cells[2].Value = nombre;
+            DGVProductos.Rows[rowIndex].Cells[3].Value = stock;
+            DGVProductos.Rows[rowIndex].Cells[4].Value = stock_min;
+            DGVProductos.Rows[rowIndex].Cells[5].Value = precio_compra;
+            DGVProductos.Rows[rowIndex].Cells[6].Value = precio_venta;
+            DGVProductos.Rows[rowIndex].Cells[7].Value = descripcion;
+            DGVProductos.Rows[rowIndex].Cells[8].Value = categoria;
+            DGVProductos.Rows[rowIndex].Cells[9].Value = imagen;
+
+            MessageBox.Show("Datos actualizados correctamente.");
+        }
+
+        private void TBDescripcionProducto_Leave(object sender, EventArgs e)
+        {
+            // Validación de que solo contenga letras y espacios, al menos 2 caracteres y no más de 30 caracteres
+            if (!TBDescripcion.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)) || TBDescripcion.Text.Length < 2 || TBDescripcion.Text.Length > 500)
+            {
+                MessageBox.Show("La tela debe contener solo letras y tener entre 2 y 500 caracteres.");
+                TBDescripcion.Focus();
+            }
         }
     }
     }

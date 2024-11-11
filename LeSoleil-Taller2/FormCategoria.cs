@@ -67,7 +67,7 @@ namespace LeSoleil_Taller2
 
         private void FormCategoria_Load(object sender, EventArgs e)
         {
-            // Mostrar todos los usuarios activos en la tabla
+            // Mostrar todos las categorias activos en la tabla
             List<Categoria> listaCategoria = new CN_Categoria().Listar().Where(u => u.Estado == true).ToList();
 
             foreach (Categoria item in listaCategoria)

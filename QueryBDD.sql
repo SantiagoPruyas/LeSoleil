@@ -662,7 +662,8 @@ select @mensaje
 
 
 ---------------------------------- PROCEDIMIENTOS PRODUCTO ----------------------------------
-SELECT Id_Producto, Codigo, Nombre, Descripcion, Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto
+SELECT Id_producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p 
+inner join Categoria c on c.Id_Categoria = p.Id_Categoria
 
 create PROC SP_REGISTRARPRODUCTO(
 @Codigo varchar(50),

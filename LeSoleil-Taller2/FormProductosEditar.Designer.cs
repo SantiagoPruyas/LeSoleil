@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.LIDUser = new System.Windows.Forms.Label();
+            this.LIDProducto = new System.Windows.Forms.Label();
             this.BEditarCancelar = new System.Windows.Forms.Button();
             this.BEditarGuardar = new System.Windows.Forms.Button();
             this.LEditarProducto = new System.Windows.Forms.Label();
@@ -37,7 +37,6 @@
             this.LCodigoProducto = new System.Windows.Forms.Label();
             this.BSeleccionarImagen = new System.Windows.Forms.Button();
             this.LImagenProducto = new System.Windows.Forms.Label();
-            this.TBImagenProducto = new System.Windows.Forms.TextBox();
             this.LCategoriaProducto = new System.Windows.Forms.Label();
             this.CBCategoriaProducto = new System.Windows.Forms.ComboBox();
             this.LStockMin = new System.Windows.Forms.Label();
@@ -52,8 +51,11 @@
             this.TBPrecioCompra = new System.Windows.Forms.TextBox();
             this.LNombreProducto = new System.Windows.Forms.Label();
             this.TBNombreProducto = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BSeleccionar = new System.Windows.Forms.Button();
             this.LFondoUser = new System.Windows.Forms.Label();
+            this.PBImagen = new System.Windows.Forms.PictureBox();
+            this.TBImagen = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PBImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -69,18 +71,18 @@
             this.label1.Text = "ID:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // LIDUser
+            // LIDProducto
             // 
-            this.LIDUser.AutoSize = true;
-            this.LIDUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LIDUser.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LIDUser.ForeColor = System.Drawing.Color.Coral;
-            this.LIDUser.Location = new System.Drawing.Point(467, 8);
-            this.LIDUser.Name = "LIDUser";
-            this.LIDUser.Size = new System.Drawing.Size(22, 29);
-            this.LIDUser.TabIndex = 78;
-            this.LIDUser.Text = "-";
-            this.LIDUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.LIDProducto.AutoSize = true;
+            this.LIDProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LIDProducto.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LIDProducto.ForeColor = System.Drawing.Color.Coral;
+            this.LIDProducto.Location = new System.Drawing.Point(467, 8);
+            this.LIDProducto.Name = "LIDProducto";
+            this.LIDProducto.Size = new System.Drawing.Size(22, 29);
+            this.LIDProducto.TabIndex = 78;
+            this.LIDProducto.Text = "-";
+            this.LIDProducto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BEditarCancelar
             // 
@@ -88,12 +90,13 @@
             this.BEditarCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarCancelar.Location = new System.Drawing.Point(380, 557);
+            this.BEditarCancelar.Location = new System.Drawing.Point(380, 666);
             this.BEditarCancelar.Name = "BEditarCancelar";
             this.BEditarCancelar.Size = new System.Drawing.Size(95, 40);
             this.BEditarCancelar.TabIndex = 75;
             this.BEditarCancelar.Text = "Cancelar";
             this.BEditarCancelar.UseVisualStyleBackColor = false;
+            this.BEditarCancelar.Click += new System.EventHandler(this.BEditarCancelar_Click);
             // 
             // BEditarGuardar
             // 
@@ -101,12 +104,13 @@
             this.BEditarGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarGuardar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarGuardar.Location = new System.Drawing.Point(24, 557);
+            this.BEditarGuardar.Location = new System.Drawing.Point(24, 666);
             this.BEditarGuardar.Name = "BEditarGuardar";
             this.BEditarGuardar.Size = new System.Drawing.Size(152, 40);
             this.BEditarGuardar.TabIndex = 74;
             this.BEditarGuardar.Text = "Guardar Cambios";
             this.BEditarGuardar.UseVisualStyleBackColor = false;
+            this.BEditarGuardar.Click += new System.EventHandler(this.BEditarGuardar_Click);
             // 
             // LEditarProducto
             // 
@@ -167,16 +171,6 @@
             this.LImagenProducto.Size = new System.Drawing.Size(52, 18);
             this.LImagenProducto.TabIndex = 95;
             this.LImagenProducto.Text = "Imagen";
-            // 
-            // TBImagenProducto
-            // 
-            this.TBImagenProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBImagenProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBImagenProducto.Location = new System.Drawing.Point(204, 389);
-            this.TBImagenProducto.Multiline = true;
-            this.TBImagenProducto.Name = "TBImagenProducto";
-            this.TBImagenProducto.Size = new System.Drawing.Size(134, 23);
-            this.TBImagenProducto.TabIndex = 94;
             // 
             // LCategoriaProducto
             // 
@@ -256,7 +250,7 @@
             this.LDescripcionProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LDescripcionProducto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDescripcionProducto.ForeColor = System.Drawing.Color.Black;
-            this.LDescripcionProducto.Location = new System.Drawing.Point(96, 436);
+            this.LDescripcionProducto.Location = new System.Drawing.Point(96, 557);
             this.LDescripcionProducto.Name = "LDescripcionProducto";
             this.LDescripcionProducto.Size = new System.Drawing.Size(80, 18);
             this.LDescripcionProducto.TabIndex = 87;
@@ -266,7 +260,7 @@
             // 
             this.TBDescripcionProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescripcionProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBDescripcionProducto.Location = new System.Drawing.Point(204, 436);
+            this.TBDescripcionProducto.Location = new System.Drawing.Point(204, 557);
             this.TBDescripcionProducto.Multiline = true;
             this.TBDescripcionProducto.Name = "TBDescripcionProducto";
             this.TBDescripcionProducto.Size = new System.Drawing.Size(257, 73);
@@ -339,36 +333,56 @@
             this.TBNombreProducto.Size = new System.Drawing.Size(134, 25);
             this.TBNombreProducto.TabIndex = 80;
             // 
-            // button1
+            // BSeleccionar
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(348, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 32);
-            this.button1.TabIndex = 97;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BSeleccionar.BackColor = System.Drawing.Color.Coral;
+            this.BSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BSeleccionar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BSeleccionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BSeleccionar.Location = new System.Drawing.Point(348, 384);
+            this.BSeleccionar.Name = "BSeleccionar";
+            this.BSeleccionar.Size = new System.Drawing.Size(117, 32);
+            this.BSeleccionar.TabIndex = 97;
+            this.BSeleccionar.Text = "Seleccionar";
+            this.BSeleccionar.UseVisualStyleBackColor = false;
+            this.BSeleccionar.Click += new System.EventHandler(this.BSeleccionar_Click);
             // 
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoUser.Location = new System.Drawing.Point(-4, -4);
             this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(505, 641);
+            this.LFondoUser.Size = new System.Drawing.Size(505, 720);
             this.LFondoUser.TabIndex = 98;
+            // 
+            // PBImagen
+            // 
+            this.PBImagen.Location = new System.Drawing.Point(204, 429);
+            this.PBImagen.Name = "PBImagen";
+            this.PBImagen.Size = new System.Drawing.Size(134, 111);
+            this.PBImagen.TabIndex = 99;
+            this.PBImagen.TabStop = false;
+            // 
+            // TBImagen
+            // 
+            this.TBImagen.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBImagen.ForeColor = System.Drawing.Color.Coral;
+            this.TBImagen.Location = new System.Drawing.Point(204, 390);
+            this.TBImagen.Multiline = true;
+            this.TBImagen.Name = "TBImagen";
+            this.TBImagen.Size = new System.Drawing.Size(134, 23);
+            this.TBImagen.TabIndex = 100;
             // 
             // FormProductosEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 633);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(496, 718);
+            this.Controls.Add(this.TBImagen);
+            this.Controls.Add(this.PBImagen);
+            this.Controls.Add(this.BSeleccionar);
             this.Controls.Add(this.BSeleccionarImagen);
             this.Controls.Add(this.LImagenProducto);
-            this.Controls.Add(this.TBImagenProducto);
             this.Controls.Add(this.LCategoriaProducto);
             this.Controls.Add(this.CBCategoriaProducto);
             this.Controls.Add(this.LStockMin);
@@ -384,7 +398,7 @@
             this.Controls.Add(this.LNombreProducto);
             this.Controls.Add(this.TBNombreProducto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.LIDUser);
+            this.Controls.Add(this.LIDProducto);
             this.Controls.Add(this.BEditarCancelar);
             this.Controls.Add(this.BEditarGuardar);
             this.Controls.Add(this.LEditarProducto);
@@ -393,6 +407,8 @@
             this.Controls.Add(this.LFondoUser);
             this.Name = "FormProductosEditar";
             this.Text = "Editar Producto";
+            this.Load += new System.EventHandler(this.FormProductosEditar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PBImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,7 +417,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LIDUser;
+        private System.Windows.Forms.Label LIDProducto;
         private System.Windows.Forms.Button BEditarCancelar;
         private System.Windows.Forms.Button BEditarGuardar;
         private System.Windows.Forms.Label LEditarProducto;
@@ -409,7 +425,6 @@
         private System.Windows.Forms.Label LCodigoProducto;
         private System.Windows.Forms.Button BSeleccionarImagen;
         private System.Windows.Forms.Label LImagenProducto;
-        private System.Windows.Forms.TextBox TBImagenProducto;
         private System.Windows.Forms.Label LCategoriaProducto;
         private System.Windows.Forms.ComboBox CBCategoriaProducto;
         private System.Windows.Forms.Label LStockMin;
@@ -424,7 +439,9 @@
         private System.Windows.Forms.TextBox TBPrecioCompra;
         private System.Windows.Forms.Label LNombreProducto;
         private System.Windows.Forms.TextBox TBNombreProducto;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BSeleccionar;
         private System.Windows.Forms.Label LFondoUser;
+        private System.Windows.Forms.PictureBox PBImagen;
+        private System.Windows.Forms.TextBox TBImagen;
     }
 }

@@ -21,7 +21,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select Id_Producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Descripcion[Descripcion], Imagen, Stock, Stock_minimo, Precio_compra, Precio_venta, p.Baja from Producto p");
+                    query.AppendLine("SELECT Id_producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Id c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p");
                     query.AppendLine("inner join Categoria c on c.Id_Categoria = p.Id_Categoria");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -37,16 +37,15 @@ namespace CapaDatos
                             {
                                 Id_producto = Convert.ToInt32(dr["Id_Producto"]),
                                 Nombre = dr["Nombre"].ToString(),
-                                Apellido = dr["Apellido"].ToString(),
-                                User = dr["Producto"].ToString(),
-                                Contraseña = dr["Contraseña"].ToString(),
+                                Codigo = dr["Codigo"].ToString(),
+                                Descripcion = dr["Descripcion"].ToString(),
+                                oCategoria = new Categoria() { Id_Categoria = Convert.ToInt32(dr["Id_Categoria"]), Nombre = dr["NombreCategoria"].ToString() },
+                                Stock = Convert.ToInt32(dr["Stock"]),
+                                Stock_minimo = Convert.ToInt32(dr["Stock_minimo"]),
+                                Precio_compra = Convert.ToInt32(dr["Precio_compra"]),
+                                Precio_venta = Convert.ToInt32(dr["Precio_venta"]),
                                 Baja = Convert.ToBoolean(dr["Baja"]),
-                                DNI = dr["DNI"].ToString(),
-                                Direccion = dr["Direccion"].ToString(),
-                                Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
-                                Telefono = dr["Telefono"].ToString(),
-                                Correo = dr["Correo"].ToString(),
-                                oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(dr["Perfil_id"]), NombreRol = dr["NombreRol"].ToString() }
+                                Imagen = dr["Imagen"] == DBNull.Value ? null : (byte[])dr["Imagen"],
                             });
                         }
 
@@ -73,17 +72,16 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_REGISTRARProducto", oconexion);
-                    cmd.Parameters.AddWithValue("DNI", obj.DNI);
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("Producto", obj.User);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
-                    cmd.Parameters.AddWithValue("Contraseña", obj.Contraseña);
-                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
-                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
-                    cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-                    cmd.Parameters.AddWithValue("Perfil_id", obj.oPerfil.Perfil_id);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Precio_compra", obj.Precio_compra);
+                    cmd.Parameters.AddWithValue("Precio_venta", obj.Precio_venta);
+                    cmd.Parameters.AddWithValue("stock", obj.Stock);
+                    cmd.Parameters.AddWithValue("stock_min", obj.Stock_minimo);
+                    cmd.Parameters.AddWithValue("Id_Categoria", obj.oCategoria.Id_Categoria);
+                    cmd.Parameters.AddWithValue("Imagen", obj.Imagen);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
                     cmd.Parameters.Add("IdProductoResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -119,20 +117,19 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_EDITARProducto", oconexion);
-                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_Producto);
-                    cmd.Parameters.AddWithValue("DNI", obj.DNI);
+                    SqlCommand cmd = new SqlCommand("SP_EDITARPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_producto);
+                    cmd.Parameters.AddWithValue("Codigo", obj.Codigo);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
-                    cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("Producto", obj.User);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
-                    cmd.Parameters.AddWithValue("Contraseña", obj.Contraseña);
-                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
-                    cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
-                    cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-                    cmd.Parameters.AddWithValue("Perfil_id", obj.oPerfil.Perfil_id);
+                    cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
+                    cmd.Parameters.AddWithValue("Precio_compra", obj.Precio_compra);
+                    cmd.Parameters.AddWithValue("Precio_venta", obj.Precio_venta);
+                    cmd.Parameters.AddWithValue("stock", obj.Stock);
+                    cmd.Parameters.AddWithValue("stock_min", obj.Stock_minimo);
+                    cmd.Parameters.AddWithValue("Id_Categoria", obj.oCategoria.Id_Categoria);
+                    cmd.Parameters.AddWithValue("Imagen", obj.Imagen);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -141,7 +138,7 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
                 }
@@ -167,8 +164,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_ELIMINARProducto", oconexion);
-                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_Producto);
+                    SqlCommand cmd = new SqlCommand("SP_ELIMINARPRODUCTO", oconexion);
+                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_producto);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
 
@@ -204,7 +201,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_BAJAProducto", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_BAJAPRODUCTO", oconexion);
                     cmd.Parameters.AddWithValue("IdProducto", Id_Producto);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -241,7 +238,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_ALTAProducto", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_ALTAPRODUCTO", oconexion);
                     cmd.Parameters.AddWithValue("IdProducto", Id_Producto);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

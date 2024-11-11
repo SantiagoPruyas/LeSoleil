@@ -36,11 +36,12 @@
             this.LPrecioProducto = new System.Windows.Forms.Label();
             this.TBStockProducto = new System.Windows.Forms.TextBox();
             this.LStock = new System.Windows.Forms.Label();
-            this.TBTelaProducto = new System.Windows.Forms.TextBox();
+            this.TBDescripcion = new System.Windows.Forms.TextBox();
             this.LTelaProducto = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,17 +150,16 @@
             this.LStock.TabIndex = 35;
             this.LStock.Text = "Stock";
             // 
-            // TBTelaProducto
+            // TBDescripcion
             // 
-            this.TBTelaProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTelaProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBTelaProducto.Location = new System.Drawing.Point(503, 53);
-            this.TBTelaProducto.Multiline = true;
-            this.TBTelaProducto.Name = "TBTelaProducto";
-            this.TBTelaProducto.Size = new System.Drawing.Size(472, 23);
-            this.TBTelaProducto.TabIndex = 41;
-            this.TBTelaProducto.Text = "Ej: Tipo de tela";
-            this.TBTelaProducto.Leave += new System.EventHandler(this.TBTelaProducto_Leave);
+            this.TBDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescripcion.ForeColor = System.Drawing.Color.Coral;
+            this.TBDescripcion.Location = new System.Drawing.Point(503, 53);
+            this.TBDescripcion.Multiline = true;
+            this.TBDescripcion.Name = "TBDescripcion";
+            this.TBDescripcion.Size = new System.Drawing.Size(472, 23);
+            this.TBDescripcion.TabIndex = 41;
+            this.TBDescripcion.Leave += new System.EventHandler(this.TBDescripcionProducto_Leave);
             // 
             // LTelaProducto
             // 
@@ -191,6 +191,7 @@
             this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
+            this.Codigo,
             this.nombreProducto,
             this.stockProducto,
             this.stockMinimo,
@@ -201,16 +202,22 @@
             this.imagenProducto,
             this.editarProducto,
             this.eliminarProducto});
-            this.DGVProductos.Location = new System.Drawing.Point(64, 378);
+            this.DGVProductos.Location = new System.Drawing.Point(12, 378);
             this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.Size = new System.Drawing.Size(1138, 236);
+            this.DGVProductos.Size = new System.Drawing.Size(1241, 236);
             this.DGVProductos.TabIndex = 46;
+            this.DGVProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellClick);
             this.DGVProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProductos_CellPainting);
             // 
             // IdProducto
             // 
             this.IdProducto.HeaderText = "ID Producto";
             this.IdProducto.Name = "IdProducto";
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
             // 
             // nombreProducto
             // 
@@ -313,14 +320,6 @@
             // CBCategoriaProducto
             // 
             this.CBCategoriaProducto.FormattingEnabled = true;
-            this.CBCategoriaProducto.Items.AddRange(new object[] {
-            "Abrigos",
-            "Pantalones",
-            "Remeras",
-            "Vestidos",
-            "Shorts",
-            "Blusas",
-            "Accesorios"});
             this.CBCategoriaProducto.Location = new System.Drawing.Point(841, 180);
             this.CBCategoriaProducto.Name = "CBCategoriaProducto";
             this.CBCategoriaProducto.Size = new System.Drawing.Size(134, 21);
@@ -410,7 +409,7 @@
             this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosUsers.Location = new System.Drawing.Point(1028, 329);
+            this.BInactivosUsers.Location = new System.Drawing.Point(1079, 329);
             this.BInactivosUsers.Name = "BInactivosUsers";
             this.BInactivosUsers.Size = new System.Drawing.Size(174, 41);
             this.BInactivosUsers.TabIndex = 59;
@@ -423,7 +422,7 @@
             this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosUser.Location = new System.Drawing.Point(64, 329);
+            this.BActivosUser.Location = new System.Drawing.Point(12, 331);
             this.BActivosUser.Name = "BActivosUser";
             this.BActivosUser.Size = new System.Drawing.Size(166, 41);
             this.BActivosUser.TabIndex = 60;
@@ -484,7 +483,7 @@
             this.Controls.Add(this.DGVProductos);
             this.Controls.Add(this.LProductos);
             this.Controls.Add(this.LTelaProducto);
-            this.Controls.Add(this.TBTelaProducto);
+            this.Controls.Add(this.TBDescripcion);
             this.Controls.Add(this.LStock);
             this.Controls.Add(this.TBStockProducto);
             this.Controls.Add(this.LPrecioProducto);
@@ -495,6 +494,7 @@
             this.Controls.Add(this.LFondoProductos);
             this.Name = "FormProductos";
             this.Text = "Productos";
+            this.Load += new System.EventHandler(this.FormProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -511,7 +511,7 @@
         private System.Windows.Forms.Label LPrecioProducto;
         private System.Windows.Forms.TextBox TBStockProducto;
         private System.Windows.Forms.Label LStock;
-        private System.Windows.Forms.TextBox TBTelaProducto;
+        private System.Windows.Forms.TextBox TBDescripcion;
         private System.Windows.Forms.Label LTelaProducto;
         private System.Windows.Forms.Label LProductos;
         private System.Windows.Forms.DataGridView DGVProductos;
@@ -529,7 +529,10 @@
         private System.Windows.Forms.Button BSeleccionarImagen;
         private System.Windows.Forms.Button BInactivosUsers;
         private System.Windows.Forms.Button BActivosUser;
+        private System.Windows.Forms.TextBox TBCodigoProducto;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimo;
@@ -540,7 +543,5 @@
         private System.Windows.Forms.DataGridViewImageColumn imagenProducto;
         private System.Windows.Forms.DataGridViewButtonColumn editarProducto;
         private System.Windows.Forms.DataGridViewButtonColumn eliminarProducto;
-        private System.Windows.Forms.TextBox TBCodigoProducto;
-        private System.Windows.Forms.Label label2;
     }
 }
