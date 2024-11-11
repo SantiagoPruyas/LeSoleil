@@ -70,7 +70,7 @@ namespace LeSoleil_Taller2
 
         private void MenuClientes_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormClientes());
+            abrirFormulario((ToolStripMenuItem)sender, new FormClientes(usuarioActual));
         }
 
         private void MenuProductos_Click(object sender, EventArgs e)

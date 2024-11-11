@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LFondoClientes = new System.Windows.Forms.Label();
             this.LCliente = new System.Windows.Forms.Label();
             this.LNombreCliente = new System.Windows.Forms.Label();
@@ -49,6 +59,8 @@
             this.BGuardarCliente = new System.Windows.Forms.Button();
             this.BCancelarCliente = new System.Windows.Forms.Button();
             this.PBFondoClientes = new System.Windows.Forms.PictureBox();
+            this.BActivosCliente = new System.Windows.Forms.Button();
+            this.BInactivosCliente = new System.Windows.Forms.Button();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNICliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,8 +71,6 @@
             this.fechaNacimientoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bajaCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BActivosCliente = new System.Windows.Forms.Button();
-            this.BInactivosCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             this.SuspendLayout();
@@ -262,7 +272,7 @@
             this.DGVClientes.Name = "DGVClientes";
             this.DGVClientes.Size = new System.Drawing.Size(1040, 307);
             this.DGVClientes.TabIndex = 55;
-            this.DGVClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVClientes_CellContentClick);
+            this.DGVClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVClientes_CellClick);
             this.DGVClientes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVClientes_CellPainting);
             // 
             // BGuardarCliente
@@ -302,56 +312,6 @@
             this.PBFondoClientes.TabIndex = 52;
             this.PBFondoClientes.TabStop = false;
             // 
-            // IdCliente
-            // 
-            this.IdCliente.HeaderText = "ID Cliente";
-            this.IdCliente.Name = "IdCliente";
-            // 
-            // DNICliente
-            // 
-            this.DNICliente.HeaderText = "DNI";
-            this.DNICliente.Name = "DNICliente";
-            // 
-            // nombreCliente
-            // 
-            this.nombreCliente.HeaderText = "Nombre";
-            this.nombreCliente.Name = "nombreCliente";
-            // 
-            // apellidoCliente
-            // 
-            this.apellidoCliente.HeaderText = "Apellido";
-            this.apellidoCliente.Name = "apellidoCliente";
-            // 
-            // direccionCliente
-            // 
-            this.direccionCliente.HeaderText = "Direccion";
-            this.direccionCliente.Name = "direccionCliente";
-            // 
-            // telefonoCliente
-            // 
-            this.telefonoCliente.HeaderText = "Telefono";
-            this.telefonoCliente.Name = "telefonoCliente";
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            // 
-            // fechaNacimientoCliente
-            // 
-            this.fechaNacimientoCliente.HeaderText = "Fecha Nacimiento";
-            this.fechaNacimientoCliente.Name = "fechaNacimientoCliente";
-            // 
-            // editarCliente
-            // 
-            this.editarCliente.HeaderText = "Editar";
-            this.editarCliente.Name = "editarCliente";
-            // 
-            // bajaCliente
-            // 
-            this.bajaCliente.HeaderText = "Dar de Baja";
-            this.bajaCliente.Name = "bajaCliente";
-            // 
             // BActivosCliente
             // 
             this.BActivosCliente.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -379,6 +339,76 @@
             this.BInactivosCliente.Text = "Clientes Inactivos";
             this.BInactivosCliente.UseVisualStyleBackColor = false;
             this.BInactivosCliente.Click += new System.EventHandler(this.BInactivosClientes_Click);
+            // 
+            // IdCliente
+            // 
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.IdCliente.DefaultCellStyle = dataGridViewCellStyle21;
+            this.IdCliente.HeaderText = "ID Cliente";
+            this.IdCliente.Name = "IdCliente";
+            // 
+            // DNICliente
+            // 
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle22;
+            this.DNICliente.HeaderText = "DNI";
+            this.DNICliente.Name = "DNICliente";
+            // 
+            // nombreCliente
+            // 
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            this.nombreCliente.DefaultCellStyle = dataGridViewCellStyle23;
+            this.nombreCliente.HeaderText = "Nombre";
+            this.nombreCliente.Name = "nombreCliente";
+            // 
+            // apellidoCliente
+            // 
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            this.apellidoCliente.DefaultCellStyle = dataGridViewCellStyle24;
+            this.apellidoCliente.HeaderText = "Apellido";
+            this.apellidoCliente.Name = "apellidoCliente";
+            // 
+            // direccionCliente
+            // 
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            this.direccionCliente.DefaultCellStyle = dataGridViewCellStyle25;
+            this.direccionCliente.HeaderText = "Direccion";
+            this.direccionCliente.Name = "direccionCliente";
+            // 
+            // telefonoCliente
+            // 
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            this.telefonoCliente.DefaultCellStyle = dataGridViewCellStyle26;
+            this.telefonoCliente.HeaderText = "Telefono";
+            this.telefonoCliente.Name = "telefonoCliente";
+            // 
+            // email
+            // 
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            this.email.DefaultCellStyle = dataGridViewCellStyle27;
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            // 
+            // fechaNacimientoCliente
+            // 
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            this.fechaNacimientoCliente.DefaultCellStyle = dataGridViewCellStyle28;
+            this.fechaNacimientoCliente.HeaderText = "Fecha Nacimiento";
+            this.fechaNacimientoCliente.Name = "fechaNacimientoCliente";
+            // 
+            // editarCliente
+            // 
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            this.editarCliente.DefaultCellStyle = dataGridViewCellStyle29;
+            this.editarCliente.HeaderText = "Editar";
+            this.editarCliente.Name = "editarCliente";
+            // 
+            // bajaCliente
+            // 
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
+            this.bajaCliente.DefaultCellStyle = dataGridViewCellStyle30;
+            this.bajaCliente.HeaderText = "Dar de Baja";
+            this.bajaCliente.Name = "bajaCliente";
             // 
             // FormClientes
             // 
@@ -439,6 +469,8 @@
         private System.Windows.Forms.DataGridView DGVClientes;
         private System.Windows.Forms.Button BGuardarCliente;
         private System.Windows.Forms.Button BCancelarCliente;
+        private System.Windows.Forms.Button BActivosCliente;
+        private System.Windows.Forms.Button BInactivosCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNICliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
@@ -449,7 +481,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn editarCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn bajaCliente;
-        private System.Windows.Forms.Button BActivosCliente;
-        private System.Windows.Forms.Button BInactivosCliente;
     }
 }

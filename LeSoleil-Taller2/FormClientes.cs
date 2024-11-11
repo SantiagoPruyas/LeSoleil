@@ -15,9 +15,11 @@ namespace LeSoleil_Taller2
 {
     public partial class FormClientes : Form
     {
-        public FormClientes()
+        private static Usuario usuarioActual;
+        public FormClientes(Usuario objusuario)
         {
             InitializeComponent();
+            usuarioActual = objusuario;
         }
         private void Limpiar()
         {
@@ -156,6 +158,7 @@ namespace LeSoleil_Taller2
                     Telefono = TBTelefonoCliente.Text,
                     Email = TBEmailCliente.Text,
                     Fecha_nacimiento = DTPFechaNacCliente.Value.ToString("yyyy-MM-dd"),
+                    Usuario_creacion = usuarioActual.Id_usuario,
                     Baja = false,
                 };
 
@@ -254,8 +257,67 @@ namespace LeSoleil_Taller2
                 e.Handled = true;
             }
         }
+        private void BActivosCliente_Click(object sender, EventArgs e)
+        {
+            DGVClientes.Rows.Clear();
 
-        private void DGVClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            DGVClientes.Columns[9].HeaderText = "Dar de Baja";
+
+            List<Cliente> listaClienteActivos = new CN_Cliente().Listar().Where(u => u.Baja == false).ToList();
+
+            foreach (Cliente item in listaClienteActivos)
+            {
+                DGVClientes.Rows.Add(new object[] {
+                    item.Id_cliente,
+                    item.DNI,
+                    item.Nombre,
+                    item.Apellido,
+                    item.Direccion,
+                    item.Telefono,
+                    item.Email,
+                    item.Fecha_nacimiento,
+                });
+            }
+        }
+
+        private void BInactivosClientes_Click(object sender, EventArgs e)
+        {
+            DGVClientes.Rows.Clear();
+
+            DGVClientes.Columns[9].HeaderText = "Dar de Alta";
+
+            List<Cliente> listaClienteInactivos = new CN_Cliente().Listar().Where(u => u.Baja == true).ToList();
+
+            foreach (Cliente item in listaClienteInactivos)
+            {
+                DGVClientes.Rows.Add(new object[] {
+                    item.Id_cliente,
+                    item.DNI,
+                    item.Nombre,
+                    item.Apellido,
+                    item.Direccion,
+                    item.Telefono,
+                    item.Email,
+                    item.Fecha_nacimiento,
+                });
+            }
+        }
+        public void ActualizarCliente(int rowIndex, int id, string dni, string nombre, string apellido,
+        string direccion, string telefono, string email, DateTime fechaNacimiento)
+        {
+            DGVClientes.Rows[rowIndex].Cells[0].Value = id;
+            DGVClientes.Rows[rowIndex].Cells[1].Value = dni;
+            DGVClientes.Rows[rowIndex].Cells[2].Value = nombre;
+            DGVClientes.Rows[rowIndex].Cells[3].Value = apellido;
+            DGVClientes.Rows[rowIndex].Cells[4].Value = direccion;
+            DGVClientes.Rows[rowIndex].Cells[5].Value = telefono;
+            DGVClientes.Rows[rowIndex].Cells[6].Value = email;
+            DGVClientes.Rows[rowIndex].Cells[7].Value = fechaNacimiento.ToShortDateString();
+
+            MessageBox.Show("Datos actualizados correctamente.");
+        }
+
+        private void DGVClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int Id_cliente = Convert.ToInt32(DGVClientes.Rows[e.RowIndex].Cells[0].Value);
             string Mensaje = string.Empty;
@@ -335,7 +397,7 @@ namespace LeSoleil_Taller2
 
 
                 // Crear y abrir el formulario de edición con los datos
-                /*FormClientesEditar editarForm = new FormClientesEditar(
+                FormClientesEditar editarForm = new FormClientesEditar(
                     id, dni, nombre, apellido, direccion, telefono, email, fechaNacimiento, e.RowIndex, this
                 );
 
@@ -343,69 +405,8 @@ namespace LeSoleil_Taller2
                 editarForm.Owner = this; // 'this' es el formulario principal ClientesForm
 
                 // Mostrar el formulario de edición como un cuadro de diálogo modal
-                editarForm.ShowDialog();*/
+                editarForm.ShowDialog();
             }
         }
-
-        private void BActivosCliente_Click(object sender, EventArgs e)
-        {
-            DGVClientes.Rows.Clear();
-
-            DGVClientes.Columns[9].HeaderText = "Dar de Baja";
-
-            List<Cliente> listaClienteActivos = new CN_Cliente().Listar().Where(u => u.Baja == false).ToList();
-
-            foreach (Cliente item in listaClienteActivos)
-            {
-                DGVClientes.Rows.Add(new object[] {
-                    item.Id_cliente,
-                    item.DNI,
-                    item.Nombre,
-                    item.Apellido,
-                    item.Direccion,
-                    item.Telefono,
-                    item.Email,
-                    item.Fecha_nacimiento,
-                });
-            }
-        }
-
-        private void BInactivosClientes_Click(object sender, EventArgs e)
-        {
-            DGVClientes.Rows.Clear();
-
-            DGVClientes.Columns[9].HeaderText = "Dar de Alta";
-
-            List<Cliente> listaClienteInactivos = new CN_Cliente().Listar().Where(u => u.Baja == true).ToList();
-
-            foreach (Cliente item in listaClienteInactivos)
-            {
-                DGVClientes.Rows.Add(new object[] {
-                    item.Id_cliente,
-                    item.DNI,
-                    item.Nombre,
-                    item.Apellido,
-                    item.Direccion,
-                    item.Telefono,
-                    item.Email,
-                    item.Fecha_nacimiento,
-                });
-            }
-        }
-        public void ActualizarCliente(int rowIndex, int id, string dni, string nombre, string apellido,
-        string direccion, string telefono, string email, DateTime fechaNacimiento)
-        {
-            DGVClientes.Rows[rowIndex].Cells[0].Value = id;
-            DGVClientes.Rows[rowIndex].Cells[1].Value = dni;
-            DGVClientes.Rows[rowIndex].Cells[2].Value = nombre;
-            DGVClientes.Rows[rowIndex].Cells[3].Value = apellido;
-            DGVClientes.Rows[rowIndex].Cells[4].Value = direccion;
-            DGVClientes.Rows[rowIndex].Cells[5].Value = telefono;
-            DGVClientes.Rows[rowIndex].Cells[6].Value = email;
-            DGVClientes.Rows[rowIndex].Cells[7].Value = fechaNacimiento.ToShortDateString();
-
-            MessageBox.Show("Datos actualizados correctamente.");
-        }
-
     }
 }

@@ -18,7 +18,7 @@ namespace CapaEntidad
         public string Fecha_nacimiento { get; set; }
         public bool Baja { get; set; }
         public string Fecha_creacion { get; set; }
-        public Usuario Usuario_creacion{ get; set; }
+        public int Usuario_creacion{ get; set; }
                 
     }
 }

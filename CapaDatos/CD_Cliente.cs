@@ -77,6 +77,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
                     cmd.Parameters.AddWithValue("Email", obj.Email);
                     cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
+                    cmd.Parameters.AddWithValue("Usuario_registro",obj.Usuario_creacion);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

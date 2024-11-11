@@ -674,7 +674,7 @@ select @mensaje
 SELECT Id_producto, Codigo, p.Nombre[NombreProducto], p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p 
 inner join Categoria c on c.Id_Categoria = p.Id_Categoria
 
-alter PROC SP_REGISTRARPRODUCTO(
+create PROC SP_REGISTRARPRODUCTO(
 @Codigo varchar(50),
 @Nombre varchar(50),
 @Descripcion varchar(100),
@@ -829,7 +829,7 @@ end
 select Id_cliente, DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Baja from Cliente
 
 --Registrar Cliente
-create PROC SP_REGISTRARCLIENTE(
+alter PROC SP_REGISTRARCLIENTE(
 @DNI varchar(50),
 @Nombre varchar(50),
 @Apellido varchar(50),
@@ -838,6 +838,7 @@ create PROC SP_REGISTRARCLIENTE(
 @Email varchar(50),
 @Fecha_nacimiento DATE,
 @Baja bit,
+@Usuario_registro int,
 @Respuesta int output,
 @Mensaje varchar(500) output
 )
@@ -849,8 +850,8 @@ begin
 	DECLARE @IDPERSONA INT
 	if not exists (select * from Cliente WHERE DNI = @DNI)
 	begin 
-		insert into Cliente(DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Baja) values
-		(@DNI, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Fecha_nacimiento, @Baja)
+		insert into Cliente(DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Usuario_registro, Baja) values
+		(@DNI, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Fecha_nacimiento, @Usuario_registro, @Baja)
 
 		set @Respuesta = SCOPE_IDENTITY()
 	end
@@ -861,7 +862,7 @@ end
 go
 
 -- Editar cliente
-create PROC SP_EDITARCLIENTE(
+alter PROC SP_EDITARCLIENTE(
 @Id_cliente int,
 @DNI varchar(50),
 @Nombre varchar(50),
@@ -876,7 +877,7 @@ create PROC SP_EDITARCLIENTE(
 )
 as
 begin
-	set @Respuesta = 0
+	set @Respuesta = 1
 	set @Mensaje = ''
 	DECLARE @IDPERSONA INT
 
