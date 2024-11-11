@@ -59,7 +59,7 @@
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFondoUser.Location = new System.Drawing.Point(-7, -26);
+            this.LFondoUser.Location = new System.Drawing.Point(-2, -4);
             this.LFondoUser.Name = "LFondoUser";
             this.LFondoUser.Size = new System.Drawing.Size(505, 641);
             this.LFondoUser.TabIndex = 29;

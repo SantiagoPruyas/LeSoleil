@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             this.BInactivosCategory = new System.Windows.Forms.Button();
             this.BActivosCategory = new System.Windows.Forms.Button();
             this.BCancelarCategoria = new System.Windows.Forms.Button();
@@ -41,16 +41,16 @@
             this.LEmailUser = new System.Windows.Forms.Label();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
             this.DGVCategorias = new System.Windows.Forms.DataGridView();
-            this.TBNombre = new System.Windows.Forms.TextBox();
-            this.LNombreUser = new System.Windows.Forms.Label();
-            this.LUsers = new System.Windows.Forms.Label();
-            this.LFondoUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarCategoria = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bajaCategoria = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TBNombre = new System.Windows.Forms.TextBox();
+            this.LNombreUser = new System.Windows.Forms.Label();
+            this.LUsers = new System.Windows.Forms.Label();
+            this.LFondoUser = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             this.BInactivosCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInactivosCategory.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInactivosCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosCategory.Location = new System.Drawing.Point(750, 292);
+            this.BInactivosCategory.Location = new System.Drawing.Point(861, 296);
             this.BInactivosCategory.Name = "BInactivosCategory";
             this.BInactivosCategory.Size = new System.Drawing.Size(173, 41);
             this.BInactivosCategory.TabIndex = 67;
@@ -75,7 +75,7 @@
             this.BActivosCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BActivosCategory.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BActivosCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosCategory.Location = new System.Drawing.Point(28, 292);
+            this.BActivosCategory.Location = new System.Drawing.Point(139, 296);
             this.BActivosCategory.Name = "BActivosCategory";
             this.BActivosCategory.Size = new System.Drawing.Size(163, 41);
             this.BActivosCategory.TabIndex = 66;
@@ -89,7 +89,7 @@
             this.BCancelarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BCancelarCategoria.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCancelarCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarCategoria.Location = new System.Drawing.Point(421, 210);
+            this.BCancelarCategoria.Location = new System.Drawing.Point(530, 185);
             this.BCancelarCategoria.Name = "BCancelarCategoria";
             this.BCancelarCategoria.Size = new System.Drawing.Size(94, 38);
             this.BCancelarCategoria.TabIndex = 65;
@@ -103,7 +103,7 @@
             this.BGuardarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGuardarCategoria.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardarCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarCategoria.Location = new System.Drawing.Point(301, 210);
+            this.BGuardarCategoria.Location = new System.Drawing.Point(421, 185);
             this.BGuardarCategoria.Name = "BGuardarCategoria";
             this.BGuardarCategoria.Size = new System.Drawing.Size(94, 38);
             this.BGuardarCategoria.TabIndex = 64;
@@ -117,7 +117,7 @@
             this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LEmailUser.ForeColor = System.Drawing.Color.Black;
-            this.LEmailUser.Location = new System.Drawing.Point(335, 64);
+            this.LEmailUser.Location = new System.Drawing.Point(335, 91);
             this.LEmailUser.Name = "LEmailUser";
             this.LEmailUser.Size = new System.Drawing.Size(80, 18);
             this.LEmailUser.TabIndex = 63;
@@ -127,7 +127,7 @@
             // 
             this.TBDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescripcion.ForeColor = System.Drawing.Color.Coral;
-            this.TBDescripcion.Location = new System.Drawing.Point(421, 64);
+            this.TBDescripcion.Location = new System.Drawing.Point(421, 91);
             this.TBDescripcion.Multiline = true;
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(359, 70);
@@ -151,66 +151,13 @@
             this.Descripcion,
             this.editarCategoria,
             this.bajaCategoria});
-            this.DGVCategorias.Location = new System.Drawing.Point(28, 345);
+            this.DGVCategorias.Location = new System.Drawing.Point(139, 351);
             this.DGVCategorias.Name = "DGVCategorias";
             this.DGVCategorias.ReadOnly = true;
-            this.DGVCategorias.Size = new System.Drawing.Size(895, 236);
+            this.DGVCategorias.Size = new System.Drawing.Size(895, 224);
             this.DGVCategorias.TabIndex = 61;
             this.DGVCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCategorias_CellClick);
             this.DGVCategorias.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVCategorias_CellPainting);
-            // 
-            // TBNombre
-            // 
-            this.TBNombre.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNombre.ForeColor = System.Drawing.Color.Coral;
-            this.TBNombre.Location = new System.Drawing.Point(421, 22);
-            this.TBNombre.Multiline = true;
-            this.TBNombre.Name = "TBNombre";
-            this.TBNombre.Size = new System.Drawing.Size(134, 25);
-            this.TBNombre.TabIndex = 45;
-            this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_Leave);
-            // 
-            // LNombreUser
-            // 
-            this.LNombreUser.AutoSize = true;
-            this.LNombreUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LNombreUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LNombreUser.ForeColor = System.Drawing.Color.Black;
-            this.LNombreUser.Location = new System.Drawing.Point(335, 24);
-            this.LNombreUser.Name = "LNombreUser";
-            this.LNombreUser.Size = new System.Drawing.Size(56, 18);
-            this.LNombreUser.TabIndex = 43;
-            this.LNombreUser.Text = "Nombre";
-            // 
-            // LUsers
-            // 
-            this.LUsers.AutoSize = true;
-            this.LUsers.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LUsers.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LUsers.ForeColor = System.Drawing.Color.Coral;
-            this.LUsers.Location = new System.Drawing.Point(18, 22);
-            this.LUsers.Name = "LUsers";
-            this.LUsers.Size = new System.Drawing.Size(152, 29);
-            this.LUsers.TabIndex = 42;
-            this.LUsers.Text = "CATEGORIAS";
-            this.LUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // LFondoUser
-            // 
-            this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFondoUser.Location = new System.Drawing.Point(-48, -5);
-            this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(997, 306);
-            this.LFondoUser.TabIndex = 59;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 281);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(951, 420);
-            this.pictureBox1.TabIndex = 60;
-            this.pictureBox1.TabStop = false;
             // 
             // Id_Usuario
             // 
@@ -264,11 +211,64 @@
             this.bajaCategoria.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.bajaCategoria.Text = "Eliminar";
             // 
+            // TBNombre
+            // 
+            this.TBNombre.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombre.ForeColor = System.Drawing.Color.Coral;
+            this.TBNombre.Location = new System.Drawing.Point(421, 46);
+            this.TBNombre.Multiline = true;
+            this.TBNombre.Name = "TBNombre";
+            this.TBNombre.Size = new System.Drawing.Size(134, 25);
+            this.TBNombre.TabIndex = 45;
+            this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_Leave);
+            // 
+            // LNombreUser
+            // 
+            this.LNombreUser.AutoSize = true;
+            this.LNombreUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LNombreUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LNombreUser.ForeColor = System.Drawing.Color.Black;
+            this.LNombreUser.Location = new System.Drawing.Point(335, 48);
+            this.LNombreUser.Name = "LNombreUser";
+            this.LNombreUser.Size = new System.Drawing.Size(56, 18);
+            this.LNombreUser.TabIndex = 43;
+            this.LNombreUser.Text = "Nombre";
+            // 
+            // LUsers
+            // 
+            this.LUsers.AutoSize = true;
+            this.LUsers.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LUsers.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LUsers.ForeColor = System.Drawing.Color.Coral;
+            this.LUsers.Location = new System.Drawing.Point(18, 22);
+            this.LUsers.Name = "LUsers";
+            this.LUsers.Size = new System.Drawing.Size(152, 29);
+            this.LUsers.TabIndex = 42;
+            this.LUsers.Text = "CATEGORIAS";
+            this.LUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // LFondoUser
+            // 
+            this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LFondoUser.Location = new System.Drawing.Point(-31, -13);
+            this.LFondoUser.Name = "LFondoUser";
+            this.LFondoUser.Size = new System.Drawing.Size(1337, 306);
+            this.LFondoUser.TabIndex = 59;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 281);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1291, 420);
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 693);
+            this.ClientSize = new System.Drawing.Size(1285, 701);
             this.Controls.Add(this.BInactivosCategory);
             this.Controls.Add(this.BActivosCategory);
             this.Controls.Add(this.BCancelarCategoria);
@@ -282,6 +282,7 @@
             this.Controls.Add(this.LUsers);
             this.Controls.Add(this.LFondoUser);
             this.Name = "FormCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCategoria";
             this.Load += new System.EventHandler(this.FormCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategorias)).EndInit();

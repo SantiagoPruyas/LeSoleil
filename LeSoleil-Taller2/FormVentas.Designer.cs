@@ -68,8 +68,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BRegistrarVenta = new System.Windows.Forms.Button();
             this.BCancelar = new System.Windows.Forms.Button();
+            this.BRegistrarVenta = new System.Windows.Forms.Button();
             this.GBInfoCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,8 +87,6 @@
             this.GBInfoCliente.Controls.Add(this.label1);
             this.GBInfoCliente.Controls.Add(this.LDNIUser);
             this.GBInfoCliente.ForeColor = System.Drawing.Color.Brown;
-            this.GBInfoCliente.Location = new System.Drawing.Point(438, 159);
-            this.GBInfoCliente.Margin = new System.Windows.Forms.Padding(4);
             this.GBInfoCliente.Location = new System.Drawing.Point(438, 132);
             this.GBInfoCliente.Margin = new System.Windows.Forms.Padding(4);
             this.GBInfoCliente.Name = "GBInfoCliente";
@@ -390,8 +388,6 @@
             // 
             this.DGVProductosVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductosVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            // dataGridView1
-            //
             this.ID_Producto,
             this.nombreProducto,
             this.Precio,
@@ -402,37 +398,6 @@
             this.DGVProductosVenta.Name = "DGVProductosVenta";
             this.DGVProductosVenta.Size = new System.Drawing.Size(689, 202);
             this.DGVProductosVenta.TabIndex = 58;
-            // 
-            // ID_Producto
-            // 
-            this.ID_Producto.HeaderText = "ID Producto";
-            this.ID_Producto.Name = "ID_Producto";
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Nombre Producto";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.Width = 150;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
-            // 
-            // Accion
-            // 
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
             // 
             // ID_Producto
             // 
@@ -565,6 +530,19 @@
             this.panel1.Size = new System.Drawing.Size(1296, 761);
             this.panel1.TabIndex = 60;
             // 
+            // BCancelar
+            // 
+            this.BCancelar.BackColor = System.Drawing.Color.Brown;
+            this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelar.Location = new System.Drawing.Point(976, 532);
+            this.BCancelar.Name = "BCancelar";
+            this.BCancelar.Size = new System.Drawing.Size(113, 40);
+            this.BCancelar.TabIndex = 61;
+            this.BCancelar.Text = "Cancelar";
+            this.BCancelar.UseVisualStyleBackColor = false;
+            // 
             // BRegistrarVenta
             // 
             this.BRegistrarVenta.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -577,19 +555,6 @@
             this.BRegistrarVenta.TabIndex = 60;
             this.BRegistrarVenta.Text = "Registrar Venta";
             this.BRegistrarVenta.UseVisualStyleBackColor = false;
-            // 
-            // BCancelar
-            // 
-            this.BCancelar.BackColor = System.Drawing.Color.Brown;
-            this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelar.Location = new System.Drawing.Point(995, 557);
-            this.BCancelar.Name = "BCancelar";
-            this.BCancelar.Size = new System.Drawing.Size(113, 46);
-            this.BCancelar.TabIndex = 61;
-            this.BCancelar.Text = "Cancelar";
-            this.BCancelar.UseVisualStyleBackColor = false;
             // 
             // FormVentas
             // 

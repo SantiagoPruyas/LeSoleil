@@ -175,6 +175,7 @@
             this.Controls.Add(this.LNombreUser);
             this.Controls.Add(this.LFondoUser);
             this.Name = "FormCategoriasEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCategoriasEditar";
             this.ResumeLayout(false);
             this.PerformLayout();

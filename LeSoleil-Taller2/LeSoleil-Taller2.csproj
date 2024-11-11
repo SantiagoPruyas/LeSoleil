@@ -82,6 +82,12 @@
     <Compile Include="FormCategoriasEditar.Designer.cs">
       <DependentUpon>FormCategoriasEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormClientesEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientesEditar.Designer.cs">
+      <DependentUpon>FormClientesEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormClientesEditar.resx">
+      <DependentUpon>FormClientesEditar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCompras.resx">
       <DependentUpon>FormCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProveedores.resx">
       <DependentUpon>FormProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>

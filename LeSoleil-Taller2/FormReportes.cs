@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace LeSoleil_Taller2
 {
-    public partial class FormReportes : Form
+    public partial class FormReporteGerente : Form
     {
-        public FormReportes()
+        public FormReporteGerente()
         {
             InitializeComponent();
         }
+
+
     }
 }

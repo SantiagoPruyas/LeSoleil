@@ -80,7 +80,7 @@ namespace LeSoleil_Taller2
 
         private void MenuReportes_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormReportes());
+            abrirFormulario((ToolStripMenuItem)sender, new FormReporteGerente());
         }
 
         private void MenuCompras_Click(object sender, EventArgs e)
