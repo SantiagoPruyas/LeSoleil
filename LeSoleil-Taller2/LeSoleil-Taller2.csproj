@@ -259,10 +259,6 @@
       <Project>{7a0ca0d1-b2b2-4502-af4d-76740d277f00}</Project>
       <Name>CapaEntidad</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{58a338ae-1551-41c1-b130-460afe8ce244}</Project>
-      <Name>CapaNegocio</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\deletepng.png" />
