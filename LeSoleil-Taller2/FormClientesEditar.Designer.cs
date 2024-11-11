@@ -83,6 +83,7 @@
             this.BEditarGuardar.TabIndex = 72;
             this.BEditarGuardar.Text = "Guardar Cambios";
             this.BEditarGuardar.UseVisualStyleBackColor = false;
+            this.BEditarGuardar.Click += new System.EventHandler(this.BEditarGuardar_Click);
             // 
             // LEditarCliente
             // 
@@ -106,6 +107,7 @@
             this.TBTelefonoCliente.Name = "TBTelefonoCliente";
             this.TBTelefonoCliente.Size = new System.Drawing.Size(134, 25);
             this.TBTelefonoCliente.TabIndex = 70;
+            this.TBTelefonoCliente.Leave += new System.EventHandler(this.TBTelefonoCliente_Leave);
             // 
             // LTelefonoCliente
             // 
@@ -128,6 +130,7 @@
             this.TBDireccionCliente.Name = "TBDireccionCliente";
             this.TBDireccionCliente.Size = new System.Drawing.Size(134, 25);
             this.TBDireccionCliente.TabIndex = 68;
+            this.TBDireccionCliente.Leave += new System.EventHandler(this.TBDireccionCliente_Leave);
             // 
             // LDireccionCliente
             // 
@@ -162,6 +165,7 @@
             this.TBEmailCliente.Name = "TBEmailCliente";
             this.TBEmailCliente.Size = new System.Drawing.Size(134, 25);
             this.TBEmailCliente.TabIndex = 63;
+            this.TBEmailCliente.Leave += new System.EventHandler(this.TBEmailCliente_Leave);
             // 
             // TBDNICliente
             // 
@@ -172,6 +176,7 @@
             this.TBDNICliente.Name = "TBDNICliente";
             this.TBDNICliente.Size = new System.Drawing.Size(134, 25);
             this.TBDNICliente.TabIndex = 58;
+            this.TBDNICliente.Leave += new System.EventHandler(this.TBDNICliente_Leave);
             // 
             // LDNICliente
             // 
@@ -194,6 +199,7 @@
             this.TBApellidoCliente.Name = "TBApellidoCliente";
             this.TBApellidoCliente.Size = new System.Drawing.Size(134, 25);
             this.TBApellidoCliente.TabIndex = 56;
+            this.TBApellidoCliente.Leave += new System.EventHandler(this.TBApellidoCliente_Leave);
             // 
             // TBNombreCliente
             // 
@@ -204,6 +210,7 @@
             this.TBNombreCliente.Name = "TBNombreCliente";
             this.TBNombreCliente.Size = new System.Drawing.Size(134, 25);
             this.TBNombreCliente.TabIndex = 55;
+            this.TBNombreCliente.Leave += new System.EventHandler(this.TBNombreCliente_Leave);
             // 
             // LApellidoCliente
             // 
@@ -267,6 +274,7 @@
             this.BEditarCancelar.TabIndex = 77;
             this.BEditarCancelar.Text = "Cancelar";
             this.BEditarCancelar.UseVisualStyleBackColor = false;
+            this.BEditarCancelar.Click += new System.EventHandler(this.BEditarCancelar_Click);
             // 
             // LFondoCliente
             // 

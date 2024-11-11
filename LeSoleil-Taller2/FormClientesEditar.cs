@@ -52,7 +52,6 @@ namespace LeSoleil_Taller2
                     Direccion = TBDireccionCliente.Text,
                     Telefono = TBTelefonoCliente.Text,
                     Email = TBEmailCliente.Text,
-                    //Fecha_nacimiento = DTPFechaNacimiento.Value
                     Fecha_nacimiento = DTPFechaNacCliente.Value.ToString("yyyy-MM-dd"),
                     Baja = false
                 };
