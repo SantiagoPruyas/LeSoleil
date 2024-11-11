@@ -671,10 +671,10 @@ select @mensaje
 
 
 ---------------------------------- PROCEDIMIENTOS PRODUCTO ----------------------------------
-SELECT Id_producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p 
+SELECT Id_producto, Codigo, p.Nombre[NombreProducto], p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p 
 inner join Categoria c on c.Id_Categoria = p.Id_Categoria
 
-create PROC SP_REGISTRARPRODUCTO(
+alter PROC SP_REGISTRARPRODUCTO(
 @Codigo varchar(50),
 @Nombre varchar(50),
 @Descripcion varchar(100),
@@ -695,7 +695,7 @@ begin
 	IF NOT EXISTS(SELECT * FROM producto WHERE Codigo = @Codigo)
 	begin 
 		insert into Producto(Codigo,Nombre,Descripcion,Precio_compra,Precio_venta,Stock,Stock_minimo,Id_Categoria, Imagen, Baja) 
-		values (@Codigo, @Nombre, @Descripcion, @Id_Categoria, @Precio_compra, @Precio_venta, @stock, @Stock_min, @Imagen, @Baja)
+		values (@Codigo, @Nombre, @Descripcion, @Precio_compra, @Precio_venta, @stock, @Stock_min, @Id_Categoria, @Imagen, @Baja)
 
 		set @IdProductoResultado = SCOPE_IDENTITY()
 	end

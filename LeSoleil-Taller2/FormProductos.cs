@@ -27,19 +27,16 @@ namespace LeSoleil_Taller2
         {
 
         }
-        public byte[] ConvertirImagenABytes(System.Drawing.Image imagen)
+        private System.Drawing.Image RedimensionarImagen(System.Drawing.Image imgOriginal, int ancho, int alto)
         {
-            if (imagen == null)
-                return null;
-
-            using (MemoryStream ms = new MemoryStream())
+            Bitmap imgRedimensionada = new Bitmap(ancho, alto);
+            using (Graphics g = Graphics.FromImage(imgRedimensionada))
             {
-                // Guardar la imagen en el MemoryStream en su formato original
-                imagen.Save(ms, imagen.RawFormat);
-                // Convertir el contenido del MemoryStream a un array de bytes
-                return ms.ToArray();
+                g.DrawImage(imgOriginal, 0, 0, ancho, alto);
             }
+            return imgRedimensionada;
         }
+
 
         public System.Drawing.Image ConvertirBytesAImagen(byte[] bytesImagen)
         {
@@ -167,7 +164,7 @@ namespace LeSoleil_Taller2
                             // Convertir la imagen a un array de bytes
                             using (MemoryStream ms = new MemoryStream())
                             {
-                                img.Save(ms, img.RawFormat); // Guardar la imagen en el stream en su formato original
+                                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // Guardar la imagen en el stream en formato jpeg
                                 imagenBytes = ms.ToArray();  // Obtener el array de bytes
                             }
 
@@ -251,8 +248,8 @@ namespace LeSoleil_Taller2
                 {
                     Nombre = TBNombreProducto.Text,
                     Descripcion = TBDescripcion.Text,
-                    Precio_compra = Convert.ToDecimal(TBPrecioCompra.Text),
-                    Precio_venta = Convert.ToDecimal(TBPrecioVenta.Text),
+                    Precio_compra = Convert.ToInt32(TBPrecioCompra.Text),
+                    Precio_venta = Convert.ToInt32(TBPrecioVenta.Text),
                     Stock = Convert.ToInt32(TBStockProducto.Text),
                     Stock_minimo = Convert.ToInt32(TBStockMin.Text),
                     Codigo = TBCodigoProducto.Text,
@@ -280,17 +277,17 @@ namespace LeSoleil_Taller2
                         DGVProductos.Rows[n].Cells[6].Value = TBPrecioVenta.Text;
                         DGVProductos.Rows[n].Cells[7].Value = TBDescripcion.Text;
                         DGVProductos.Rows[n].Cells[8].Value = CBCategoriaProducto.Text;
-                        DGVProductos.Rows[n].Cells[9].Value = ConvertirBytesAImagen(imagenBytes);
+                        DGVProductos.Rows[n].Cells[9].Value = RedimensionarImagen(ConvertirBytesAImagen(imagenBytes),130,110);
 
                         LimpiarCamposProducto();
 
-                        MessageBox.Show("Usuario guardado exitosamente.");
+                        MessageBox.Show("Producto guardado exitosamente.");
                     }
                     else
                     {
                         LimpiarCamposProducto();
 
-                        MessageBox.Show("Usuario guardado exitosamente.");
+                        MessageBox.Show("Producto guardado exitosamente.");
                     }
                 }
                 else
@@ -336,7 +333,7 @@ namespace LeSoleil_Taller2
                     item.Precio_venta,
                     item.Descripcion,
                     item.oCategoria.Nombre,
-                    ConvertirBytesAImagen(item.Imagen),
+                    RedimensionarImagen(ConvertirBytesAImagen(item.Imagen),130,110),
                 });
             }
         }
@@ -419,8 +416,7 @@ namespace LeSoleil_Taller2
                 string precio_venta = DGVProductos.Rows[e.RowIndex].Cells[6].Value.ToString();
                 string descripcion = DGVProductos.Rows[e.RowIndex].Cells[7].Value.ToString();
                 string categoria = DGVProductos.Rows[e.RowIndex].Cells[8].Value.ToString();
-                System.Drawing.Image img = (System.Drawing.Image)DGVProductos.Rows[e.RowIndex].Cells[9].Value;
-                byte[] imagen = ConvertirImagenABytes(img);
+                System.Drawing.Image imagen = DGVProductos.Rows[e.RowIndex].Cells[9].Value as System.Drawing.Image;
 
 
                 // Crear y abrir el formulario de edición con los datos
@@ -428,7 +424,7 @@ namespace LeSoleil_Taller2
                     id, codigo, nombre, stock, stock_min, precio_compra, precio_venta, descripcion, categoria, imagen, e.RowIndex, this);
 
                 // Establecer la propiedad Owner (propietario del formulario)
-                editarForm.Owner = this; // 'this' es el formulario principal UsuariosForm
+                editarForm.Owner = this; 
 
                 // Mostrar el formulario de edición como un cuadro de diálogo modal
                 editarForm.ShowDialog();
@@ -458,6 +454,56 @@ namespace LeSoleil_Taller2
             {
                 MessageBox.Show("La tela debe contener solo letras y tener entre 2 y 500 caracteres.");
                 TBDescripcion.Focus();
+            }
+        }
+
+        private void BInactivosUsers_Click(object sender, EventArgs e)
+        {
+            DGVProductos.Rows.Clear();
+
+            DGVProductos.Columns[11].HeaderText = "Dar de Alta";
+
+            List<Producto> listaProductoInactivos = new CN_Producto().Listar().Where(u => u.Baja == true).ToList();
+
+            foreach (Producto item in listaProductoInactivos)
+            {
+                DGVProductos.Rows.Add(new object[] {
+                    item.Id_producto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.Stock,
+                    item.Stock_minimo,
+                    item.Precio_compra,
+                    item.Precio_venta,
+                    item.Descripcion,
+                    item.oCategoria.Nombre,
+                    ConvertirBytesAImagen(item.Imagen),
+                });
+            }
+        }
+
+        private void BActivosUser_Click(object sender, EventArgs e)
+        {
+            DGVProductos.Rows.Clear();
+
+            DGVProductos.Columns[11].HeaderText = "Dar de Baja";
+
+            List<Producto> listaProductoActivos = new CN_Producto().Listar().Where(u => u.Baja == false).ToList();
+
+            foreach (Producto item in listaProductoActivos)
+            {
+                DGVProductos.Rows.Add(new object[] {
+                    item.Id_producto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.Stock,
+                    item.Stock_minimo,
+                    item.Precio_compra,
+                    item.Precio_venta,
+                    item.Descripcion,
+                    item.oCategoria.Nombre,
+                    ConvertirBytesAImagen(item.Imagen),
+                });
             }
         }
     }

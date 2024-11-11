@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    /*public class CD_Producto
+    public class CD_Producto
     {
 
         public List<Producto> Listar()
@@ -21,7 +21,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT Id_producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Id c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p");
+                    query.AppendLine("SELECT Id_producto, Codigo, p.Nombre[NombreProducto], p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p");
                     query.AppendLine("inner join Categoria c on c.Id_Categoria = p.Id_Categoria");
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -36,7 +36,7 @@ namespace CapaDatos
                             lista.Add(new Producto()
                             {
                                 Id_producto = Convert.ToInt32(dr["Id_Producto"]),
-                                Nombre = dr["Nombre"].ToString(),
+                                Nombre = dr["NombreProducto"].ToString(),
                                 Codigo = dr["Codigo"].ToString(),
                                 Descripcion = dr["Descripcion"].ToString(),
                                 oCategoria = new Categoria() { Id_Categoria = Convert.ToInt32(dr["Id_Categoria"]), Nombre = dr["NombreCategoria"].ToString() },
@@ -52,9 +52,15 @@ namespace CapaDatos
                     }
 
                 }
+                catch (SqlException sqlEx)
+                {
+                    // Mostramos el error SQL en la consola
+                    Console.WriteLine($"Error en la consulta SQL: {sqlEx.Message}");
+                }
                 catch (Exception ex)
                 {
-                    lista = new List<Producto>();
+                    // Mostramos el error general en la consola
+                    Console.WriteLine($"Error general: {ex.Message}");
                 }
             }
 
@@ -263,7 +269,5 @@ namespace CapaDatos
 
             return respuesta;
         }
-
-        // Escribir
-    }*/
+    }
 }

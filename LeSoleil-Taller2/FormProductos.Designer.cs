@@ -28,7 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.TBNombreProducto = new System.Windows.Forms.TextBox();
             this.LNombreProducto = new System.Windows.Forms.Label();
@@ -40,18 +52,6 @@
             this.LTelaProducto = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.eliminarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LPrecioVenta = new System.Windows.Forms.Label();
             this.TBPrecioVenta = new System.Windows.Forms.TextBox();
             this.LStockMin = new System.Windows.Forms.Label();
@@ -68,6 +68,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TBCodigoProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bajaProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +89,7 @@
             this.LFondoProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoProductos.Location = new System.Drawing.Point(-9, -6);
             this.LFondoProductos.Name = "LFondoProductos";
-            this.LFondoProductos.Size = new System.Drawing.Size(1293, 332);
+            this.LFondoProductos.Size = new System.Drawing.Size(1371, 332);
             this.LFondoProductos.TabIndex = 29;
             // 
             // TBNombreProducto
@@ -201,75 +213,13 @@
             this.categoriaProducto,
             this.imagenProducto,
             this.editarProducto,
-            this.eliminarProducto});
+            this.bajaProducto});
             this.DGVProductos.Location = new System.Drawing.Point(12, 378);
             this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.Size = new System.Drawing.Size(1241, 236);
+            this.DGVProductos.Size = new System.Drawing.Size(1330, 236);
             this.DGVProductos.TabIndex = 46;
             this.DGVProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellClick);
             this.DGVProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProductos_CellPainting);
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "ID Producto";
-            this.IdProducto.Name = "IdProducto";
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.Name = "nombreProducto";
-            // 
-            // stockProducto
-            // 
-            this.stockProducto.HeaderText = "Stock";
-            this.stockProducto.Name = "stockProducto";
-            // 
-            // stockMinimo
-            // 
-            this.stockMinimo.HeaderText = "Stock Minimo";
-            this.stockMinimo.Name = "stockMinimo";
-            // 
-            // precioCompra
-            // 
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.Name = "precioCompra";
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.HeaderText = "Precio Venta";
-            this.precioVenta.Name = "precioVenta";
-            // 
-            // descripcionProducto
-            // 
-            this.descripcionProducto.HeaderText = "Descripcion";
-            this.descripcionProducto.Name = "descripcionProducto";
-            // 
-            // categoriaProducto
-            // 
-            this.categoriaProducto.HeaderText = "Categoria";
-            this.categoriaProducto.Name = "categoriaProducto";
-            // 
-            // imagenProducto
-            // 
-            this.imagenProducto.HeaderText = "Imagen";
-            this.imagenProducto.Name = "imagenProducto";
-            // 
-            // editarProducto
-            // 
-            this.editarProducto.HeaderText = "Editar";
-            this.editarProducto.Name = "editarProducto";
-            // 
-            // eliminarProducto
-            // 
-            this.eliminarProducto.HeaderText = "Dar de Baja";
-            this.eliminarProducto.Name = "eliminarProducto";
-            this.eliminarProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eliminarProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // LPrecioVenta
             // 
@@ -409,12 +359,13 @@
             this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosUsers.Location = new System.Drawing.Point(1079, 329);
+            this.BInactivosUsers.Location = new System.Drawing.Point(1168, 329);
             this.BInactivosUsers.Name = "BInactivosUsers";
             this.BInactivosUsers.Size = new System.Drawing.Size(174, 41);
             this.BInactivosUsers.TabIndex = 59;
             this.BInactivosUsers.Text = "Productos Inactivos";
             this.BInactivosUsers.UseVisualStyleBackColor = false;
+            this.BInactivosUsers.Click += new System.EventHandler(this.BInactivosUsers_Click);
             // 
             // BActivosUser
             // 
@@ -428,13 +379,14 @@
             this.BActivosUser.TabIndex = 60;
             this.BActivosUser.Text = "Productos Activos";
             this.BActivosUser.UseVisualStyleBackColor = false;
+            this.BActivosUser.Click += new System.EventHandler(this.BActivosUser_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-6, 320);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1293, 383);
+            this.pictureBox1.Size = new System.Drawing.Size(1368, 383);
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
@@ -460,11 +412,103 @@
             this.label2.TabIndex = 62;
             this.label2.Text = "Codigo";
             // 
+            // IdProducto
+            // 
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.IdProducto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            // 
+            // Codigo
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // nombreProducto
+            // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombreProducto.HeaderText = "Nombre";
+            this.nombreProducto.Name = "nombreProducto";
+            // 
+            // stockProducto
+            // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.stockProducto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.stockProducto.HeaderText = "Stock";
+            this.stockProducto.Name = "stockProducto";
+            // 
+            // stockMinimo
+            // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.stockMinimo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.stockMinimo.HeaderText = "Stock Minimo";
+            this.stockMinimo.Name = "stockMinimo";
+            // 
+            // precioCompra
+            // 
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.precioCompra.DefaultCellStyle = dataGridViewCellStyle6;
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.Name = "precioCompra";
+            // 
+            // precioVenta
+            // 
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.precioVenta.DefaultCellStyle = dataGridViewCellStyle7;
+            this.precioVenta.HeaderText = "Precio Venta";
+            this.precioVenta.Name = "precioVenta";
+            // 
+            // descripcionProducto
+            // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.descripcionProducto.DefaultCellStyle = dataGridViewCellStyle8;
+            this.descripcionProducto.HeaderText = "Descripcion";
+            this.descripcionProducto.Name = "descripcionProducto";
+            // 
+            // categoriaProducto
+            // 
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.categoriaProducto.DefaultCellStyle = dataGridViewCellStyle9;
+            this.categoriaProducto.HeaderText = "Categoria";
+            this.categoriaProducto.Name = "categoriaProducto";
+            // 
+            // imagenProducto
+            // 
+            this.imagenProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.imagenProducto.DefaultCellStyle = dataGridViewCellStyle10;
+            this.imagenProducto.FillWeight = 110F;
+            this.imagenProducto.HeaderText = "Imagen";
+            this.imagenProducto.Name = "imagenProducto";
+            // 
+            // editarProducto
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.editarProducto.DefaultCellStyle = dataGridViewCellStyle11;
+            this.editarProducto.HeaderText = "Editar";
+            this.editarProducto.Name = "editarProducto";
+            // 
+            // bajaProducto
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.bajaProducto.DefaultCellStyle = dataGridViewCellStyle12;
+            this.bajaProducto.HeaderText = "Dar de Baja";
+            this.bajaProducto.Name = "bajaProducto";
+            this.bajaProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.ClientSize = new System.Drawing.Size(1354, 701);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TBCodigoProducto);
             this.Controls.Add(this.BActivosUser);
@@ -542,6 +586,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn categoriaProducto;
         private System.Windows.Forms.DataGridViewImageColumn imagenProducto;
         private System.Windows.Forms.DataGridViewButtonColumn editarProducto;
-        private System.Windows.Forms.DataGridViewButtonColumn eliminarProducto;
+        private System.Windows.Forms.DataGridViewButtonColumn bajaProducto;
     }
 }

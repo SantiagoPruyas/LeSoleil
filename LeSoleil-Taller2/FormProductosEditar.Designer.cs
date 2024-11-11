@@ -187,14 +187,6 @@
             // CBCategoriaProducto
             // 
             this.CBCategoriaProducto.FormattingEnabled = true;
-            this.CBCategoriaProducto.Items.AddRange(new object[] {
-            "Abrigos",
-            "Pantalones",
-            "Remeras",
-            "Vestidos",
-            "Shorts",
-            "Blusas",
-            "Accesorios"});
             this.CBCategoriaProducto.Location = new System.Drawing.Point(204, 351);
             this.CBCategoriaProducto.Name = "CBCategoriaProducto";
             this.CBCategoriaProducto.Size = new System.Drawing.Size(134, 21);

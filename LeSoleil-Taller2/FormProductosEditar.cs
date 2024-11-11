@@ -29,23 +29,22 @@ namespace LeSoleil_Taller2
             using (MemoryStream ms = new MemoryStream())
             {
                 // Guardar la imagen en el MemoryStream en su formato original
-                imagen.Save(ms, imagen.RawFormat);
+                imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 // Convertir el contenido del MemoryStream a un array de bytes
                 return ms.ToArray();
             }
         }
-
-        public System.Drawing.Image ConvertirBytesAImagen(byte[] bytesImagen)
+        private Image RedimensionarImagen(Image imgOriginal, int ancho, int alto)
         {
-            if (bytesImagen == null || bytesImagen.Length == 0)
-                return null;
-
-            using (MemoryStream ms = new MemoryStream(bytesImagen))
+            Bitmap imgRedimensionada = new Bitmap(ancho, alto);
+            using (Graphics g = Graphics.FromImage(imgRedimensionada))
             {
-                return System.Drawing.Image.FromStream(ms);
+                g.DrawImage(imgOriginal, 0, 0, ancho, alto);
             }
+            return imgRedimensionada;
         }
-        public FormProductosEditar(int id, string codigo, string nombre, string stock, string stock_min, string precio_compra, string precio_venta, string descripcion, string categoria, byte[] imagen, int rowIndex, FormProductos productosForm)
+
+        public FormProductosEditar(int id, string codigo, string nombre, string stock, string stock_min, string precio_compra, string precio_venta, string descripcion, string categoria, Image imagen, int rowIndex, FormProductos productosForm)
         {
             InitializeComponent();
             this.productosForm = productosForm;
@@ -61,7 +60,7 @@ namespace LeSoleil_Taller2
             TBPrecioVenta.Text = precio_venta;
             TBDescripcionProducto.Text = descripcion;
             CBCategoriaProducto.Text = categoria;
-            PBImagen.Image = ConvertirBytesAImagen(imagen);
+            PBImagen.Image = imagen;
         }
 
         private void FormProductosEditar_Load(object sender, EventArgs e)
@@ -89,10 +88,10 @@ namespace LeSoleil_Taller2
                 Id_producto = IdProducto,
                 Nombre = TBNombreProducto.Text,
                 Descripcion = TBDescripcionProducto.Text,
-                Precio_compra = Convert.ToDecimal(TBPrecioCompra),
-                Precio_venta = Convert.ToDecimal(TBPrecioVenta),
-                Stock = Convert.ToInt32(TBStockProducto),
-                Stock_minimo = Convert.ToInt32(TBStockMin),
+                Precio_compra = Convert.ToInt32(TBPrecioCompra.Text),
+                Precio_venta = Convert.ToInt32(TBPrecioVenta.Text),
+                Stock = Convert.ToInt32(TBStockProducto.Text),
+                Stock_minimo = Convert.ToInt32(TBStockMin.Text),
                 Codigo = TBCodigoProducto.Text,
                 oCategoria = new Categoria() { Id_Categoria = Convert.ToInt32(((OpcionCombo)CBCategoriaProducto.SelectedItem).Valor) },
                 Imagen = ConvertirImagenABytes(PBImagen.Image),
@@ -138,7 +137,7 @@ namespace LeSoleil_Taller2
                             // Asignar la ruta del archivo al TextBox
                             TBImagen.Text = openFileDialog.FileName;
 
-                            PBImagen.Image = img;
+                            PBImagen.Image = RedimensionarImagen(img,130,110);
 
                         }
                     }

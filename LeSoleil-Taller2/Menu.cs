@@ -83,11 +83,6 @@ namespace LeSoleil_Taller2
             abrirFormulario((ToolStripMenuItem)sender, new FormReporteGerente());
         }
 
-        private void MenuCompras_Click(object sender, EventArgs e)
-        {
-            abrirFormulario((ToolStripMenuItem)sender, new FormCompras(usuarioActual));
-        }
-
         private void MenuSalir_Click(object sender, EventArgs e)
         {
             this.Close();
