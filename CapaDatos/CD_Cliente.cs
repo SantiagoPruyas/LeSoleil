@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    /*public class CD_Producto
+    public class CD_Cliente
     {
-
-        public List<Producto> Listar()
+        //Metodo listar clientes
+        public List<Cliente> Listar()
         {
-            List<Producto> lista = new List<Producto>();
+            List<Cliente> lista = new List<Cliente>();
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
             {
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select Id_Producto, Codigo, p.Nombre, p.Descripcion, c.Id_Categoria, c.Descripcion[Descripcion], Imagen, Stock, Stock_minimo, Precio_compra, Precio_venta, p.Baja from Producto p");
-                    query.AppendLine("inner join Categoria c on c.Id_Categoria = p.Id_Categoria");
+                    query.AppendLine("select Id_cliente, DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Baja from Cliente");
+
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
 
@@ -33,20 +33,17 @@ namespace CapaDatos
 
                         while (dr.Read())
                         {
-                            lista.Add(new Producto()
+                            lista.Add(new Cliente()
                             {
-                                Id_Producto = Convert.ToInt32(dr["Id_Producto"]),
+                                Id_cliente = Convert.ToInt32(dr["Id_cliente"]),
+                                DNI = dr["DNI"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Apellido = dr["Apellido"].ToString(),
-                                User = dr["Producto"].ToString(),
-                                Contraseña = dr["Contraseña"].ToString(),
-                                Baja = Convert.ToBoolean(dr["Baja"]),
-                                DNI = dr["DNI"].ToString(),
                                 Direccion = dr["Direccion"].ToString(),
-                                Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),
-                                Correo = dr["Correo"].ToString(),
-                                oPerfil = new Perfil() { Perfil_id = Convert.ToInt32(dr["Perfil_id"]), NombreRol = dr["NombreRol"].ToString() }
+                                Email = dr["Email"].ToString(),
+                                Fecha_nacimiento = dr["Fecha_nacimiento"].ToString(),
+                                Baja = Convert.ToBoolean(dr["Baja"]),
                             });
                         }
 
@@ -55,37 +52,33 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    lista = new List<Producto>();
+                    lista = new List<Cliente>();
                 }
             }
 
             return lista;
         }
 
-        public int Registrar(Producto obj, out string Mensaje)
+        public int Registrar(Cliente obj, out string Mensaje)
         {
-            int IdProductogenerado = 0;
+            int IdClientegenerado = 0;
             Mensaje = string.Empty;
 
             try
             {
-
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_REGISTRARProducto", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARCLIENTE", oconexion);
                     cmd.Parameters.AddWithValue("DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("Producto", obj.User);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
-                    cmd.Parameters.AddWithValue("Contraseña", obj.Contraseña);
-                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
                     cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-                    cmd.Parameters.AddWithValue("Perfil_id", obj.oPerfil.Perfil_id);
+                    cmd.Parameters.AddWithValue("Email", obj.Email);
+                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
-                    cmd.Parameters.Add("IdProductoResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -94,7 +87,7 @@ namespace CapaDatos
 
                     cmd.ExecuteNonQuery();
 
-                    IdProductogenerado = Convert.ToInt32(cmd.Parameters["IdProductoResultado"].Value);
+                    IdClientegenerado = Convert.ToInt32(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
                 }
@@ -102,13 +95,13 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                IdProductogenerado = 0;
+                IdClientegenerado = 0;
                 Mensaje = ex.Message;
             }
 
-            return IdProductogenerado;
+            return IdClientegenerado;
         }
-        public bool Editar(Producto obj, out string Mensaje)
+        public bool Editar(Cliente obj, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
@@ -119,18 +112,15 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_EDITARProducto", oconexion);
-                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_Producto);
+                    SqlCommand cmd = new SqlCommand("SP_EDITARCLIENTE", oconexion);
+                    cmd.Parameters.AddWithValue("Id_cliente", obj.Id_cliente);
                     cmd.Parameters.AddWithValue("DNI", obj.DNI);
                     cmd.Parameters.AddWithValue("Nombre", obj.Nombre);
                     cmd.Parameters.AddWithValue("Apellido", obj.Apellido);
-                    cmd.Parameters.AddWithValue("Producto", obj.User);
-                    cmd.Parameters.AddWithValue("Correo", obj.Correo);
-                    cmd.Parameters.AddWithValue("Contraseña", obj.Contraseña);
-                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
                     cmd.Parameters.AddWithValue("Direccion", obj.Direccion);
                     cmd.Parameters.AddWithValue("Telefono", obj.Telefono);
-                    cmd.Parameters.AddWithValue("Perfil_id", obj.oPerfil.Perfil_id);
+                    cmd.Parameters.AddWithValue("Email", obj.Email);
+                    cmd.Parameters.AddWithValue("Fecha_nacimiento", obj.Fecha_nacimiento);
                     cmd.Parameters.AddWithValue("Baja", obj.Baja);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -156,31 +146,25 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool Eliminar(Producto obj, out string Mensaje)
+        public bool Eliminar(Cliente obj, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
 
             try
             {
-
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
+                    SqlCommand cmd = new SqlCommand("delete from cliente where Id_cliente = @id", oconexion);
+                    cmd.Parameters.AddWithValue("@id", obj.Id_cliente);
 
-                    SqlCommand cmd = new SqlCommand("SP_ELIMINARProducto", oconexion);
-                    cmd.Parameters.AddWithValue("Id_Producto", obj.Id_Producto);
-                    cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
-
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.Text;
 
                     oconexion.Open();
 
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
+                    respuesta = cmd.ExecuteNonQuery() > 0 ? true : false;
                 }
 
             }
@@ -193,7 +177,8 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool DarBaja(int Id_Producto, out string Mensaje)
+        // Metodo dar de baja un cliente
+        public bool DarBaja(int Id_cliente, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
@@ -204,8 +189,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_BAJAProducto", oconexion);
-                    cmd.Parameters.AddWithValue("IdProducto", Id_Producto);
+                    SqlCommand cmd = new SqlCommand("SP_BAJACliente", oconexion);
+                    cmd.Parameters.AddWithValue("Id_cliente", Id_cliente);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -230,7 +215,8 @@ namespace CapaDatos
             return respuesta;
         }
 
-        public bool DarAlta(int Id_Producto, out string Mensaje)
+        // Metodo dar de alta un cliente
+        public bool DarAlta(int Id_cliente, out string Mensaje)
         {
             bool respuesta = false;
             Mensaje = string.Empty;
@@ -241,8 +227,8 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
 
-                    SqlCommand cmd = new SqlCommand("SP_ALTAProducto", oconexion);
-                    cmd.Parameters.AddWithValue("IdProducto", Id_Producto);
+                    SqlCommand cmd = new SqlCommand("SP_ALTACliente", oconexion);
+                    cmd.Parameters.AddWithValue("Id_cliente", Id_cliente);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
@@ -266,7 +252,5 @@ namespace CapaDatos
 
             return respuesta;
         }
-
-        // Escribir
-    }*/
+    }
 }

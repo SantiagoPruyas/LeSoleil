@@ -8,14 +8,17 @@ namespace CapaEntidad
 {
     public class Cliente
     {
-        public int IdCliente { get; set; }
+        public int Id_cliente { get; set; }
+        public string DNI { get; set; }
         public string Nombre { get; set; }
-        public int DNI { get; set;}
         public string Apellido { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
+        public string Email { get; set; }
+        public string Fecha_nacimiento { get; set; }
         public bool Baja { get; set; }
         public string Fecha_creacion { get; set; }
         public Usuario Usuario_creacion{ get; set; }
+                
     }
 }

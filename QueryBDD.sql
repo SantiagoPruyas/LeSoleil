@@ -203,6 +203,15 @@ FOREIGN KEY (Perfil_id) REFERENCES Perfil(Perfil_id);
 ALTER TABLE Categoria
 ALTER COLUMN Descripcion VARCHAR(500);
 
+ALTER TABLE Cliente
+ALTER COLUMN DNI VARCHAR(50) NOT NULL;
+
+ALTER TABLE Cliente
+ALTER COLUMN Telefono VARCHAR(50) NOT NULL;
+
+ALTER TABLE Cliente
+ADD Fecha_nacimiento DATE NOT NULL;
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
@@ -814,3 +823,129 @@ begin
 			SET @Mensaje = 'El id del Producto no coindice con ningun otro id';
 end
 
+
+---------------------------------- PROCEDIMIENTOS CLIENTE ----------------------------------
+select Id_cliente, DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Baja from Cliente
+
+--Registrar Cliente
+create PROC SP_REGISTRARCLIENTE(
+@DNI varchar(50),
+@Nombre varchar(50),
+@Apellido varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Fecha_nacimiento DATE,
+@Baja bit,
+@Respuesta int output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	DECLARE @IDPERSONA INT
+	if not exists (select * from Cliente WHERE DNI = @DNI)
+	begin 
+		insert into Cliente(DNI, Nombre, Apellido, Direccion, Telefono, Email, Fecha_nacimiento, Baja) values
+		(@DNI, @Nombre, @Apellido, @Direccion, @Telefono, @Email, @Fecha_nacimiento, @Baja)
+
+		set @Respuesta = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'El numero de documento ingresado ya existe.'
+end
+
+go
+
+-- Editar cliente
+create PROC SP_EDITARCLIENTE(
+@Id_cliente int,
+@DNI varchar(50),
+@Nombre varchar(50),
+@Apellido varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Fecha_nacimiento DATE,
+@Baja bit,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+	DECLARE @IDPERSONA INT
+
+
+	if not exists(select * from Cliente where DNI = @DNI and Id_cliente != @Id_cliente)
+	begin
+		UPDATE Cliente set
+		DNI = @DNI, 
+		Nombre = @Nombre, 
+		Apellido = @Apellido, 
+		Direccion = @Direccion,
+		Telefono = @Telefono,
+		Email = @Email,
+		Fecha_nacimiento = @Fecha_nacimiento, 
+		Baja = @Baja
+		where Id_cliente = @Id_cliente
+	end
+	else
+	begin 
+		SET @Respuesta = 0
+		SET @Mensaje = 'El numero de documento ingresado ya existe.'
+	end
+end
+
+-- Baja cliente
+create PROC SP_BAJACliente(
+@Id_cliente int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Cliente where Id_cliente = @Id_cliente)
+		BEGIN
+			UPDATE Cliente set 
+			Baja = 1
+			where Id_cliente = @Id_cliente
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito la baja del cliente.'
+		END	
+		ELSE
+			SET @Mensaje = 'El id de Cliente no coindice con ningun otro id';
+end
+
+go
+
+-- Alta cliente
+create PROC SP_ALTACliente(
+@Id_cliente int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Cliente where Id_cliente = @Id_cliente)
+		BEGIN
+			UPDATE Cliente set 
+			Baja = 0
+			where Id_cliente = @Id_cliente
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito el alta del cliente'
+		END	
+		ELSE
+			SET @Mensaje = 'El id de Cliente no coindice con ningun otro id';
+end
