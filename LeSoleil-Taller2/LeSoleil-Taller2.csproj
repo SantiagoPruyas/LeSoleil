@@ -118,6 +118,12 @@
     <Compile Include="FormProveedores.Designer.cs">
       <DependentUpon>FormProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProveedoresEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProveedoresEditar.Designer.cs">
+      <DependentUpon>FormProveedoresEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProveedores.resx">
       <DependentUpon>FormProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProveedoresEditar.resx">
+      <DependentUpon>FormProveedoresEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>

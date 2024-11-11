@@ -228,6 +228,21 @@ ALTER COLUMN Telefono VARCHAR(50) NOT NULL;
 ALTER TABLE Cliente
 ADD Fecha_nacimiento DATE NOT NULL;
 
+ALTER TABLE Proveedor
+ADD CUIT VARCHAR(50) NOT NULL;
+
+ALTER TABLE Proveedor
+ADD Razon_social VARCHAR(50) NOT NULL;
+
+ALTER TABLE Proveedor
+ADD Ciudad VARCHAR(100) NOT NULL;
+
+ALTER TABLE Proveedor
+ADD Pais VARCHAR(100) NOT NULL;
+
+ALTER TABLE Proveedor
+ALTER COLUMN Descripcion VARCHAR(150) NULL;
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
@@ -321,6 +336,9 @@ where u.Id_usuario = 2
 -- Select de Usuarios
 select u.Id_Usuario, u.Nombre, u.Apellido, u.Contraseña, u.Baja, u.Usuario, u.Direccion, u.Telefono, u.DNI, u.Fecha_nacimiento, u.Correo, r.Perfil_id, r.NombreRol from Usuario u
 inner join Perfil r on r.Perfil_id = u.Perfil_id
+
+-- Select de Proveedores
+select Id_Proveedor, Descripcion, Nombre, Direccion, Telefono, Email, Baja, CUIT, Razon_social, Ciudad, Pais from Proveedor
 
 ---------------------------------- PROCEDIMIENTOS ----------------------------------
 create PROC SP_REGISTRARUSUARIO(
@@ -949,3 +967,214 @@ begin
 		ELSE
 			SET @Mensaje = 'El id de Cliente no coindice con ningun otro id';
 end
+
+---------------------------------- PROCEDIMIENTOS PROVEEDORES ----------------------------------
+select * from Proveedor;
+
+
+-- Registrar Proveedor
+create PROC SP_REGISTRARPROVEEDOR(
+@Nombre varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Baja bit,
+@CUIT varchar(50),
+@Razon_social varchar(50),
+@Ciudad varchar(100),
+@Pais varchar(100),
+@Respuesta int output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	DECLARE @IDPERSONA INT
+	if not exists (select * from Proveedor WHERE CUIT = @CUIT)
+	begin 
+		insert into Proveedor(Nombre, Direccion, Telefono, Email, Baja, CUIT, Razon_social, Ciudad, Pais) values
+		(@Nombre, @Direccion, @Telefono, @Email, @Baja, @CUIT, @Razon_social, @Ciudad, @Pais)
+
+		set @Respuesta = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'El numero de CUIT ingresado ya existe.'
+end
+
+-- Eliminar metodo registrar
+DROP PROCEDURE IF EXISTS SP_REGISTRARPROVEEDOR;
+
+-- Metodo REGISTRAR Proveedor (con Descripcion incluida)
+create PROC SP_REGISTRARPROVEEDOR(
+@Descripcion VARCHAR(150),
+@Nombre varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Baja bit,
+@CUIT varchar(50),
+@Razon_social varchar(50),
+@Ciudad varchar(100),
+@Pais varchar(100),
+@Respuesta int output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	DECLARE @IDPERSONA INT
+	if not exists (select * from Proveedor WHERE CUIT = @CUIT)
+	begin 
+		insert into Proveedor(Descripcion, Nombre, Direccion, Telefono, Email, Baja, CUIT, Razon_social, Ciudad, Pais) values
+		(@Descripcion, @Nombre, @Direccion, @Telefono, @Email, @Baja, @CUIT, @Razon_social, @Ciudad, @Pais)
+
+		set @Respuesta = SCOPE_IDENTITY()
+	end
+	else
+		set @Mensaje = 'El numero de CUIT ingresado ya existe.'
+end
+
+-- Editar Proveedor
+create PROC SP_EDITARPROVEEDOR(
+@Id_Proveedor int,
+@Nombre varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Baja bit,
+@CUIT varchar(50),
+@Razon_social varchar(50),
+@Ciudad varchar(100),
+@Pais varchar(100),
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if not exists(select * from Proveedor where CUIT = @CUIT and Id_Proveedor != @Id_Proveedor)
+	begin
+		UPDATE Proveedor set
+		Nombre = @Nombre, 
+		Direccion = @Direccion, 
+		Telefono = @Telefono, 
+		Email = @Email, 
+		Baja = @Baja,
+		CUIT = @CUIT,
+		Razon_social = @Razon_social,
+		Ciudad = @Ciudad,
+		Pais = @Pais
+		where Id_Proveedor = @Id_Proveedor
+
+		set @Respuesta = 1
+		
+	end
+	else
+		set @Mensaje = 'No se puede repetir el CUIT para más de un Proveedor'
+
+end
+
+-- Eliminar Metodo Editar
+DROP PROCEDURE IF EXISTS SP_EDITARPROVEEDOR;
+
+-- Metodo EDITAR Proveedor (con Descripcion incluida)
+create PROC SP_EDITARPROVEEDOR(
+@Id_Proveedor int,
+@Descripcion VARCHAR(150),
+@Nombre varchar(50),
+@Direccion varchar(100),
+@Telefono VARCHAR(50),
+@Email varchar(50),
+@Baja bit,
+@CUIT varchar(50),
+@Razon_social varchar(50),
+@Ciudad varchar(100),
+@Pais varchar(100),
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if not exists(select * from Proveedor where CUIT = @CUIT and Id_Proveedor != @Id_Proveedor)
+	begin
+		UPDATE Proveedor set
+		Descripcion = @Descripcion,
+		Nombre = @Nombre, 
+		Direccion = @Direccion, 
+		Telefono = @Telefono, 
+		Email = @Email, 
+		Baja = @Baja,
+		CUIT = @CUIT,
+		Razon_social = @Razon_social,
+		Ciudad = @Ciudad,
+		Pais = @Pais
+		where Id_Proveedor = @Id_Proveedor
+
+		set @Respuesta = 1
+		
+	end
+	else
+		set @Mensaje = 'No se puede repetir el CUIT para más de un Proveedor'
+
+end
+
+
+-- Baja Proveedor
+create PROC SP_BAJAProveedor(
+@Id_Proveedor int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Proveedor where Id_Proveedor = @Id_Proveedor)
+		BEGIN
+			UPDATE Proveedor set 
+			Baja = 1
+			where Id_Proveedor = @Id_Proveedor
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito la baja del Proveedor.'
+		END	
+		ELSE
+			SET @Mensaje = 'El ID del Proveedor no coindice con ningun otro ID';
+end
+
+go
+
+-- Alta Proveedor
+create PROC SP_ALTAProveedor(
+@Id_Proveedor int,
+@Respuesta bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	set @Respuesta = 0
+	set @Mensaje = ''
+
+	if EXISTS(select * from Proveedor where Id_Proveedor = @Id_Proveedor)
+		BEGIN
+			UPDATE Proveedor set 
+			Baja = 0
+			where Id_Proveedor = @Id_Proveedor
+
+			set @Respuesta = 1 
+			set @Mensaje = 'Se ejecuto con exito el alta del Proveedor.'
+		END	
+		ELSE
+			SET @Mensaje = 'El ID del Proveedor no coindice con ningun otro ID';
+end
+
