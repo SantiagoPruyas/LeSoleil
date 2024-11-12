@@ -29,38 +29,32 @@ namespace LeSoleil_Taller2
 
         private void TBNombre_Leave(object sender, EventArgs e)
         {
-            // Validación de que solo contenga letras, al menos 2 caracteres y no más de 50 caracteres
-            if (!TBNombre.Text.All(char.IsLetter) || TBNombre.Text.Length < 2 || TBNombre.Text.Length > 50)
+            // Validación de que solo contenga letras y espacios, al menos 2 caracteres y no más de 50 caracteres
+            if (!TBNombre.Text.All(c => char.IsLetter(c) || char.IsWhiteSpace(c)) || TBNombre.Text.Length < 2 || TBNombre.Text.Length > 50)
             {
-                MessageBox.Show("El nombre debe contener solo letras, tener entre 2 y 50 caracteres.");
-                TBNombre.Focus();  // Enfoca el campo para corrección
+                MessageBox.Show("El nombre debe contener solo letras, y tener entre 2 y 50 caracteres.");
+                TBNombre.Focus();
             }
             else
             {
-                // Asegura que el texto no esté vacío antes de aplicar los cambios
                 if (!string.IsNullOrWhiteSpace(TBNombre.Text))
                 {
-                    // Convertir el texto a formato Título (Primera letra mayúscula y resto minúscula)
                     TBNombre.Text = char.ToUpper(TBNombre.Text[0]) + TBNombre.Text.Substring(1).ToLower();
                 }
             }
         }
 
-        private void TBDescripcion_Leave(object sender, EventArgs e)
+        private void TBDescripcion_Validating(object sender, CancelEventArgs e)
         {
-            // Validación de que solo contenga letras, al menos 2 caracteres y no más de 20 caracteres
-            if (TBDescripcion.Text.Length < 2 || TBDescripcion.Text.Length > 100)
+            string descripcion = TBDescripcion.Text.Trim();
+
+            if (!string.IsNullOrEmpty(descripcion))
             {
-                MessageBox.Show("La descripcion debe tener entre 2 y 100 caracteres.");
-                TBDescripcion.Focus();  // Enfoca el campo para corrección
-            }
-            else
-            {
-                // Asegura que el texto no esté vacío antes de aplicar los cambios
-                if (!string.IsNullOrWhiteSpace(TBDescripcion.Text))
+                // Permitir letras, espacios, comas y puntos, y limitar la longitud a 150 caracteres
+                if (descripcion.Length > 150 || !descripcion.All(c => char.IsLetter(c) || c == ' ' || c == ',' || c == '.'))
                 {
-                    // Convertir el texto a formato Título (Primera letra mayúscula y resto minúscula)
-                    TBDescripcion.Text = char.ToUpper(TBDescripcion.Text[0]) + TBDescripcion.Text.Substring(1).ToLower();
+                    MessageBox.Show("La descripción solo puede contener letras y hasta 150 caracteres.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    e.Cancel = true; // Cancela el evento de salida del control
                 }
             }
         }
@@ -316,5 +310,7 @@ namespace LeSoleil_Taller2
                 });
             }
         }
+
+       
     }
 }

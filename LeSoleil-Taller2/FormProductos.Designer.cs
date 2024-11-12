@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.TBNombreProducto = new System.Windows.Forms.TextBox();
             this.LNombreProducto = new System.Windows.Forms.Label();
@@ -52,6 +54,18 @@
             this.LTelaProducto = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bajaProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LPrecioVenta = new System.Windows.Forms.Label();
             this.TBPrecioVenta = new System.Windows.Forms.TextBox();
             this.LStockMin = new System.Windows.Forms.Label();
@@ -68,18 +82,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TBCodigoProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bajaProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -89,14 +91,14 @@
             this.LFondoProductos.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoProductos.Location = new System.Drawing.Point(-9, -6);
             this.LFondoProductos.Name = "LFondoProductos";
-            this.LFondoProductos.Size = new System.Drawing.Size(1371, 332);
+            this.LFondoProductos.Size = new System.Drawing.Size(1413, 285);
             this.LFondoProductos.TabIndex = 29;
             // 
             // TBNombreProducto
             // 
             this.TBNombreProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBNombreProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBNombreProducto.Location = new System.Drawing.Point(327, 53);
+            this.TBNombreProducto.Location = new System.Drawing.Point(291, 42);
             this.TBNombreProducto.Multiline = true;
             this.TBNombreProducto.Name = "TBNombreProducto";
             this.TBNombreProducto.Size = new System.Drawing.Size(134, 25);
@@ -109,7 +111,7 @@
             this.LNombreProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LNombreProducto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombreProducto.ForeColor = System.Drawing.Color.Black;
-            this.LNombreProducto.Location = new System.Drawing.Point(325, 23);
+            this.LNombreProducto.Location = new System.Drawing.Point(288, 14);
             this.LNombreProducto.Name = "LNombreProducto";
             this.LNombreProducto.Size = new System.Drawing.Size(139, 18);
             this.LNombreProducto.TabIndex = 31;
@@ -119,7 +121,7 @@
             // 
             this.TBPrecioCompra.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPrecioCompra.ForeColor = System.Drawing.Color.Coral;
-            this.TBPrecioCompra.Location = new System.Drawing.Point(327, 119);
+            this.TBPrecioCompra.Location = new System.Drawing.Point(289, 101);
             this.TBPrecioCompra.Multiline = true;
             this.TBPrecioCompra.Name = "TBPrecioCompra";
             this.TBPrecioCompra.Size = new System.Drawing.Size(134, 23);
@@ -133,7 +135,7 @@
             this.LPrecioProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LPrecioProducto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPrecioProducto.ForeColor = System.Drawing.Color.Black;
-            this.LPrecioProducto.Location = new System.Drawing.Point(323, 94);
+            this.LPrecioProducto.Location = new System.Drawing.Point(286, 77);
             this.LPrecioProducto.Name = "LPrecioProducto";
             this.LPrecioProducto.Size = new System.Drawing.Size(98, 18);
             this.LPrecioProducto.TabIndex = 33;
@@ -143,7 +145,7 @@
             // 
             this.TBStockProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBStockProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBStockProducto.Location = new System.Drawing.Point(326, 182);
+            this.TBStockProducto.Location = new System.Drawing.Point(289, 161);
             this.TBStockProducto.Multiline = true;
             this.TBStockProducto.Name = "TBStockProducto";
             this.TBStockProducto.Size = new System.Drawing.Size(134, 23);
@@ -156,7 +158,7 @@
             this.LStock.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LStock.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LStock.ForeColor = System.Drawing.Color.Black;
-            this.LStock.Location = new System.Drawing.Point(325, 157);
+            this.LStock.Location = new System.Drawing.Point(288, 136);
             this.LStock.Name = "LStock";
             this.LStock.Size = new System.Drawing.Size(41, 18);
             this.LStock.TabIndex = 35;
@@ -166,7 +168,7 @@
             // 
             this.TBDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescripcion.ForeColor = System.Drawing.Color.Coral;
-            this.TBDescripcion.Location = new System.Drawing.Point(503, 53);
+            this.TBDescripcion.Location = new System.Drawing.Point(466, 44);
             this.TBDescripcion.Multiline = true;
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(472, 23);
@@ -179,7 +181,7 @@
             this.LTelaProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LTelaProducto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTelaProducto.ForeColor = System.Drawing.Color.Black;
-            this.LTelaProducto.Location = new System.Drawing.Point(500, 23);
+            this.LTelaProducto.Location = new System.Drawing.Point(463, 14);
             this.LTelaProducto.Name = "LTelaProducto";
             this.LTelaProducto.Size = new System.Drawing.Size(80, 18);
             this.LTelaProducto.TabIndex = 42;
@@ -200,6 +202,15 @@
             // 
             // DGVProductos
             // 
+            this.DGVProductos.BackgroundColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -214,12 +225,115 @@
             this.imagenProducto,
             this.editarProducto,
             this.bajaProducto});
-            this.DGVProductos.Location = new System.Drawing.Point(12, 378);
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.GhostWhite;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVProductos.DefaultCellStyle = dataGridViewCellStyle28;
+            this.DGVProductos.Location = new System.Drawing.Point(12, 331);
             this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.Size = new System.Drawing.Size(1330, 236);
+            this.DGVProductos.RowTemplate.Height = 70;
+            this.DGVProductos.Size = new System.Drawing.Size(1297, 298);
             this.DGVProductos.TabIndex = 46;
             this.DGVProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellClick);
             this.DGVProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProductos_CellPainting);
+            // 
+            // IdProducto
+            // 
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.IdProducto.DefaultCellStyle = dataGridViewCellStyle16;
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            // 
+            // Codigo
+            // 
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle17;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // nombreProducto
+            // 
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle18;
+            this.nombreProducto.HeaderText = "Nombre";
+            this.nombreProducto.Name = "nombreProducto";
+            // 
+            // stockProducto
+            // 
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            this.stockProducto.DefaultCellStyle = dataGridViewCellStyle19;
+            this.stockProducto.HeaderText = "Stock";
+            this.stockProducto.Name = "stockProducto";
+            // 
+            // stockMinimo
+            // 
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.stockMinimo.DefaultCellStyle = dataGridViewCellStyle20;
+            this.stockMinimo.HeaderText = "Stock Minimo";
+            this.stockMinimo.Name = "stockMinimo";
+            // 
+            // precioCompra
+            // 
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.precioCompra.DefaultCellStyle = dataGridViewCellStyle21;
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.Name = "precioCompra";
+            // 
+            // precioVenta
+            // 
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            this.precioVenta.DefaultCellStyle = dataGridViewCellStyle22;
+            this.precioVenta.HeaderText = "Precio Venta";
+            this.precioVenta.Name = "precioVenta";
+            // 
+            // descripcionProducto
+            // 
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            this.descripcionProducto.DefaultCellStyle = dataGridViewCellStyle23;
+            this.descripcionProducto.HeaderText = "Descripcion";
+            this.descripcionProducto.Name = "descripcionProducto";
+            // 
+            // categoriaProducto
+            // 
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            this.categoriaProducto.DefaultCellStyle = dataGridViewCellStyle24;
+            this.categoriaProducto.HeaderText = "Categoria";
+            this.categoriaProducto.Name = "categoriaProducto";
+            // 
+            // imagenProducto
+            // 
+            this.imagenProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle25.NullValue")));
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.imagenProducto.DefaultCellStyle = dataGridViewCellStyle25;
+            this.imagenProducto.FillWeight = 110F;
+            this.imagenProducto.HeaderText = "Imagen";
+            this.imagenProducto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imagenProducto.MinimumWidth = 8;
+            this.imagenProducto.Name = "imagenProducto";
+            // 
+            // editarProducto
+            // 
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            this.editarProducto.DefaultCellStyle = dataGridViewCellStyle26;
+            this.editarProducto.HeaderText = "Editar";
+            this.editarProducto.Name = "editarProducto";
+            // 
+            // bajaProducto
+            // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            this.bajaProducto.DefaultCellStyle = dataGridViewCellStyle27;
+            this.bajaProducto.HeaderText = "Dar de Baja";
+            this.bajaProducto.Name = "bajaProducto";
+            this.bajaProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // LPrecioVenta
             // 
@@ -227,7 +341,7 @@
             this.LPrecioVenta.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LPrecioVenta.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LPrecioVenta.ForeColor = System.Drawing.Color.Black;
-            this.LPrecioVenta.Location = new System.Drawing.Point(501, 94);
+            this.LPrecioVenta.Location = new System.Drawing.Point(464, 77);
             this.LPrecioVenta.Name = "LPrecioVenta";
             this.LPrecioVenta.Size = new System.Drawing.Size(85, 18);
             this.LPrecioVenta.TabIndex = 49;
@@ -237,7 +351,7 @@
             // 
             this.TBPrecioVenta.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPrecioVenta.ForeColor = System.Drawing.Color.Coral;
-            this.TBPrecioVenta.Location = new System.Drawing.Point(503, 119);
+            this.TBPrecioVenta.Location = new System.Drawing.Point(467, 101);
             this.TBPrecioVenta.Multiline = true;
             this.TBPrecioVenta.Name = "TBPrecioVenta";
             this.TBPrecioVenta.Size = new System.Drawing.Size(134, 23);
@@ -250,7 +364,7 @@
             this.LStockMin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LStockMin.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LStockMin.ForeColor = System.Drawing.Color.Black;
-            this.LStockMin.Location = new System.Drawing.Point(503, 157);
+            this.LStockMin.Location = new System.Drawing.Point(464, 136);
             this.LStockMin.Name = "LStockMin";
             this.LStockMin.Size = new System.Drawing.Size(89, 18);
             this.LStockMin.TabIndex = 51;
@@ -260,7 +374,7 @@
             // 
             this.TBStockMin.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBStockMin.ForeColor = System.Drawing.Color.Coral;
-            this.TBStockMin.Location = new System.Drawing.Point(503, 182);
+            this.TBStockMin.Location = new System.Drawing.Point(466, 161);
             this.TBStockMin.Multiline = true;
             this.TBStockMin.Name = "TBStockMin";
             this.TBStockMin.Size = new System.Drawing.Size(134, 23);
@@ -270,7 +384,7 @@
             // CBCategoriaProducto
             // 
             this.CBCategoriaProducto.FormattingEnabled = true;
-            this.CBCategoriaProducto.Location = new System.Drawing.Point(841, 180);
+            this.CBCategoriaProducto.Location = new System.Drawing.Point(804, 159);
             this.CBCategoriaProducto.Name = "CBCategoriaProducto";
             this.CBCategoriaProducto.Size = new System.Drawing.Size(134, 21);
             this.CBCategoriaProducto.TabIndex = 52;
@@ -282,7 +396,7 @@
             this.LCategoriaProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LCategoriaProducto.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LCategoriaProducto.ForeColor = System.Drawing.Color.Black;
-            this.LCategoriaProducto.Location = new System.Drawing.Point(838, 157);
+            this.LCategoriaProducto.Location = new System.Drawing.Point(801, 136);
             this.LCategoriaProducto.Name = "LCategoriaProducto";
             this.LCategoriaProducto.Size = new System.Drawing.Size(66, 18);
             this.LCategoriaProducto.TabIndex = 53;
@@ -292,7 +406,7 @@
             // 
             this.TBImagenProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBImagenProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBImagenProducto.Location = new System.Drawing.Point(671, 119);
+            this.TBImagenProducto.Location = new System.Drawing.Point(635, 101);
             this.TBImagenProducto.Multiline = true;
             this.TBImagenProducto.Name = "TBImagenProducto";
             this.TBImagenProducto.Size = new System.Drawing.Size(304, 23);
@@ -305,7 +419,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(670, 94);
+            this.label1.Location = new System.Drawing.Point(633, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 18);
             this.label1.TabIndex = 55;
@@ -317,9 +431,9 @@
             this.BGuardarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BGuardarProducto.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGuardarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarProducto.Location = new System.Drawing.Point(326, 241);
+            this.BGuardarProducto.Location = new System.Drawing.Point(289, 218);
             this.BGuardarProducto.Name = "BGuardarProducto";
-            this.BGuardarProducto.Size = new System.Drawing.Size(94, 38);
+            this.BGuardarProducto.Size = new System.Drawing.Size(94, 32);
             this.BGuardarProducto.TabIndex = 56;
             this.BGuardarProducto.Text = "Guardar";
             this.BGuardarProducto.UseVisualStyleBackColor = false;
@@ -331,9 +445,9 @@
             this.BCancelarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BCancelarProducto.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCancelarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarProducto.Location = new System.Drawing.Point(444, 241);
+            this.BCancelarProducto.Location = new System.Drawing.Point(404, 218);
             this.BCancelarProducto.Name = "BCancelarProducto";
-            this.BCancelarProducto.Size = new System.Drawing.Size(94, 38);
+            this.BCancelarProducto.Size = new System.Drawing.Size(94, 32);
             this.BCancelarProducto.TabIndex = 57;
             this.BCancelarProducto.Text = "Cancelar";
             this.BCancelarProducto.UseVisualStyleBackColor = false;
@@ -345,9 +459,9 @@
             this.BSeleccionarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BSeleccionarImagen.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BSeleccionarImagen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BSeleccionarImagen.Location = new System.Drawing.Point(990, 109);
+            this.BSeleccionarImagen.Location = new System.Drawing.Point(953, 97);
             this.BSeleccionarImagen.Name = "BSeleccionarImagen";
-            this.BSeleccionarImagen.Size = new System.Drawing.Size(167, 38);
+            this.BSeleccionarImagen.Size = new System.Drawing.Size(167, 32);
             this.BSeleccionarImagen.TabIndex = 58;
             this.BSeleccionarImagen.Text = "Seleccionar Imagen";
             this.BSeleccionarImagen.UseVisualStyleBackColor = false;
@@ -359,7 +473,7 @@
             this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosUsers.Location = new System.Drawing.Point(1168, 329);
+            this.BInactivosUsers.Location = new System.Drawing.Point(1135, 282);
             this.BInactivosUsers.Name = "BInactivosUsers";
             this.BInactivosUsers.Size = new System.Drawing.Size(174, 41);
             this.BInactivosUsers.TabIndex = 59;
@@ -373,7 +487,7 @@
             this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosUser.Location = new System.Drawing.Point(12, 331);
+            this.BActivosUser.Location = new System.Drawing.Point(12, 282);
             this.BActivosUser.Name = "BActivosUser";
             this.BActivosUser.Size = new System.Drawing.Size(166, 41);
             this.BActivosUser.TabIndex = 60;
@@ -384,9 +498,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-6, 320);
+            this.pictureBox1.Location = new System.Drawing.Point(-36, 266);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1368, 383);
+            this.pictureBox1.Size = new System.Drawing.Size(1415, 437);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
@@ -394,11 +509,12 @@
             // 
             this.TBCodigoProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBCodigoProducto.ForeColor = System.Drawing.Color.Coral;
-            this.TBCodigoProducto.Location = new System.Drawing.Point(671, 180);
+            this.TBCodigoProducto.Location = new System.Drawing.Point(634, 159);
             this.TBCodigoProducto.Multiline = true;
             this.TBCodigoProducto.Name = "TBCodigoProducto";
             this.TBCodigoProducto.Size = new System.Drawing.Size(134, 25);
             this.TBCodigoProducto.TabIndex = 61;
+            this.TBCodigoProducto.Leave += new System.EventHandler(this.TBCodigoProducto_Leave);
             // 
             // label2
             // 
@@ -406,109 +522,18 @@
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(670, 157);
+            this.label2.Location = new System.Drawing.Point(633, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 62;
             this.label2.Text = "Codigo";
             // 
-            // IdProducto
-            // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.IdProducto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.IdProducto.HeaderText = "ID Producto";
-            this.IdProducto.Name = "IdProducto";
-            // 
-            // Codigo
-            // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // nombreProducto
-            // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.Name = "nombreProducto";
-            // 
-            // stockProducto
-            // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.stockProducto.DefaultCellStyle = dataGridViewCellStyle4;
-            this.stockProducto.HeaderText = "Stock";
-            this.stockProducto.Name = "stockProducto";
-            // 
-            // stockMinimo
-            // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.stockMinimo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.stockMinimo.HeaderText = "Stock Minimo";
-            this.stockMinimo.Name = "stockMinimo";
-            // 
-            // precioCompra
-            // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.precioCompra.DefaultCellStyle = dataGridViewCellStyle6;
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.Name = "precioCompra";
-            // 
-            // precioVenta
-            // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.precioVenta.DefaultCellStyle = dataGridViewCellStyle7;
-            this.precioVenta.HeaderText = "Precio Venta";
-            this.precioVenta.Name = "precioVenta";
-            // 
-            // descripcionProducto
-            // 
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.descripcionProducto.DefaultCellStyle = dataGridViewCellStyle8;
-            this.descripcionProducto.HeaderText = "Descripcion";
-            this.descripcionProducto.Name = "descripcionProducto";
-            // 
-            // categoriaProducto
-            // 
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.categoriaProducto.DefaultCellStyle = dataGridViewCellStyle9;
-            this.categoriaProducto.HeaderText = "Categoria";
-            this.categoriaProducto.Name = "categoriaProducto";
-            // 
-            // imagenProducto
-            // 
-            this.imagenProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.imagenProducto.DefaultCellStyle = dataGridViewCellStyle10;
-            this.imagenProducto.FillWeight = 110F;
-            this.imagenProducto.HeaderText = "Imagen";
-            this.imagenProducto.Name = "imagenProducto";
-            // 
-            // editarProducto
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.editarProducto.DefaultCellStyle = dataGridViewCellStyle11;
-            this.editarProducto.HeaderText = "Editar";
-            this.editarProducto.Name = "editarProducto";
-            // 
-            // bajaProducto
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.bajaProducto.DefaultCellStyle = dataGridViewCellStyle12;
-            this.bajaProducto.HeaderText = "Dar de Baja";
-            this.bajaProducto.Name = "bajaProducto";
-            this.bajaProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 701);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1370, 701);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TBCodigoProducto);
             this.Controls.Add(this.BActivosUser);
@@ -536,6 +561,7 @@
             this.Controls.Add(this.TBNombreProducto);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LFondoProductos);
+            this.ForeColor = System.Drawing.Color.GhostWhite;
             this.Name = "FormProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.FormProductos_Load);

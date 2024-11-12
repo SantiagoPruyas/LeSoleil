@@ -28,7 +28,7 @@ namespace CapaNegocio
 
             if (obj.Codigo == "")
             {
-                Mensaje += "Es necesario el Nombre de la Producto \n";
+                Mensaje += "Es necesario el Codigo del Producto \n";
             }
 
 
@@ -52,7 +52,7 @@ namespace CapaNegocio
 
             if (obj.Codigo == "")
             {
-                Mensaje += "Es necesario el Nombre de la Producto \n";
+                Mensaje += "Es necesario el Codigo del Producto \n";
             }
 
             if (Mensaje != string.Empty)

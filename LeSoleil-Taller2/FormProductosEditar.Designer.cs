@@ -52,9 +52,9 @@
             this.LNombreProducto = new System.Windows.Forms.Label();
             this.TBNombreProducto = new System.Windows.Forms.TextBox();
             this.BSeleccionar = new System.Windows.Forms.Button();
-            this.LFondoUser = new System.Windows.Forms.Label();
+            this.LFondoProd = new System.Windows.Forms.Label();
             this.PBImagen = new System.Windows.Forms.PictureBox();
-            this.TBImagen = new System.Windows.Forms.TextBox();
+            this.TBImagenProducto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@
             this.BEditarCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarCancelar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarCancelar.Location = new System.Drawing.Point(380, 666);
+            this.BEditarCancelar.Location = new System.Drawing.Point(379, 654);
             this.BEditarCancelar.Name = "BEditarCancelar";
             this.BEditarCancelar.Size = new System.Drawing.Size(95, 40);
             this.BEditarCancelar.TabIndex = 75;
@@ -104,7 +104,7 @@
             this.BEditarGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BEditarGuardar.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEditarGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BEditarGuardar.Location = new System.Drawing.Point(24, 666);
+            this.BEditarGuardar.Location = new System.Drawing.Point(24, 654);
             this.BEditarGuardar.Name = "BEditarGuardar";
             this.BEditarGuardar.Size = new System.Drawing.Size(152, 40);
             this.BEditarGuardar.TabIndex = 74;
@@ -134,6 +134,7 @@
             this.TBCodigoProducto.Name = "TBCodigoProducto";
             this.TBCodigoProducto.Size = new System.Drawing.Size(134, 25);
             this.TBCodigoProducto.TabIndex = 57;
+            this.TBCodigoProducto.Leave += new System.EventHandler(this.TBCodigoProducto_Leave);
             // 
             // LCodigoProducto
             // 
@@ -191,6 +192,7 @@
             this.CBCategoriaProducto.Name = "CBCategoriaProducto";
             this.CBCategoriaProducto.Size = new System.Drawing.Size(134, 21);
             this.CBCategoriaProducto.TabIndex = 92;
+            this.CBCategoriaProducto.Leave += new System.EventHandler(this.CBCategoriaProducto_Leave);
             // 
             // LStockMin
             // 
@@ -213,6 +215,7 @@
             this.TBStockMin.Name = "TBStockMin";
             this.TBStockMin.Size = new System.Drawing.Size(134, 23);
             this.TBStockMin.TabIndex = 90;
+            this.TBStockMin.Leave += new System.EventHandler(this.TBStockMin_Leave);
             // 
             // LPrecioVenta
             // 
@@ -235,6 +238,7 @@
             this.TBPrecioVenta.Name = "TBPrecioVenta";
             this.TBPrecioVenta.Size = new System.Drawing.Size(134, 23);
             this.TBPrecioVenta.TabIndex = 88;
+            this.TBPrecioVenta.Leave += new System.EventHandler(this.TBPrecioVenta_Leave);
             // 
             // LDescripcionProducto
             // 
@@ -258,6 +262,7 @@
             this.TBDescripcionProducto.Size = new System.Drawing.Size(257, 73);
             this.TBDescripcionProducto.TabIndex = 86;
             this.TBDescripcionProducto.Text = "Ej: Tipo de tela";
+            this.TBDescripcionProducto.Leave += new System.EventHandler(this.TBDescripcionProducto_Leave);
             // 
             // LStock
             // 
@@ -280,6 +285,7 @@
             this.TBStockProducto.Name = "TBStockProducto";
             this.TBStockProducto.Size = new System.Drawing.Size(134, 23);
             this.TBStockProducto.TabIndex = 84;
+            this.TBStockProducto.Leave += new System.EventHandler(this.TBStockProducto_Leave);
             // 
             // LPrecioProducto
             // 
@@ -302,6 +308,7 @@
             this.TBPrecioCompra.Name = "TBPrecioCompra";
             this.TBPrecioCompra.Size = new System.Drawing.Size(134, 23);
             this.TBPrecioCompra.TabIndex = 82;
+            this.TBPrecioCompra.Leave += new System.EventHandler(this.TBPrecioCompra_Leave);
             // 
             // LNombreProducto
             // 
@@ -324,6 +331,7 @@
             this.TBNombreProducto.Name = "TBNombreProducto";
             this.TBNombreProducto.Size = new System.Drawing.Size(134, 25);
             this.TBNombreProducto.TabIndex = 80;
+            this.TBNombreProducto.Leave += new System.EventHandler(this.TBNombreProducto_Leave);
             // 
             // BSeleccionar
             // 
@@ -339,13 +347,13 @@
             this.BSeleccionar.UseVisualStyleBackColor = false;
             this.BSeleccionar.Click += new System.EventHandler(this.BSeleccionar_Click);
             // 
-            // LFondoUser
+            // LFondoProd
             // 
-            this.LFondoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFondoUser.Location = new System.Drawing.Point(-4, -4);
-            this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(505, 720);
-            this.LFondoUser.TabIndex = 98;
+            this.LFondoProd.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LFondoProd.Location = new System.Drawing.Point(-4, -4);
+            this.LFondoProd.Name = "LFondoProd";
+            this.LFondoProd.Size = new System.Drawing.Size(505, 720);
+            this.LFondoProd.TabIndex = 98;
             // 
             // PBImagen
             // 
@@ -355,22 +363,23 @@
             this.PBImagen.TabIndex = 99;
             this.PBImagen.TabStop = false;
             // 
-            // TBImagen
+            // TBImagenProducto
             // 
-            this.TBImagen.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBImagen.ForeColor = System.Drawing.Color.Coral;
-            this.TBImagen.Location = new System.Drawing.Point(204, 390);
-            this.TBImagen.Multiline = true;
-            this.TBImagen.Name = "TBImagen";
-            this.TBImagen.Size = new System.Drawing.Size(134, 23);
-            this.TBImagen.TabIndex = 100;
+            this.TBImagenProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBImagenProducto.ForeColor = System.Drawing.Color.Coral;
+            this.TBImagenProducto.Location = new System.Drawing.Point(204, 390);
+            this.TBImagenProducto.Multiline = true;
+            this.TBImagenProducto.Name = "TBImagenProducto";
+            this.TBImagenProducto.Size = new System.Drawing.Size(134, 23);
+            this.TBImagenProducto.TabIndex = 100;
+            this.TBImagenProducto.Leave += new System.EventHandler(this.TBImagenProducto_Leave);
             // 
             // FormProductosEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 718);
-            this.Controls.Add(this.TBImagen);
+            this.Controls.Add(this.TBImagenProducto);
             this.Controls.Add(this.PBImagen);
             this.Controls.Add(this.BSeleccionar);
             this.Controls.Add(this.BSeleccionarImagen);
@@ -396,8 +405,9 @@
             this.Controls.Add(this.LEditarProducto);
             this.Controls.Add(this.TBCodigoProducto);
             this.Controls.Add(this.LCodigoProducto);
-            this.Controls.Add(this.LFondoUser);
+            this.Controls.Add(this.LFondoProd);
             this.Name = "FormProductosEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Producto";
             this.Load += new System.EventHandler(this.FormProductosEditar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBImagen)).EndInit();
@@ -432,8 +442,8 @@
         private System.Windows.Forms.Label LNombreProducto;
         private System.Windows.Forms.TextBox TBNombreProducto;
         private System.Windows.Forms.Button BSeleccionar;
-        private System.Windows.Forms.Label LFondoUser;
+        private System.Windows.Forms.Label LFondoProd;
         private System.Windows.Forms.PictureBox PBImagen;
-        private System.Windows.Forms.TextBox TBImagen;
+        private System.Windows.Forms.TextBox TBImagenProducto;
     }
 }

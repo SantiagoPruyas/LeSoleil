@@ -59,6 +59,7 @@ namespace LeSoleil_Taller2
             TBPrecioVenta.Text = "";
             TBStockMin.Text = "";
             TBImagenProducto.Text = "";
+            TBCodigoProducto.Text = "";
 
             // Limpiar el ComboBox
             CBCategoriaProducto.SelectedIndex = -1;
@@ -136,9 +137,39 @@ namespace LeSoleil_Taller2
             }
         }
 
+        private void TBCodigoProducto_Leave(object sender, EventArgs e)
+        {
+            // Obtener el texto del TextBox y eliminar espacios al principio y al final
+            string codigoProducto = TBCodigoProducto.Text.Trim();
+
+            // Verificar que el código de producto tenga entre 8 y 14 dígitos
+            if (codigoProducto.Length < 8 || codigoProducto.Length > 14)
+            {
+                MessageBox.Show("El código de producto debe tener entre 8 y 14 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBCodigoProducto.Focus();  // Colocar el foco en el TextBox para corregir
+                return;
+            }
+
+            // Verificar que el código solo contenga números (no letras ni caracteres especiales)
+            if (!codigoProducto.All(char.IsDigit))
+            {
+                MessageBox.Show("El código de producto no debe contener letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBCodigoProducto.Focus();  // Colocar el foco en el TextBox para corregir
+                return;
+            }
+        }
+
         private void TBImagenProducto_Leave(object sender, EventArgs e)
         {
+            // Verificar si el TextBox de la imagen está vacío
+            if (string.IsNullOrEmpty(TBImagenProducto.Text))
+            {
+                // Si el TextBox está vacío, mostrar un mensaje de advertencia
+                MessageBox.Show("Por favor, seleccione una imagen para el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                // Enfocar nuevamente el TextBox para que el usuario pueda corregirlo
+                TBImagenProducto.Focus();
+            }
         }
 
         private void BSeleccionarImagen_Click(object sender, EventArgs e)
@@ -506,6 +537,8 @@ namespace LeSoleil_Taller2
                 });
             }
         }
+
+
     }
     }
 
