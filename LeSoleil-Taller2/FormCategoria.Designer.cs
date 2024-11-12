@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCategoria));
             this.BInactivosCategory = new System.Windows.Forms.Button();
             this.BActivosCategory = new System.Windows.Forms.Button();
             this.BCancelarCategoria = new System.Windows.Forms.Button();
             this.BGuardarCategoria = new System.Windows.Forms.Button();
-            this.LEmailUser = new System.Windows.Forms.Label();
+            this.LDescripcion = new System.Windows.Forms.Label();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
             this.DGVCategorias = new System.Windows.Forms.DataGridView();
             this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,17 +111,17 @@
             this.BGuardarCategoria.UseVisualStyleBackColor = false;
             this.BGuardarCategoria.Click += new System.EventHandler(this.BGuardarCategoria_Click);
             // 
-            // LEmailUser
+            // LDescripcion
             // 
-            this.LEmailUser.AutoSize = true;
-            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
-            this.LEmailUser.Location = new System.Drawing.Point(335, 91);
-            this.LEmailUser.Name = "LEmailUser";
-            this.LEmailUser.Size = new System.Drawing.Size(80, 18);
-            this.LEmailUser.TabIndex = 63;
-            this.LEmailUser.Text = "Descripcion";
+            this.LDescripcion.AutoSize = true;
+            this.LDescripcion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LDescripcion.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LDescripcion.ForeColor = System.Drawing.Color.Black;
+            this.LDescripcion.Location = new System.Drawing.Point(335, 91);
+            this.LDescripcion.Name = "LDescripcion";
+            this.LDescripcion.Size = new System.Drawing.Size(80, 18);
+            this.LDescripcion.TabIndex = 63;
+            this.LDescripcion.Text = "Descripcion";
             // 
             // TBDescripcion
             // 
@@ -132,18 +132,18 @@
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(359, 70);
             this.TBDescripcion.TabIndex = 62;
-            this.TBDescripcion.MouseLeave += new System.EventHandler(this.TBDescripcion_Leave);
+            this.TBDescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.TBDescripcion_Validating);
             // 
             // DGVCategorias
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGVCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Usuario,
@@ -161,8 +161,8 @@
             // 
             // Id_Usuario
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle7;
             this.Id_Usuario.HeaderText = "ID";
             this.Id_Usuario.Name = "Id_Usuario";
             this.Id_Usuario.ReadOnly = true;
@@ -170,16 +170,16 @@
             // 
             // nombreUsuario
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle8;
             this.nombreUsuario.HeaderText = "Nombre";
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.ReadOnly = true;
             // 
             // Descripcion
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle9;
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
@@ -196,14 +196,14 @@
             // 
             // bajaCategoria
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaCategoria.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaCategoria.DefaultCellStyle = dataGridViewCellStyle10;
             this.bajaCategoria.HeaderText = "Dar de Baja";
             this.bajaCategoria.Name = "bajaCategoria";
             this.bajaCategoria.ReadOnly = true;
@@ -220,7 +220,7 @@
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.Size = new System.Drawing.Size(134, 25);
             this.TBNombre.TabIndex = 45;
-            this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_Leave);
+            this.TBNombre.Leave += new System.EventHandler(this.TBNombre_Leave);
             // 
             // LNombreUser
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.BActivosCategory);
             this.Controls.Add(this.BCancelarCategoria);
             this.Controls.Add(this.BGuardarCategoria);
-            this.Controls.Add(this.LEmailUser);
+            this.Controls.Add(this.LDescripcion);
             this.Controls.Add(this.TBDescripcion);
             this.Controls.Add(this.DGVCategorias);
             this.Controls.Add(this.pictureBox1);
@@ -297,7 +297,7 @@
         private System.Windows.Forms.Button BActivosCategory;
         private System.Windows.Forms.Button BCancelarCategoria;
         private System.Windows.Forms.Button BGuardarCategoria;
-        private System.Windows.Forms.Label LEmailUser;
+        private System.Windows.Forms.Label LDescripcion;
         private System.Windows.Forms.TextBox TBDescripcion;
         private System.Windows.Forms.DataGridView DGVCategorias;
         private System.Windows.Forms.PictureBox pictureBox1;
