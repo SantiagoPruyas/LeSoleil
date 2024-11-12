@@ -243,18 +243,23 @@ ADD Pais VARCHAR(100) NOT NULL;
 ALTER TABLE Proveedor
 ALTER COLUMN Descripcion VARCHAR(150) NULL;
 
+ALTER TABLE Proveedor
+ALTER COLUMN Telefono VARCHAR(50) NULL;
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
 SELECT * from Perfil
-SELECT * from Permiso
+SELECT * from Permiso order by Perfil_id ASC
 SELECT * from Categoria
 SELECT * from Producto
+SELECT * from Proveedor
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
 insert into Perfil (NombreRol, Descripcion) values ('VENDEDOR', 'Este usuario administrador tiene los permisos necesarios para manejar ventas y clientes')
 insert into Perfil (NombreRol, Descripcion) values ('REPOSITOR', 'Este usuario repositor tiene los permisos necesarios para gestionar los productos')
+insert into Perfil (NombreRol, Descripcion) values ('GERENTE', 'Este usuario gerente tiene los permisos necesarios para gestionar toda la aplicacion excepto por funcionalidades propias del admin')
 
 -- Primer Usuario Admin
 insert into Usuario(Nombre, Apellido, Usuario, Contraseña, DNI, Fecha_nacimiento, Correo, Baja, Perfil_id, Direccion, Telefono) 
@@ -302,6 +307,23 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuCategorias')
 
+-- Permiso de MenuCategorias para el repositor
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(3,'MenuCategorias')
+
+-- Permiso de MenuProveedores para el administrador
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(1,'MenuProveedores')
+
+-- Gestion de permisos de usuario Gerente
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(4,'MenuClientes'),
+(4,'MenuProveedores'),
+(4,'MenuCategorias'),
+(4,'MenuProductos'),
+(4,'MenuReportes'),
+(4,'MenuSalir')
+
 UPDATE Permiso
 SET Nombre = 'MenuBackup'
 WHERE Nombre = 'MenuBackUp'
@@ -321,6 +343,12 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (3,'MenuProductos'),
 (3,'MenuReportes'),
 (3,'MenuSalir')
+ 
+-- Eliminacion del permiso "MenuProductos" al vendedor 
+DELETE from Permiso where Id_permiso = 8
+
+-- Eliminacion del permiso "MenuBackUp" al repositor 
+DELETE from Permiso where Id_permiso = 22
 
 -- Modificar Permisos
 UPDATE Permiso
@@ -973,41 +1001,6 @@ end
 ---------------------------------- PROCEDIMIENTOS PROVEEDORES ----------------------------------
 select * from Proveedor;
 
-
--- Registrar Proveedor
-create PROC SP_REGISTRARPROVEEDOR(
-@Nombre varchar(50),
-@Direccion varchar(100),
-@Telefono VARCHAR(50),
-@Email varchar(50),
-@Baja bit,
-@CUIT varchar(50),
-@Razon_social varchar(50),
-@Ciudad varchar(100),
-@Pais varchar(100),
-@Respuesta int output,
-@Mensaje varchar(500) output
-)
-as
-begin
-	set @Respuesta = 0
-	set @Mensaje = ''
-
-	DECLARE @IDPERSONA INT
-	if not exists (select * from Proveedor WHERE CUIT = @CUIT)
-	begin 
-		insert into Proveedor(Nombre, Direccion, Telefono, Email, Baja, CUIT, Razon_social, Ciudad, Pais) values
-		(@Nombre, @Direccion, @Telefono, @Email, @Baja, @CUIT, @Razon_social, @Ciudad, @Pais)
-
-		set @Respuesta = SCOPE_IDENTITY()
-	end
-	else
-		set @Mensaje = 'El numero de CUIT ingresado ya existe.'
-end
-
--- Eliminar metodo registrar
-DROP PROCEDURE IF EXISTS SP_REGISTRARPROVEEDOR;
-
 -- Metodo REGISTRAR Proveedor (con Descripcion incluida)
 create PROC SP_REGISTRARPROVEEDOR(
 @Descripcion VARCHAR(150),
@@ -1039,51 +1032,6 @@ begin
 	else
 		set @Mensaje = 'El numero de CUIT ingresado ya existe.'
 end
-
--- Editar Proveedor
-create PROC SP_EDITARPROVEEDOR(
-@Id_Proveedor int,
-@Nombre varchar(50),
-@Direccion varchar(100),
-@Telefono VARCHAR(50),
-@Email varchar(50),
-@Baja bit,
-@CUIT varchar(50),
-@Razon_social varchar(50),
-@Ciudad varchar(100),
-@Pais varchar(100),
-@Respuesta bit output,
-@Mensaje varchar(500) output
-)
-as
-begin
-	set @Respuesta = 0
-	set @Mensaje = ''
-
-	if not exists(select * from Proveedor where CUIT = @CUIT and Id_Proveedor != @Id_Proveedor)
-	begin
-		UPDATE Proveedor set
-		Nombre = @Nombre, 
-		Direccion = @Direccion, 
-		Telefono = @Telefono, 
-		Email = @Email, 
-		Baja = @Baja,
-		CUIT = @CUIT,
-		Razon_social = @Razon_social,
-		Ciudad = @Ciudad,
-		Pais = @Pais
-		where Id_Proveedor = @Id_Proveedor
-
-		set @Respuesta = 1
-		
-	end
-	else
-		set @Mensaje = 'No se puede repetir el CUIT para más de un Proveedor'
-
-end
-
--- Eliminar Metodo Editar
-DROP PROCEDURE IF EXISTS SP_EDITARPROVEEDOR;
 
 -- Metodo EDITAR Proveedor (con Descripcion incluida)
 create PROC SP_EDITARPROVEEDOR(
