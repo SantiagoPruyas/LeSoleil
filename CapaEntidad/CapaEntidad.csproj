@@ -45,6 +45,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="CompraCabecera.cs" />
     <Compile Include="CompraDetalle.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Producto.cs" />

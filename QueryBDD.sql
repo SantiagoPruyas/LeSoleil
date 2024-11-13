@@ -156,6 +156,12 @@ CREATE TABLE VentaDetalle
   FOREIGN KEY (Id_venta) REFERENCES VentaCabecera(Id_venta),
   FOREIGN KEY (Id_producto) REFERENCES Producto(Id_producto)
 );
+
+CREATE TABLE Factura
+(
+  Id_Factura INT IDENTITY NOT NULL,
+  Tipo_Factura VARCHAR(1) NOT NULL
+);
 -- Modificaciones previas a la creacion de Datos
 -- Nuevas Columnas a Tabla Usuario
 /* ALTER TABLE Usuario
@@ -246,6 +252,19 @@ ALTER COLUMN Descripcion VARCHAR(150) NULL;
 ALTER TABLE Proveedor
 ALTER COLUMN Telefono VARCHAR(50) NULL;
 
+ALTER TABLE Factura
+alter Column Tipo_Factura varchar(2);
+
+ALTER TABLE VentaCabecera
+add Id_Factura int;
+
+ALTER TABLE Factura
+ADD CONSTRAINT PK_Factura PRIMARY KEY (Id_Factura);
+
+ALTER TABLE VentaCabecera
+ADD CONSTRAINT FK_Factura_Id_Factura
+FOREIGN KEY (Id_Factura) REFERENCES Factura(Id_Factura);
+
 ---------------------------------- LOTE DE DATOS ----------------------------------
 -- Selects
 SELECT * from Usuario
@@ -254,6 +273,9 @@ SELECT * from Permiso order by Perfil_id ASC
 SELECT * from Categoria
 SELECT * from Producto
 SELECT * from Proveedor
+SELECT * from Factura
+SELECT * from VentaCabecera
+SELECT * from VentaDetalle
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
@@ -343,6 +365,12 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (3,'MenuProductos'),
 (3,'MenuReportes'),
 (3,'MenuSalir')
+
+-- Insercion de Tipos de Facturas
+INSERT INTO Factura(Tipo_Factura) values
+('A'),
+('B'),
+('C')
  
 -- Eliminacion del permiso "MenuProductos" al vendedor 
 DELETE from Permiso where Id_permiso = 8
@@ -367,6 +395,20 @@ inner join Perfil r on r.Perfil_id = u.Perfil_id
 
 -- Select de Proveedores
 select Id_Proveedor, Descripcion, Nombre, Direccion, Telefono, Email, Baja, CUIT, Razon_social, Ciudad, Pais from Proveedor
+
+-- Select de Ventas
+SELECT v.Id_venta, u.Nombre[NombreVendedor], c.DNI, c.Nombre[NombreCliente], f.Tipo_Factura, v.Nro_Factura, v.Monto_pago, v.Monto_cambio, v.Total,
+convert(char(10),v.FechaVenta,103)[FechaRegistro]
+from VentaCabecera v
+inner join Usuario u on u.Id_usuario = v.Id_usuario
+inner join Cliente c on c.Id_cliente = v.Id_cliente
+inner join Factura f on f.Id_Factura = v.Id_Factura
+where v.Nro_Factura = '0002'
+
+SELECT p.Nombre, vd.Precio_venta, vd.Subtotal
+FROM VentaDetalle vd
+INNER JOIN Producto p on p.Id_producto = vd.Id_producto
+WHERE vd.Id_venta = 1
 
 ---------------------------------- PROCEDIMIENTOS ----------------------------------
 create PROC SP_REGISTRARUSUARIO(
@@ -1128,3 +1170,56 @@ begin
 			SET @Mensaje = 'El ID del Proveedor no coindice con ningun otro ID';
 end
 
+/* PROCESOS PARA REGISTRAR UNA VENTA */
+
+CREATE TYPE [dbo].[EDetalle_Venta] AS TABLE(
+	[Id_producto] int NULL,
+	[Precio_venta] decimal(10,2) NULL,
+	[Cantidad] int NULL,
+	[Subtotal] decimal(10,2) NULL
+)
+
+
+GO
+
+create procedure usp_RegistrarVenta(
+@IdUsuario int,
+@Id_Factura int,
+@Id_cliente int,
+@Nro_Factura varchar(50),
+@Monto_pago decimal(10,2),
+@Monto_cambio decimal(10,2),
+@Total decimal(10,2),
+@DetalleVenta [EDetalle_Venta] READONLY,                                      
+@Resultado bit output,
+@Mensaje varchar(500) output
+)
+as
+begin
+	
+	begin try
+
+		declare @idventa int = 0
+		set @Resultado = 1
+		set @Mensaje = ''
+
+		begin  transaction registro
+
+		insert into VentaCabecera(Id_usuario,Id_Factura,Nro_Factura,Id_cliente,Monto_pago,Monto_cambio,Total)
+		values(@IdUsuario,@Id_Factura,@Nro_Factura,@Id_cliente,@Monto_pago,@Monto_cambio,@Total)
+
+		set @idventa = SCOPE_IDENTITY()
+
+		insert into VentaDetalle(Id_venta,Id_producto,Precio_venta,Cantidad,Subtotal)
+		select @idventa,Id_producto,Precio_venta,Cantidad,Subtotal from @DetalleVenta
+
+		commit transaction registro
+
+	end try
+	begin catch
+		set @Resultado = 0
+		set @Mensaje = ERROR_MESSAGE()
+		rollback transaction registro
+	end catch
+
+end

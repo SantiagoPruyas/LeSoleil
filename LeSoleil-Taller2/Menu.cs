@@ -107,7 +107,7 @@ namespace LeSoleil_Taller2
 
         private void MenuRegistrarVenta_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormVentas());
+            abrirFormulario((ToolStripMenuItem)sender, new FormVentas(usuarioActual));
         }
 
         private void MenuDetalleVenta_Click(object sender, EventArgs e)

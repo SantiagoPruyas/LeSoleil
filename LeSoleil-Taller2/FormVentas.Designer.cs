@@ -28,46 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GBInfoCliente = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.TBApellidoUser = new System.Windows.Forms.TextBox();
+            this.LId_cliente = new System.Windows.Forms.Label();
+            this.TBApellidoCliente = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.BTBuscarCliente = new System.Windows.Forms.Button();
+            this.TBNombreCliente = new System.Windows.Forms.TextBox();
+            this.TBDniCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LDNIUser = new System.Windows.Forms.Label();
             this.LUsers = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CBPerfilUser = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CBTipoFactura = new System.Windows.Forms.ComboBox();
+            this.TBFechaActual = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.LId_producto = new System.Windows.Forms.Label();
+            this.BTBuscarProducto = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.DUDCantidad = new System.Windows.Forms.DomainUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TBStock = new System.Windows.Forms.TextBox();
+            this.TBPrecio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TBProducto = new System.Windows.Forms.TextBox();
+            this.TBCodigoProducto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BGuardarCliente = new System.Windows.Forms.Button();
+            this.BAgregarProducto = new System.Windows.Forms.Button();
             this.DGVProductosVenta = new System.Windows.Forms.DataGridView();
-            this.ID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BTEliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TBNombreVendedor = new System.Windows.Forms.TextBox();
+            this.TBIdVendedor = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TBPrecioTotal = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TBCambio = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TBPago = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.BAgregarCliente = new System.Windows.Forms.Button();
             this.BCancelar = new System.Windows.Forms.Button();
             this.BRegistrarVenta = new System.Windows.Forms.Button();
             this.GBInfoCliente.SuspendLayout();
@@ -81,9 +96,12 @@
             // GBInfoCliente
             // 
             this.GBInfoCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.GBInfoCliente.Controls.Add(this.button1);
-            this.GBInfoCliente.Controls.Add(this.textBox1);
-            this.GBInfoCliente.Controls.Add(this.TBApellidoUser);
+            this.GBInfoCliente.Controls.Add(this.LId_cliente);
+            this.GBInfoCliente.Controls.Add(this.TBApellidoCliente);
+            this.GBInfoCliente.Controls.Add(this.label12);
+            this.GBInfoCliente.Controls.Add(this.BTBuscarCliente);
+            this.GBInfoCliente.Controls.Add(this.TBNombreCliente);
+            this.GBInfoCliente.Controls.Add(this.TBDniCliente);
             this.GBInfoCliente.Controls.Add(this.label1);
             this.GBInfoCliente.Controls.Add(this.LDNIUser);
             this.GBInfoCliente.ForeColor = System.Drawing.Color.Brown;
@@ -96,34 +114,67 @@
             this.GBInfoCliente.TabStop = false;
             this.GBInfoCliente.Text = "Informacion Cliente";
             // 
-            // button1
+            // LId_cliente
             // 
-            this.button1.Location = new System.Drawing.Point(157, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 26);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LId_cliente.AutoSize = true;
+            this.LId_cliente.Location = new System.Drawing.Point(39, 26);
+            this.LId_cliente.Name = "LId_cliente";
+            this.LId_cliente.Size = new System.Drawing.Size(65, 18);
+            this.LId_cliente.TabIndex = 42;
+            this.LId_cliente.Text = "Id_cliente";
             // 
-            // textBox1
+            // TBApellidoCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Coral;
-            this.textBox1.Location = new System.Drawing.Point(230, 50);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 25);
-            this.textBox1.TabIndex = 20;
+            this.TBApellidoCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBApellidoCliente.ForeColor = System.Drawing.Color.Coral;
+            this.TBApellidoCliente.Location = new System.Drawing.Point(395, 50);
+            this.TBApellidoCliente.Multiline = true;
+            this.TBApellidoCliente.Name = "TBApellidoCliente";
+            this.TBApellidoCliente.Size = new System.Drawing.Size(142, 25);
+            this.TBApellidoCliente.TabIndex = 23;
             // 
-            // TBApellidoUser
+            // label12
             // 
-            this.TBApellidoUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBApellidoUser.ForeColor = System.Drawing.Color.Coral;
-            this.TBApellidoUser.Location = new System.Drawing.Point(11, 50);
-            this.TBApellidoUser.Multiline = true;
-            this.TBApellidoUser.Name = "TBApellidoUser";
-            this.TBApellidoUser.Size = new System.Drawing.Size(134, 25);
-            this.TBApellidoUser.TabIndex = 19;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(392, 26);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 18);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Apellido:";
+            // 
+            // BTBuscarCliente
+            // 
+            this.BTBuscarCliente.Location = new System.Drawing.Point(157, 50);
+            this.BTBuscarCliente.Name = "BTBuscarCliente";
+            this.BTBuscarCliente.Size = new System.Drawing.Size(57, 26);
+            this.BTBuscarCliente.TabIndex = 21;
+            this.BTBuscarCliente.Text = "Buscar";
+            this.BTBuscarCliente.UseVisualStyleBackColor = true;
+            this.BTBuscarCliente.Click += new System.EventHandler(this.BTBuscarCliente_Click);
+            // 
+            // TBNombreCliente
+            // 
+            this.TBNombreCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombreCliente.ForeColor = System.Drawing.Color.Coral;
+            this.TBNombreCliente.Location = new System.Drawing.Point(230, 50);
+            this.TBNombreCliente.Multiline = true;
+            this.TBNombreCliente.Name = "TBNombreCliente";
+            this.TBNombreCliente.Size = new System.Drawing.Size(142, 25);
+            this.TBNombreCliente.TabIndex = 20;
+            // 
+            // TBDniCliente
+            // 
+            this.TBDniCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDniCliente.ForeColor = System.Drawing.Color.Coral;
+            this.TBDniCliente.Location = new System.Drawing.Point(11, 50);
+            this.TBDniCliente.Multiline = true;
+            this.TBDniCliente.Name = "TBDniCliente";
+            this.TBDniCliente.Size = new System.Drawing.Size(134, 25);
+            this.TBDniCliente.TabIndex = 19;
             // 
             // label1
             // 
@@ -134,9 +185,9 @@
             this.label1.Location = new System.Drawing.Point(227, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 18);
+            this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Nombre Completo:";
+            this.label1.Text = "Nombre:";
             // 
             // LDNIUser
             // 
@@ -168,8 +219,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Controls.Add(this.CBPerfilUser);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.CBTipoFactura);
+            this.groupBox1.Controls.Add(this.TBFechaActual);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.Color.Brown;
@@ -182,23 +233,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion Venta";
             // 
-            // CBPerfilUser
+            // CBTipoFactura
             // 
-            this.CBPerfilUser.FormattingEnabled = true;
-            this.CBPerfilUser.Location = new System.Drawing.Point(166, 50);
-            this.CBPerfilUser.Name = "CBPerfilUser";
-            this.CBPerfilUser.Size = new System.Drawing.Size(183, 26);
-            this.CBPerfilUser.TabIndex = 20;
+            this.CBTipoFactura.FormattingEnabled = true;
+            this.CBTipoFactura.Location = new System.Drawing.Point(166, 50);
+            this.CBTipoFactura.Name = "CBTipoFactura";
+            this.CBTipoFactura.Size = new System.Drawing.Size(183, 26);
+            this.CBTipoFactura.TabIndex = 20;
             // 
-            // textBox3
+            // TBFechaActual
             // 
-            this.textBox3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Coral;
-            this.textBox3.Location = new System.Drawing.Point(10, 50);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 25);
-            this.textBox3.TabIndex = 19;
+            this.TBFechaActual.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBFechaActual.ForeColor = System.Drawing.Color.Coral;
+            this.TBFechaActual.Location = new System.Drawing.Point(10, 50);
+            this.TBFechaActual.Multiline = true;
+            this.TBFechaActual.Name = "TBFechaActual";
+            this.TBFechaActual.Size = new System.Drawing.Size(134, 25);
+            this.TBFechaActual.TabIndex = 19;
             // 
             // label2
             // 
@@ -229,15 +280,16 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.LId_producto);
+            this.groupBox2.Controls.Add(this.BTBuscarProducto);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.DUDCantidad);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.TBStock);
+            this.groupBox2.Controls.Add(this.TBPrecio);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.TBProducto);
+            this.groupBox2.Controls.Add(this.TBCodigoProducto);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.ForeColor = System.Drawing.Color.Brown;
@@ -250,14 +302,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion de Producto";
             // 
-            // button2
+            // LId_producto
             // 
-            this.button2.Location = new System.Drawing.Point(189, 50);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 26);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.LId_producto.AutoSize = true;
+            this.LId_producto.Location = new System.Drawing.Point(7, 78);
+            this.LId_producto.Name = "LId_producto";
+            this.LId_producto.Size = new System.Drawing.Size(76, 18);
+            this.LId_producto.TabIndex = 41;
+            this.LId_producto.Text = "Id_producto";
+            this.LId_producto.Visible = false;
+            // 
+            // BTBuscarProducto
+            // 
+            this.BTBuscarProducto.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
+            this.BTBuscarProducto.Location = new System.Drawing.Point(189, 50);
+            this.BTBuscarProducto.Name = "BTBuscarProducto";
+            this.BTBuscarProducto.Size = new System.Drawing.Size(45, 26);
+            this.BTBuscarProducto.TabIndex = 22;
+            this.BTBuscarProducto.UseVisualStyleBackColor = true;
+            this.BTBuscarProducto.Click += new System.EventHandler(this.BTBuscarProducto_Click);
             // 
             // label8
             // 
@@ -292,25 +355,26 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "Stock:";
             // 
-            // textBox7
+            // TBStock
             // 
-            this.textBox7.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Coral;
-            this.textBox7.Location = new System.Drawing.Point(586, 50);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(103, 25);
-            this.textBox7.TabIndex = 24;
+            this.TBStock.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBStock.ForeColor = System.Drawing.Color.Coral;
+            this.TBStock.Location = new System.Drawing.Point(586, 50);
+            this.TBStock.Multiline = true;
+            this.TBStock.Name = "TBStock";
+            this.TBStock.Size = new System.Drawing.Size(103, 25);
+            this.TBStock.TabIndex = 24;
             // 
-            // textBox6
+            // TBPrecio
             // 
-            this.textBox6.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Coral;
-            this.textBox6.Location = new System.Drawing.Point(465, 50);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(103, 25);
-            this.textBox6.TabIndex = 23;
+            this.TBPrecio.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPrecio.ForeColor = System.Drawing.Color.Coral;
+            this.TBPrecio.Location = new System.Drawing.Point(465, 50);
+            this.TBPrecio.Multiline = true;
+            this.TBPrecio.Name = "TBPrecio";
+            this.TBPrecio.Size = new System.Drawing.Size(103, 25);
+            this.TBPrecio.TabIndex = 23;
+            this.TBPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBPrecio_KeyPress);
             // 
             // label6
             // 
@@ -325,25 +389,26 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Precio:";
             // 
-            // textBox5
+            // TBProducto
             // 
-            this.textBox5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Coral;
-            this.textBox5.Location = new System.Drawing.Point(240, 50);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(210, 25);
-            this.textBox5.TabIndex = 21;
+            this.TBProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBProducto.ForeColor = System.Drawing.Color.Coral;
+            this.TBProducto.Location = new System.Drawing.Point(240, 50);
+            this.TBProducto.Multiline = true;
+            this.TBProducto.Name = "TBProducto";
+            this.TBProducto.Size = new System.Drawing.Size(210, 25);
+            this.TBProducto.TabIndex = 21;
             // 
-            // textBox2
+            // TBCodigoProducto
             // 
-            this.textBox2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Coral;
-            this.textBox2.Location = new System.Drawing.Point(10, 50);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 25);
-            this.textBox2.TabIndex = 19;
+            this.TBCodigoProducto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigoProducto.ForeColor = System.Drawing.Color.Coral;
+            this.TBCodigoProducto.Location = new System.Drawing.Point(10, 50);
+            this.TBCodigoProducto.Multiline = true;
+            this.TBCodigoProducto.Name = "TBCodigoProducto";
+            this.TBCodigoProducto.Size = new System.Drawing.Size(173, 25);
+            this.TBCodigoProducto.TabIndex = 19;
+            this.TBCodigoProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBCodigoProducto_KeyDown);
             // 
             // label4
             // 
@@ -371,70 +436,90 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Codigo de Producto:";
             // 
-            // BGuardarCliente
+            // BAgregarProducto
             // 
-            this.BGuardarCliente.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarCliente.Location = new System.Drawing.Point(875, 261);
-            this.BGuardarCliente.Name = "BGuardarCliente";
-            this.BGuardarCliente.Size = new System.Drawing.Size(121, 58);
-            this.BGuardarCliente.TabIndex = 57;
-            this.BGuardarCliente.Text = "Agregar Producto";
-            this.BGuardarCliente.UseVisualStyleBackColor = false;
+            this.BAgregarProducto.BackColor = System.Drawing.Color.Coral;
+            this.BAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarProducto.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BAgregarProducto.Location = new System.Drawing.Point(875, 261);
+            this.BAgregarProducto.Name = "BAgregarProducto";
+            this.BAgregarProducto.Size = new System.Drawing.Size(121, 58);
+            this.BAgregarProducto.TabIndex = 57;
+            this.BAgregarProducto.Text = "Agregar Producto";
+            this.BAgregarProducto.UseVisualStyleBackColor = false;
+            this.BAgregarProducto.Click += new System.EventHandler(this.BAgregarProducto_Click);
             // 
             // DGVProductosVenta
             // 
             this.DGVProductosVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductosVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_Producto,
+            this.IdProducto,
+            this.Codigo,
             this.nombreProducto,
             this.Precio,
             this.Cantidad,
             this.Subtotal,
-            this.Accion});
-            this.DGVProductosVenta.Location = new System.Drawing.Point(40, 370);
+            this.BTEliminar});
+            this.DGVProductosVenta.Location = new System.Drawing.Point(50, 370);
             this.DGVProductosVenta.Name = "DGVProductosVenta";
             this.DGVProductosVenta.Size = new System.Drawing.Size(689, 202);
             this.DGVProductosVenta.TabIndex = 58;
+            this.DGVProductosVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductosVenta_CellClick);
+            this.DGVProductosVenta.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProductosVenta_CellPainting);
             // 
-            // ID_Producto
+            // IdProducto
             // 
-            this.ID_Producto.HeaderText = "ID Producto";
-            this.ID_Producto.Name = "ID_Producto";
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Visible = false;
+            // 
+            // Codigo
+            // 
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
             // 
             // nombreProducto
             // 
-            this.nombreProducto.HeaderText = "Nombre Producto";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.nombreProducto.HeaderText = "Nombre";
             this.nombreProducto.Name = "nombreProducto";
             this.nombreProducto.Width = 150;
             // 
             // Precio
             // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle3;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
             // Cantidad
             // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle4;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Subtotal
             // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle5;
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             // 
-            // Accion
+            // BTEliminar
             // 
-            this.Accion.HeaderText = "Accion";
-            this.Accion.Name = "Accion";
+            this.BTEliminar.HeaderText = "Accion";
+            this.BTEliminar.Name = "BTEliminar";
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.TBNombreVendedor);
+            this.groupBox3.Controls.Add(this.TBIdVendedor);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.ForeColor = System.Drawing.Color.Brown;
@@ -447,25 +532,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacion Vendedor";
             // 
-            // textBox9
+            // TBNombreVendedor
             // 
-            this.textBox9.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.Coral;
-            this.textBox9.Location = new System.Drawing.Point(141, 50);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(134, 25);
-            this.textBox9.TabIndex = 20;
+            this.TBNombreVendedor.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNombreVendedor.ForeColor = System.Drawing.Color.Coral;
+            this.TBNombreVendedor.Location = new System.Drawing.Point(141, 50);
+            this.TBNombreVendedor.Multiline = true;
+            this.TBNombreVendedor.Name = "TBNombreVendedor";
+            this.TBNombreVendedor.Size = new System.Drawing.Size(134, 25);
+            this.TBNombreVendedor.TabIndex = 20;
             // 
-            // textBox8
+            // TBIdVendedor
             // 
-            this.textBox8.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.Coral;
-            this.textBox8.Location = new System.Drawing.Point(10, 50);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(101, 25);
-            this.textBox8.TabIndex = 19;
+            this.TBIdVendedor.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBIdVendedor.ForeColor = System.Drawing.Color.Coral;
+            this.TBIdVendedor.Location = new System.Drawing.Point(10, 50);
+            this.TBIdVendedor.Multiline = true;
+            this.TBIdVendedor.Name = "TBIdVendedor";
+            this.TBIdVendedor.Size = new System.Drawing.Size(101, 25);
+            this.TBIdVendedor.TabIndex = 19;
             // 
             // label9
             // 
@@ -493,15 +578,15 @@
             this.label10.TabIndex = 16;
             this.label10.Text = "ID:";
             // 
-            // textBox4
+            // TBPrecioTotal
             // 
-            this.textBox4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Coral;
-            this.textBox4.Location = new System.Drawing.Point(796, 454);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(160, 26);
-            this.textBox4.TabIndex = 59;
+            this.TBPrecioTotal.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPrecioTotal.ForeColor = System.Drawing.Color.Coral;
+            this.TBPrecioTotal.Location = new System.Drawing.Point(796, 409);
+            this.TBPrecioTotal.Multiline = true;
+            this.TBPrecioTotal.Name = "TBPrecioTotal";
+            this.TBPrecioTotal.Size = new System.Drawing.Size(160, 26);
+            this.TBPrecioTotal.TabIndex = 59;
             // 
             // label11
             // 
@@ -509,7 +594,7 @@
             this.label11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(793, 433);
+            this.label11.Location = new System.Drawing.Point(793, 388);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 18);
@@ -519,9 +604,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.TBCambio);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.TBPago);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.BAgregarCliente);
             this.panel1.Controls.Add(this.BCancelar);
             this.panel1.Controls.Add(this.BRegistrarVenta);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.TBPrecioTotal);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.DGVProductosVenta);
@@ -529,6 +619,67 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1296, 761);
             this.panel1.TabIndex = 60;
+            // 
+            // TBCambio
+            // 
+            this.TBCambio.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCambio.ForeColor = System.Drawing.Color.Coral;
+            this.TBCambio.Location = new System.Drawing.Point(976, 488);
+            this.TBCambio.Multiline = true;
+            this.TBCambio.Name = "TBCambio";
+            this.TBCambio.Size = new System.Drawing.Size(113, 26);
+            this.TBCambio.TabIndex = 65;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(973, 467);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 18);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Cambio:";
+            // 
+            // TBPago
+            // 
+            this.TBPago.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPago.ForeColor = System.Drawing.Color.Coral;
+            this.TBPago.Location = new System.Drawing.Point(796, 488);
+            this.TBPago.Multiline = true;
+            this.TBPago.Name = "TBPago";
+            this.TBPago.Size = new System.Drawing.Size(160, 26);
+            this.TBPago.TabIndex = 63;
+            this.TBPago.TextChanged += new System.EventHandler(this.TBPago_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(793, 467);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 18);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Paga con:";
+            // 
+            // BAgregarCliente
+            // 
+            this.BAgregarCliente.BackColor = System.Drawing.Color.Coral;
+            this.BAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BAgregarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAgregarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BAgregarCliente.Location = new System.Drawing.Point(1024, 157);
+            this.BAgregarCliente.Name = "BAgregarCliente";
+            this.BAgregarCliente.Size = new System.Drawing.Size(121, 58);
+            this.BAgregarCliente.TabIndex = 61;
+            this.BAgregarCliente.Text = "Agregar Cliente";
+            this.BAgregarCliente.UseVisualStyleBackColor = false;
+            this.BAgregarCliente.Click += new System.EventHandler(this.BAgregarCliente_Click);
             // 
             // BCancelar
             // 
@@ -555,6 +706,7 @@
             this.BRegistrarVenta.TabIndex = 60;
             this.BRegistrarVenta.Text = "Registrar Venta";
             this.BRegistrarVenta.UseVisualStyleBackColor = false;
+            this.BRegistrarVenta.Click += new System.EventHandler(this.BRegistrarVenta_Click);
             // 
             // FormVentas
             // 
@@ -562,7 +714,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.BGuardarCliente);
+            this.Controls.Add(this.BAgregarProducto);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.LUsers);
             this.Controls.Add(this.GBInfoCliente);
@@ -594,43 +746,53 @@
         private System.Windows.Forms.Label LUsers;
         private System.Windows.Forms.Label LDNIUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox TBApellidoUser;
+        private System.Windows.Forms.TextBox TBNombreCliente;
+        private System.Windows.Forms.TextBox TBDniCliente;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBFechaActual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CBPerfilUser;
+        private System.Windows.Forms.ComboBox CBTipoFactura;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TBPrecio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TBProducto;
+        private System.Windows.Forms.TextBox TBCodigoProducto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TBStock;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DomainUpDown DUDCantidad;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button BGuardarCliente;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BAgregarProducto;
+        private System.Windows.Forms.Button BTBuscarCliente;
+        private System.Windows.Forms.Button BTBuscarProducto;
         private System.Windows.Forms.DataGridView DGVProductosVenta;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TBIdVendedor;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Accion;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TBNombreVendedor;
+        private System.Windows.Forms.TextBox TBPrecioTotal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BCancelar;
         private System.Windows.Forms.Button BRegistrarVenta;
+        private System.Windows.Forms.Button BAgregarCliente;
+        private System.Windows.Forms.TextBox TBApellidoCliente;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label LId_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BTEliminar;
+        private System.Windows.Forms.Label LId_cliente;
+        private System.Windows.Forms.TextBox TBPago;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TBCambio;
+        private System.Windows.Forms.Label label14;
     }
 }
