@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class ReporteVenta
+    public class ReporteVenta
     {
-        public string FechaRegistro {  get; set; }
-        public string TipoFactira {  get; set; }
+        public string FechaVenta {  get; set; }
+        public string TipoFactura {  get; set; }
         public string NroFactura {  get; set; }
         public string MontoTotal {  get; set; }
         public string UsuarioRegistro {  get; set; }

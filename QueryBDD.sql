@@ -1231,15 +1231,6 @@ begin
 
 end
 
-/* CREATE PROC sp_ReporteVentas(
-@fechaInicio varchar(10),
-@fechaFin varchar(10)
-)
-AS
-BEGIN
-SET DATEFORMAT dmy;
-SELECT
-convert(char(10), v.Fecha) */
 
 -- Auditorias de BackUps --
 CREATE TABLE auditoria_backup (
@@ -1249,3 +1240,29 @@ CREATE TABLE auditoria_backup (
     estado VARCHAR(50) NOT NULL,
     ubicacion_backup NVARCHAR(255) NULL
 );
+
+
+---------------------------------- PROCEDIMIENTOS REPORTES ----------------------------------
+CREATE PROC sp_ReporteVentas(
+@fechaInicio varchar(10),
+@fechaFin varchar(10)
+)
+AS
+BEGIN
+SET DATEFORMAT dmy;
+SELECT
+convert(char(10), vc.FechaVenta,103)[FechaRegistro], f.Tipo_Factura[TipoFactura], vc.Nro_Factura[NumeroFactura], vc.Total,
+u.Usuario[UsuarioRegistro],
+c.DNI[DNICliente], c.Nombre[NombreCliente],
+p.Codigo[CodigoProducto], p.Nombre[NombreProducto], ca.Descripcion[Categoria], vd.Precio_venta, vd.Cantidad, vd.Subtotal
+from VentaCabecera vc
+inner join Usuario u on u.Id_usuario = vc.Id_usuario
+inner join VentaDetalle vd on vd.Id_venta = vc.Id_venta
+inner join Producto p on p.Id_producto = vd.Id_producto
+inner join Categoria ca on ca.Id_Categoria = p.Id_Categoria
+inner join Factura f on f.Id_Factura = vc.Id_Factura
+inner join Cliente c on c.Id_cliente = vc.Id_cliente
+where CONVERT (date, vc.FechaVenta) between @fechaInicio and @fechaFin
+end
+
+exec sp_ReporteVentas '18/10/2021', '20/10/2021'
