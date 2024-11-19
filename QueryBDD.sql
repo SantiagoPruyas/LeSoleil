@@ -692,7 +692,7 @@ select @mensaje
 SELECT Id_producto, Codigo, p.Nombre[NombreProducto], p.Descripcion, c.Id_Categoria, c.Nombre[NombreCategoria], Precio_compra, Precio_venta, Stock, Stock_minimo, Imagen, Baja from Producto p 
 inner join Categoria c on c.Id_Categoria = p.Id_Categoria
 
-create PROC SP_REGISTRARPRODUCTO(
+alter PROC SP_REGISTRARPRODUCTO(
 @Codigo varchar(50),
 @Nombre varchar(50),
 @Descripcion varchar(100),
@@ -723,7 +723,7 @@ end
 
 go
 
-create procedure SP_EDITARPRODUCTO(
+alter procedure SP_EDITARPRODUCTO(
 @Id_producto int,
 @Codigo varchar(50),
 @Nombre varchar(50),
