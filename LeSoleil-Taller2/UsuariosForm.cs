@@ -344,6 +344,18 @@ namespace LeSoleil_Taller2
 
         private void UsuariosForm_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn columna in DGVUsuarios.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "editarUsuario" && columna.Name != "bajaUsuario")
+                {
+                    CBBusquedaUsuario.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            CBBusquedaUsuario.DisplayMember = "Texto";
+            CBBusquedaUsuario.ValueMember = "Valor";
+            CBBusquedaUsuario.SelectedIndex = 0;
+
             List<Perfil> listaPerfil = new CN_Perfil().Listar();
 
             foreach (Perfil item in listaPerfil)
@@ -374,22 +386,6 @@ namespace LeSoleil_Taller2
                 });
             }
         }
-
-        //private void BGuardarUser_Click(object sender, EventArgs e)
-        //{
-        //    DGVUsuarios.Rows.Add(new object[] {
-        //        TBNombreUser.Text,
-        //        TBApellidoUser.Text,
-        //        TBDniUser.Text,
-        //        TBDniUser,
-        //        TBContraseñaUser,
-        //        TBEmailUser,
-        //        TBDireccionUser.Text,
-        //        ((OpcionCombo)CBPerfilUser.SelectedItem).Valor.ToString(),
-        //        ((OpcionCombo)CBPerfilUser.SelectedItem).Texto.ToString(),
-        //        TBTelefonoUser.Text
-        //    });
-        //}
 
         private void DGVUsuarios_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -490,6 +486,41 @@ namespace LeSoleil_Taller2
                     item.Telefono,
                     item.Fecha_nacimiento,
                 });
+            }
+        }
+
+        private void BTBuscarUsuario_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)CBBusquedaUsuario.SelectedItem).Valor.ToString();
+
+            if (DGVUsuarios.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVUsuarios.Rows)
+                {
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TBusquedaUsuario.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
+        {
+            CBBusquedaUsuario.Text = "";
+            foreach (DataGridViewRow row in DGVUsuarios.Rows)
+            {
+                row.Visible = true;
             }
         }
     }

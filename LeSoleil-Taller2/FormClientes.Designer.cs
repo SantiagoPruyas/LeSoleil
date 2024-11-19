@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.LFondoClientes = new System.Windows.Forms.Label();
             this.LCliente = new System.Windows.Forms.Label();
             this.LNombreCliente = new System.Windows.Forms.Label();
@@ -56,11 +56,6 @@
             this.LDireccionCliente = new System.Windows.Forms.Label();
             this.DTPFechaNacCliente = new System.Windows.Forms.DateTimePicker();
             this.DGVClientes = new System.Windows.Forms.DataGridView();
-            this.BGuardarCliente = new System.Windows.Forms.Button();
-            this.BCancelarCliente = new System.Windows.Forms.Button();
-            this.PBFondoClientes = new System.Windows.Forms.PictureBox();
-            this.BActivosCliente = new System.Windows.Forms.Button();
-            this.BInactivosCliente = new System.Windows.Forms.Button();
             this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNICliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +66,16 @@
             this.fechaNacimientoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bajaCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BGuardarCliente = new System.Windows.Forms.Button();
+            this.BCancelarCliente = new System.Windows.Forms.Button();
+            this.PBFondoClientes = new System.Windows.Forms.PictureBox();
+            this.BActivosCliente = new System.Windows.Forms.Button();
+            this.BInactivosCliente = new System.Windows.Forms.Button();
+            this.BTLimpiar = new System.Windows.Forms.Button();
+            this.BTBuscarCliente = new System.Windows.Forms.Button();
+            this.TBusquedaCliente = new System.Windows.Forms.TextBox();
+            this.CBBusquedaCliente = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             this.SuspendLayout();
@@ -275,71 +280,6 @@
             this.DGVClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVClientes_CellClick);
             this.DGVClientes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVClientes_CellPainting);
             // 
-            // BGuardarCliente
-            // 
-            this.BGuardarCliente.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarCliente.Location = new System.Drawing.Point(549, 210);
-            this.BGuardarCliente.Name = "BGuardarCliente";
-            this.BGuardarCliente.Size = new System.Drawing.Size(94, 38);
-            this.BGuardarCliente.TabIndex = 56;
-            this.BGuardarCliente.Text = "Guardar";
-            this.BGuardarCliente.UseVisualStyleBackColor = false;
-            this.BGuardarCliente.Click += new System.EventHandler(this.BGuardarCliente_Click);
-            // 
-            // BCancelarCliente
-            // 
-            this.BCancelarCliente.BackColor = System.Drawing.Color.Coral;
-            this.BCancelarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarCliente.Location = new System.Drawing.Point(670, 210);
-            this.BCancelarCliente.Name = "BCancelarCliente";
-            this.BCancelarCliente.Size = new System.Drawing.Size(94, 38);
-            this.BCancelarCliente.TabIndex = 57;
-            this.BCancelarCliente.Text = "Cancelar";
-            this.BCancelarCliente.UseVisualStyleBackColor = false;
-            this.BCancelarCliente.Click += new System.EventHandler(this.BCancelarCliente_Click);
-            // 
-            // PBFondoClientes
-            // 
-            this.PBFondoClientes.Image = ((System.Drawing.Image)(resources.GetObject("PBFondoClientes.Image")));
-            this.PBFondoClientes.Location = new System.Drawing.Point(0, 264);
-            this.PBFondoClientes.Name = "PBFondoClientes";
-            this.PBFondoClientes.Size = new System.Drawing.Size(1286, 439);
-            this.PBFondoClientes.TabIndex = 52;
-            this.PBFondoClientes.TabStop = false;
-            // 
-            // BActivosCliente
-            // 
-            this.BActivosCliente.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BActivosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BActivosCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActivosCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosCliente.Location = new System.Drawing.Point(115, 287);
-            this.BActivosCliente.Name = "BActivosCliente";
-            this.BActivosCliente.Size = new System.Drawing.Size(152, 41);
-            this.BActivosCliente.TabIndex = 58;
-            this.BActivosCliente.Text = "Clientes Activos";
-            this.BActivosCliente.UseVisualStyleBackColor = false;
-            this.BActivosCliente.Click += new System.EventHandler(this.BActivosCliente_Click);
-            // 
-            // BInactivosCliente
-            // 
-            this.BInactivosCliente.BackColor = System.Drawing.Color.Brown;
-            this.BInactivosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInactivosCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInactivosCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosCliente.Location = new System.Drawing.Point(997, 287);
-            this.BInactivosCliente.Name = "BInactivosCliente";
-            this.BInactivosCliente.Size = new System.Drawing.Size(158, 41);
-            this.BInactivosCliente.TabIndex = 59;
-            this.BInactivosCliente.Text = "Clientes Inactivos";
-            this.BInactivosCliente.UseVisualStyleBackColor = false;
-            this.BInactivosCliente.Click += new System.EventHandler(this.BInactivosClientes_Click);
-            // 
             // IdCliente
             // 
             dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
@@ -410,11 +350,131 @@
             this.bajaCliente.HeaderText = "Dar de Baja";
             this.bajaCliente.Name = "bajaCliente";
             // 
+            // BGuardarCliente
+            // 
+            this.BGuardarCliente.BackColor = System.Drawing.Color.Coral;
+            this.BGuardarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BGuardarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGuardarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BGuardarCliente.Location = new System.Drawing.Point(549, 210);
+            this.BGuardarCliente.Name = "BGuardarCliente";
+            this.BGuardarCliente.Size = new System.Drawing.Size(94, 38);
+            this.BGuardarCliente.TabIndex = 56;
+            this.BGuardarCliente.Text = "Guardar";
+            this.BGuardarCliente.UseVisualStyleBackColor = false;
+            this.BGuardarCliente.Click += new System.EventHandler(this.BGuardarCliente_Click);
+            // 
+            // BCancelarCliente
+            // 
+            this.BCancelarCliente.BackColor = System.Drawing.Color.Coral;
+            this.BCancelarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BCancelarCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelarCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BCancelarCliente.Location = new System.Drawing.Point(670, 210);
+            this.BCancelarCliente.Name = "BCancelarCliente";
+            this.BCancelarCliente.Size = new System.Drawing.Size(94, 38);
+            this.BCancelarCliente.TabIndex = 57;
+            this.BCancelarCliente.Text = "Cancelar";
+            this.BCancelarCliente.UseVisualStyleBackColor = false;
+            this.BCancelarCliente.Click += new System.EventHandler(this.BCancelarCliente_Click);
+            // 
+            // PBFondoClientes
+            // 
+            this.PBFondoClientes.Image = ((System.Drawing.Image)(resources.GetObject("PBFondoClientes.Image")));
+            this.PBFondoClientes.Location = new System.Drawing.Point(0, 264);
+            this.PBFondoClientes.Name = "PBFondoClientes";
+            this.PBFondoClientes.Size = new System.Drawing.Size(1286, 439);
+            this.PBFondoClientes.TabIndex = 52;
+            this.PBFondoClientes.TabStop = false;
+            // 
+            // BActivosCliente
+            // 
+            this.BActivosCliente.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BActivosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BActivosCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BActivosCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BActivosCliente.Location = new System.Drawing.Point(115, 287);
+            this.BActivosCliente.Name = "BActivosCliente";
+            this.BActivosCliente.Size = new System.Drawing.Size(152, 41);
+            this.BActivosCliente.TabIndex = 58;
+            this.BActivosCliente.Text = "Clientes Activos";
+            this.BActivosCliente.UseVisualStyleBackColor = false;
+            this.BActivosCliente.Click += new System.EventHandler(this.BActivosCliente_Click);
+            // 
+            // BInactivosCliente
+            // 
+            this.BInactivosCliente.BackColor = System.Drawing.Color.Brown;
+            this.BInactivosCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BInactivosCliente.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BInactivosCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BInactivosCliente.Location = new System.Drawing.Point(997, 287);
+            this.BInactivosCliente.Name = "BInactivosCliente";
+            this.BInactivosCliente.Size = new System.Drawing.Size(158, 41);
+            this.BInactivosCliente.TabIndex = 59;
+            this.BInactivosCliente.Text = "Clientes Inactivos";
+            this.BInactivosCliente.UseVisualStyleBackColor = false;
+            this.BInactivosCliente.Click += new System.EventHandler(this.BInactivosClientes_Click);
+            // 
+            // BTLimpiar
+            // 
+            this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
+            this.BTLimpiar.Location = new System.Drawing.Point(861, 294);
+            this.BTLimpiar.Name = "BTLimpiar";
+            this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
+            this.BTLimpiar.TabIndex = 77;
+            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
+            // 
+            // BTBuscarCliente
+            // 
+            this.BTBuscarCliente.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
+            this.BTBuscarCliente.Location = new System.Drawing.Point(824, 294);
+            this.BTBuscarCliente.Name = "BTBuscarCliente";
+            this.BTBuscarCliente.Size = new System.Drawing.Size(31, 28);
+            this.BTBuscarCliente.TabIndex = 76;
+            this.BTBuscarCliente.UseVisualStyleBackColor = true;
+            this.BTBuscarCliente.Click += new System.EventHandler(this.BTBuscarCliente_Click);
+            // 
+            // TBusquedaCliente
+            // 
+            this.TBusquedaCliente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBusquedaCliente.ForeColor = System.Drawing.Color.Coral;
+            this.TBusquedaCliente.Location = new System.Drawing.Point(617, 298);
+            this.TBusquedaCliente.Multiline = true;
+            this.TBusquedaCliente.Name = "TBusquedaCliente";
+            this.TBusquedaCliente.Size = new System.Drawing.Size(201, 21);
+            this.TBusquedaCliente.TabIndex = 75;
+            // 
+            // CBBusquedaCliente
+            // 
+            this.CBBusquedaCliente.FormattingEnabled = true;
+            this.CBBusquedaCliente.Location = new System.Drawing.Point(482, 299);
+            this.CBBusquedaCliente.Name = "CBBusquedaCliente";
+            this.CBBusquedaCliente.Size = new System.Drawing.Size(129, 21);
+            this.CBBusquedaCliente.TabIndex = 74;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Coral;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(393, 301);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "Buscar por:";
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.BTLimpiar);
+            this.Controls.Add(this.BTBuscarCliente);
+            this.Controls.Add(this.TBusquedaCliente);
+            this.Controls.Add(this.CBBusquedaCliente);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.BInactivosCliente);
             this.Controls.Add(this.BActivosCliente);
             this.Controls.Add(this.BCancelarCliente);
@@ -481,5 +541,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimientoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn editarCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn bajaCliente;
+        private System.Windows.Forms.Button BTLimpiar;
+        private System.Windows.Forms.Button BTBuscarCliente;
+        private System.Windows.Forms.TextBox TBusquedaCliente;
+        private System.Windows.Forms.ComboBox CBBusquedaCliente;
+        private System.Windows.Forms.Label label3;
     }
 }

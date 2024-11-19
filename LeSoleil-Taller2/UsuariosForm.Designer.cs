@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -60,15 +60,6 @@
             this.TBTelefonoUser = new System.Windows.Forms.TextBox();
             this.LFondoUser = new System.Windows.Forms.Label();
             this.DGVUsuarios = new System.Windows.Forms.DataGridView();
-            this.TBEmailUser = new System.Windows.Forms.TextBox();
-            this.LEmailUser = new System.Windows.Forms.Label();
-            this.BGuardarUsuario = new System.Windows.Forms.Button();
-            this.BCancelarUsuario = new System.Windows.Forms.Button();
-            this.BActivosUser = new System.Windows.Forms.Button();
-            this.BInactivosUsers = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
-            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.Id_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +73,20 @@
             this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bajaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.TBEmailUser = new System.Windows.Forms.TextBox();
+            this.LEmailUser = new System.Windows.Forms.Label();
+            this.BGuardarUsuario = new System.Windows.Forms.Button();
+            this.BCancelarUsuario = new System.Windows.Forms.Button();
+            this.BActivosUser = new System.Windows.Forms.Button();
+            this.BInactivosUsers = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
+            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.BTLimpiar = new System.Windows.Forms.Button();
+            this.BTBuscarUsuario = new System.Windows.Forms.Button();
+            this.TBusquedaUsuario = new System.Windows.Forms.TextBox();
+            this.CBBusquedaUsuario = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -292,14 +297,14 @@
             // 
             // DGVUsuarios
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Usuario,
@@ -322,6 +327,122 @@
             this.DGVUsuarios.TabIndex = 30;
             this.DGVUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVUsuarios_CellClick);
             this.DGVUsuarios.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVUsuarios_CellPainting);
+            // 
+            // Id_Usuario
+            // 
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle26;
+            this.Id_Usuario.HeaderText = "ID";
+            this.Id_Usuario.Name = "Id_Usuario";
+            this.Id_Usuario.ReadOnly = true;
+            this.Id_Usuario.Width = 50;
+            // 
+            // nombreUsuario
+            // 
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle27;
+            this.nombreUsuario.HeaderText = "Nombre";
+            this.nombreUsuario.Name = "nombreUsuario";
+            this.nombreUsuario.ReadOnly = true;
+            // 
+            // apellidoUsuario
+            // 
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle28;
+            this.apellidoUsuario.HeaderText = "Apellido";
+            this.apellidoUsuario.Name = "apellidoUsuario";
+            this.apellidoUsuario.ReadOnly = true;
+            // 
+            // dniUsuario
+            // 
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dniUsuario.HeaderText = "DNI";
+            this.dniUsuario.Name = "dniUsuario";
+            this.dniUsuario.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle30;
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // Contraseña
+            // 
+            this.Contraseña.HeaderText = "Contraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            this.Contraseña.Visible = false;
+            // 
+            // emailUsuario
+            // 
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
+            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle31;
+            this.emailUsuario.HeaderText = "Email";
+            this.emailUsuario.Name = "emailUsuario";
+            this.emailUsuario.ReadOnly = true;
+            // 
+            // direccionUsuario
+            // 
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
+            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle32;
+            this.direccionUsuario.HeaderText = "Direccion";
+            this.direccionUsuario.Name = "direccionUsuario";
+            this.direccionUsuario.ReadOnly = true;
+            // 
+            // Perfil
+            // 
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            this.Perfil.DefaultCellStyle = dataGridViewCellStyle33;
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.Name = "Perfil";
+            this.Perfil.ReadOnly = true;
+            // 
+            // telefonoUsuario
+            // 
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
+            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle34;
+            this.telefonoUsuario.HeaderText = "Telefono";
+            this.telefonoUsuario.Name = "telefonoUsuario";
+            this.telefonoUsuario.ReadOnly = true;
+            // 
+            // Fecha_Nacimiento
+            // 
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle35;
+            this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
+            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
+            this.Fecha_Nacimiento.ReadOnly = true;
+            this.Fecha_Nacimiento.Width = 150;
+            // 
+            // editarUsuario
+            // 
+            this.editarUsuario.HeaderText = "Editar ";
+            this.editarUsuario.Name = "editarUsuario";
+            this.editarUsuario.ReadOnly = true;
+            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editarUsuario.Text = "editar";
+            // 
+            // bajaUsuario
+            // 
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle36;
+            this.bajaUsuario.HeaderText = "Dar de Baja";
+            this.bajaUsuario.Name = "bajaUsuario";
+            this.bajaUsuario.ReadOnly = true;
+            this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.bajaUsuario.Text = "Eliminar";
             // 
             // TBEmailUser
             // 
@@ -432,127 +553,66 @@
             this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
             this.DTPFechaNacimiento.TabIndex = 41;
             // 
-            // Id_Usuario
+            // BTLimpiar
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Id_Usuario.HeaderText = "ID";
-            this.Id_Usuario.Name = "Id_Usuario";
-            this.Id_Usuario.ReadOnly = true;
-            this.Id_Usuario.Width = 50;
+            this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
+            this.BTLimpiar.Location = new System.Drawing.Point(863, 299);
+            this.BTLimpiar.Name = "BTLimpiar";
+            this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
+            this.BTLimpiar.TabIndex = 102;
+            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
             // 
-            // nombreUsuario
+            // BTBuscarUsuario
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nombreUsuario.HeaderText = "Nombre";
-            this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.ReadOnly = true;
+            this.BTBuscarUsuario.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
+            this.BTBuscarUsuario.Location = new System.Drawing.Point(826, 299);
+            this.BTBuscarUsuario.Name = "BTBuscarUsuario";
+            this.BTBuscarUsuario.Size = new System.Drawing.Size(31, 28);
+            this.BTBuscarUsuario.TabIndex = 101;
+            this.BTBuscarUsuario.UseVisualStyleBackColor = true;
+            this.BTBuscarUsuario.Click += new System.EventHandler(this.BTBuscarUsuario_Click);
             // 
-            // apellidoUsuario
+            // TBusquedaUsuario
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle4;
-            this.apellidoUsuario.HeaderText = "Apellido";
-            this.apellidoUsuario.Name = "apellidoUsuario";
-            this.apellidoUsuario.ReadOnly = true;
+            this.TBusquedaUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBusquedaUsuario.ForeColor = System.Drawing.Color.Coral;
+            this.TBusquedaUsuario.Location = new System.Drawing.Point(619, 303);
+            this.TBusquedaUsuario.Multiline = true;
+            this.TBusquedaUsuario.Name = "TBusquedaUsuario";
+            this.TBusquedaUsuario.Size = new System.Drawing.Size(201, 21);
+            this.TBusquedaUsuario.TabIndex = 100;
             // 
-            // dniUsuario
+            // CBBusquedaUsuario
             // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dniUsuario.HeaderText = "DNI";
-            this.dniUsuario.Name = "dniUsuario";
-            this.dniUsuario.ReadOnly = true;
+            this.CBBusquedaUsuario.FormattingEnabled = true;
+            this.CBBusquedaUsuario.Location = new System.Drawing.Point(484, 304);
+            this.CBBusquedaUsuario.Name = "CBBusquedaUsuario";
+            this.CBBusquedaUsuario.Size = new System.Drawing.Size(129, 21);
+            this.CBBusquedaUsuario.TabIndex = 99;
             // 
-            // usuario
+            // label3
             // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle6;
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Contraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
-            this.Contraseña.Visible = false;
-            // 
-            // emailUsuario
-            // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle7;
-            this.emailUsuario.HeaderText = "Email";
-            this.emailUsuario.Name = "emailUsuario";
-            this.emailUsuario.ReadOnly = true;
-            // 
-            // direccionUsuario
-            // 
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle8;
-            this.direccionUsuario.HeaderText = "Direccion";
-            this.direccionUsuario.Name = "direccionUsuario";
-            this.direccionUsuario.ReadOnly = true;
-            // 
-            // Perfil
-            // 
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.Perfil.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            // 
-            // telefonoUsuario
-            // 
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle10;
-            this.telefonoUsuario.HeaderText = "Telefono";
-            this.telefonoUsuario.Name = "telefonoUsuario";
-            this.telefonoUsuario.ReadOnly = true;
-            // 
-            // Fecha_Nacimiento
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
-            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
-            this.Fecha_Nacimiento.ReadOnly = true;
-            this.Fecha_Nacimiento.Width = 150;
-            // 
-            // editarUsuario
-            // 
-            this.editarUsuario.HeaderText = "Editar ";
-            this.editarUsuario.Name = "editarUsuario";
-            this.editarUsuario.ReadOnly = true;
-            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editarUsuario.Text = "editar";
-            // 
-            // bajaUsuario
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle12;
-            this.bajaUsuario.HeaderText = "Dar de Baja";
-            this.bajaUsuario.Name = "bajaUsuario";
-            this.bajaUsuario.ReadOnly = true;
-            this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.bajaUsuario.Text = "Eliminar";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Coral;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(395, 306);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "Buscar por:";
             // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.BTLimpiar);
+            this.Controls.Add(this.BTBuscarUsuario);
+            this.Controls.Add(this.TBusquedaUsuario);
+            this.Controls.Add(this.CBBusquedaUsuario);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.DTPFechaNacimiento);
             this.Controls.Add(this.LFechaNacimientoUser);
             this.Controls.Add(this.BInactivosUsers);
@@ -637,5 +697,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Nacimiento;
         private System.Windows.Forms.DataGridViewButtonColumn editarUsuario;
         private System.Windows.Forms.DataGridViewButtonColumn bajaUsuario;
+        private System.Windows.Forms.Button BTLimpiar;
+        private System.Windows.Forms.Button BTBuscarUsuario;
+        private System.Windows.Forms.TextBox TBusquedaUsuario;
+        private System.Windows.Forms.ComboBox CBBusquedaUsuario;
+        private System.Windows.Forms.Label label3;
     }
 }
