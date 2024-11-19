@@ -276,6 +276,7 @@ SELECT * from Proveedor
 SELECT * from Factura
 SELECT * from VentaCabecera
 SELECT * from VentaDetalle
+SELECT * FROM auditoria_backup
 
 -- Creacion de Perfiles
 insert into Perfil (NombreRol, Descripcion) values ('ADMINISTRADOR', 'Este usuario administrador tiene los permisos necesarios para ingresar a todas las funcionalidades')
@@ -416,6 +417,10 @@ SELECT p.Nombre, vd.Precio_venta, vd.Subtotal
 FROM VentaDetalle vd
 INNER JOIN Producto p on p.Id_producto = vd.Id_producto
 WHERE vd.Id_venta = 1
+
+-- Select Auditoria
+SELECT a.Id_auditoria, u.Nombre, a.Estado, a.Fecha_backup, a.Ubicacion_backup from auditoria_backup a 
+inner join Usuario u on u.Id_usuario = a.Id_usuario  
 
 ---------------------------------- PROCEDIMIENTOS ----------------------------------
 create PROC SP_REGISTRARUSUARIO(
@@ -1243,9 +1248,66 @@ convert(char(10), v.Fecha) */
 
 -- Auditorias de BackUps --
 CREATE TABLE auditoria_backup (
-    id_auditoria INT IDENTITY(1,1) PRIMARY KEY,
-    fecha_backup DATETIME NOT NULL DEFAULT GETDATE(),
-    usuario_backup VARCHAR(100) NOT NULL,
-    estado VARCHAR(50) NOT NULL,
-    ubicacion_backup NVARCHAR(255) NULL
+    Id_auditoria INT IDENTITY(1,1) PRIMARY KEY,
+    Fecha_backup DATETIME NOT NULL DEFAULT GETDATE(),
+    Id_usuario INT NOT NULL,
+    Estado INT NOT NULL,
+    Ubicacion_backup VARCHAR(255) NULL
 );
+
+ALTER TABLE auditoria_backup
+ADD CONSTRAINT FK_Usuario_Id_usuario
+FOREIGN KEY (Id_usuario) REFERENCES Usuario(Id_usuario);
+
+-- Procedimiento para realizar Back Up
+ALTER PROCEDURE sp_realizar_backup
+    @Id_usuario INT,                   -- ID del usuario que realiza el backup
+    @ruta_backup NVARCHAR(255),   
+    @nombre_backup VARCHAR(255),        -- Nombre del archivo de backup
+    @mensaje NVARCHAR(4000) OUTPUT,    -- Mensaje de salida (éxito o error)
+    @Resultado BIT OUTPUT              -- Indicador de éxito (1: éxito, 0: error)
+AS
+BEGIN
+    -- Inicializar el indicador de resultado
+    SET @Resultado = 0;
+
+    BEGIN TRY
+        -- Declarar variable para el comando de backup
+        DECLARE @comando_backup NVARCHAR(MAX);
+
+        -- Construir el comando de backup
+        SET @comando_backup = 'BACKUP DATABASE ' + QUOTENAME(DB_NAME()) +
+                              ' TO DISK = ''' + @ruta_backup + '\' + @nombre_backup + '''';
+
+        -- Ejecutar el comando de backup
+        EXEC sp_executesql @comando_backup;
+
+        -- Asignar mensaje de éxito al parámetro de salida
+        SET @mensaje = 'Backup realizado exitosamente en: ' + @ruta_backup;
+
+        -- Actualizar el indicador de resultado a 1 (éxito)
+        SET @Resultado = 1;
+
+        -- Insertar en la tabla de auditoría
+        DECLARE @ubicacion NVARCHAR(255) = @ruta_backup + '\' + @nombre_backup;  -- Ubicación completa del backup
+
+        -- Insertar los datos en la tabla de auditoría
+        INSERT INTO auditoria_backup (Id_usuario, Estado, ubicacion_backup, Fecha_backup)
+        VALUES (@Id_usuario, 1, @ubicacion, GETDATE());
+
+    END TRY
+    BEGIN CATCH
+        -- Manejo de errores
+        -- Asignar mensaje de error al parámetro de salida
+        SET @mensaje = 'Error al realizar el backup: ' + ERROR_MESSAGE();
+
+        -- @Resultado se mantiene en 0 (fallo)
+        -- Insertar los datos en la tabla de auditoría con estado de error
+        INSERT INTO auditoria_backup (Id_usuario, Estado, ubicacion_backup, Fecha_backup)
+        VALUES (@Id_usuario, 0, 'Error - BackUp no generado', GETDATE());
+    END CATCH
+END;
+
+-- Pruebas
+BACKUP DATABASE DBLE_SOLEIL
+TO DISK = 'C:\BackUps\DBLE_SOLEIL.bak';
