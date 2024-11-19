@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LDetalleVenta = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBTipoFactura = new System.Windows.Forms.TextBox();
@@ -51,11 +55,11 @@
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LPrecioTotalDetalle = new System.Windows.Forms.Label();
             this.TBPrecioTotalDetalle = new System.Windows.Forms.TextBox();
-            this.BDescargarPDF = new System.Windows.Forms.Button();
             this.BLimpiar = new System.Windows.Forms.Button();
             this.BBuscar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BTDescargar = new System.Windows.Forms.Button();
             this.TBMonto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBPago = new System.Windows.Forms.TextBox();
@@ -285,24 +289,32 @@
             // nombreProducto
             // 
             this.nombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle9;
             this.nombreProducto.HeaderText = "Producto";
             this.nombreProducto.Name = "nombreProducto";
             // 
             // Precio
             // 
             this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
             // Cantidad
             // 
             this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle11;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Subtotal
             // 
             this.Subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle12;
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             // 
@@ -328,19 +340,6 @@
             this.TBPrecioTotalDetalle.Name = "TBPrecioTotalDetalle";
             this.TBPrecioTotalDetalle.Size = new System.Drawing.Size(78, 26);
             this.TBPrecioTotalDetalle.TabIndex = 61;
-            // 
-            // BDescargarPDF
-            // 
-            this.BDescargarPDF.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BDescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BDescargarPDF.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BDescargarPDF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BDescargarPDF.Location = new System.Drawing.Point(495, 515);
-            this.BDescargarPDF.Name = "BDescargarPDF";
-            this.BDescargarPDF.Size = new System.Drawing.Size(163, 33);
-            this.BDescargarPDF.TabIndex = 62;
-            this.BDescargarPDF.Text = "Descargar en PDF";
-            this.BDescargarPDF.UseVisualStyleBackColor = false;
             // 
             // BLimpiar
             // 
@@ -374,10 +373,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BTDescargar);
             this.panel1.Controls.Add(this.TBMonto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.TBPrecioTotalDetalle);
-            this.panel1.Controls.Add(this.BDescargarPDF);
             this.panel1.Controls.Add(this.TBPago);
             this.panel1.Controls.Add(this.BCancelar);
             this.panel1.Controls.Add(this.label1);
@@ -390,6 +389,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(680, 576);
             this.panel1.TabIndex = 66;
+            // 
+            // BTDescargar
+            // 
+            this.BTDescargar.BackColor = System.Drawing.Color.Tan;
+            this.BTDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTDescargar.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTDescargar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTDescargar.Image = global::LeSoleil_Taller2.Properties.Resources.descargarpdf;
+            this.BTDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTDescargar.Location = new System.Drawing.Point(504, 516);
+            this.BTDescargar.Name = "BTDescargar";
+            this.BTDescargar.Size = new System.Drawing.Size(139, 25);
+            this.BTDescargar.TabIndex = 68;
+            this.BTDescargar.Text = "Descargar PDF";
+            this.BTDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTDescargar.UseVisualStyleBackColor = false;
+            this.BTDescargar.Click += new System.EventHandler(this.BTDescargar_Click);
             // 
             // TBMonto
             // 
@@ -410,9 +426,9 @@
             this.label2.Location = new System.Drawing.Point(333, 518);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
+            this.label2.Size = new System.Drawing.Size(58, 18);
             this.label2.TabIndex = 70;
-            this.label2.Text = "Monto:";
+            this.label2.Text = "Cambio:";
             // 
             // TBPago
             // 
@@ -542,13 +558,8 @@
         private System.Windows.Forms.Label LNombreCliente;
         private System.Windows.Forms.Label LDNICliente;
         private System.Windows.Forms.DataGridView DGVProductosDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.Label LPrecioTotalDetalle;
         private System.Windows.Forms.TextBox TBPrecioTotalDetalle;
-        private System.Windows.Forms.Button BDescargarPDF;
         private System.Windows.Forms.Button BLimpiar;
         private System.Windows.Forms.Button BBuscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -562,5 +573,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBMonto;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.Button BTDescargar;
     }
 }

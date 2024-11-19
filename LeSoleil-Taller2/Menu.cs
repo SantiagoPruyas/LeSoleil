@@ -60,7 +60,7 @@ namespace LeSoleil_Taller2
 
         private void MenuBackup_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormBackUp());
+            abrirFormulario((ToolStripMenuItem)sender, new FormBackUp(usuarioActual));
         }
 
         /*private void MenuVentas_Click(object sender, EventArgs e)

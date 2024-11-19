@@ -337,6 +337,10 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 INSERT INTO Permiso(Perfil_id,Nombre) values
 (1,'MenuProveedores')
 
+-- Permiso de MenuUsuarios para el administrador
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(1,'MenuUsuarios')
+
 -- Gestion de permisos de usuario Gerente
 INSERT INTO Permiso(Perfil_id,Nombre) values
 (4,'MenuClientes'),
@@ -377,6 +381,9 @@ DELETE from Permiso where Id_permiso = 8
 
 -- Eliminacion del permiso "MenuBackUp" al repositor 
 DELETE from Permiso where Id_permiso = 22
+
+--Eliminacion de permisos de administrador
+DELETE FROM Permiso WHERE Id_permiso IN (1, 3, 4, 16, 18, 19, 20);
 
 -- Modificar Permisos
 UPDATE Permiso
@@ -1223,3 +1230,13 @@ begin
 	end catch
 
 end
+
+CREATE PROC sp_ReporteVentas(
+@fechaInicio varchar(10),
+@fechaFin varchar(10)
+)
+AS
+BEGIN
+SET DATEFORMAT dmy;
+SELECT
+convert(char(10), v.Fecha)

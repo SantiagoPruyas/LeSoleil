@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace LeSoleil_Taller2
 {
     public partial class FormBackUp : Form
     {
-        public FormBackUp()
+        public FormBackUp(Usuario usuario)
         {
             InitializeComponent();
+            Usuario usuarioActual = usuario; 
         }
+
+
     }
 }

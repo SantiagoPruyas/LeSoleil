@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GBInfoCliente = new System.Windows.Forms.GroupBox();
             this.LId_cliente = new System.Windows.Forms.Label();
             this.TBApellidoCliente = new System.Windows.Forms.TextBox();
@@ -122,6 +122,7 @@
             this.LId_cliente.Size = new System.Drawing.Size(65, 18);
             this.LId_cliente.TabIndex = 42;
             this.LId_cliente.Text = "Id_cliente";
+            this.LId_cliente.Visible = false;
             // 
             // TBApellidoCliente
             // 
@@ -476,37 +477,37 @@
             // 
             // Codigo
             // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle6;
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             // 
             // nombreProducto
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle7;
             this.nombreProducto.HeaderText = "Nombre";
             this.nombreProducto.Name = "nombreProducto";
             this.nombreProducto.Width = 150;
             // 
             // Precio
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Precio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle8;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
             // Cantidad
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle9;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Subtotal
             // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle10;
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             // 
@@ -693,6 +694,7 @@
             this.BCancelar.TabIndex = 61;
             this.BCancelar.Text = "Cancelar";
             this.BCancelar.UseVisualStyleBackColor = false;
+            this.BCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // BRegistrarVenta
             // 

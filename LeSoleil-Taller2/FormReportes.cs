@@ -17,6 +17,8 @@ namespace LeSoleil_Taller2
             InitializeComponent();
         }
 
-
+         private void BBuscar_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
