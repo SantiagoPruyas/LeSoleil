@@ -117,14 +117,14 @@
             // MenuRegistrarVenta
             // 
             this.MenuRegistrarVenta.Name = "MenuRegistrarVenta";
-            this.MenuRegistrarVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegistrarVenta.Size = new System.Drawing.Size(162, 22);
             this.MenuRegistrarVenta.Text = "Registrar Venta";
             this.MenuRegistrarVenta.Click += new System.EventHandler(this.MenuRegistrarVenta_Click);
             // 
             // MenuDetalleVenta
             // 
             this.MenuDetalleVenta.Name = "MenuDetalleVenta";
-            this.MenuDetalleVenta.Size = new System.Drawing.Size(180, 22);
+            this.MenuDetalleVenta.Size = new System.Drawing.Size(162, 22);
             this.MenuDetalleVenta.Text = "Detalle Venta";
             this.MenuDetalleVenta.Click += new System.EventHandler(this.MenuDetalleVenta_Click);
             // 
@@ -182,6 +182,7 @@
             this.MenuProveedores.Size = new System.Drawing.Size(102, 85);
             this.MenuProveedores.Text = "Proveedores";
             this.MenuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuProveedores.Click += new System.EventHandler(this.MenuProveedores_Click);
             // 
             // MenuReportes
             // 

@@ -75,6 +75,7 @@
             this.TBRazonSocialProveedor.Name = "TBRazonSocialProveedor";
             this.TBRazonSocialProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBRazonSocialProveedor.TabIndex = 93;
+            this.TBRazonSocialProveedor.Leave += new System.EventHandler(this.TBRazonSocialProveedor_Leave);
             // 
             // TBTelefonoProveedor
             // 
@@ -85,6 +86,7 @@
             this.TBTelefonoProveedor.Name = "TBTelefonoProveedor";
             this.TBTelefonoProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBTelefonoProveedor.TabIndex = 92;
+            this.TBTelefonoProveedor.Leave += new System.EventHandler(this.TBTelefonoProveedor_Leave);
             // 
             // TBDireccionProveedor
             // 
@@ -95,6 +97,7 @@
             this.TBDireccionProveedor.Name = "TBDireccionProveedor";
             this.TBDireccionProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBDireccionProveedor.TabIndex = 91;
+            this.TBDireccionProveedor.Leave += new System.EventHandler(this.TBDireccionProveedor_Leave);
             // 
             // LTelefonoProveedor
             // 
@@ -129,6 +132,7 @@
             this.TBCUITProveedor.Name = "TBCUITProveedor";
             this.TBCUITProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBCUITProveedor.TabIndex = 88;
+            this.TBCUITProveedor.Leave += new System.EventHandler(this.TBCUITProveedor_Leave);
             // 
             // TBEmailProveedor
             // 
@@ -139,6 +143,7 @@
             this.TBEmailProveedor.Name = "TBEmailProveedor";
             this.TBEmailProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBEmailProveedor.TabIndex = 87;
+            this.TBEmailProveedor.Leave += new System.EventHandler(this.TBEmailProveedor_Leave);
             // 
             // TBNombreProveedor
             // 
@@ -149,6 +154,7 @@
             this.TBNombreProveedor.Name = "TBNombreProveedor";
             this.TBNombreProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBNombreProveedor.TabIndex = 86;
+            this.TBNombreProveedor.Leave += new System.EventHandler(this.TBNombreProveedor_Leave);
             // 
             // LCUITProveedor
             // 
@@ -195,6 +201,7 @@
             this.TBDescripcionProveedor.Name = "TBDescripcionProveedor";
             this.TBDescripcionProveedor.Size = new System.Drawing.Size(215, 73);
             this.TBDescripcionProveedor.TabIndex = 100;
+            this.TBDescripcionProveedor.Validating += new System.ComponentModel.CancelEventHandler(this.TBDescripcionProveedor_Validating);
             // 
             // LDescripcionProveedor
             // 
@@ -217,6 +224,7 @@
             this.TBPaisProveedor.Name = "TBPaisProveedor";
             this.TBPaisProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBPaisProveedor.TabIndex = 98;
+            this.TBPaisProveedor.Leave += new System.EventHandler(this.TBPaisProveedor_Leave);
             // 
             // LPaisProveedor
             // 
@@ -251,6 +259,7 @@
             this.TBCiudadProveedor.Name = "TBCiudadProveedor";
             this.TBCiudadProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBCiudadProveedor.TabIndex = 95;
+            this.TBCiudadProveedor.Leave += new System.EventHandler(this.TBCiudadProveedor_Leave);
             // 
             // BEditarGuardar
             // 
@@ -264,6 +273,7 @@
             this.BEditarGuardar.TabIndex = 101;
             this.BEditarGuardar.Text = "Guardar Cambios";
             this.BEditarGuardar.UseVisualStyleBackColor = false;
+            this.BEditarGuardar.Click += new System.EventHandler(this.BEditarGuardar_Click);
             // 
             // BEditarCancelar
             // 
@@ -277,6 +287,7 @@
             this.BEditarCancelar.TabIndex = 102;
             this.BEditarCancelar.Text = "Cancelar";
             this.BEditarCancelar.UseVisualStyleBackColor = false;
+            this.BEditarCancelar.Click += new System.EventHandler(this.BEditarCancelar_Click);
             // 
             // LEditarProveedor
             // 

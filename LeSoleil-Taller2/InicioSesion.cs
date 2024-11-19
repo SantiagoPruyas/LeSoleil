@@ -26,6 +26,27 @@ namespace LeSoleil_Taller2
 
         private void BIngresar_Click(object sender, EventArgs e)
         {
+            Ingresar();
+        }
+
+        private void frm_closing(object sender , FormClosingEventArgs e)
+        {
+            TBUsuario.Text = "";
+            TBContraseña.Text = "";
+
+            this.Show(); // Muestra de nuevo el formulario actual cuando el formulario de inicio de sesión se cierra.
+        }
+
+        private void TBContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                Ingresar();
+            }
+        }
+
+        private void Ingresar()
+        {
             Usuario oUsuario = new CN_Usuario().Listar().Where(u => u.User == TBUsuario.Text && u.Contraseña == TBContraseña.Text).FirstOrDefault();
 
             if (oUsuario != null)
@@ -40,15 +61,9 @@ namespace LeSoleil_Taller2
             else
             {
                 MessageBox.Show("No se encontro el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TBUsuario.Text = "";
+                TBContraseña.Text = "";
             }
-        }
-
-        private void frm_closing(object sender , FormClosingEventArgs e)
-        {
-            TBUsuario.Text = "";
-            TBContraseña.Text = "";
-
-            this.Show(); // Muestra de nuevo el formulario actual cuando el formulario de inicio de sesión se cierra.
         }
     }
 }

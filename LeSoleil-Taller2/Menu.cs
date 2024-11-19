@@ -60,7 +60,7 @@ namespace LeSoleil_Taller2
 
         private void MenuBackup_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormBackUp());
+            abrirFormulario((ToolStripMenuItem)sender, new FormBackUp(usuarioActual));
         }
 
         /*private void MenuVentas_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace LeSoleil_Taller2
 
         private void MenuRegistrarVenta_Click(object sender, EventArgs e)
         {
-            abrirFormulario((ToolStripMenuItem)sender, new FormVentas());
+            abrirFormulario((ToolStripMenuItem)sender, new FormVentas(usuarioActual));
         }
 
         private void MenuDetalleVenta_Click(object sender, EventArgs e)
@@ -118,6 +118,11 @@ namespace LeSoleil_Taller2
         private void MenuCategorias_Click(object sender, EventArgs e)
         {
             abrirFormulario((ToolStripMenuItem)sender, new FormCategoria());
+        }
+
+        private void MenuProveedores_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormProveedores());
         }
     }
 

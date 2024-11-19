@@ -102,6 +102,7 @@
             this.TBContraseña.PasswordChar = '*';
             this.TBContraseña.Size = new System.Drawing.Size(140, 24);
             this.TBContraseña.TabIndex = 7;
+            this.TBContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBContraseña_KeyDown);
             // 
             // BIngresar
             // 

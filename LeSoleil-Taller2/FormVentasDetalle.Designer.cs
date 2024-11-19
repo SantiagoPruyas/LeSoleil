@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LDetalleVenta = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBTipoFactura = new System.Windows.Forms.TextBox();
@@ -37,10 +41,10 @@
             this.LTipoFactura = new System.Windows.Forms.Label();
             this.LFecha = new System.Windows.Forms.Label();
             this.LDNIDetalle = new System.Windows.Forms.Label();
-            this.TBDNIDetalle = new System.Windows.Forms.TextBox();
+            this.TBBusqueda = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TBNombreCliente = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TBFactura = new System.Windows.Forms.TextBox();
             this.TBDNICliente = new System.Windows.Forms.TextBox();
             this.LNombreCliente = new System.Windows.Forms.Label();
             this.LDNICliente = new System.Windows.Forms.Label();
@@ -51,12 +55,16 @@
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LPrecioTotalDetalle = new System.Windows.Forms.Label();
             this.TBPrecioTotalDetalle = new System.Windows.Forms.TextBox();
-            this.BDescargarPDF = new System.Windows.Forms.Button();
             this.BLimpiar = new System.Windows.Forms.Button();
             this.BBuscar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BTDescargar = new System.Windows.Forms.Button();
+            this.TBMonto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TBPago = new System.Windows.Forms.TextBox();
             this.BCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.BRegistrarVenta = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -174,28 +182,28 @@
             this.LDNIDetalle.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LDNIDetalle.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDNIDetalle.ForeColor = System.Drawing.Color.Black;
-            this.LDNIDetalle.Location = new System.Drawing.Point(478, 89);
+            this.LDNIDetalle.Location = new System.Drawing.Point(198, 73);
             this.LDNIDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LDNIDetalle.Name = "LDNIDetalle";
-            this.LDNIDetalle.Size = new System.Drawing.Size(128, 18);
+            this.LDNIDetalle.Size = new System.Drawing.Size(107, 18);
             this.LDNIDetalle.TabIndex = 24;
-            this.LDNIDetalle.Text = "Numero Documento";
+            this.LDNIDetalle.Text = "Numero Factura";
             // 
-            // TBDNIDetalle
+            // TBBusqueda
             // 
-            this.TBDNIDetalle.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDNIDetalle.ForeColor = System.Drawing.Color.Coral;
-            this.TBDNIDetalle.Location = new System.Drawing.Point(613, 82);
-            this.TBDNIDetalle.Multiline = true;
-            this.TBDNIDetalle.Name = "TBDNIDetalle";
-            this.TBDNIDetalle.Size = new System.Drawing.Size(186, 25);
-            this.TBDNIDetalle.TabIndex = 24;
+            this.TBBusqueda.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBusqueda.ForeColor = System.Drawing.Color.Coral;
+            this.TBBusqueda.Location = new System.Drawing.Point(613, 82);
+            this.TBBusqueda.Multiline = true;
+            this.TBBusqueda.Name = "TBBusqueda";
+            this.TBBusqueda.Size = new System.Drawing.Size(186, 25);
+            this.TBBusqueda.TabIndex = 24;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox2.Controls.Add(this.TBNombreCliente);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.TBFactura);
             this.groupBox2.Controls.Add(this.TBDNICliente);
             this.groupBox2.Controls.Add(this.LNombreCliente);
             this.groupBox2.Controls.Add(this.LDNICliente);
@@ -219,15 +227,15 @@
             this.TBNombreCliente.Size = new System.Drawing.Size(285, 25);
             this.TBNombreCliente.TabIndex = 23;
             // 
-            // textBox6
+            // TBFactura
             // 
-            this.textBox6.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Coral;
-            this.textBox6.Location = new System.Drawing.Point(551, 50);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(63, 25);
-            this.textBox6.TabIndex = 21;
+            this.TBFactura.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBFactura.ForeColor = System.Drawing.Color.Coral;
+            this.TBFactura.Location = new System.Drawing.Point(551, 50);
+            this.TBFactura.Multiline = true;
+            this.TBFactura.Name = "TBFactura";
+            this.TBFactura.Size = new System.Drawing.Size(63, 25);
+            this.TBFactura.TabIndex = 21;
             // 
             // TBDNICliente
             // 
@@ -281,24 +289,32 @@
             // nombreProducto
             // 
             this.nombreProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle9;
             this.nombreProducto.HeaderText = "Producto";
             this.nombreProducto.Name = "nombreProducto";
             // 
             // Precio
             // 
             this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle10;
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             // 
             // Cantidad
             // 
             this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle11;
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
             // 
             // Subtotal
             // 
             this.Subtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle12;
             this.Subtotal.HeaderText = "Subtotal";
             this.Subtotal.Name = "Subtotal";
             // 
@@ -319,24 +335,11 @@
             // 
             this.TBPrecioTotalDetalle.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPrecioTotalDetalle.ForeColor = System.Drawing.Color.Coral;
-            this.TBPrecioTotalDetalle.Location = new System.Drawing.Point(419, 532);
+            this.TBPrecioTotalDetalle.Location = new System.Drawing.Point(114, 516);
             this.TBPrecioTotalDetalle.Multiline = true;
             this.TBPrecioTotalDetalle.Name = "TBPrecioTotalDetalle";
-            this.TBPrecioTotalDetalle.Size = new System.Drawing.Size(160, 26);
+            this.TBPrecioTotalDetalle.Size = new System.Drawing.Size(78, 26);
             this.TBPrecioTotalDetalle.TabIndex = 61;
-            // 
-            // BDescargarPDF
-            // 
-            this.BDescargarPDF.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BDescargarPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BDescargarPDF.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BDescargarPDF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BDescargarPDF.Location = new System.Drawing.Point(796, 532);
-            this.BDescargarPDF.Name = "BDescargarPDF";
-            this.BDescargarPDF.Size = new System.Drawing.Size(163, 33);
-            this.BDescargarPDF.TabIndex = 62;
-            this.BDescargarPDF.Text = "Descargar en PDF";
-            this.BDescargarPDF.UseVisualStyleBackColor = false;
             // 
             // BLimpiar
             // 
@@ -350,6 +353,7 @@
             this.BLimpiar.TabIndex = 64;
             this.BLimpiar.Text = "Limpiar";
             this.BLimpiar.UseVisualStyleBackColor = false;
+            this.BLimpiar.Click += new System.EventHandler(this.BLimpiar_Click);
             // 
             // BBuscar
             // 
@@ -363,20 +367,78 @@
             this.BBuscar.TabIndex = 65;
             this.BBuscar.Text = "Buscar";
             this.BBuscar.UseVisualStyleBackColor = false;
+            this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BTDescargar);
+            this.panel1.Controls.Add(this.TBMonto);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.TBPrecioTotalDetalle);
+            this.panel1.Controls.Add(this.TBPago);
             this.panel1.Controls.Add(this.BCancelar);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.BRegistrarVenta);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.LDetalleVenta);
+            this.panel1.Controls.Add(this.LDNIDetalle);
             this.panel1.Location = new System.Drawing.Point(300, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(680, 576);
             this.panel1.TabIndex = 66;
+            // 
+            // BTDescargar
+            // 
+            this.BTDescargar.BackColor = System.Drawing.Color.Tan;
+            this.BTDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTDescargar.Font = new System.Drawing.Font("Perpetua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTDescargar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTDescargar.Image = global::LeSoleil_Taller2.Properties.Resources.descargarpdf;
+            this.BTDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BTDescargar.Location = new System.Drawing.Point(504, 516);
+            this.BTDescargar.Name = "BTDescargar";
+            this.BTDescargar.Size = new System.Drawing.Size(139, 25);
+            this.BTDescargar.TabIndex = 68;
+            this.BTDescargar.Text = "Descargar PDF";
+            this.BTDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTDescargar.UseVisualStyleBackColor = false;
+            this.BTDescargar.Click += new System.EventHandler(this.BTDescargar_Click);
+            // 
+            // TBMonto
+            // 
+            this.TBMonto.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBMonto.ForeColor = System.Drawing.Color.Coral;
+            this.TBMonto.Location = new System.Drawing.Point(390, 516);
+            this.TBMonto.Multiline = true;
+            this.TBMonto.Name = "TBMonto";
+            this.TBMonto.Size = new System.Drawing.Size(78, 26);
+            this.TBMonto.TabIndex = 71;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(333, 518);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 18);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Cambio:";
+            // 
+            // TBPago
+            // 
+            this.TBPago.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPago.ForeColor = System.Drawing.Color.Coral;
+            this.TBPago.Location = new System.Drawing.Point(247, 516);
+            this.TBPago.Multiline = true;
+            this.TBPago.Name = "TBPago";
+            this.TBPago.Size = new System.Drawing.Size(78, 26);
+            this.TBPago.TabIndex = 69;
             // 
             // BCancelar
             // 
@@ -390,6 +452,19 @@
             this.BCancelar.TabIndex = 61;
             this.BCancelar.Text = "Cancelar";
             this.BCancelar.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(199, 518);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 18);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Pago:";
             // 
             // BRegistrarVenta
             // 
@@ -442,18 +517,16 @@
             this.ClientSize = new System.Drawing.Size(1285, 701);
             this.Controls.Add(this.BBuscar);
             this.Controls.Add(this.BLimpiar);
-            this.Controls.Add(this.BDescargarPDF);
-            this.Controls.Add(this.TBPrecioTotalDetalle);
             this.Controls.Add(this.LPrecioTotalDetalle);
             this.Controls.Add(this.DGVProductosDetalle);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.TBDNIDetalle);
-            this.Controls.Add(this.LDNIDetalle);
+            this.Controls.Add(this.TBBusqueda);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LFondoUser);
             this.Name = "FormVentasDetalle";
             this.Text = "Detalle Venta";
+            this.Load += new System.EventHandler(this.FormVentasDetalle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -477,21 +550,16 @@
         private System.Windows.Forms.Label LTipoFactura;
         private System.Windows.Forms.Label LFecha;
         private System.Windows.Forms.Label LDNIDetalle;
-        private System.Windows.Forms.TextBox TBDNIDetalle;
+        private System.Windows.Forms.TextBox TBBusqueda;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TBNombreCliente;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TBFactura;
         private System.Windows.Forms.TextBox TBDNICliente;
         private System.Windows.Forms.Label LNombreCliente;
         private System.Windows.Forms.Label LDNICliente;
         private System.Windows.Forms.DataGridView DGVProductosDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.Label LPrecioTotalDetalle;
         private System.Windows.Forms.TextBox TBPrecioTotalDetalle;
-        private System.Windows.Forms.Button BDescargarPDF;
         private System.Windows.Forms.Button BLimpiar;
         private System.Windows.Forms.Button BBuscar;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -501,5 +569,14 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label LFondoUser;
+        private System.Windows.Forms.TextBox TBPago;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TBMonto;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.Button BTDescargar;
     }
 }

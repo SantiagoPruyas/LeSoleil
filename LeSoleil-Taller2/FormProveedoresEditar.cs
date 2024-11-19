@@ -206,7 +206,5 @@ namespace LeSoleil_Taller2
                 }
             }
         }
-
-
     }
 }

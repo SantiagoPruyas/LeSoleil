@@ -218,7 +218,7 @@ namespace LeSoleil_Taller2
                 );
 
                 // Establecer la propiedad Owner (propietario del formulario)
-                editarForm.Owner = this; // 'this' es el formulario principal UsuariosForm
+                editarForm.Owner = this; // 'this' es el formulario principal CateroriaForm
 
                 // Mostrar el formulario de edición como un cuadro de diálogo modal
                 editarForm.ShowDialog();

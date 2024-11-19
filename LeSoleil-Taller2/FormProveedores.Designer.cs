@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BCancelarProveedor = new System.Windows.Forms.Button();
             this.BGuardarProveedor = new System.Windows.Forms.Button();
             this.DGVProveedores = new System.Windows.Forms.DataGridView();
@@ -54,6 +64,7 @@
             this.TBPaisProveedor = new System.Windows.Forms.TextBox();
             this.LDescripcionProveedor = new System.Windows.Forms.Label();
             this.TBDescripcionProveedor = new System.Windows.Forms.TextBox();
+            this.PBFondoClientes = new System.Windows.Forms.PictureBox();
             this.IdProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CUITProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +76,7 @@
             this.paisProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarProveedor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bajarProveedor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PBFondoClientes = new System.Windows.Forms.PictureBox();
+            this.bajaProveedor = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +93,7 @@
             this.BCancelarProveedor.TabIndex = 80;
             this.BCancelarProveedor.Text = "Cancelar";
             this.BCancelarProveedor.UseVisualStyleBackColor = false;
+            this.BCancelarProveedor.Click += new System.EventHandler(this.BCancelarProveedor_Click);
             // 
             // BGuardarProveedor
             // 
@@ -96,6 +107,7 @@
             this.BGuardarProveedor.TabIndex = 79;
             this.BGuardarProveedor.Text = "Guardar";
             this.BGuardarProveedor.UseVisualStyleBackColor = false;
+            this.BGuardarProveedor.Click += new System.EventHandler(this.BGuardarProveedor_Click);
             // 
             // DGVProveedores
             // 
@@ -113,11 +125,12 @@
             this.paisProveedor,
             this.descripcionProveedor,
             this.editarProveedor,
-            this.bajarProveedor});
+            this.bajaProveedor});
             this.DGVProveedores.Location = new System.Drawing.Point(17, 352);
             this.DGVProveedores.Name = "DGVProveedores";
             this.DGVProveedores.Size = new System.Drawing.Size(1242, 281);
             this.DGVProveedores.TabIndex = 78;
+            this.DGVProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProveedores_CellClick);
             this.DGVProveedores.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProveedores_CellPainting);
             // 
             // TBTelefonoProveedor
@@ -129,6 +142,7 @@
             this.TBTelefonoProveedor.Name = "TBTelefonoProveedor";
             this.TBTelefonoProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBTelefonoProveedor.TabIndex = 73;
+            this.TBTelefonoProveedor.Leave += new System.EventHandler(this.TBTelefonoProveedor_Leave);
             // 
             // TBDireccionProveedor
             // 
@@ -139,6 +153,7 @@
             this.TBDireccionProveedor.Name = "TBDireccionProveedor";
             this.TBDireccionProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBDireccionProveedor.TabIndex = 72;
+            this.TBDireccionProveedor.Leave += new System.EventHandler(this.TBDireccionProveedor_Leave);
             // 
             // LTelefonoProveedor
             // 
@@ -173,6 +188,7 @@
             this.TBCUITProveedor.Name = "TBCUITProveedor";
             this.TBCUITProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBCUITProveedor.TabIndex = 67;
+            this.TBCUITProveedor.Leave += new System.EventHandler(this.TBCUITProveedor_Leave);
             // 
             // TBEmailProveedor
             // 
@@ -183,6 +199,7 @@
             this.TBEmailProveedor.Name = "TBEmailProveedor";
             this.TBEmailProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBEmailProveedor.TabIndex = 66;
+            this.TBEmailProveedor.Leave += new System.EventHandler(this.TBEmailProveedor_Leave);
             // 
             // TBNombreProveedor
             // 
@@ -193,6 +210,7 @@
             this.TBNombreProveedor.Name = "TBNombreProveedor";
             this.TBNombreProveedor.Size = new System.Drawing.Size(215, 25);
             this.TBNombreProveedor.TabIndex = 64;
+            this.TBNombreProveedor.Leave += new System.EventHandler(this.TBNombreProveedor_Leave);
             // 
             // LCUITProveedor
             // 
@@ -260,6 +278,7 @@
             this.TBRazonSocialProveedor.Name = "TBRazonSocialProveedor";
             this.TBRazonSocialProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBRazonSocialProveedor.TabIndex = 81;
+            this.TBRazonSocialProveedor.Leave += new System.EventHandler(this.TBRazonSocialProveedor_Leave);
             // 
             // LRazonSocialProveedor
             // 
@@ -285,6 +304,7 @@
             this.BActivosProveedores.TabIndex = 85;
             this.BActivosProveedores.Text = "Proveedores Activos";
             this.BActivosProveedores.UseVisualStyleBackColor = false;
+            this.BActivosProveedores.Click += new System.EventHandler(this.BActivosProveedor_Click);
             // 
             // BInactivosProveedores
             // 
@@ -298,6 +318,7 @@
             this.BInactivosProveedores.TabIndex = 86;
             this.BInactivosProveedores.Text = "Proveedores Inactivos";
             this.BInactivosProveedores.UseVisualStyleBackColor = false;
+            this.BInactivosProveedores.Click += new System.EventHandler(this.BInactivosProveedores_Click);
             // 
             // TBCiudadProveedor
             // 
@@ -308,6 +329,7 @@
             this.TBCiudadProveedor.Name = "TBCiudadProveedor";
             this.TBCiudadProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBCiudadProveedor.TabIndex = 87;
+            this.TBCiudadProveedor.Leave += new System.EventHandler(this.TBCiudadProveedor_Leave);
             // 
             // LCiudadProveedor
             // 
@@ -342,6 +364,7 @@
             this.TBPaisProveedor.Name = "TBPaisProveedor";
             this.TBPaisProveedor.Size = new System.Drawing.Size(214, 25);
             this.TBPaisProveedor.TabIndex = 90;
+            this.TBPaisProveedor.Leave += new System.EventHandler(this.TBPaisProveedor_Leave);
             // 
             // LDescripcionProveedor
             // 
@@ -364,76 +387,7 @@
             this.TBDescripcionProveedor.Name = "TBDescripcionProveedor";
             this.TBDescripcionProveedor.Size = new System.Drawing.Size(215, 73);
             this.TBDescripcionProveedor.TabIndex = 92;
-            // 
-            // IdProveedor
-            // 
-            this.IdProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.IdProveedor.HeaderText = "ID";
-            this.IdProveedor.Name = "IdProveedor";
-            // 
-            // CUITProveedor
-            // 
-            this.CUITProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CUITProveedor.HeaderText = "CUIT";
-            this.CUITProveedor.Name = "CUITProveedor";
-            // 
-            // nombreProveedor
-            // 
-            this.nombreProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreProveedor.HeaderText = "Nombre";
-            this.nombreProveedor.Name = "nombreProveedor";
-            // 
-            // direccionProveedor
-            // 
-            this.direccionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.direccionProveedor.HeaderText = "Direccion";
-            this.direccionProveedor.Name = "direccionProveedor";
-            // 
-            // telefonoProveedor
-            // 
-            this.telefonoProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.telefonoProveedor.HeaderText = "Telefono";
-            this.telefonoProveedor.Name = "telefonoProveedor";
-            // 
-            // emailProveedor
-            // 
-            this.emailProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailProveedor.HeaderText = "Email";
-            this.emailProveedor.Name = "emailProveedor";
-            // 
-            // razonSocialProveedor
-            // 
-            this.razonSocialProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.razonSocialProveedor.HeaderText = "Razon Social";
-            this.razonSocialProveedor.Name = "razonSocialProveedor";
-            // 
-            // ciudadProveedor
-            // 
-            this.ciudadProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ciudadProveedor.HeaderText = "Ciudad";
-            this.ciudadProveedor.Name = "ciudadProveedor";
-            // 
-            // paisProveedor
-            // 
-            this.paisProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.paisProveedor.HeaderText = "Pais";
-            this.paisProveedor.Name = "paisProveedor";
-            // 
-            // descripcionProveedor
-            // 
-            this.descripcionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionProveedor.HeaderText = "Descripcion";
-            this.descripcionProveedor.Name = "descripcionProveedor";
-            // 
-            // editarProveedor
-            // 
-            this.editarProveedor.HeaderText = "Editar";
-            this.editarProveedor.Name = "editarProveedor";
-            // 
-            // bajarProveedor
-            // 
-            this.bajarProveedor.HeaderText = "Dar de Baja";
-            this.bajarProveedor.Name = "bajarProveedor";
+            this.TBDescripcionProveedor.Validating += new System.ComponentModel.CancelEventHandler(this.TBDescripcionProveedor_Validating);
             // 
             // PBFondoClientes
             // 
@@ -443,6 +397,96 @@
             this.PBFondoClientes.Size = new System.Drawing.Size(1310, 454);
             this.PBFondoClientes.TabIndex = 77;
             this.PBFondoClientes.TabStop = false;
+            // 
+            // IdProveedor
+            // 
+            this.IdProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.IdProveedor.DefaultCellStyle = dataGridViewCellStyle1;
+            this.IdProveedor.HeaderText = "ID";
+            this.IdProveedor.Name = "IdProveedor";
+            // 
+            // CUITProveedor
+            // 
+            this.CUITProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.CUITProveedor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CUITProveedor.HeaderText = "CUIT";
+            this.CUITProveedor.Name = "CUITProveedor";
+            // 
+            // nombreProveedor
+            // 
+            this.nombreProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombreProveedor.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nombreProveedor.HeaderText = "Nombre";
+            this.nombreProveedor.Name = "nombreProveedor";
+            // 
+            // direccionProveedor
+            // 
+            this.direccionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.direccionProveedor.DefaultCellStyle = dataGridViewCellStyle4;
+            this.direccionProveedor.HeaderText = "Direccion";
+            this.direccionProveedor.Name = "direccionProveedor";
+            // 
+            // telefonoProveedor
+            // 
+            this.telefonoProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.telefonoProveedor.DefaultCellStyle = dataGridViewCellStyle5;
+            this.telefonoProveedor.HeaderText = "Telefono";
+            this.telefonoProveedor.Name = "telefonoProveedor";
+            // 
+            // emailProveedor
+            // 
+            this.emailProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.emailProveedor.DefaultCellStyle = dataGridViewCellStyle6;
+            this.emailProveedor.HeaderText = "Email";
+            this.emailProveedor.Name = "emailProveedor";
+            // 
+            // razonSocialProveedor
+            // 
+            this.razonSocialProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.razonSocialProveedor.DefaultCellStyle = dataGridViewCellStyle7;
+            this.razonSocialProveedor.HeaderText = "Razon Social";
+            this.razonSocialProveedor.Name = "razonSocialProveedor";
+            // 
+            // ciudadProveedor
+            // 
+            this.ciudadProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.ciudadProveedor.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ciudadProveedor.HeaderText = "Ciudad";
+            this.ciudadProveedor.Name = "ciudadProveedor";
+            // 
+            // paisProveedor
+            // 
+            this.paisProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.paisProveedor.DefaultCellStyle = dataGridViewCellStyle9;
+            this.paisProveedor.HeaderText = "Pais";
+            this.paisProveedor.Name = "paisProveedor";
+            // 
+            // descripcionProveedor
+            // 
+            this.descripcionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.descripcionProveedor.DefaultCellStyle = dataGridViewCellStyle10;
+            this.descripcionProveedor.HeaderText = "Descripcion";
+            this.descripcionProveedor.Name = "descripcionProveedor";
+            // 
+            // editarProveedor
+            // 
+            this.editarProveedor.HeaderText = "Editar";
+            this.editarProveedor.Name = "editarProveedor";
+            // 
+            // bajaProveedor
+            // 
+            this.bajaProveedor.HeaderText = "Dar de Baja";
+            this.bajaProveedor.Name = "bajaProveedor";
             // 
             // FormProveedores
             // 
@@ -524,6 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paisProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionProveedor;
         private System.Windows.Forms.DataGridViewButtonColumn editarProveedor;
-        private System.Windows.Forms.DataGridViewButtonColumn bajarProveedor;
+        private System.Windows.Forms.DataGridViewButtonColumn bajaProveedor;
     }
 }

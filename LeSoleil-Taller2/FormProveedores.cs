@@ -166,15 +166,15 @@ namespace LeSoleil_Taller2
             {
                 DGVProveedores.Rows.Add(new object[] {
                     item.Id_Proveedor,
-                    item.Descripcion,
+                    item.CUIT,
                     item.Nombre,
                     item.Direccion,
                     item.Telefono,
                     item.Email,
-                    item.CUIT,
                     item.Razon_social,
                     item.Ciudad,
                     item.Pais,
+                    item.Descripcion,
                 });
             }
         }
@@ -213,7 +213,7 @@ namespace LeSoleil_Taller2
 
                 if (IdProveedorGenerado != 0)
                 {
-                    if (DGVProveedores.Columns[9].HeaderText == "Dar de Baja")
+                    if (DGVProveedores.Columns[11].HeaderText == "Dar de Baja")
                     {
                         // Adicionar nuevo renglón en el DataGridView
                         int n = DGVProveedores.Rows.Add();
@@ -307,7 +307,7 @@ namespace LeSoleil_Taller2
             }
         }
 
-        private void DGVProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DGVProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int Id_Proveedor = Convert.ToInt32(DGVProveedores.Rows[e.RowIndex].Cells[0].Value);
             string Mensaje = string.Empty;
@@ -386,6 +386,17 @@ namespace LeSoleil_Taller2
                 string ciudad = DGVProveedores.Rows[e.RowIndex].Cells[7].Value.ToString();
                 string pais = DGVProveedores.Rows[e.RowIndex].Cells[8].Value.ToString();
                 string descripcion = DGVProveedores.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+                // Crear y abrir el formulario de edición con los datos
+                FormProveedoresEditar editarForm = new FormProveedoresEditar(
+                    id, CUIT, nombre, direccion, telefono, email, razonSocial, ciudad, pais, descripcion, e.RowIndex, this
+                );
+
+                // Establecer la propiedad Owner (propietario del formulario)
+                editarForm.Owner = this; // 'this' es el formulario principal ProveedorForm
+
+                // Mostrar el formulario de edición como un cuadro de diálogo modal
+                editarForm.ShowDialog();
             }
         }
 
@@ -401,15 +412,15 @@ namespace LeSoleil_Taller2
             {
                 DGVProveedores.Rows.Add(new object[] {
                     item.Id_Proveedor,
-                    item.Descripcion,
+                    item.CUIT,
                     item.Nombre,
                     item.Direccion,
                     item.Telefono,
                     item.Email,
-                    item.CUIT,
                     item.Razon_social,
                     item.Ciudad,
                     item.Pais,
+                    item.Descripcion,
                 });
             }
         }
@@ -425,15 +436,15 @@ namespace LeSoleil_Taller2
             {
                 DGVProveedores.Rows.Add(new object[] {
                     item.Id_Proveedor,
-                    item.Descripcion,
+                    item.CUIT,
                     item.Nombre,
                     item.Direccion,
                     item.Telefono,
                     item.Email,
-                    item.CUIT,
                     item.Razon_social,
                     item.Ciudad,
                     item.Pais,
+                    item.Descripcion,
                 });
             }
         }
@@ -454,19 +465,5 @@ namespace LeSoleil_Taller2
 
             MessageBox.Show("Datos actualizados correctamente.");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

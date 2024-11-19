@@ -159,6 +159,10 @@ namespace LeSoleil_Taller2
             }
         }
 
+        private void FormClientesEditar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
