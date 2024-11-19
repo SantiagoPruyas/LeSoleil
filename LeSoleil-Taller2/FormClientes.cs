@@ -116,6 +116,17 @@ namespace LeSoleil_Taller2
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn columna in DGVClientes.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "editarCliente" && columna.Name != "bajaCliente")
+                {
+                    CBBusquedaCliente.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            CBBusquedaCliente.DisplayMember = "Texto";
+            CBBusquedaCliente.ValueMember = "Valor";
+            CBBusquedaCliente.SelectedIndex = 0;
             //List<Perfil> listaPerfil = new CN_Perfil().Listar();
 
             // Mostrar todos los Clientes activos en la tabla
@@ -406,6 +417,41 @@ namespace LeSoleil_Taller2
 
                 // Mostrar el formulario de edición como un cuadro de diálogo modal
                 editarForm.ShowDialog();
+            }
+        }
+
+        private void BTBuscarCliente_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)CBBusquedaCliente.SelectedItem).Valor.ToString();
+
+            if (DGVClientes.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVClientes.Rows)
+                {
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TBusquedaCliente.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
+        {
+            CBBusquedaCliente.Text = "";
+            foreach (DataGridViewRow row in DGVClientes.Rows)
+            {
+                row.Visible = true;
             }
         }
     }

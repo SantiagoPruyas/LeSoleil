@@ -61,6 +61,17 @@ namespace LeSoleil_Taller2
 
         private void FormCategoria_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn columna in DGVCategorias.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "editarCategoria" && columna.Name != "bajaCategoria")
+                {
+                    CBBusquedaCategoria.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            CBBusquedaCategoria.DisplayMember = "Texto";
+            CBBusquedaCategoria.ValueMember = "Valor";
+            CBBusquedaCategoria.SelectedIndex = 0;
             // Mostrar todos las categorias activos en la tabla
             List<Categoria> listaCategoria = new CN_Categoria().Listar().Where(u => u.Estado == true).ToList();
 
@@ -311,6 +322,39 @@ namespace LeSoleil_Taller2
             }
         }
 
-       
+        private void BTBuscarCategoria_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)CBBusquedaCategoria.SelectedItem).Valor.ToString();
+
+            if (DGVCategorias.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVCategorias.Rows)
+                {
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TBusquedaCategoria.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
+        {
+            CBBusquedaCategoria.Text = "";
+            foreach (DataGridViewRow row in DGVCategorias.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }

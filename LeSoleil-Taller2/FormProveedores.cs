@@ -159,6 +159,17 @@ namespace LeSoleil_Taller2
 
         private void FormProveedores_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn columna in DGVProveedores.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "editarProveedor" && columna.Name != "bajaProveedor")
+                {
+                    CBBusquedaProveedor.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            CBBusquedaProveedor.DisplayMember = "Texto";
+            CBBusquedaProveedor.ValueMember = "Valor";
+            CBBusquedaProveedor.SelectedIndex = 0;
             // Mostrar todos los Proveedores activos en la tabla
             List<Proveedor> listaProveedor = new CN_Proveedor().Listar().Where(u => u.Baja == false).ToList();
 
@@ -464,6 +475,41 @@ namespace LeSoleil_Taller2
 
 
             MessageBox.Show("Datos actualizados correctamente.");
+        }
+
+        private void BTBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)CBBusquedaProveedor.SelectedItem).Valor.ToString();
+
+            if (DGVProveedores.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVProveedores.Rows)
+                {
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TBusquedaProveedor.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
+        {
+            CBBusquedaProveedor.Text = "";
+            foreach (DataGridViewRow row in DGVProveedores.Rows)
+            {
+                row.Visible = true;
+            }
         }
     }
 }

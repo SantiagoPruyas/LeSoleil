@@ -349,6 +349,18 @@ namespace LeSoleil_Taller2
                 CBCategoriaProducto.SelectedIndex = 0;
             }
 
+            foreach (DataGridViewColumn columna in DGVProductos.Columns)
+            {
+                if (columna.Visible == true && columna.Name != "editarProducto" && columna.Name != "bajaProducto")
+                {
+                    CBBusquedaProducto.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
+                }
+            }
+
+            CBBusquedaProducto.DisplayMember = "Texto";
+            CBBusquedaProducto.ValueMember = "Valor";
+            CBBusquedaProducto.SelectedIndex = 0;
+
             // Mostrar todos los usuarios activos en la tabla
             List<Producto> listaProducto = new CN_Producto().Listar().Where(u => u.Baja == false).ToList();
 
@@ -538,7 +550,40 @@ namespace LeSoleil_Taller2
             }
         }
 
+        private void BTBuscarProducto_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)CBBusquedaProducto.SelectedItem).Valor.ToString();
 
+            if (DGVProductos.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVProductos.Rows)
+                {
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                        row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(TBusquedaProducto.Text.Trim().ToUpper()))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        private void BTLimpiar_Click(object sender, EventArgs e)
+        {
+            TBusquedaProducto.Text = "";
+            foreach (DataGridViewRow row in DGVProductos.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
     }
 
