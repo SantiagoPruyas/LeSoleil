@@ -33,6 +33,10 @@
             this.LBackup = new System.Windows.Forms.Label();
             this.BBackUp = new System.Windows.Forms.Button();
             this.DGVCategorias = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +45,7 @@
             this.LFondoBackup.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoBackup.Location = new System.Drawing.Point(0, -3);
             this.LFondoBackup.Name = "LFondoBackup";
-            this.LFondoBackup.Size = new System.Drawing.Size(806, 687);
+            this.LFondoBackup.Size = new System.Drawing.Size(600, 687);
             this.LFondoBackup.TabIndex = 0;
             // 
             // LBackup
@@ -50,7 +54,7 @@
             this.LBackup.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LBackup.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBackup.ForeColor = System.Drawing.Color.Coral;
-            this.LBackup.Location = new System.Drawing.Point(322, 38);
+            this.LBackup.Location = new System.Drawing.Point(254, 38);
             this.LBackup.Name = "LBackup";
             this.LBackup.Size = new System.Drawing.Size(102, 29);
             this.LBackup.TabIndex = 3;
@@ -62,7 +66,7 @@
             this.BBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBackUp.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BBackUp.Location = new System.Drawing.Point(298, 97);
+            this.BBackUp.Location = new System.Drawing.Point(230, 97);
             this.BBackUp.Name = "BBackUp";
             this.BBackUp.Size = new System.Drawing.Size(147, 61);
             this.BBackUp.TabIndex = 9;
@@ -80,17 +84,49 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVCategorias.Location = new System.Drawing.Point(12, 183);
+            this.DGVCategorias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Usuario,
+            this.Estado,
+            this.Ubicacion});
+            this.DGVCategorias.Location = new System.Drawing.Point(13, 183);
             this.DGVCategorias.Name = "DGVCategorias";
             this.DGVCategorias.ReadOnly = true;
-            this.DGVCategorias.Size = new System.Drawing.Size(776, 479);
+            this.DGVCategorias.Size = new System.Drawing.Size(576, 479);
             this.DGVCategorias.TabIndex = 62;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 80;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 150;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Ubicacion
+            // 
+            this.Ubicacion.HeaderText = "Ubicacion";
+            this.Ubicacion.Name = "Ubicacion";
+            this.Ubicacion.ReadOnly = true;
+            this.Ubicacion.Width = 200;
             // 
             // FormBackUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 674);
+            this.ClientSize = new System.Drawing.Size(601, 674);
             this.Controls.Add(this.DGVCategorias);
             this.Controls.Add(this.BBackUp);
             this.Controls.Add(this.LBackup);
@@ -109,5 +145,9 @@
         private System.Windows.Forms.Label LBackup;
         private System.Windows.Forms.Button BBackUp;
         private System.Windows.Forms.DataGridView DGVCategorias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ubicacion;
     }
 }

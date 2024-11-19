@@ -1231,7 +1231,7 @@ begin
 
 end
 
-CREATE PROC sp_ReporteVentas(
+/* CREATE PROC sp_ReporteVentas(
 @fechaInicio varchar(10),
 @fechaFin varchar(10)
 )
@@ -1239,4 +1239,13 @@ AS
 BEGIN
 SET DATEFORMAT dmy;
 SELECT
-convert(char(10), v.Fecha)
+convert(char(10), v.Fecha) */
+
+-- Auditorias de BackUps --
+CREATE TABLE auditoria_backup (
+    id_auditoria INT IDENTITY(1,1) PRIMARY KEY,
+    fecha_backup DATETIME NOT NULL DEFAULT GETDATE(),
+    usuario_backup VARCHAR(100) NOT NULL,
+    estado VARCHAR(50) NOT NULL,
+    ubicacion_backup NVARCHAR(255) NULL
+);
