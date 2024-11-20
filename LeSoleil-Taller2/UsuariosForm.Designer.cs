@@ -53,7 +53,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
+            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -86,15 +86,6 @@
             this.Fecha_Nacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bajaUsuario = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.TBEmailUser = new System.Windows.Forms.TextBox();
-            this.LEmailUser = new System.Windows.Forms.Label();
-            this.BGuardarUsuario = new System.Windows.Forms.Button();
-            this.BCancelarUsuario = new System.Windows.Forms.Button();
-            this.BActivosUser = new System.Windows.Forms.Button();
-            this.BInactivosUsers = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LFechaNacimientoUser = new System.Windows.Forms.Label();
-            this.DTPFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.TBEmailUser = new System.Windows.Forms.TextBox();
             this.LEmailUser = new System.Windows.Forms.Label();
             this.BGuardarUsuario = new System.Windows.Forms.Button();

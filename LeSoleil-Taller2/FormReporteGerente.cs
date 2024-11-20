@@ -66,23 +66,29 @@ namespace LeSoleil_Taller2
 
         private void BBuscarFiltro_Click(object sender, EventArgs e)
         {
-                string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
+            string columnaFiltro = ((OpcionCombo)cbobusqueda.SelectedItem).Valor.ToString();
 
-                if (DGVTotalVentas.Rows.Count > 0)
+            if (DGVTotalVentas.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in DGVTotalVentas.Rows)
                 {
-                    foreach (DataGridViewRow row in DGVTotalVentas.Rows)
+                    // Ignorar la fila si es la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    // Verificar si el valor de la celda es null antes de acceder a ToString()
+                    if (row.Cells[columnaFiltro].Value != null &&
+                    row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
                     {
-                        if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
-                        {
-                            row.Visible = true;
-                        }
-                        else
-                        {
-                            row.Visible = false;
-                        }
-                           
+                        row.Visible = true;
                     }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+
                 }
+            }
         }
 
         private void BLimpiarBuscador_Click(object sender, EventArgs e)
