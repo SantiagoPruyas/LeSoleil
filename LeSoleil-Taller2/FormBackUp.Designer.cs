@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LFondoBackup = new System.Windows.Forms.Label();
             this.LBackup = new System.Windows.Forms.Label();
             this.BBackUp = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.LFondoBackup.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LFondoBackup.Location = new System.Drawing.Point(0, -3);
             this.LFondoBackup.Name = "LFondoBackup";
-            this.LFondoBackup.Size = new System.Drawing.Size(809, 587);
+            this.LFondoBackup.Size = new System.Drawing.Size(1299, 587);
             this.LFondoBackup.TabIndex = 0;
             // 
             // LBackup
@@ -60,7 +60,7 @@
             this.LBackup.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LBackup.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBackup.ForeColor = System.Drawing.Color.Coral;
-            this.LBackup.Location = new System.Drawing.Point(341, 38);
+            this.LBackup.Location = new System.Drawing.Point(573, 43);
             this.LBackup.Name = "LBackup";
             this.LBackup.Size = new System.Drawing.Size(102, 29);
             this.LBackup.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.BBackUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BBackUp.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BBackUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BBackUp.Location = new System.Drawing.Point(317, 97);
+            this.BBackUp.Location = new System.Drawing.Point(553, 89);
             this.BBackUp.Name = "BBackUp";
             this.BBackUp.Size = new System.Drawing.Size(147, 61);
             this.BBackUp.TabIndex = 9;
@@ -82,14 +82,14 @@
             // 
             // DGVBackUps
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVBackUps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVBackUps.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVBackUps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVBackUps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -97,61 +97,62 @@
             this.Estado,
             this.Fecha,
             this.Ubicacion});
-            this.DGVBackUps.Location = new System.Drawing.Point(13, 183);
+            this.DGVBackUps.Location = new System.Drawing.Point(180, 181);
             this.DGVBackUps.Name = "DGVBackUps";
             this.DGVBackUps.ReadOnly = true;
-            this.DGVBackUps.Size = new System.Drawing.Size(781, 383);
+            this.DGVBackUps.Size = new System.Drawing.Size(855, 383);
             this.DGVBackUps.TabIndex = 62;
             // 
             // Id
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle8;
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 80;
             // 
             // Usuario
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Usuario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Usuario.DefaultCellStyle = dataGridViewCellStyle9;
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 150;
             // 
             // Estado
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle10;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
             // Fecha
             // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Fecha.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle11;
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 200;
             // 
             // Ubicacion
             // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.Ubicacion.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Ubicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.Ubicacion.DefaultCellStyle = dataGridViewCellStyle12;
             this.Ubicacion.HeaderText = "Ubicacion";
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.ReadOnly = true;
-            this.Ubicacion.Width = 200;
             // 
             // FormBackUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 578);
+            this.ClientSize = new System.Drawing.Size(1285, 701);
             this.Controls.Add(this.DGVBackUps);
             this.Controls.Add(this.BBackUp);
             this.Controls.Add(this.LBackup);

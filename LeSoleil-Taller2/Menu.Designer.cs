@@ -39,7 +39,6 @@
             this.MenuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosMásVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuReportesGerente = new System.Windows.Forms.ToolStripMenuItem();
@@ -191,19 +190,19 @@
             // 
             // MenuReportesGerente
             // 
-            this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuReportesGerente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.historialDeVentasToolStripMenuItem,
             this.productosMásVendidosToolStripMenuItem});
-            this.MenuReportes.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MenuReportes.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportes.Image")));
-            this.MenuReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MenuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuReportes.Name = "MenuReportes";
-            this.MenuReportes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.MenuReportes.Size = new System.Drawing.Size(89, 85);
-            this.MenuReportes.Text = "Reportes";
-            this.MenuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuReportesGerente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuReportesGerente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuReportesGerente.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportes.Image")));
+            this.MenuReportesGerente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuReportesGerente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReportesGerente.Name = "MenuReportes";
+            this.MenuReportesGerente.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuReportesGerente.Size = new System.Drawing.Size(89, 85);
+            this.MenuReportesGerente.Text = "Reportes";
+            this.MenuReportesGerente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText; 
             // 
             // historialDeVentasToolStripMenuItem
             // 
@@ -228,7 +227,6 @@
             this.MenuReportesGerente.Size = new System.Drawing.Size(89, 85);
             this.MenuReportesGerente.Text = "Reportes";
             this.MenuReportesGerente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuReportesGerente.Click += new System.EventHandler(this.MenuReportes_Click);
             // 
             // MenuSalir
             // 
