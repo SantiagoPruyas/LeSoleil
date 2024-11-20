@@ -288,6 +288,13 @@ insert into Perfil (NombreRol, Descripcion) values ('GERENTE', 'Este usuario ger
 insert into Usuario(Nombre, Apellido, Usuario, Contraseña, DNI, Fecha_nacimiento, Correo, Baja, Perfil_id, Direccion, Telefono) 
 values ('Lara','Valetto','Lara','admin','45374333','2003-11-26','lvaletto21@gmail.com',0,2,'Junin 25', '3794995322')
 
+SELECT * FROM Usuario
+WHERE Usuario = 'Lara';
+
+UPDATE Usuario
+SET Perfil_id = 1
+WHERE Usuario = 'Lara';
+
 -- Modificar usuario
 UPDATE Usuario
 SET Baja = 0
@@ -431,6 +438,60 @@ WHERE vd.Id_venta = 1
 -- Select Auditoria
 SELECT a.Id_auditoria, u.Nombre, a.Estado, a.Fecha_backup, a.Ubicacion_backup from auditoria_backup a 
 inner join Usuario u on u.Id_usuario = a.Id_usuario  
+
+------------ *** CORRECION DE PERFILES (Solo Lara) *** ------------ 
+Select * from Perfil
+select * from Permiso
+
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(7,'MenuClientes'),
+(7,'MenuProveedores'),
+(7,'MenuCategorias'),
+(7,'MenuProductos'),
+(7,'MenuReportes'),
+(7,'MenuSalir')
+
+-- Permiso backup para el Admin
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(1,'MenuBackup')
+
+-- borrar permisos de admin
+DELETE FROM Permiso
+WHERE Id_permiso IN (9, 10, 13, 21, 23, 24, 25, 26, 27, 28, 30, 31, 42, 48, 50, 61, 67);
+
+-- borrar permisos de vendedor
+DELETE FROM Permiso
+WHERE Id_permiso IN (2, 5, 6, 14, 43, 62);
+
+-- Permiso de MenuReportesGerente para el Gerente
+UPDATE Permiso
+SET Nombre = 'MenuReportesGerente'
+WHERE Id_permiso = 78
+
+-- Permiso de MenuVentas para el Gerente
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(7,'MenuVentas')
+
+-- Permiso de MenuReportesGerente para el Admin
+UPDATE Permiso
+SET Nombre = 'MenuReportesGerente'
+WHERE Id_permiso = 11
+
+-- agregar permisos de vendedor
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(2,'MenuVentas'),
+(2,'MenuClientes'),
+(2,'MenuReportesVendedor'),
+(2,'MenuSalir')
+
+-- borrar permisos de repositor
+delete FROM Permiso
+WHERE Id_permiso IN (15, 17, 29, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 44, 45, 46, 47, 49, 57, 58, 59, 60, 63, 64, 65, 66);
+
+INSERT INTO Permiso(Perfil_id,Nombre) values
+(3,'MenuCategorias'),
+(3,'MenuProductos'),
+(3,'MenuSalir')
 
 ---------------------------------- PROCEDIMIENTOS ----------------------------------
 create PROC SP_REGISTRARUSUARIO(
@@ -1261,7 +1322,7 @@ ADD CONSTRAINT FK_Usuario_Id_usuario
 FOREIGN KEY (Id_usuario) REFERENCES Usuario(Id_usuario);
 
 -- Procedimiento para realizar Back Up
-ALTER PROCEDURE sp_realizar_backup
+create PROCEDURE sp_realizar_backup
     @Id_usuario INT,                   -- ID del usuario que realiza el backup
     @ruta_backup NVARCHAR(255),   
     @nombre_backup VARCHAR(255),        -- Nombre del archivo de backup
@@ -1315,9 +1376,10 @@ TO DISK = 'C:\BackUps\DBLE_SOLEIL.bak';
 
 
 ---------------------------------- PROCEDIMIENTOS REPORTES ----------------------------------
+USE DBLE_SOLEIL
 
 -- Reporte Historial de Ventas
-CREATE PROC sp_ReporteVentas(
+alter PROC sp_ReporteVentas(
 @fechaInicio varchar(10),
 @fechaFin varchar(10)
 )
@@ -1325,10 +1387,10 @@ AS
 BEGIN
 SET DATEFORMAT dmy;
 SELECT
-convert(char(10), vc.FechaVenta,103)[FechaRegistro], f.Tipo_Factura[TipoFactura], vc.Nro_Factura[NumeroFactura], vc.Total,
+convert(char(10), vc.FechaVenta,103)[FechaVenta], f.Tipo_Factura[TipoFactura], vc.Nro_Factura[NroFactura], vc.Total[MontoTotal],
 u.Usuario[UsuarioRegistro],
 c.DNI[DNICliente], c.Nombre[NombreCliente],
-p.Codigo[CodigoProducto], p.Nombre[NombreProducto], ca.Descripcion[Categoria], vd.Precio_venta, vd.Cantidad, vd.Subtotal
+p.Codigo[CodigoProducto], p.Nombre[NombreProducto], ca.Descripcion[Categoria], vd.Precio_venta[PrecioVenta], vd.Cantidad, vd.Subtotal
 from VentaCabecera vc
 inner join Usuario u on u.Id_usuario = vc.Id_usuario
 inner join VentaDetalle vd on vd.Id_venta = vc.Id_venta
@@ -1341,7 +1403,9 @@ end
 
 exec sp_ReporteVentas '01/11/2024', '20/11/2024'
 
-CREATE PROC sp_ReporteVentasVendedor
+
+-- Reporte de Ventas del Vendedor
+alter PROC sp_ReporteVentasVendedor
 (
     @fechaInicio VARCHAR(10),
     @fechaFin VARCHAR(10),
@@ -1352,16 +1416,16 @@ BEGIN
     SET DATEFORMAT dmy;
 
     SELECT
-        CONVERT(CHAR(10), vc.FechaVenta, 103) AS [FechaRegistro],
+        CONVERT(CHAR(10), vc.FechaVenta, 103) AS [FechaVenta],
         f.Tipo_Factura AS [TipoFactura],
-        vc.Nro_Factura AS [NumeroFactura],
-        vc.Total,
+        vc.Nro_Factura AS [NroFactura],
+        vc.Total[MontoTotal],
         c.DNI AS [DNICliente],
         c.Nombre AS [NombreCliente],
         p.Codigo AS [CodigoProducto],
         p.Nombre AS [NombreProducto],
         ca.Descripcion AS [Categoria],
-        vd.Precio_venta,
+        vd.Precio_venta[PrecioVenta],
         vd.Cantidad,
         vd.Subtotal
     FROM VentaCabecera vc
@@ -1375,7 +1439,7 @@ BEGIN
     AND vc.Id_usuario = @Id_usuario; -- Filtro por usuario
 END;
 
-exec sp_ReporteVentasVendedor '18/10/2024', '20/11/2024', 4
+exec sp_ReporteVentasVendedor '18/10/2024', '21/11/2024', 4
 -- Prueba 
 exec sp_ReporteVentas '19/11/2024', '20/11/2024'
 
