@@ -92,7 +92,7 @@ namespace LeSoleil_Taller2
                 }
 
                 SaveFileDialog savefile = new SaveFileDialog();
-                savefile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.FileName = string.Format("ReporteVentas{0}_{0}.xlsx", usuarioActual.Nombre.ToString() , DateTime.Now.ToString("ddMMyyyyHHmmss"));
                 savefile.Filter = "Excel Files | *.xlsx";
 
                 if (savefile.ShowDialog() == DialogResult.OK)

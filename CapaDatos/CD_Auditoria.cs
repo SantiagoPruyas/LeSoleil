@@ -63,11 +63,11 @@ namespace CapaDatos
             string ubicacion = @"C:\BackUps";
             string nombreBackup = "Backup_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".bak";
 
+            // Verificar si la carpeta existe
             if (!Directory.Exists(ubicacion))
             {
-                Mensaje = "La carpeta de destino no existe.";
-                respuesta = false;
-                return respuesta;
+                // Si la carpeta no existe, intenta crearla
+                Directory.CreateDirectory(ubicacion);
             }
             try
             {
