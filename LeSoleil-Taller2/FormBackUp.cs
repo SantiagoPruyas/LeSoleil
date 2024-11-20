@@ -48,6 +48,21 @@ namespace LeSoleil_Taller2
             if (respuesta)
             {
                 MessageBox.Show("Back Up generado con exito!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DGVBackUps.Rows.Clear();
+                
+                List<Auditoria> listaBackUp = new CN_Auditoria().Listar().ToList();
+
+                foreach (Auditoria item in listaBackUp)
+                {
+                    DGVBackUps.Rows.Add(new object[] {
+                    item.Id_auditoria,
+                    item.oUsuario.Nombre,
+                    item.Estado,
+                    item.Fecha,
+                    item.Ubicacion,
+                });
+                }
             } else
             {
                 MessageBox.Show(Mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
