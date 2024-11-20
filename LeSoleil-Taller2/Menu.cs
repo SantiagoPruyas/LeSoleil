@@ -124,6 +124,11 @@ namespace LeSoleil_Taller2
         {
             abrirFormulario((ToolStripMenuItem)sender, new FormProveedores());
         }
+
+        private void MenuReportesVendedor_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormReporteVendedor(usuarioActual));
+        }
     }
 
     // Clase para el renderizado personalizado de los ítems del menú

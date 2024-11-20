@@ -39,13 +39,14 @@
             this.MenuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuReportesGerente = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.LLeSoleil = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.PContenedor = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.MN_nombreUsuario = new System.Windows.Forms.Label();
+            this.MenuReportesVendedor = new System.Windows.Forms.ToolStripMenuItem();
             this.MSMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@
             this.MenuCategorias,
             this.MenuProductos,
             this.MenuProveedores,
-            this.MenuReportes,
+            this.MenuReportesVendedor,
+            this.MenuReportesGerente,
             this.MenuSalir});
             this.MSMenu.Location = new System.Drawing.Point(0, 11);
             this.MSMenu.Name = "MSMenu";
@@ -184,19 +186,19 @@
             this.MenuProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.MenuProveedores.Click += new System.EventHandler(this.MenuProveedores_Click);
             // 
-            // MenuReportes
+            // MenuReportesGerente
             // 
-            this.MenuReportes.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.MenuReportes.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportes.Image")));
-            this.MenuReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.MenuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.MenuReportes.Name = "MenuReportes";
-            this.MenuReportes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.MenuReportes.Size = new System.Drawing.Size(89, 85);
-            this.MenuReportes.Text = "Reportes";
-            this.MenuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
+            this.MenuReportesGerente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuReportesGerente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuReportesGerente.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportesGerente.Image")));
+            this.MenuReportesGerente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuReportesGerente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReportesGerente.Name = "MenuReportesGerente";
+            this.MenuReportesGerente.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuReportesGerente.Size = new System.Drawing.Size(89, 85);
+            this.MenuReportesGerente.Text = "Reportes";
+            this.MenuReportesGerente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuReportesGerente.Click += new System.EventHandler(this.MenuReportes_Click);
             // 
             // MenuSalir
             // 
@@ -265,6 +267,20 @@
             this.MN_nombreUsuario.TabIndex = 6;
             this.MN_nombreUsuario.Text = "UsuarioActual";
             // 
+            // MenuReportesVendedor
+            // 
+            this.MenuReportesVendedor.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuReportesVendedor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuReportesVendedor.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportesVendedor.Image")));
+            this.MenuReportesVendedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuReportesVendedor.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReportesVendedor.Name = "MenuReportesVendedor";
+            this.MenuReportesVendedor.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuReportesVendedor.Size = new System.Drawing.Size(89, 85);
+            this.MenuReportesVendedor.Text = "Reportes";
+            this.MenuReportesVendedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MenuReportesVendedor.Click += new System.EventHandler(this.MenuReportesVendedor_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,7 +315,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuVentas;
         private System.Windows.Forms.ToolStripMenuItem MenuClientes;
         private System.Windows.Forms.ToolStripMenuItem MenuProductos;
-        private System.Windows.Forms.ToolStripMenuItem MenuReportes;
+        private System.Windows.Forms.ToolStripMenuItem MenuReportesGerente;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.Label label2;
@@ -308,5 +324,6 @@
         private System.Windows.Forms.ToolStripMenuItem MenuDetalleVenta;
         private System.Windows.Forms.ToolStripMenuItem MenuProveedores;
         private System.Windows.Forms.ToolStripMenuItem MenuCategorias;
+        private System.Windows.Forms.ToolStripMenuItem MenuReportesVendedor;
     }
 }
