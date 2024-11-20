@@ -41,7 +41,33 @@ namespace LeSoleil_Taller2
                     {
                         adapter.Fill(dt);
                     }
-                    DGVProductosVendidos.DataSource = dt;  
+                    DGVProductosVendidos.DataSource = dt;
+
+
+                    // Limpiar los datos previos del gráfico
+                    CProductosVendidos.Series.Clear();
+                    CProductosVendidos.Legends.Clear();
+
+                    // Agregar una nueva serie de tipo 'Pie' (gráfico de torta)
+                    var serie = new System.Windows.Forms.DataVisualization.Charting.Series("Productos Vendidos");
+                    serie.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+
+                    // Agregar los valores al gráfico
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string producto = row["Producto"].ToString();
+                        double totalVentas = Convert.ToDouble(row["TotalVentas"]);
+
+                        serie.Points.AddXY(producto, totalVentas);
+                    }
+
+                    // Agregar la serie al gráfico
+                    CProductosVendidos.Series.Add(serie);
+
+                    // Agregar una leyenda al gráfico
+                    CProductosVendidos.Legends.Add(new System.Windows.Forms.DataVisualization.Charting.Legend("Productos Vendidos"));
+
+
                 }
             }
         }

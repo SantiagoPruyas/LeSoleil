@@ -1439,7 +1439,11 @@ BEGIN
     AND vc.Id_usuario = @Id_usuario; -- Filtro por usuario
 END;
 
-exec sp_ReporteVentasVendedor '18/10/2024', '21/11/2024', 4
+--Prueba
+select * from Usuario;
+
+exec sp_ReporteVentasVendedor '18/10/2024', '21/11/2024', 8
+
 -- Prueba 
 exec sp_ReporteVentas '19/11/2024', '20/11/2024'
 

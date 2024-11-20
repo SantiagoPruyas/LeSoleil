@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.BProductosVendidos = new System.Windows.Forms.Button();
             this.LHasta = new System.Windows.Forms.Label();
             this.fechafin = new System.Windows.Forms.DateTimePicker();
@@ -38,7 +41,9 @@
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.LFondoUser = new System.Windows.Forms.Label();
             this.DGVProductosVendidos = new System.Windows.Forms.DataGridView();
+            this.CProductosVendidos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductosVendidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CProductosVendidos)).BeginInit();
             this.SuspendLayout();
             // 
             // BProductosVendidos
@@ -116,7 +121,7 @@
             this.LFondoProductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LFondoProductos.Location = new System.Drawing.Point(22, 24);
             this.LFondoProductos.Name = "LFondoProductos";
-            this.LFondoProductos.Size = new System.Drawing.Size(1251, 122);
+            this.LFondoProductos.Size = new System.Drawing.Size(1215, 122);
             this.LFondoProductos.TabIndex = 59;
             // 
             // LFondoUser
@@ -133,18 +138,37 @@
             this.DGVProductosVendidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductosVendidos.Location = new System.Drawing.Point(22, 180);
             this.DGVProductosVendidos.Name = "DGVProductosVendidos";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.DGVProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.DGVProductosVendidos.Size = new System.Drawing.Size(652, 326);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.DGVProductosVendidos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVProductosVendidos.Size = new System.Drawing.Size(389, 350);
             this.DGVProductosVendidos.TabIndex = 67;
+            // 
+            // CProductosVendidos
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.CProductosVendidos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.CProductosVendidos.Legends.Add(legend1);
+            this.CProductosVendidos.Location = new System.Drawing.Point(461, 180);
+            this.CProductosVendidos.Name = "CProductosVendidos";
+            this.CProductosVendidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.CProductosVendidos.Series.Add(series1);
+            this.CProductosVendidos.Size = new System.Drawing.Size(776, 350);
+            this.CProductosVendidos.TabIndex = 68;
+            this.CProductosVendidos.Text = "Productos Vendidos";
             // 
             // FormReporteGerente2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.CProductosVendidos);
             this.Controls.Add(this.DGVProductosVendidos);
             this.Controls.Add(this.BProductosVendidos);
             this.Controls.Add(this.LHasta);
@@ -157,6 +181,7 @@
             this.Name = "FormReporteGerente2";
             this.Text = "Reporte Gerente";
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductosVendidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CProductosVendidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +198,6 @@
         private System.Windows.Forms.Label LFondoProductos;
         private System.Windows.Forms.Label LFondoUser;
         private System.Windows.Forms.DataGridView DGVProductosVendidos;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CProductosVendidos;
     }
 }
