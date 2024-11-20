@@ -1390,7 +1390,7 @@ SELECT
 convert(char(10), vc.FechaVenta,103)[FechaVenta], f.Tipo_Factura[TipoFactura], vc.Nro_Factura[NroFactura], vc.Total[MontoTotal],
 u.Usuario[UsuarioRegistro],
 c.DNI[DNICliente], c.Nombre[NombreCliente],
-p.Codigo[CodigoProducto], p.Nombre[NombreProducto], ca.Descripcion[Categoria], vd.Precio_venta[PrecioVenta], vd.Cantidad, vd.Subtotal
+p.Codigo[CodigoProducto], p.Nombre[NombreProducto], ca.Nombre[Categoria], vd.Precio_venta[PrecioVenta], vd.Cantidad, vd.Subtotal
 from VentaCabecera vc
 inner join Usuario u on u.Id_usuario = vc.Id_usuario
 inner join VentaDetalle vd on vd.Id_venta = vc.Id_venta
@@ -1424,7 +1424,7 @@ BEGIN
         c.Nombre AS [NombreCliente],
         p.Codigo AS [CodigoProducto],
         p.Nombre AS [NombreProducto],
-        ca.Descripcion AS [Categoria],
+        ca.Nombre AS [Categoria],
         vd.Precio_venta[PrecioVenta],
         vd.Cantidad,
         vd.Subtotal
@@ -1459,14 +1459,14 @@ BEGIN
 
     SELECT 
         p.Nombre AS Producto, 
-        SUM(vd.Cantidad) AS CantidadVecesVendido, 
+        SUM(vd.Cantidad) AS UnidadesVendidas, 
         SUM(vd.Cantidad * vd.Precio_venta) AS TotalVentas
     FROM VentaDetalle vd
     INNER JOIN Producto p ON p.Id_producto = vd.Id_producto
     INNER JOIN VentaCabecera vc ON vc.Id_venta = vd.Id_venta
     WHERE CONVERT(DATE, vc.FechaVenta) BETWEEN @fechaInicio AND @fechaFin
     GROUP BY p.Nombre
-    ORDER BY CantidadVecesVendido DESC; -- Ordenamos por la cantidad total vendida de mayor a menor
+    ORDER BY UnidadesVendidas DESC; -- Ordenamos por la cantidad total vendida de mayor a menor
 END
 
 -- Prueba 
