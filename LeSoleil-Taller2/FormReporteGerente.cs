@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace LeSoleil_Taller2
 {
@@ -99,6 +100,67 @@ namespace LeSoleil_Taller2
                 row.Visible = true;
             }
         }
+
+        private void BDescargarExcel_Click(object sender, EventArgs e)
+        {
+            if(DGVTotalVentas.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay registros para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                foreach (DataGridViewColumn columna in DGVTotalVentas.Columns)
+                {
+                    dt.Columns.Add(columna.HeaderText, typeof(string));
+                }
+
+                foreach (DataGridViewRow row in DGVTotalVentas.Rows)
+                {
+                    // Ignorar la fila de inserción nueva
+                    if (row.IsNewRow)
+                        continue;
+
+                    if (row.Visible)
+                        dt.Rows.Add(new object[] {
+                            row.Cells[0].Value.ToString(),
+                            row.Cells[1].Value.ToString(),
+                            row.Cells[2].Value.ToString(),
+                            row.Cells[3].Value.ToString(),
+                            row.Cells[4].Value.ToString(),
+                            row.Cells[5].Value.ToString(),
+                            row.Cells[6].Value.ToString(),
+                            row.Cells[7].Value.ToString(),
+                            row.Cells[8].Value.ToString(),
+                            row.Cells[9].Value.ToString(),
+                            row.Cells[10].Value.ToString(),
+                            row.Cells[11].Value.ToString(),
+                            row.Cells[12].Value.ToString()
+                        });
+                }
+
+                SaveFileDialog savefile = new SaveFileDialog();
+                savefile.FileName = string.Format("ReporteVentas_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                savefile.Filter = "Excel Files | *.xlsx";
+
+                if (savefile.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(savefile.FileName);
+                        MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
 
 
     }

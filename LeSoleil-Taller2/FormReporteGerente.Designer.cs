@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteGerente));
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
             this.LDesde = new System.Windows.Forms.Label();
@@ -62,13 +63,14 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BLimpiarBuscador = new System.Windows.Forms.Button();
+            this.BBuscarFiltro = new System.Windows.Forms.Button();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.Lbuscador = new System.Windows.Forms.Label();
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.BBuscar = new System.Windows.Forms.Button();
-            this.BBuscarFiltro = new System.Windows.Forms.Button();
-            this.BLimpiarBuscador = new System.Windows.Forms.Button();
             this.LFondoUser = new System.Windows.Forms.Label();
+            this.BDescargarExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVTotalVentas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -160,124 +162,124 @@
             // 
             // FechaVenta
             // 
-            dataGridViewCellStyle66.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.Black;
-            this.FechaVenta.DefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.FechaVenta.DefaultCellStyle = dataGridViewCellStyle1;
             this.FechaVenta.HeaderText = "Fecha Registro";
             this.FechaVenta.Name = "FechaVenta";
             this.FechaVenta.Width = 150;
             // 
             // TipoFactura
             // 
-            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.Color.Black;
-            this.TipoFactura.DefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.TipoFactura.DefaultCellStyle = dataGridViewCellStyle2;
             this.TipoFactura.HeaderText = "Tipo Factura";
             this.TipoFactura.Name = "TipoFactura";
             // 
             // NroFactura
             // 
-            dataGridViewCellStyle68.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.Color.Black;
-            this.NroFactura.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.NroFactura.DefaultCellStyle = dataGridViewCellStyle3;
             this.NroFactura.HeaderText = "Numero Factura";
             this.NroFactura.Name = "NroFactura";
             // 
             // MontoTotal
             // 
-            dataGridViewCellStyle69.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.Black;
-            this.MontoTotal.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.MontoTotal.DefaultCellStyle = dataGridViewCellStyle4;
             this.MontoTotal.HeaderText = "Monto Total";
             this.MontoTotal.Name = "MontoTotal";
             // 
             // UsuarioRegistro
             // 
-            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.Color.Black;
-            this.UsuarioRegistro.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.UsuarioRegistro.DefaultCellStyle = dataGridViewCellStyle5;
             this.UsuarioRegistro.HeaderText = "Usuario Registro";
             this.UsuarioRegistro.Name = "UsuarioRegistro";
             // 
             // DNICliente
             // 
-            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.Color.Black;
-            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle6;
             this.DNICliente.HeaderText = "DNI Cliente";
             this.DNICliente.Name = "DNICliente";
             this.DNICliente.Width = 120;
             // 
             // NombreCliente
             // 
-            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.Black;
-            this.NombreCliente.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.NombreCliente.DefaultCellStyle = dataGridViewCellStyle7;
             this.NombreCliente.HeaderText = "Nombre Cliente";
             this.NombreCliente.Name = "NombreCliente";
             // 
             // CodigoProducto
             // 
-            dataGridViewCellStyle73.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.Color.Black;
-            this.CodigoProducto.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.CodigoProducto.DefaultCellStyle = dataGridViewCellStyle8;
             this.CodigoProducto.HeaderText = "Codigo Producto";
             this.CodigoProducto.Name = "CodigoProducto";
             // 
             // NombreProducto
             // 
-            dataGridViewCellStyle74.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.Color.Black;
-            this.NombreProducto.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.NombreProducto.DefaultCellStyle = dataGridViewCellStyle9;
             this.NombreProducto.HeaderText = "Nombre Producto";
             this.NombreProducto.Name = "NombreProducto";
             // 
             // CategoriaProducto
             // 
-            dataGridViewCellStyle75.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.Color.Black;
-            this.CategoriaProducto.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.CategoriaProducto.DefaultCellStyle = dataGridViewCellStyle10;
             this.CategoriaProducto.HeaderText = "Categoria";
             this.CategoriaProducto.Name = "CategoriaProducto";
             // 
             // PrecioVenta
             // 
-            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.Color.Black;
-            this.PrecioVenta.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.PrecioVenta.DefaultCellStyle = dataGridViewCellStyle11;
             this.PrecioVenta.HeaderText = "Precio Venta";
             this.PrecioVenta.Name = "PrecioVenta";
             this.PrecioVenta.Width = 104;
             // 
             // cantidad
             // 
-            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.Color.Black;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle12;
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
             // 
             // subtotal
             // 
-            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.Black;
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle13;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             // 
@@ -285,6 +287,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BDescargarExcel);
             this.panel1.Controls.Add(this.BLimpiarBuscador);
             this.panel1.Controls.Add(this.BBuscarFiltro);
             this.panel1.Controls.Add(this.txtbusqueda);
@@ -295,6 +298,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1251, 428);
             this.panel1.TabIndex = 56;
+            // 
+            // BLimpiarBuscador
+            // 
+            this.BLimpiarBuscador.BackColor = System.Drawing.Color.LightSalmon;
+            this.BLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BLimpiarBuscador.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BLimpiarBuscador.ForeColor = System.Drawing.Color.Black;
+            this.BLimpiarBuscador.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
+            this.BLimpiarBuscador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BLimpiarBuscador.Location = new System.Drawing.Point(1148, 15);
+            this.BLimpiarBuscador.Name = "BLimpiarBuscador";
+            this.BLimpiarBuscador.Size = new System.Drawing.Size(86, 33);
+            this.BLimpiarBuscador.TabIndex = 61;
+            this.BLimpiarBuscador.Text = "    Limpiar";
+            this.BLimpiarBuscador.UseVisualStyleBackColor = false;
+            this.BLimpiarBuscador.Click += new System.EventHandler(this.BLimpiarBuscador_Click);
+            // 
+            // BBuscarFiltro
+            // 
+            this.BBuscarFiltro.BackColor = System.Drawing.Color.LightSalmon;
+            this.BBuscarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BBuscarFiltro.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BBuscarFiltro.ForeColor = System.Drawing.Color.Black;
+            this.BBuscarFiltro.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
+            this.BBuscarFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BBuscarFiltro.Location = new System.Drawing.Point(1053, 15);
+            this.BBuscarFiltro.Name = "BBuscarFiltro";
+            this.BBuscarFiltro.Size = new System.Drawing.Size(86, 33);
+            this.BBuscarFiltro.TabIndex = 58;
+            this.BBuscarFiltro.Text = "    Buscar";
+            this.BBuscarFiltro.UseVisualStyleBackColor = false;
+            this.BBuscarFiltro.Click += new System.EventHandler(this.BBuscarFiltro_Click);
             // 
             // txtbusqueda
             // 
@@ -343,38 +378,6 @@
             this.BBuscar.UseVisualStyleBackColor = false;
             this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
             // 
-            // BBuscarFiltro
-            // 
-            this.BBuscarFiltro.BackColor = System.Drawing.Color.LightSalmon;
-            this.BBuscarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BBuscarFiltro.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BBuscarFiltro.ForeColor = System.Drawing.Color.Black;
-            this.BBuscarFiltro.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
-            this.BBuscarFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BBuscarFiltro.Location = new System.Drawing.Point(1053, 15);
-            this.BBuscarFiltro.Name = "BBuscarFiltro";
-            this.BBuscarFiltro.Size = new System.Drawing.Size(86, 33);
-            this.BBuscarFiltro.TabIndex = 58;
-            this.BBuscarFiltro.Text = "    Buscar";
-            this.BBuscarFiltro.UseVisualStyleBackColor = false;
-            this.BBuscarFiltro.Click += new System.EventHandler(this.BBuscarFiltro_Click);
-            // 
-            // BLimpiarBuscador
-            // 
-            this.BLimpiarBuscador.BackColor = System.Drawing.Color.LightSalmon;
-            this.BLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BLimpiarBuscador.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BLimpiarBuscador.ForeColor = System.Drawing.Color.Black;
-            this.BLimpiarBuscador.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
-            this.BLimpiarBuscador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BLimpiarBuscador.Location = new System.Drawing.Point(1148, 15);
-            this.BLimpiarBuscador.Name = "BLimpiarBuscador";
-            this.BLimpiarBuscador.Size = new System.Drawing.Size(86, 33);
-            this.BLimpiarBuscador.TabIndex = 61;
-            this.BLimpiarBuscador.Text = "    Limpiar";
-            this.BLimpiarBuscador.UseVisualStyleBackColor = false;
-            this.BLimpiarBuscador.Click += new System.EventHandler(this.BLimpiarBuscador_Click);
-            // 
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.Color.DarkGray;
@@ -382,6 +385,22 @@
             this.LFondoUser.Name = "LFondoUser";
             this.LFondoUser.Size = new System.Drawing.Size(1326, 739);
             this.LFondoUser.TabIndex = 58;
+            // 
+            // BDescargarExcel
+            // 
+            this.BDescargarExcel.BackColor = System.Drawing.Color.LightSalmon;
+            this.BDescargarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BDescargarExcel.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BDescargarExcel.ForeColor = System.Drawing.Color.Black;
+            this.BDescargarExcel.Image = ((System.Drawing.Image)(resources.GetObject("BDescargarExcel.Image")));
+            this.BDescargarExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BDescargarExcel.Location = new System.Drawing.Point(18, 15);
+            this.BDescargarExcel.Name = "BDescargarExcel";
+            this.BDescargarExcel.Size = new System.Drawing.Size(140, 33);
+            this.BDescargarExcel.TabIndex = 62;
+            this.BDescargarExcel.Text = "    Descargar Excel";
+            this.BDescargarExcel.UseVisualStyleBackColor = false;
+            this.BDescargarExcel.Click += new System.EventHandler(this.BDescargarExcel_Click);
             // 
             // FormReporteGerente
             // 
@@ -438,5 +457,6 @@
         private System.Windows.Forms.Button BLimpiarBuscador;
         private System.Windows.Forms.Button BBuscarFiltro;
         private System.Windows.Forms.Label LFondoUser;
+        private System.Windows.Forms.Button BDescargarExcel;
     }
 }
