@@ -56,9 +56,9 @@ namespace LeSoleil_Taller2
                     foreach (DataRow row in dt.Rows)
                     {
                         string producto = row["Producto"].ToString();
-                        double totalVentas = Convert.ToDouble(row["TotalVentas"]);
+                        int unidadesVendidas = Convert.ToInt32(row["UnidadesVendidas"]); // Cantidad vendida
 
-                        serie.Points.AddXY(producto, totalVentas);
+                        serie.Points.AddXY(producto, unidadesVendidas);
                     }
 
                     // Agregar la serie al gráfico
