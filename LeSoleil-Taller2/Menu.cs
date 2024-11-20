@@ -78,11 +78,6 @@ namespace LeSoleil_Taller2
             abrirFormulario((ToolStripMenuItem)sender, new FormProductos());
         }
 
-        private void MenuReportes_Click(object sender, EventArgs e)
-        {
-            abrirFormulario((ToolStripMenuItem)sender, new FormReporteGerente());
-        }
-
         private void MenuSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -129,6 +124,17 @@ namespace LeSoleil_Taller2
         {
             abrirFormulario((ToolStripMenuItem)sender, new FormReporteVendedor(usuarioActual));
         }
+
+        private void productosMásVendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormReporteGerente2());
+        }
+
+        private void historialDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirFormulario((ToolStripMenuItem)sender, new FormReporteGerente());
+        }
+
     }
 
     // Clase para el renderizado personalizado de los ítems del menú

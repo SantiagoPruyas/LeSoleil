@@ -39,6 +39,9 @@
             this.MenuCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosMásVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuReportesGerente = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.LLeSoleil = new System.Windows.Forms.Label();
@@ -188,6 +191,33 @@
             // 
             // MenuReportesGerente
             // 
+            this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historialDeVentasToolStripMenuItem,
+            this.productosMásVendidosToolStripMenuItem});
+            this.MenuReportes.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MenuReportes.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportes.Image")));
+            this.MenuReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.MenuReportes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.MenuReportes.Name = "MenuReportes";
+            this.MenuReportes.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.MenuReportes.Size = new System.Drawing.Size(89, 85);
+            this.MenuReportes.Text = "Reportes";
+            this.MenuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // historialDeVentasToolStripMenuItem
+            // 
+            this.historialDeVentasToolStripMenuItem.Name = "historialDeVentasToolStripMenuItem";
+            this.historialDeVentasToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.historialDeVentasToolStripMenuItem.Text = "Historial de Ventas";
+            this.historialDeVentasToolStripMenuItem.Click += new System.EventHandler(this.historialDeVentasToolStripMenuItem_Click);
+            // 
+            // productosMásVendidosToolStripMenuItem
+            // 
+            this.productosMásVendidosToolStripMenuItem.Name = "productosMásVendidosToolStripMenuItem";
+            this.productosMásVendidosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.productosMásVendidosToolStripMenuItem.Text = "Productos Más Vendidos";
+            this.productosMásVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMásVendidosToolStripMenuItem_Click);
             this.MenuReportesGerente.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuReportesGerente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MenuReportesGerente.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportesGerente.Image")));
@@ -324,6 +354,8 @@
         private System.Windows.Forms.ToolStripMenuItem MenuDetalleVenta;
         private System.Windows.Forms.ToolStripMenuItem MenuProveedores;
         private System.Windows.Forms.ToolStripMenuItem MenuCategorias;
+        private System.Windows.Forms.ToolStripMenuItem historialDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosMásVendidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuReportesVendedor;
     }
 }
