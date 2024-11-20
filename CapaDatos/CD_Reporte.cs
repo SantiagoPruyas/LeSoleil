@@ -65,5 +65,54 @@ namespace CapaDatos
             return lista;
         }
 
+        public List<ReporteVenta> VentaVendedor(int id_usuario, string fechainicio, string fechafin)
+        {
+            List<ReporteVenta> lista = new List<ReporteVenta>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    SqlCommand cmd = new SqlCommand("sp_ReporteVentasVendedor", oconexion);
+                    cmd.Parameters.AddWithValue("fechainicio", fechainicio);
+                    cmd.Parameters.AddWithValue("fechafin", fechafin);
+                    cmd.Parameters.AddWithValue("Id_usuario", id_usuario);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new ReporteVenta()
+                            {
+                                FechaVenta = dr["FechaVenta"].ToString(),
+                                TipoFactura = dr["TipoFactura"].ToString(),
+                                NroFactura = dr["NroFactura"].ToString(),
+                                MontoTotal = dr["MontoTotal"].ToString(),
+                                DNICliente = dr["DNICliente"].ToString(),
+                                NombreCliente = dr["NombreCliente"].ToString(),
+                                CodigoProducto = dr["CodigoProducto"].ToString(),
+                                NombreProducto = dr["NombreProducto"].ToString(),
+                                Categoria = dr["Categoria"].ToString(),
+                                PrecioVenta = dr["PrecioVenta"].ToString(),
+                                Cantidad = dr["Cantidad"].ToString(),
+                                Subtotal = dr["Subtotal"].ToString(),
+                            });
+                        }
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    lista = new List<ReporteVenta>();
+                }
+            }
+
+            return lista;
+        }
     }
 }

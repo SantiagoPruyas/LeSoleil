@@ -351,6 +351,16 @@ INSERT INTO Permiso(Perfil_id,Nombre) values
 (4,'MenuReportes'),
 (4,'MenuSalir')
 
+-- Permiso de MenuReportesGerente para el Gerente
+UPDATE Permiso
+SET Nombre = 'MenuReportesGerente'
+WHERE Id_permiso = 32
+
+-- Permiso de MenuReportesGerente para el Gerente
+UPDATE Permiso
+SET Nombre = 'MenuReportesVendedor'
+WHERE Id_permiso = 9
+
 UPDATE Permiso
 SET Nombre = 'MenuBackup'
 WHERE Nombre = 'MenuBackUp'
@@ -1329,17 +1339,47 @@ inner join Cliente c on c.Id_cliente = vc.Id_cliente
 where CONVERT (date, vc.FechaVenta) between @fechaInicio and @fechaFin
 end
 
+exec sp_ReporteVentas '01/11/2024', '20/11/2024'
+
+CREATE PROC sp_ReporteVentasVendedor
+(
+    @fechaInicio VARCHAR(10),
+    @fechaFin VARCHAR(10),
+    @Id_usuario INT -- Nuevo parámetro para filtrar por usuario
+)
+AS
+BEGIN
+    SET DATEFORMAT dmy;
+
+    SELECT
+        CONVERT(CHAR(10), vc.FechaVenta, 103) AS [FechaRegistro],
+        f.Tipo_Factura AS [TipoFactura],
+        vc.Nro_Factura AS [NumeroFactura],
+        vc.Total,
+        c.DNI AS [DNICliente],
+        c.Nombre AS [NombreCliente],
+        p.Codigo AS [CodigoProducto],
+        p.Nombre AS [NombreProducto],
+        ca.Descripcion AS [Categoria],
+        vd.Precio_venta,
+        vd.Cantidad,
+        vd.Subtotal
+    FROM VentaCabecera vc
+    INNER JOIN Usuario u ON u.Id_usuario = vc.Id_usuario
+    INNER JOIN VentaDetalle vd ON vd.Id_venta = vc.Id_venta
+    INNER JOIN Producto p ON p.Id_producto = vd.Id_producto
+    INNER JOIN Categoria ca ON ca.Id_Categoria = p.Id_Categoria
+    INNER JOIN Factura f ON f.Id_Factura = vc.Id_Factura
+    INNER JOIN Cliente c ON c.Id_cliente = vc.Id_cliente
+    WHERE CONVERT(DATE, vc.FechaVenta) BETWEEN @fechaInicio AND @fechaFin
+    AND vc.Id_usuario = @Id_usuario; -- Filtro por usuario
+END;
+
+exec sp_ReporteVentasVendedor '18/10/2024', '20/11/2024', 4
 -- Prueba 
 exec sp_ReporteVentas '19/11/2024', '20/11/2024'
 
--- Reporte Producto Más Vendido
-SELECT TOP 1 
-    p.Nombre AS Producto, 
-    SUM(vd.Cantidad) AS Cantidad
-FROM VentaDetalle vd
-INNER JOIN Producto p ON vd.Id_producto = p.Id_producto
-GROUP BY p.Nombre
-ORDER BY SUM(vd.Cantidad) DESC;
+
 
 -- Reporte PRODUCTOS VENDIDOS, Cantidad y Total de Venta
 alter PROC sp_ProductosVendidos
