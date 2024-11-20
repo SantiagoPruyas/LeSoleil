@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.TBNombreProducto = new System.Windows.Forms.TextBox();
             this.LNombreProducto = new System.Windows.Forms.Label();
@@ -54,6 +54,18 @@
             this.LTelaProducto = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bajaProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             this.LPrecioVenta = new System.Windows.Forms.Label();
             this.TBPrecioVenta = new System.Windows.Forms.TextBox();
             this.LStockMin = new System.Windows.Forms.Label();
@@ -75,18 +87,6 @@
             this.TBusquedaProducto = new System.Windows.Forms.TextBox();
             this.CBBusquedaProducto = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagenProducto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.editarProducto = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bajaProducto = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -208,14 +208,14 @@
             // DGVProductos
             // 
             this.DGVProductos.BackgroundColor = System.Drawing.Color.Tan;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle57.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -230,21 +230,118 @@
             this.imagenProducto,
             this.editarProducto,
             this.bajaProducto});
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.GhostWhite;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVProductos.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.GhostWhite;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVProductos.DefaultCellStyle = dataGridViewCellStyle14;
             this.DGVProductos.Location = new System.Drawing.Point(12, 331);
             this.DGVProductos.Name = "DGVProductos";
             this.DGVProductos.RowTemplate.Height = 70;
-            this.DGVProductos.Size = new System.Drawing.Size(1261, 298);
+            this.DGVProductos.Size = new System.Drawing.Size(1261, 250);
             this.DGVProductos.TabIndex = 46;
             this.DGVProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellClick);
             this.DGVProductos.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVProductos_CellPainting);
+            // 
+            // IdProducto
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.IdProducto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Width = 80;
+            // 
+            // Codigo
+            // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            // 
+            // nombreProducto
+            // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.nombreProducto.HeaderText = "Nombre";
+            this.nombreProducto.Name = "nombreProducto";
+            // 
+            // stockProducto
+            // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.stockProducto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.stockProducto.HeaderText = "Stock";
+            this.stockProducto.Name = "stockProducto";
+            this.stockProducto.Width = 80;
+            // 
+            // stockMinimo
+            // 
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.stockMinimo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.stockMinimo.HeaderText = "Stock Minimo";
+            this.stockMinimo.Name = "stockMinimo";
+            this.stockMinimo.Width = 80;
+            // 
+            // precioCompra
+            // 
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.precioCompra.DefaultCellStyle = dataGridViewCellStyle7;
+            this.precioCompra.HeaderText = "Precio Compra";
+            this.precioCompra.Name = "precioCompra";
+            // 
+            // precioVenta
+            // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.precioVenta.DefaultCellStyle = dataGridViewCellStyle8;
+            this.precioVenta.HeaderText = "Precio Venta";
+            this.precioVenta.Name = "precioVenta";
+            // 
+            // descripcionProducto
+            // 
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.descripcionProducto.DefaultCellStyle = dataGridViewCellStyle9;
+            this.descripcionProducto.HeaderText = "Descripcion";
+            this.descripcionProducto.Name = "descripcionProducto";
+            // 
+            // categoriaProducto
+            // 
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.categoriaProducto.DefaultCellStyle = dataGridViewCellStyle10;
+            this.categoriaProducto.HeaderText = "Categoria";
+            this.categoriaProducto.Name = "categoriaProducto";
+            // 
+            // imagenProducto
+            // 
+            this.imagenProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.imagenProducto.DefaultCellStyle = dataGridViewCellStyle11;
+            this.imagenProducto.FillWeight = 110F;
+            this.imagenProducto.HeaderText = "Imagen";
+            this.imagenProducto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imagenProducto.MinimumWidth = 8;
+            this.imagenProducto.Name = "imagenProducto";
+            // 
+            // editarProducto
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.editarProducto.DefaultCellStyle = dataGridViewCellStyle12;
+            this.editarProducto.HeaderText = "Editar";
+            this.editarProducto.Name = "editarProducto";
+            // 
+            // bajaProducto
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.bajaProducto.DefaultCellStyle = dataGridViewCellStyle13;
+            this.bajaProducto.HeaderText = "Dar de Baja";
+            this.bajaProducto.Name = "bajaProducto";
+            this.bajaProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bajaProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // LPrecioVenta
             // 
@@ -441,22 +538,26 @@
             // 
             // BTLimpiar
             // 
+            this.BTLimpiar.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
             this.BTLimpiar.Location = new System.Drawing.Point(878, 286);
             this.BTLimpiar.Name = "BTLimpiar";
             this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
             this.BTLimpiar.TabIndex = 72;
-            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.UseVisualStyleBackColor = false;
             this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
             // 
             // BTBuscarProducto
             // 
+            this.BTBuscarProducto.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTBuscarProducto.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
             this.BTBuscarProducto.Location = new System.Drawing.Point(841, 286);
             this.BTBuscarProducto.Name = "BTBuscarProducto";
             this.BTBuscarProducto.Size = new System.Drawing.Size(31, 28);
             this.BTBuscarProducto.TabIndex = 71;
-            this.BTBuscarProducto.UseVisualStyleBackColor = true;
+            this.BTBuscarProducto.UseVisualStyleBackColor = false;
             this.BTBuscarProducto.Click += new System.EventHandler(this.BTBuscarProducto_Click);
             // 
             // TBusquedaProducto
@@ -480,111 +581,14 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Coral;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Salmon;
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(410, 293);
+            this.label3.Location = new System.Drawing.Point(409, 291);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 68;
             this.label3.Text = "Buscar por:";
-            // 
-            // IdProducto
-            // 
-            dataGridViewCellStyle58.ForeColor = System.Drawing.Color.Black;
-            this.IdProducto.DefaultCellStyle = dataGridViewCellStyle58;
-            this.IdProducto.HeaderText = "ID Producto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.Width = 80;
-            // 
-            // Codigo
-            // 
-            dataGridViewCellStyle59.ForeColor = System.Drawing.Color.Black;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle59;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // nombreProducto
-            // 
-            dataGridViewCellStyle60.ForeColor = System.Drawing.Color.Black;
-            this.nombreProducto.DefaultCellStyle = dataGridViewCellStyle60;
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.Name = "nombreProducto";
-            // 
-            // stockProducto
-            // 
-            dataGridViewCellStyle61.ForeColor = System.Drawing.Color.Black;
-            this.stockProducto.DefaultCellStyle = dataGridViewCellStyle61;
-            this.stockProducto.HeaderText = "Stock";
-            this.stockProducto.Name = "stockProducto";
-            this.stockProducto.Width = 80;
-            // 
-            // stockMinimo
-            // 
-            dataGridViewCellStyle62.ForeColor = System.Drawing.Color.Black;
-            this.stockMinimo.DefaultCellStyle = dataGridViewCellStyle62;
-            this.stockMinimo.HeaderText = "Stock Minimo";
-            this.stockMinimo.Name = "stockMinimo";
-            this.stockMinimo.Width = 80;
-            // 
-            // precioCompra
-            // 
-            dataGridViewCellStyle63.ForeColor = System.Drawing.Color.Black;
-            this.precioCompra.DefaultCellStyle = dataGridViewCellStyle63;
-            this.precioCompra.HeaderText = "Precio Compra";
-            this.precioCompra.Name = "precioCompra";
-            // 
-            // precioVenta
-            // 
-            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.Black;
-            this.precioVenta.DefaultCellStyle = dataGridViewCellStyle64;
-            this.precioVenta.HeaderText = "Precio Venta";
-            this.precioVenta.Name = "precioVenta";
-            // 
-            // descripcionProducto
-            // 
-            dataGridViewCellStyle65.ForeColor = System.Drawing.Color.Black;
-            this.descripcionProducto.DefaultCellStyle = dataGridViewCellStyle65;
-            this.descripcionProducto.HeaderText = "Descripcion";
-            this.descripcionProducto.Name = "descripcionProducto";
-            // 
-            // categoriaProducto
-            // 
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.Black;
-            this.categoriaProducto.DefaultCellStyle = dataGridViewCellStyle66;
-            this.categoriaProducto.HeaderText = "Categoria";
-            this.categoriaProducto.Name = "categoriaProducto";
-            // 
-            // imagenProducto
-            // 
-            this.imagenProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle67.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle67.NullValue")));
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.imagenProducto.DefaultCellStyle = dataGridViewCellStyle67;
-            this.imagenProducto.FillWeight = 110F;
-            this.imagenProducto.HeaderText = "Imagen";
-            this.imagenProducto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imagenProducto.MinimumWidth = 8;
-            this.imagenProducto.Name = "imagenProducto";
-            // 
-            // editarProducto
-            // 
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.Black;
-            this.editarProducto.DefaultCellStyle = dataGridViewCellStyle68;
-            this.editarProducto.HeaderText = "Editar";
-            this.editarProducto.Name = "editarProducto";
-            // 
-            // bajaProducto
-            // 
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.Black;
-            this.bajaProducto.DefaultCellStyle = dataGridViewCellStyle69;
-            this.bajaProducto.HeaderText = "Dar de Baja";
-            this.bajaProducto.Name = "bajaProducto";
-            this.bajaProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormProductos
             // 

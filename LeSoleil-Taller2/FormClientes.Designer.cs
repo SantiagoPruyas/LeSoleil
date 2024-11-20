@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.LFondoClientes = new System.Windows.Forms.Label();
             this.LCliente = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@
             this.BTBuscarCliente = new System.Windows.Forms.Button();
             this.TBusquedaCliente = new System.Windows.Forms.TextBox();
             this.CBBusquedaCliente = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             this.SuspendLayout();
@@ -275,78 +275,78 @@
             this.bajaCliente});
             this.DGVClientes.Location = new System.Drawing.Point(115, 342);
             this.DGVClientes.Name = "DGVClientes";
-            this.DGVClientes.Size = new System.Drawing.Size(1040, 307);
+            this.DGVClientes.Size = new System.Drawing.Size(1040, 268);
             this.DGVClientes.TabIndex = 55;
             this.DGVClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVClientes_CellClick);
             this.DGVClientes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVClientes_CellPainting);
             // 
             // IdCliente
             // 
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            this.IdCliente.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.IdCliente.DefaultCellStyle = dataGridViewCellStyle11;
             this.IdCliente.HeaderText = "ID Cliente";
             this.IdCliente.Name = "IdCliente";
             // 
             // DNICliente
             // 
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle12;
             this.DNICliente.HeaderText = "DNI";
             this.DNICliente.Name = "DNICliente";
             // 
             // nombreCliente
             // 
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            this.nombreCliente.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.nombreCliente.DefaultCellStyle = dataGridViewCellStyle13;
             this.nombreCliente.HeaderText = "Nombre";
             this.nombreCliente.Name = "nombreCliente";
             // 
             // apellidoCliente
             // 
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.apellidoCliente.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.apellidoCliente.DefaultCellStyle = dataGridViewCellStyle14;
             this.apellidoCliente.HeaderText = "Apellido";
             this.apellidoCliente.Name = "apellidoCliente";
             // 
             // direccionCliente
             // 
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.direccionCliente.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.direccionCliente.DefaultCellStyle = dataGridViewCellStyle15;
             this.direccionCliente.HeaderText = "Direccion";
             this.direccionCliente.Name = "direccionCliente";
             // 
             // telefonoCliente
             // 
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            this.telefonoCliente.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.telefonoCliente.DefaultCellStyle = dataGridViewCellStyle16;
             this.telefonoCliente.HeaderText = "Telefono";
             this.telefonoCliente.Name = "telefonoCliente";
             // 
             // email
             // 
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            this.email.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.email.DefaultCellStyle = dataGridViewCellStyle17;
             this.email.HeaderText = "Email";
             this.email.Name = "email";
             // 
             // fechaNacimientoCliente
             // 
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            this.fechaNacimientoCliente.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.fechaNacimientoCliente.DefaultCellStyle = dataGridViewCellStyle18;
             this.fechaNacimientoCliente.HeaderText = "Fecha Nacimiento";
             this.fechaNacimientoCliente.Name = "fechaNacimientoCliente";
             // 
             // editarCliente
             // 
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            this.editarCliente.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            this.editarCliente.DefaultCellStyle = dataGridViewCellStyle19;
             this.editarCliente.HeaderText = "Editar";
             this.editarCliente.Name = "editarCliente";
             // 
             // bajaCliente
             // 
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            this.bajaCliente.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.bajaCliente.DefaultCellStyle = dataGridViewCellStyle20;
             this.bajaCliente.HeaderText = "Dar de Baja";
             this.bajaCliente.Name = "bajaCliente";
             // 
@@ -417,22 +417,28 @@
             // 
             // BTLimpiar
             // 
+            this.BTLimpiar.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTLimpiar.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
             this.BTLimpiar.Location = new System.Drawing.Point(861, 294);
             this.BTLimpiar.Name = "BTLimpiar";
             this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
             this.BTLimpiar.TabIndex = 77;
-            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.UseVisualStyleBackColor = false;
             this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
             // 
             // BTBuscarCliente
             // 
+            this.BTBuscarCliente.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTBuscarCliente.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTBuscarCliente.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
             this.BTBuscarCliente.Location = new System.Drawing.Point(824, 294);
             this.BTBuscarCliente.Name = "BTBuscarCliente";
             this.BTBuscarCliente.Size = new System.Drawing.Size(31, 28);
             this.BTBuscarCliente.TabIndex = 76;
-            this.BTBuscarCliente.UseVisualStyleBackColor = true;
+            this.BTBuscarCliente.UseVisualStyleBackColor = false;
             this.BTBuscarCliente.Click += new System.EventHandler(this.BTBuscarCliente_Click);
             // 
             // TBusquedaCliente
@@ -453,28 +459,28 @@
             this.CBBusquedaCliente.Size = new System.Drawing.Size(129, 21);
             this.CBBusquedaCliente.TabIndex = 74;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Coral;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(393, 301);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "Buscar por:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Salmon;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(396, 300);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Buscar por:";
             // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTLimpiar);
             this.Controls.Add(this.BTBuscarCliente);
             this.Controls.Add(this.TBusquedaCliente);
             this.Controls.Add(this.CBBusquedaCliente);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.BInactivosCliente);
             this.Controls.Add(this.BActivosCliente);
             this.Controls.Add(this.BCancelarCliente);
@@ -545,6 +551,6 @@
         private System.Windows.Forms.Button BTBuscarCliente;
         private System.Windows.Forms.TextBox TBusquedaCliente;
         private System.Windows.Forms.ComboBox CBBusquedaCliente;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

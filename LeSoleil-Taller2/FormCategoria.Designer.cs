@@ -55,7 +55,7 @@
             this.BTBuscarCategoria = new System.Windows.Forms.Button();
             this.TBusquedaCategoria = new System.Windows.Forms.TextBox();
             this.CBBusquedaCategoria = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -271,22 +271,28 @@
             // 
             // BTLimpiar
             // 
+            this.BTLimpiar.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTLimpiar.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
             this.BTLimpiar.Location = new System.Drawing.Point(807, 303);
             this.BTLimpiar.Name = "BTLimpiar";
             this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
             this.BTLimpiar.TabIndex = 82;
-            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.UseVisualStyleBackColor = false;
             this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
             // 
             // BTBuscarCategoria
             // 
+            this.BTBuscarCategoria.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTBuscarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTBuscarCategoria.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTBuscarCategoria.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
             this.BTBuscarCategoria.Location = new System.Drawing.Point(770, 303);
             this.BTBuscarCategoria.Name = "BTBuscarCategoria";
             this.BTBuscarCategoria.Size = new System.Drawing.Size(31, 28);
             this.BTBuscarCategoria.TabIndex = 81;
-            this.BTBuscarCategoria.UseVisualStyleBackColor = true;
+            this.BTBuscarCategoria.UseVisualStyleBackColor = false;
             this.BTBuscarCategoria.Click += new System.EventHandler(this.BTBuscarCategoria_Click);
             // 
             // TBusquedaCategoria
@@ -307,28 +313,28 @@
             this.CBBusquedaCategoria.Size = new System.Drawing.Size(129, 21);
             this.CBBusquedaCategoria.TabIndex = 79;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Coral;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(339, 310);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 78;
-            this.label3.Text = "Buscar por:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Salmon;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(341, 309);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Buscar por:";
             // 
             // FormCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTLimpiar);
             this.Controls.Add(this.BTBuscarCategoria);
             this.Controls.Add(this.TBusquedaCategoria);
             this.Controls.Add(this.CBBusquedaCategoria);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.BInactivosCategory);
             this.Controls.Add(this.BActivosCategory);
             this.Controls.Add(this.BCancelarCategoria);
@@ -374,6 +380,6 @@
         private System.Windows.Forms.Button BTBuscarCategoria;
         private System.Windows.Forms.TextBox TBusquedaCategoria;
         private System.Windows.Forms.ComboBox CBBusquedaCategoria;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

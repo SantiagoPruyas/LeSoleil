@@ -41,19 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.LUsers = new System.Windows.Forms.Label();
             this.LNombreUser = new System.Windows.Forms.Label();
             this.LApellidoUser = new System.Windows.Forms.Label();
@@ -99,7 +86,7 @@
             this.BTBuscarUsuario = new System.Windows.Forms.Button();
             this.TBusquedaUsuario = new System.Windows.Forms.TextBox();
             this.CBBusquedaUsuario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -310,14 +297,15 @@
             // 
             // DGVUsuarios
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.DGVUsuarios.BackgroundColor = System.Drawing.Color.Tan;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Usuario,
@@ -343,8 +331,8 @@
             // 
             // Id_Usuario
             // 
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Id_Usuario.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id_Usuario.HeaderText = "ID";
             this.Id_Usuario.Name = "Id_Usuario";
             this.Id_Usuario.ReadOnly = true;
@@ -352,269 +340,37 @@
             // 
             // nombreUsuario
             // 
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreUsuario.HeaderText = "Nombre";
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.ReadOnly = true;
             // 
             // apellidoUsuario
             // 
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle4;
             this.apellidoUsuario.HeaderText = "Apellido";
             this.apellidoUsuario.Name = "apellidoUsuario";
             this.apellidoUsuario.ReadOnly = true;
             // 
             // dniUsuario
             // 
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle5;
             this.dniUsuario.HeaderText = "DNI";
             this.dniUsuario.Name = "dniUsuario";
             this.dniUsuario.ReadOnly = true;
             // 
             // usuario
             // 
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            this.usuario.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.usuario.DefaultCellStyle = dataGridViewCellStyle6;
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
             this.usuario.ReadOnly = true;
             // 
             // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Contraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
-            this.Contraseña.Visible = false;
-            // 
-            // emailUsuario
-            // 
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
-            this.emailUsuario.DefaultCellStyle = dataGridViewCellStyle31;
-            this.emailUsuario.HeaderText = "Email";
-            this.emailUsuario.Name = "emailUsuario";
-            this.emailUsuario.ReadOnly = true;
-            // 
-            // direccionUsuario
-            // 
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
-            this.direccionUsuario.DefaultCellStyle = dataGridViewCellStyle32;
-            this.direccionUsuario.HeaderText = "Direccion";
-            this.direccionUsuario.Name = "direccionUsuario";
-            this.direccionUsuario.ReadOnly = true;
-            // 
-            // Perfil
-            // 
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
-            this.Perfil.DefaultCellStyle = dataGridViewCellStyle33;
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            // 
-            // telefonoUsuario
-            // 
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
-            this.telefonoUsuario.DefaultCellStyle = dataGridViewCellStyle34;
-            this.telefonoUsuario.HeaderText = "Telefono";
-            this.telefonoUsuario.Name = "telefonoUsuario";
-            this.telefonoUsuario.ReadOnly = true;
-            // 
-            // Fecha_Nacimiento
-            // 
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            this.Fecha_Nacimiento.DefaultCellStyle = dataGridViewCellStyle35;
-            this.Fecha_Nacimiento.HeaderText = "Fecha Nacimiento";
-            this.Fecha_Nacimiento.Name = "Fecha_Nacimiento";
-            this.Fecha_Nacimiento.ReadOnly = true;
-            this.Fecha_Nacimiento.Width = 150;
-            // 
-            // editarUsuario
-            // 
-            this.editarUsuario.HeaderText = "Editar ";
-            this.editarUsuario.Name = "editarUsuario";
-            this.editarUsuario.ReadOnly = true;
-            this.editarUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.editarUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.editarUsuario.Text = "editar";
-            // 
-            // bajaUsuario
-            // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaUsuario.DefaultCellStyle = dataGridViewCellStyle36;
-            this.bajaUsuario.HeaderText = "Dar de Baja";
-            this.bajaUsuario.Name = "bajaUsuario";
-            this.bajaUsuario.ReadOnly = true;
-            this.bajaUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bajaUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.bajaUsuario.Text = "Eliminar";
-            // 
-            // TBEmailUser
-            // 
-            this.TBEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEmailUser.ForeColor = System.Drawing.Color.Coral;
-            this.TBEmailUser.Location = new System.Drawing.Point(703, 23);
-            this.TBEmailUser.Multiline = true;
-            this.TBEmailUser.Name = "TBEmailUser";
-            this.TBEmailUser.Size = new System.Drawing.Size(359, 25);
-            this.TBEmailUser.TabIndex = 33;
-            this.TBEmailUser.Leave += new System.EventHandler(this.TBEmailUser_Leave);
-            // 
-            // LEmailUser
-            // 
-            this.LEmailUser.AutoSize = true;
-            this.LEmailUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LEmailUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LEmailUser.ForeColor = System.Drawing.Color.Black;
-            this.LEmailUser.Location = new System.Drawing.Point(641, 25);
-            this.LEmailUser.Name = "LEmailUser";
-            this.LEmailUser.Size = new System.Drawing.Size(41, 18);
-            this.LEmailUser.TabIndex = 34;
-            this.LEmailUser.Text = "Email";
-            // 
-            // BGuardarUsuario
-            // 
-            this.BGuardarUsuario.BackColor = System.Drawing.Color.Coral;
-            this.BGuardarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BGuardarUsuario.Location = new System.Drawing.Point(644, 221);
-            this.BGuardarUsuario.Name = "BGuardarUsuario";
-            this.BGuardarUsuario.Size = new System.Drawing.Size(94, 38);
-            this.BGuardarUsuario.TabIndex = 35;
-            this.BGuardarUsuario.Text = "Guardar";
-            this.BGuardarUsuario.UseVisualStyleBackColor = false;
-            this.BGuardarUsuario.Click += new System.EventHandler(this.BGuardarUsuario_Click);
-            // 
-            // BCancelarUsuario
-            // 
-            this.BCancelarUsuario.BackColor = System.Drawing.Color.Coral;
-            this.BCancelarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BCancelarUsuario.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelarUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BCancelarUsuario.Location = new System.Drawing.Point(764, 221);
-            this.BCancelarUsuario.Name = "BCancelarUsuario";
-            this.BCancelarUsuario.Size = new System.Drawing.Size(94, 38);
-            this.BCancelarUsuario.TabIndex = 36;
-            this.BCancelarUsuario.Text = "Cancelar";
-            this.BCancelarUsuario.UseVisualStyleBackColor = false;
-            this.BCancelarUsuario.Click += new System.EventHandler(this.BCancelarUsuario_Click);
-            // 
-            // BActivosUser
-            // 
-            this.BActivosUser.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.BActivosUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BActivosUser.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActivosUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BActivosUser.Location = new System.Drawing.Point(27, 292);
-            this.BActivosUser.Name = "BActivosUser";
-            this.BActivosUser.Size = new System.Drawing.Size(152, 41);
-            this.BActivosUser.TabIndex = 37;
-            this.BActivosUser.Text = "Usuarios Activos";
-            this.BActivosUser.UseVisualStyleBackColor = false;
-            this.BActivosUser.Click += new System.EventHandler(this.BActivosUser_Click);
-            // 
-            // BInactivosUsers
-            // 
-            this.BInactivosUsers.BackColor = System.Drawing.Color.Brown;
-            this.BInactivosUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BInactivosUsers.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BInactivosUsers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BInactivosUsers.Location = new System.Drawing.Point(1106, 292);
-            this.BInactivosUsers.Name = "BInactivosUsers";
-            this.BInactivosUsers.Size = new System.Drawing.Size(158, 41);
-            this.BInactivosUsers.TabIndex = 38;
-            this.BInactivosUsers.Text = "Usuarios Inactivos";
-            this.BInactivosUsers.UseVisualStyleBackColor = false;
-            this.BInactivosUsers.Click += new System.EventHandler(this.BInactivosUsers_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 281);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1295, 420);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
-            // 
-            // LFechaNacimientoUser
-            // 
-            this.LFechaNacimientoUser.AutoSize = true;
-            this.LFechaNacimientoUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LFechaNacimientoUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LFechaNacimientoUser.ForeColor = System.Drawing.Color.Black;
-            this.LFechaNacimientoUser.Location = new System.Drawing.Point(641, 159);
-            this.LFechaNacimientoUser.Name = "LFechaNacimientoUser";
-            this.LFechaNacimientoUser.Size = new System.Drawing.Size(117, 18);
-            this.LFechaNacimientoUser.TabIndex = 39;
-            this.LFechaNacimientoUser.Text = "Fecha Nacimiento";
-            // 
-            // DTPFechaNacimiento
-            // 
-            this.DTPFechaNacimiento.CalendarTitleBackColor = System.Drawing.Color.IndianRed;
-            this.DTPFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTPFechaNacimiento.Location = new System.Drawing.Point(775, 159);
-            this.DTPFechaNacimiento.Name = "DTPFechaNacimiento";
-            this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
-            this.DTPFechaNacimiento.TabIndex = 41;
-            // 
-            // BTLimpiar
-            // 
-            this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
-            this.BTLimpiar.Location = new System.Drawing.Point(863, 299);
-            this.BTLimpiar.Name = "BTLimpiar";
-            this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
-            this.BTLimpiar.TabIndex = 102;
-            this.BTLimpiar.UseVisualStyleBackColor = true;
-            this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
-            // 
-            // BTBuscarUsuario
-            // 
-            this.BTBuscarUsuario.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
-            this.BTBuscarUsuario.Location = new System.Drawing.Point(826, 299);
-            this.BTBuscarUsuario.Name = "BTBuscarUsuario";
-            this.BTBuscarUsuario.Size = new System.Drawing.Size(31, 28);
-            this.BTBuscarUsuario.TabIndex = 101;
-            this.BTBuscarUsuario.UseVisualStyleBackColor = true;
-            this.BTBuscarUsuario.Click += new System.EventHandler(this.BTBuscarUsuario_Click);
-            // 
-            // TBusquedaUsuario
-            // 
-            this.TBusquedaUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBusquedaUsuario.ForeColor = System.Drawing.Color.Coral;
-            this.TBusquedaUsuario.Location = new System.Drawing.Point(619, 303);
-            this.TBusquedaUsuario.Multiline = true;
-            this.TBusquedaUsuario.Name = "TBusquedaUsuario";
-            this.TBusquedaUsuario.Size = new System.Drawing.Size(201, 21);
-            this.TBusquedaUsuario.TabIndex = 100;
-            // 
-            // CBBusquedaUsuario
-            // 
-            this.CBBusquedaUsuario.FormattingEnabled = true;
-            this.CBBusquedaUsuario.Location = new System.Drawing.Point(484, 304);
-            this.CBBusquedaUsuario.Name = "CBBusquedaUsuario";
-            this.CBBusquedaUsuario.Size = new System.Drawing.Size(129, 21);
-            this.CBBusquedaUsuario.TabIndex = 99;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Coral;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(395, 306);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 98;
-            this.label3.Text = "Buscar por:";
             // 
             this.Contraseña.HeaderText = "Contraseña";
             this.Contraseña.Name = "Contraseña";
@@ -798,16 +554,72 @@
             this.DTPFechaNacimiento.Size = new System.Drawing.Size(104, 20);
             this.DTPFechaNacimiento.TabIndex = 41;
             // 
+            // BTLimpiar
+            // 
+            this.BTLimpiar.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTLimpiar.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
+            this.BTLimpiar.Location = new System.Drawing.Point(863, 299);
+            this.BTLimpiar.Name = "BTLimpiar";
+            this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
+            this.BTLimpiar.TabIndex = 102;
+            this.BTLimpiar.UseVisualStyleBackColor = false;
+            this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
+            // 
+            // BTBuscarUsuario
+            // 
+            this.BTBuscarUsuario.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTBuscarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTBuscarUsuario.ForeColor = System.Drawing.Color.GhostWhite;
+            this.BTBuscarUsuario.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
+            this.BTBuscarUsuario.Location = new System.Drawing.Point(826, 299);
+            this.BTBuscarUsuario.Name = "BTBuscarUsuario";
+            this.BTBuscarUsuario.Size = new System.Drawing.Size(31, 28);
+            this.BTBuscarUsuario.TabIndex = 101;
+            this.BTBuscarUsuario.UseVisualStyleBackColor = false;
+            this.BTBuscarUsuario.Click += new System.EventHandler(this.BTBuscarUsuario_Click);
+            // 
+            // TBusquedaUsuario
+            // 
+            this.TBusquedaUsuario.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBusquedaUsuario.ForeColor = System.Drawing.Color.Coral;
+            this.TBusquedaUsuario.Location = new System.Drawing.Point(619, 303);
+            this.TBusquedaUsuario.Multiline = true;
+            this.TBusquedaUsuario.Name = "TBusquedaUsuario";
+            this.TBusquedaUsuario.Size = new System.Drawing.Size(201, 21);
+            this.TBusquedaUsuario.TabIndex = 100;
+            // 
+            // CBBusquedaUsuario
+            // 
+            this.CBBusquedaUsuario.FormattingEnabled = true;
+            this.CBBusquedaUsuario.Location = new System.Drawing.Point(484, 304);
+            this.CBBusquedaUsuario.Name = "CBBusquedaUsuario";
+            this.CBBusquedaUsuario.Size = new System.Drawing.Size(129, 21);
+            this.CBBusquedaUsuario.TabIndex = 99;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Salmon;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(398, 305);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 103;
+            this.label1.Text = "Buscar por:";
+            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTLimpiar);
             this.Controls.Add(this.BTBuscarUsuario);
             this.Controls.Add(this.TBusquedaUsuario);
             this.Controls.Add(this.CBBusquedaUsuario);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.DTPFechaNacimiento);
             this.Controls.Add(this.LFechaNacimientoUser);
             this.Controls.Add(this.BInactivosUsers);
@@ -896,6 +708,6 @@
         private System.Windows.Forms.Button BTBuscarUsuario;
         private System.Windows.Forms.TextBox TBusquedaUsuario;
         private System.Windows.Forms.ComboBox CBBusquedaUsuario;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
             this.BCancelarProveedor = new System.Windows.Forms.Button();
             this.BGuardarProveedor = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.BTBuscarProveedor = new System.Windows.Forms.Button();
             this.TBusquedaProveedor = new System.Windows.Forms.TextBox();
             this.CBBusquedaProveedor = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoClientes)).BeginInit();
             this.SuspendLayout();
@@ -141,80 +141,80 @@
             // IdProveedor
             // 
             this.IdProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            this.IdProveedor.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.IdProveedor.DefaultCellStyle = dataGridViewCellStyle1;
             this.IdProveedor.HeaderText = "ID";
             this.IdProveedor.Name = "IdProveedor";
             // 
             // CUITProveedor
             // 
             this.CUITProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
-            this.CUITProveedor.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.CUITProveedor.DefaultCellStyle = dataGridViewCellStyle2;
             this.CUITProveedor.HeaderText = "CUIT";
             this.CUITProveedor.Name = "CUITProveedor";
             // 
             // nombreProveedor
             // 
             this.nombreProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
-            this.nombreProveedor.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.nombreProveedor.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreProveedor.HeaderText = "Nombre";
             this.nombreProveedor.Name = "nombreProveedor";
             // 
             // direccionProveedor
             // 
             this.direccionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            this.direccionProveedor.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.direccionProveedor.DefaultCellStyle = dataGridViewCellStyle4;
             this.direccionProveedor.HeaderText = "Direccion";
             this.direccionProveedor.Name = "direccionProveedor";
             // 
             // telefonoProveedor
             // 
             this.telefonoProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.telefonoProveedor.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.telefonoProveedor.DefaultCellStyle = dataGridViewCellStyle5;
             this.telefonoProveedor.HeaderText = "Telefono";
             this.telefonoProveedor.Name = "telefonoProveedor";
             // 
             // emailProveedor
             // 
             this.emailProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            this.emailProveedor.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.emailProveedor.DefaultCellStyle = dataGridViewCellStyle6;
             this.emailProveedor.HeaderText = "Email";
             this.emailProveedor.Name = "emailProveedor";
             // 
             // razonSocialProveedor
             // 
             this.razonSocialProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            this.razonSocialProveedor.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.razonSocialProveedor.DefaultCellStyle = dataGridViewCellStyle7;
             this.razonSocialProveedor.HeaderText = "Razon Social";
             this.razonSocialProveedor.Name = "razonSocialProveedor";
             // 
             // ciudadProveedor
             // 
             this.ciudadProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            this.ciudadProveedor.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.ciudadProveedor.DefaultCellStyle = dataGridViewCellStyle8;
             this.ciudadProveedor.HeaderText = "Ciudad";
             this.ciudadProveedor.Name = "ciudadProveedor";
             // 
             // paisProveedor
             // 
             this.paisProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            this.paisProveedor.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.paisProveedor.DefaultCellStyle = dataGridViewCellStyle9;
             this.paisProveedor.HeaderText = "Pais";
             this.paisProveedor.Name = "paisProveedor";
             // 
             // descripcionProveedor
             // 
             this.descripcionProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            this.descripcionProveedor.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.descripcionProveedor.DefaultCellStyle = dataGridViewCellStyle10;
             this.descripcionProveedor.HeaderText = "Descripcion";
             this.descripcionProveedor.Name = "descripcionProveedor";
             // 
@@ -495,22 +495,28 @@
             // 
             // BTLimpiar
             // 
+            this.BTLimpiar.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTLimpiar.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTLimpiar.Image = global::LeSoleil_Taller2.Properties.Resources.escobapng;
             this.BTLimpiar.Location = new System.Drawing.Point(864, 300);
             this.BTLimpiar.Name = "BTLimpiar";
             this.BTLimpiar.Size = new System.Drawing.Size(31, 28);
             this.BTLimpiar.TabIndex = 97;
-            this.BTLimpiar.UseVisualStyleBackColor = true;
+            this.BTLimpiar.UseVisualStyleBackColor = false;
             this.BTLimpiar.Click += new System.EventHandler(this.BTLimpiar_Click);
             // 
             // BTBuscarProveedor
             // 
+            this.BTBuscarProveedor.BackColor = System.Drawing.Color.PeachPuff;
+            this.BTBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTBuscarProveedor.ForeColor = System.Drawing.Color.GhostWhite;
             this.BTBuscarProveedor.Image = global::LeSoleil_Taller2.Properties.Resources.lupapng;
             this.BTBuscarProveedor.Location = new System.Drawing.Point(827, 300);
             this.BTBuscarProveedor.Name = "BTBuscarProveedor";
             this.BTBuscarProveedor.Size = new System.Drawing.Size(31, 28);
             this.BTBuscarProveedor.TabIndex = 96;
-            this.BTBuscarProveedor.UseVisualStyleBackColor = true;
+            this.BTBuscarProveedor.UseVisualStyleBackColor = false;
             this.BTBuscarProveedor.Click += new System.EventHandler(this.BTBuscarProveedor_Click);
             // 
             // TBusquedaProveedor
@@ -531,28 +537,28 @@
             this.CBBusquedaProveedor.Size = new System.Drawing.Size(129, 21);
             this.CBBusquedaProveedor.TabIndex = 94;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Coral;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(396, 307);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 16);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Buscar por:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Salmon;
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(399, 306);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 98;
+            this.label1.Text = "Buscar por:";
             // 
             // FormProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 701);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BTLimpiar);
             this.Controls.Add(this.BTBuscarProveedor);
             this.Controls.Add(this.TBusquedaProveedor);
             this.Controls.Add(this.CBBusquedaProveedor);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.TBDescripcionProveedor);
             this.Controls.Add(this.LDescripcionProveedor);
             this.Controls.Add(this.TBPaisProveedor);
@@ -633,6 +639,6 @@
         private System.Windows.Forms.Button BTBuscarProveedor;
         private System.Windows.Forms.TextBox TBusquedaProveedor;
         private System.Windows.Forms.ComboBox CBBusquedaProveedor;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
     }
 }
