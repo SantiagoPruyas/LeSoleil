@@ -40,6 +40,8 @@
             this.MenuProductos = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuProveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.historialDeVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosMásVendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.LLeSoleil = new System.Windows.Forms.Label();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
@@ -186,6 +188,9 @@
             // 
             // MenuReportes
             // 
+            this.MenuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historialDeVentasToolStripMenuItem,
+            this.productosMásVendidosToolStripMenuItem});
             this.MenuReportes.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuReportes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MenuReportes.Image = ((System.Drawing.Image)(resources.GetObject("MenuReportes.Image")));
@@ -196,7 +201,20 @@
             this.MenuReportes.Size = new System.Drawing.Size(89, 85);
             this.MenuReportes.Text = "Reportes";
             this.MenuReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MenuReportes.Click += new System.EventHandler(this.MenuReportes_Click);
+            // 
+            // historialDeVentasToolStripMenuItem
+            // 
+            this.historialDeVentasToolStripMenuItem.Name = "historialDeVentasToolStripMenuItem";
+            this.historialDeVentasToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.historialDeVentasToolStripMenuItem.Text = "Historial de Ventas";
+            this.historialDeVentasToolStripMenuItem.Click += new System.EventHandler(this.historialDeVentasToolStripMenuItem_Click);
+            // 
+            // productosMásVendidosToolStripMenuItem
+            // 
+            this.productosMásVendidosToolStripMenuItem.Name = "productosMásVendidosToolStripMenuItem";
+            this.productosMásVendidosToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.productosMásVendidosToolStripMenuItem.Text = "Productos Más Vendidos";
+            this.productosMásVendidosToolStripMenuItem.Click += new System.EventHandler(this.productosMásVendidosToolStripMenuItem_Click);
             // 
             // MenuSalir
             // 
@@ -308,5 +326,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuDetalleVenta;
         private System.Windows.Forms.ToolStripMenuItem MenuProveedores;
         private System.Windows.Forms.ToolStripMenuItem MenuCategorias;
+        private System.Windows.Forms.ToolStripMenuItem historialDeVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosMásVendidosToolStripMenuItem;
     }
 }

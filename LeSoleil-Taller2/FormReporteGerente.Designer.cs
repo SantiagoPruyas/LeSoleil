@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReporteGerente));
             this.LFondoProductos = new System.Windows.Forms.Label();
             this.LProductos = new System.Windows.Forms.Label();
@@ -162,124 +162,124 @@
             // 
             // FechaVenta
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.FechaVenta.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.FechaVenta.DefaultCellStyle = dataGridViewCellStyle14;
             this.FechaVenta.HeaderText = "Fecha Registro";
             this.FechaVenta.Name = "FechaVenta";
             this.FechaVenta.Width = 150;
             // 
             // TipoFactura
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.TipoFactura.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.TipoFactura.DefaultCellStyle = dataGridViewCellStyle15;
             this.TipoFactura.HeaderText = "Tipo Factura";
             this.TipoFactura.Name = "TipoFactura";
             // 
             // NroFactura
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.NroFactura.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
+            this.NroFactura.DefaultCellStyle = dataGridViewCellStyle16;
             this.NroFactura.HeaderText = "Numero Factura";
             this.NroFactura.Name = "NroFactura";
             // 
             // MontoTotal
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.MontoTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.MontoTotal.DefaultCellStyle = dataGridViewCellStyle17;
             this.MontoTotal.HeaderText = "Monto Total";
             this.MontoTotal.Name = "MontoTotal";
             // 
             // UsuarioRegistro
             // 
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            this.UsuarioRegistro.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.UsuarioRegistro.DefaultCellStyle = dataGridViewCellStyle18;
             this.UsuarioRegistro.HeaderText = "Usuario Registro";
             this.UsuarioRegistro.Name = "UsuarioRegistro";
             // 
             // DNICliente
             // 
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.DNICliente.DefaultCellStyle = dataGridViewCellStyle19;
             this.DNICliente.HeaderText = "DNI Cliente";
             this.DNICliente.Name = "DNICliente";
             this.DNICliente.Width = 120;
             // 
             // NombreCliente
             // 
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.NombreCliente.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.NombreCliente.DefaultCellStyle = dataGridViewCellStyle20;
             this.NombreCliente.HeaderText = "Nombre Cliente";
             this.NombreCliente.Name = "NombreCliente";
             // 
             // CodigoProducto
             // 
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.CodigoProducto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.CodigoProducto.DefaultCellStyle = dataGridViewCellStyle21;
             this.CodigoProducto.HeaderText = "Codigo Producto";
             this.CodigoProducto.Name = "CodigoProducto";
             // 
             // NombreProducto
             // 
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.NombreProducto.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            this.NombreProducto.DefaultCellStyle = dataGridViewCellStyle22;
             this.NombreProducto.HeaderText = "Nombre Producto";
             this.NombreProducto.Name = "NombreProducto";
             // 
             // CategoriaProducto
             // 
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.CategoriaProducto.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            this.CategoriaProducto.DefaultCellStyle = dataGridViewCellStyle23;
             this.CategoriaProducto.HeaderText = "Categoria";
             this.CategoriaProducto.Name = "CategoriaProducto";
             // 
             // PrecioVenta
             // 
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.PrecioVenta.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            this.PrecioVenta.DefaultCellStyle = dataGridViewCellStyle24;
             this.PrecioVenta.HeaderText = "Precio Venta";
             this.PrecioVenta.Name = "PrecioVenta";
             this.PrecioVenta.Width = 104;
             // 
             // cantidad
             // 
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle25;
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
             // 
             // subtotal
             // 
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.PaleGreen;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.PaleGreen;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Black;
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle26;
             this.subtotal.HeaderText = "Subtotal";
             this.subtotal.Name = "subtotal";
             // 
@@ -381,9 +381,9 @@
             // LFondoUser
             // 
             this.LFondoUser.BackColor = System.Drawing.Color.DarkGray;
-            this.LFondoUser.Location = new System.Drawing.Point(-7, -28);
+            this.LFondoUser.Location = new System.Drawing.Point(-7, -7);
             this.LFondoUser.Name = "LFondoUser";
-            this.LFondoUser.Size = new System.Drawing.Size(1326, 739);
+            this.LFondoUser.Size = new System.Drawing.Size(1326, 718);
             this.LFondoUser.TabIndex = 58;
             // 
             // BDescargarExcel

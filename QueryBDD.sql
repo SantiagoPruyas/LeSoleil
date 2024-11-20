@@ -1305,6 +1305,8 @@ TO DISK = 'C:\BackUps\DBLE_SOLEIL.bak';
 
 
 ---------------------------------- PROCEDIMIENTOS REPORTES ----------------------------------
+
+-- Reporte Historial de Ventas
 CREATE PROC sp_ReporteVentas(
 @fechaInicio varchar(10),
 @fechaFin varchar(10)
@@ -1327,4 +1329,37 @@ inner join Cliente c on c.Id_cliente = vc.Id_cliente
 where CONVERT (date, vc.FechaVenta) between @fechaInicio and @fechaFin
 end
 
-exec sp_ReporteVentas '18/10/2021', '20/10/2021'
+-- Prueba 
+exec sp_ReporteVentas '19/11/2024', '20/11/2024'
+
+-- Reporte Producto Más Vendido
+SELECT TOP 1 
+    p.Nombre AS Producto, 
+    SUM(vd.Cantidad) AS Cantidad
+FROM VentaDetalle vd
+INNER JOIN Producto p ON vd.Id_producto = p.Id_producto
+GROUP BY p.Nombre
+ORDER BY SUM(vd.Cantidad) DESC;
+
+-- Reporte PRODUCTOS VENDIDOS, Cantidad y Total de Venta
+alter PROC sp_ProductosVendidos
+    @fechaInicio varchar(10),
+    @fechaFin varchar(10)
+AS
+BEGIN
+    SET DATEFORMAT dmy;
+
+    SELECT 
+        p.Nombre AS Producto, 
+        SUM(vd.Cantidad) AS CantidadVecesVendido, 
+        SUM(vd.Cantidad * vd.Precio_venta) AS TotalVentas
+    FROM VentaDetalle vd
+    INNER JOIN Producto p ON p.Id_producto = vd.Id_producto
+    INNER JOIN VentaCabecera vc ON vc.Id_venta = vd.Id_venta
+    WHERE CONVERT(DATE, vc.FechaVenta) BETWEEN @fechaInicio AND @fechaFin
+    GROUP BY p.Nombre
+    ORDER BY CantidadVecesVendido DESC; -- Ordenamos por la cantidad total vendida de mayor a menor
+END
+
+-- Prueba 
+exec sp_ProductosVendidos '19/11/2024', '20/11/2024'
