@@ -1,0 +1,10 @@
+Usuarios y Claves de Acceso:
+
+User: Santiago	Pass: admin
+User:Lara	Pass:admin
+User:Vendedor	Pass:12345
+User:Repositora	Pass:12345
+User:dana	Pass:12345
+User:pedro	Pass:12345
+User:abril	Pass:12345
+User:gerente	Pass:12345
